@@ -69,8 +69,8 @@
                         <li>
                             <a href="#" class="it-courses" onclick="toggleSubmenu(event)">IT Courses <span class="dropdown-icon">&#9662;</span></a>
                             <ul class="dropdown2">
-                                <li><a href="{% url 'data_science_business_analytics' %}">Data Science and Business Analytics</a></li>
-                                <li><a href="{% url 'cyber_security_and_ethical_hacking' %}">Cyber Security and Ethical Hacking</a></li>
+                                <li><a href="{% url 'data_science_business_analytics' %}">Data Science & Business Analytics</a></li>
+                                <li><a href="{% url 'cyber_security_and_ethical_hacking' %}">Cyber Security & Ethical Hacking</a></li>
                                 <li><a href="{% url 'cloud_and_devops' %}">Cloud & DevOps</a></li>
                                 <li><a href="{% url 'chess_analytics' %}">Chess Analytics</a></li>
 
@@ -93,49 +93,7 @@
                 </li>
                 <li><a href="{% url 'centers' %}">Centers</a></li>
 
-                
-                {% comment %} <li>
-                    <a href="#" class="Centers" onclick="toggleSubmenu(event)">Centers<span class="dropdown-icon">&#9662;</span></a>
-
-                    <ul class="dropdown1">
-                        <li>
-                            <a href="#" class="mumbai" onclick="toggleSubmenu(event)">Mumbai <span class="dropdown-icon">&#9662;</span></a>
-                            <ul class="dropdown2">
-                                <li><a href="#">Andheri</a></li>
-                                <li><a href="#">Bandra</a></li>
-                                <li><a href="#">Colaba</a></li>
-                                <li><a href="#">Juhu</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="bangalore" onclick="toggleSubmenu(event)">Bangalore <span class="dropdown-icon">&#9662;</span></a>
-                            <ul class="dropdown2">
-                                <li><a href="#">Koramangala</a></li>
-                                <li><a href="#">Whitefield</a></li>
-                                <li><a href="#">Indiranagar</a></li>
-                                <li><a href="#">Jayanagar</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="indore" onclick="toggleSubmenu(event)">Indore <span class="dropdown-icon">&#9662;</span></a>
-                            <ul class="dropdown2">
-                                <li><a href="#">Rajwada</a></li>
-                                <li><a href="#">AB Road</a></li>
-                                <li><a href="#">LIG</a></li>
-                                <li><a href="#">MG Road</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="kolkata" onclick="toggleSubmenu(event)">Kolkata <span class="dropdown-icon">&#9662;</span></a>
-                            <ul class="dropdown2">
-                                <li><a href="#">Park Street</a></li>
-                                <li><a href="#">Salt Lake</a></li>
-                                <li><a href="#">Howrah</a></li>
-                                <li><a href="#">Esplanade</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> {% endcomment %}
+             
                 
 
                 
@@ -224,6 +182,7 @@
 
 
 /* General Dropdown Styling for course */
+/* Dropdown 1 Styling */
 .dropdown1 {
     display: none;
     position: absolute;
@@ -253,7 +212,7 @@
     text-decoration: none;
     color: #333;
     display: flex;
-    justify-content: space-between; /* Align text and icons */
+    justify-content: flex-start; /* Align text to the left */
     align-items: center;
     padding: 8px 12px; /* Padding for better spacing */
     transition: background-color 0.3s;
@@ -266,7 +225,6 @@
 }
 
 /* Add Dropdown Icon */
-/* Dropdown Styling */
 .dropdown-icon {
     font-size: 12px;
     color: #666;
@@ -277,19 +235,6 @@
 /* Rotate the icon when submenu is expanded */
 .dropdown1 li a[aria-expanded="true"] .dropdown-icon {
     transform: rotate(180deg);
-}
-
-/* General Dropdown Styling */
-.dropdown1 {
-    display: none;
-    position: absolute;
-    background: white;
-    padding: 12px;
-    border: 1px solid #ddd;
-    list-style-type: none;
-    z-index: 1000;
-    min-width: 240px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Submenu Styling */
@@ -321,25 +266,28 @@
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-    .dropdown1 {
+    .dropdown {
         position: static;
         box-shadow: none;
         border: none;
         padding: 0;
+        text-align: left; /* Align text to the left */
     }
 
-    .dropdown2 {
+    .dropdown .dropdown2 {
         padding: 0;
         margin: 0;
         border-top: none;
     }
 
-    .dropdown1 li, .dropdown2 li {
+    .dropdown li {
         padding: 10px 0;
+        display: inline-block; /* Keep items in one line */
     }
 
-    .dropdown1 li a, .dropdown2 li a {
+    .dropdown li a {
         padding: 10px;
+        white-space: nowrap; /* Prevent text from wrapping to the next line */
     }
 
     .dropdown-icon {
@@ -347,119 +295,6 @@
     }
 }
 
-
-{% comment %} styling for Centers  {% endcomment %}
-
-
-/* General Dropdown Styling */
-.dropdown-centers {
-    display: none;
-    position: absolute;
-    background: white;
-    padding: 12px;
-    border: 1px solid #ddd;
-    list-style-type: none;
-    z-index: 1000;
-    min-width: 240px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Show Dropdown on Hover for the First Level */
-.mumbai:hover + .dropdown-centers,
-.mumbai:focus + .dropdown-centers,
-.bangalore:hover + .dropdown-centers,
-.bangalore:focus + .dropdown-centers,
-.indore:hover + .dropdown-centers,
-.indore:focus + .dropdown-centers,
-.kolkata:hover + .dropdown-centers,
-.kolkata:focus + .dropdown-centers {
-    display: block;
-}
-
-/* Dropdown Items */
-.dropdown-centers li {
-    position: relative;
-    padding: 5px 10px; /* Add spacing for items */
-}
-
-/* Links Styling */
-.dropdown-centers li a {
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    justify-content: space-between; /* Align text and icons */
-    align-items: center;
-    padding: 8px 12px; /* Padding for better spacing */
-    transition: background-color 0.3s;
-    font-size: 14px;
-}
-
-.dropdown-centers li a:hover {
-    background-color: red;
-    color: white;
-}
-
-/* Add Dropdown Icon */
-.dropdown-icon {
-    font-size: 12px;
-    color: #666;
-    margin-left: 10px;
-}
-
-/* Submenu Styling */
-.dropdown-subcenters {
-    display: none;
-    position: relative; /* Align inside the parent */
-    margin-top: 5px;
-    padding: 5px 0;
-    list-style-type: none;
-    border-top: 1px solid #ddd; /* Separator for sub-items */
-}
-
-.dropdown-subcenters li {
-    padding: 5px 15px; /* Add spacing for submenu items */
-}
-
-.dropdown-subcenters li a {
-    text-decoration: none;
-    color: #555;
-    display: block;
-    padding: 8px 12px;
-    transition: background-color 0.3s;
-}
-
-.dropdown-subcenters li a:hover {
-    background-color: red;
-    color: white;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .dropdown-centers {
-        position: static;
-        box-shadow: none;
-        border: none;
-        padding: 0;
-    }
-
-    .dropdown-subcenters {
-        padding: 0;
-        margin: 0;
-        border-top: none;
-    }
-
-    .dropdown-centers li, .dropdown-subcenters li {
-        padding: 10px 0;
-    }
-
-    .dropdown-centers li a, .dropdown-subcenters li a {
-        padding: 10px;
-    }
-
-    .dropdown-icon {
-        display: none; /* Hide icons in responsive view */
-    }
-}
 
 
 
