@@ -1,0 +1,901 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<section class="spoken_english-responsive-banner">
+  <img
+    src="{% static 'images/ds_banner.jpg' %}"
+    alt="Spoken English Banner"
+    class="spoken_english-banner-image"
+  />
+  <div class="spoken_english-banner-content">
+    <h1>Spoken English and Communication Skills</h1>
+  </div>
+</section>
+
+<!--banner section css start here ============= -->
+<style>
+  /* Section Styling */
+  .spoken_english-responsive-banner {
+    margin-top: 100px;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow: hidden; /* Ensures the image doesn't exceed the section dimensions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Image Styling */
+  .spoken_english-banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the section without distortion */
+    z-index: -1; /* Places the image behind the content */
+  }
+
+  /* Title Styling */
+  .spoken_english-banner-content h1 {
+    font-size: 2.3rem; /* Adjust font size for responsiveness */
+    font-weight: bold;
+    color: white; /* Ensure contrast against the background image */
+    margin: 0;
+    z-index: 1; /* Keeps the text above the image */
+  }
+  .spoken_english-banner-content h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: white;
+    margin: 10px auto 0;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .spoken_english-banner-content h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .spoken_english-banner-content h1 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+
+<section class="spoken_english-courses-section">
+  <div class="spoken_english-container">
+    <div class="spoken_english-course-category">
+      <h2 class="spoken_english-course-title">
+        Best Spoken English and Communication Course in India
+      </h2>
+      <p>
+        Spoken English Academy offers an extensive portfolio of courses designed
+        to equip individuals with the skills and knowledge necessary to excel in
+        today’s language-driven world. The academy prioritizes spoken English,
+        communication skills, business communication, and personality
+        development for their growing importance in various industries.
+      </p>
+      <p>
+        Begin an enriching journey that empowers you with the expertise to
+        communicate confidently and emerge as a highly sought-after specialist
+        in this high-demand domain.
+      </p>
+    </div>
+
+    <div class="spoken_english-course-category">
+      <h2 class="spoken_english-course-title">
+        Spoken English Course in India
+      </h2>
+      <p>
+        In an era of increasing need for effective communication, Spoken English
+        Academy provides cutting-edge spoken English courses to help individuals
+        develop the necessary skills to communicate fluently in English. These
+        courses cover areas such as grammar, vocabulary building, accent
+        training, and conversation practice, preparing individuals to excel in
+        personal and professional communication.
+      </p>
+    </div>
+
+    <div class="spoken_english-course-category">
+      <h2 class="spoken_english-course-title">
+        Business Communication Course in India
+      </h2>
+      <p>
+        With the rising demand for professionals who can communicate effectively
+        in business settings, Spoken English Academy offers courses in business
+        communication. These programs teach students how to present ideas
+        clearly, participate in discussions, negotiate, and write professional
+        emails, giving them the skills necessary to excel in corporate
+        environments.
+      </p>
+      <br />
+      <p>
+        Begin an enriching journey that empowers you with the expertise to
+        communicate with confidence, build strong professional relationships,
+        and emerge as a highly sought-after specialist in this high-demand
+        domain.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .spoken_english-courses-section {
+    background-color: #f7f9fc;
+    padding: 50px 20px;
+  }
+
+  .spoken_english-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .spoken_english-section-title {
+    font-size: 1.8rem;
+    color: #162020;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .spoken_english-section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #ff5252;
+  }
+
+  .spoken_english-section-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+  }
+
+  .spoken_english-course-category {
+    margin-bottom: 30px;
+  }
+
+  .spoken_english-course-title {
+    font-size: 1.8rem;
+    color: #162020;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .spoken_english-course-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff5252;
+    margin: 8px 0;
+  }
+
+  .spoken_english-course-category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .spoken_english-section-title {
+      font-size: 2rem;
+    }
+
+    .spoken_english-course-title {
+      font-size: 1.5rem;
+    }
+
+    .spoken_english-section-description {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<section class="spoken_english-offerings-section">
+  <div class="spoken_english-offerings-container">
+    <div class="spoken_english-offerings-image">
+      <img
+        src="{% static 'images/spoken_image11.png' %}"
+        alt="Student learning"
+      />
+    </div>
+    <div class="spoken_english-offerings-text">
+      <h2 class="spoken_english-offerings-title">
+        Our Diverse Spoken English Course Offerings
+      </h2>
+      <ul class="spoken_english-offerings-list">
+        <li>
+          <span class="spoken_english-check-icon spoken_english-blue"
+            >&#10003;</span
+          >
+          Introduction to Spoken English and Communication
+        </li>
+        <li>
+          <span class="spoken_english-check-icon spoken_english-blue"
+            >&#10003;</span
+          >
+          Vocabulary Building and Accent Training
+        </li>
+        <li>
+          <span class="spoken_english-check-icon spoken_english-blue"
+            >&#10003;</span
+          >
+          English Grammar Fundamentals
+        </li>
+        <li>
+          <span class="spoken_english-check-icon spoken_english-blue"
+            >&#10003;</span
+          >
+          Effective Speaking and Listening Skills
+        </li>
+        <li>
+          <span class="spoken_english-check-icon spoken_english-blue"
+            >&#10003;</span
+          >
+          Public Speaking and Presentation Skills
+        </li>
+        <li>
+          <span class="spoken_english-check-icon spoken_english-blue"
+            >&#10003;</span
+          >
+          Business Communication and Etiquette
+        </li>
+        <li>
+          <span class="spoken_english-check-icon spoken_english-blue"
+            >&#10003;</span
+          >
+          Writing Professional Emails and Reports
+        </li>
+        <li>
+          <span class="spoken_english-check-icon spoken_english-blue"
+            >&#10003;</span
+          >
+          Personality Development and Confidence Building
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .spoken_english-offerings-section {
+    background-color: #f9f9fb;
+    padding-bottom: 50px;
+  }
+
+  .spoken_english-offerings-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .spoken_english-offerings-text {
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .spoken_english-offerings-title {
+    font-size: 1.8rem;
+    color: #162020;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .spoken_english-offerings-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff3131;
+    margin-top: 10px;
+  }
+
+  .spoken_english-offerings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .spoken_english-offerings-list li {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .spoken_english-check-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+
+  .spoken_english-red {
+    color: #ff5252;
+  }
+
+  .spoken_english-blue {
+    color: #1a73e8;
+  }
+
+  .spoken_english-offerings-image {
+    flex: 1;
+    max-width: 550px;
+    text-align: center;
+  }
+
+  .spoken_english-offerings-image img {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  @media (max-width: 768px) {
+    .spoken_english-offerings-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .spoken_english-offerings-text,
+    .spoken_english-offerings-image {
+      max-width: 100%;
+    }
+
+    .spoken_english-offerings-title {
+      font-size: 1.8rem;
+    }
+
+    .spoken_english-offerings-list li {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<div class="spoken-english-section">
+    <h2 class="spoken-english-title">
+      Why Choose Our Spoken English Courses?
+    </h2>
+    <div class="spoken-english-carousel">
+      <div class="spoken-english-cards-wrapper">
+        <div class="spoken-english-cards" id="spokenEnglishCards">
+          <div class="spoken-english-card">
+            <h3>Comprehensive Curriculum</h3>
+            <p>
+              Our courses cover everything from basic pronunciation to advanced
+              conversational skills, ensuring you're fluent in all aspects of spoken
+              English.
+            </p>
+          </div>
+          <div class="spoken-english-card">
+            <h3>Interactive Sessions</h3>
+            <p>
+              Participate in live classes and interactive activities designed to
+              improve your speaking and listening skills through real-time feedback.
+            </p>
+          </div>
+          <div class="spoken-english-card">
+            <h3>Expert Instructors</h3>
+            <p>
+              Learn from experienced teachers who specialize in spoken English and
+              provide personalized guidance to boost your confidence and fluency.
+            </p>
+          </div>
+          <div class="spoken-english-card">
+            <h3>Real-World Practice</h3>
+            <p>
+              Engage in role-play scenarios, discussions, and debates to practice
+              real-world conversations and situations, preparing you for day-to-day
+              communication.
+            </p>
+          </div>
+          <div class="spoken-english-card">
+            <h3>Flexible Learning</h3>
+            <p>
+              With our online platform, you can learn at your own pace, anywhere,
+              and anytime, making it easier to fit learning into your busy schedule.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="spoken-carousel-arrow spoken-right-arrow" id="spokenNextButton">
+        &#10095;
+      </button>
+      <button class="spoken-carousel-arrow spoken-left-arrow" id="spokenPrevButton">
+        &#10094;
+      </button>
+    </div>
+    <div class="spoken-carousel-dots" id="spokenCarouselDots"></div>
+  </div>
+  
+  <!-- CSS -->
+  <style>
+    .spoken-english-section {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9f9fb; /* Matches the section background */
+    }
+  
+    .spoken-english-title {
+      font-size: 1.8rem; /* Matches section title font size */
+      color: #162020;
+      margin-bottom: 25px;
+      font-weight: bold;
+      position: relative;
+    }
+  
+    .spoken-english-title::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 4px;
+      background-color: #ff3131; /* Underline color */
+      margin: 15px auto 0;
+    }
+  
+    .spoken-english-carousel {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .spoken-english-cards-wrapper {
+      overflow: hidden;
+      width: 80%;
+    }
+  
+    .spoken-english-cards {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+  
+    .spoken-english-card {
+      flex: 0 0 32.5%;
+      box-sizing: border-box;
+      padding: 25px;
+      margin: 5px;
+      background-color: white;
+      color: black;
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    .spoken-english-card h3 {
+      font-size: 1.5rem;
+    }
+  
+    .spoken-english-card p {
+      font-size: 1rem;
+      margin-top: 15px;
+    }
+  
+    .spoken-english-card:hover {
+      background-color: #dc3545;
+      color: white;
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    .spoken-carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: transparent;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: rgb(143, 145, 145);
+      z-index: 10;
+    }
+  
+    .spoken-left-arrow {
+      left: 50px;
+    }
+  
+    .spoken-right-arrow {
+      right: 50px;
+    }
+  
+    .spoken-carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+  
+    .spoken-carousel-dots button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 5px;
+      border: none;
+      background-color: #ddd;
+      cursor: pointer;
+    }
+  
+    .spoken-carousel-dots button.active {
+      background-color: #dc3545;
+    }
+  
+    .spoken-carousel-arrow {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+  
+    .spoken-english-carousel:hover .spoken-carousel-arrow,
+    .spoken-carousel-arrow:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    @media (max-width: 768px) {
+      .spoken-english-cards-wrapper {
+        width: 100%;
+      }
+  
+      .spoken-english-card {
+        flex: 0 0 100%; /* Cards will take full width on mobile */
+      }
+    }
+  </style>
+  
+  <!-- JavaScript -->
+  <script>
+    const spokenEnglishCards = document.getElementById("spokenEnglishCards");
+    const spokenDotsContainer = document.getElementById("spokenCarouselDots");
+    const spokenPrevButton = document.getElementById("spokenPrevButton");
+    const spokenNextButton = document.getElementById("spokenNextButton");
+  
+    const spokenCards = document.querySelectorAll(".spoken-english-card");
+    let spokenCurrentIndex = 0;
+    let isAutoScrolling = true;
+  
+    function spokenUpdateCarousel() {
+      const cardWidth = spokenEnglishCards.children[0].offsetWidth + 10; // Including margin
+      spokenEnglishCards.style.transform = `translateX(-${
+        spokenCurrentIndex * cardWidth
+      }px)`;
+      spokenUpdateDots();
+    }
+  
+    function spokenUpdateDots() {
+      spokenDotsContainer.innerHTML = "";
+      const totalDots = Math.ceil(spokenCards.length / (isMobile() ? 1 : 3)); // 1 card per slide on mobile, 3 per slide on desktop
+      for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement("button");
+        dot.classList.add("dot");
+        if (i === spokenCurrentIndex) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+          spokenCurrentIndex = i;
+          spokenUpdateCarousel();
+        });
+        spokenDotsContainer.appendChild(dot);
+      }
+    }
+  
+    spokenPrevButton.addEventListener("click", () => {
+      if (spokenCurrentIndex > 0) {
+        spokenCurrentIndex--;
+        spokenUpdateCarousel();
+      }
+    });
+  
+    spokenNextButton.addEventListener("click", () => {
+      const totalDots = Math.ceil(spokenCards.length / (isMobile() ? 1 : 3));
+      if (spokenCurrentIndex < totalDots - 1) {
+        spokenCurrentIndex++;
+        spokenUpdateCarousel();
+      }
+    });
+  
+    window.addEventListener("resize", () => {
+      spokenCurrentIndex = 0;
+      spokenUpdateCarousel();
+    });
+  
+    // Auto-scroll functionality
+    setInterval(() => {
+      if (isAutoScrolling) {
+        const totalDots = Math.ceil(spokenCards.length / (isMobile() ? 1 : 3));
+        if (spokenCurrentIndex < totalDots - 1) {
+          spokenCurrentIndex++;
+        } else {
+          spokenCurrentIndex = 0; // Reset to first slide
+        }
+        spokenUpdateCarousel();
+      }
+    }, 5000);
+  
+    // Pause auto-scroll on mobile touch
+    const spokenEnglishCarousel = document.querySelector(".spoken-english-carousel");
+    spokenEnglishCarousel.addEventListener("touchstart", () => {
+      isAutoScrolling = false;
+    });
+  
+    spokenEnglishCarousel.addEventListener("touchend", () => {
+      isAutoScrolling = true;
+    });
+  
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+  
+    spokenUpdateCarousel();
+  </script>
+  
+  <div class="training-section">
+    <h2 class="training-title">Our Spoken English Training Programs</h2>
+    <div class="training-container">
+      <div class="training-card">
+        <div class="training-badge">4 MONTHS</div>
+        <h3 class="training-heading">Intensive Speaking Module</h3>
+        <p class="training-details">
+          Get Certified for 30k + GST<br />
+          Duration: 4 Months (50 hours of live classes + 50 hours of practice sessions)
+        </p>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- CSS -->
+  <style>
+    /* Training Section */
+    .training-section {
+      background-color: #f9f9fb; /* Matches skills section background */
+      padding: 40px 20px;
+      text-align: center;
+    }
+  
+    /* Training Title (matches skills section style) */
+    .training-title {
+      font-size: 1.8rem;
+      color: #162020;
+      margin-bottom: 25px;
+      font-weight: bold;
+      position: relative;
+    }
+  
+    .training-title::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 4px;
+      background-color: #ff3131;
+      margin: 15px auto 0;
+    }
+  
+    /* Training Container */
+    .training-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+  
+    /* Training Card */
+    .training-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 600px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .training-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      background-color: #ff3131; /* Changes background color */
+      color: white; /* Changes text color */
+    }
+  
+    /* Ensure child elements like links or headings also change color */
+    .training-card:hover * {
+      color: white; /* Applies to all text elements inside the card */
+    }
+  
+    /* Training Badge */
+    .training-badge {
+      background-color: #ff3131; /* Red-orange badge color */
+      color: #fff;
+      padding: 5px 15px;
+      font-size: 14px;
+      border-radius: 20px;
+      display: inline-block;
+      font-weight: bold;
+    }
+  
+    /* Training Heading */
+    .training-heading {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 22px;
+      color: #2e8b57; /* Green heading color */
+    }
+  
+    /* Training Details */
+    .training-details {
+      margin-top: 10px;
+  
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #555;
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .training-card {
+        width: 100%;
+      }
+    }
+  </style>
+  
+  <section class="spoken-english-offerings-section">
+    <div class="spoken-english-offerings-container">
+      <div class="spoken-english-offerings-text">
+        <h2 class="spoken-english-offerings-title">
+          Career Opportunities in Spoken English
+        </h2>
+        <ul class="spoken-english-offerings-list">
+          <li>
+            <span class="spoken-english-check-icon blue">&#10003;</span> English Language Expert
+          </li>
+          <li>
+            <span class="spoken-english-check-icon blue">&#10003;</span> English Communication Coach
+          </li>
+          <li>
+            <span class="spoken-english-check-icon blue">&#10003;</span> ESL (English as a Second Language) Teacher
+          </li>
+          <li>
+            <span class="spoken-english-check-icon blue">&#10003;</span> Corporate Trainer (Spoken English)
+          </li>
+          <li>
+            <span class="spoken-english-check-icon blue">&#10003;</span> Spoken English Tutor
+          </li>
+          <li>
+            <span class="spoken-english-check-icon blue">&#10003;</span> Voice and Accent Trainer
+          </li>
+        </ul>
+      </div>
+      <div class="spoken-english-offerings-image">
+        <img
+          style="height: 60vh"
+          src="{% static 'images/spoken_image2.png' %}"
+          alt="Spoken English Learning"
+        />
+      </div>
+    </div>
+  </section>
+  
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .spoken-english-offerings-section {
+      background-color: #f9f9fb;
+      padding-bottom: 50px;
+    }
+  
+    .spoken-english-offerings-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+  
+    .spoken-english-offerings-text {
+      flex: 1;
+      max-width: 550px;
+    }
+  
+    .spoken-english-offerings-title {
+      font-size: 1.8rem;
+      color: #162020;
+      margin-bottom: 20px;
+      font-weight: bold;
+      position: relative;
+    }
+  
+    .spoken-english-offerings-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #ff3131;
+      margin-top: 10px;
+    }
+  
+    .spoken-english-offerings-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .spoken-english-offerings-list li {
+      font-size: 1rem;
+      color: #555;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+  
+    .spoken-english-check-icon {
+      font-size: 1.2rem;
+      margin-right: 10px;
+    }
+  
+    .red {
+      color: #ff5252;
+    }
+  
+    .blue {
+      color: #1a73e8;
+    }
+  
+    .spoken-english-offerings-image {
+      flex: 1;
+      max-width: 550px;
+      text-align: center;
+    }
+  
+    .spoken-english-offerings-image img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    @media (max-width: 768px) {
+      .spoken-english-offerings-container {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .spoken-english-offerings-text,
+      .spoken-english-offerings-image {
+        max-width: 100%;
+      }
+  
+      .spoken-english-offerings-title {
+        font-size: 1.8rem;
+      }
+  
+      .spoken-english-offerings-list li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+  
+  
+
+{% endblock content%}

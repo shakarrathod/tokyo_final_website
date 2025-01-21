@@ -22,12 +22,18 @@ def data_science_business_analytics(request):
 
 def cyber_security_and_ethical_hacking(request):
     return render(request, 'cyber_security.html')
+def cloud_and_devops(request):
+    return render(request, 'cloud_and_devops.html')
 
 def chess_analytics(request):
     return render(request, 'chess_analytics.html')
 
 def event_management(request):
     return render(request, 'event_management.html')
+def spoken_english(request):
+    return render(request, 'spoken_english.html')
+def nail_artistry(request):
+    return render(request, 'nail_artistry.html')
 
 def admissions(request):
     return render(request, 'admissions.html')

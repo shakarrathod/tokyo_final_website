@@ -1,328 +1,935 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
-{% block content %}
-
-<!-- HTML -->
-<section class="mackup-courses-section">
-      <div class="mackup-container">
-        <h1 class="mackup-section-title">Best Makeup Artistry Courses in Mumbai</h1>
-        <p class="mackup-section-description">
-          Tokyo AnalyticX offers an extensive portfolio of makeup artistry courses designed to equip individuals with the skills and knowledge necessary to excel in the beauty industry. The company prioritizes techniques, trends, and skills that are in demand to help students succeed as professional makeup artists. </p>
-    
-        <div class="mackup-course-category">
-          <h2 class="mackup-course-title">Makeup Artistry Course in Mumbai</h2>
-          <p>
-            With the growing demand for professional makeup artists, Tokyo AnalyticX offers comprehensive makeup artistry courses that teach students the art of creating flawless looks for different occasions. The curriculum covers areas such as bridal makeup, editorial makeup, special effects makeup, and makeup for film and television, preparing individuals to excel in a variety of beauty sectors. </p>
-        </div>
-    
-        <div class="mackup-course-category">
-          <h2 class="mackup-course-title">Advanced Makeup Artistry Course in Mumbai</h2>
-          <p>
-            For those seeking to take their makeup skills to the next level, our advanced makeup artistry course offers in-depth training in techniques like airbrush makeup, contouring, special effects, and more. Students will master the art of creating dramatic looks that enhance their client's natural beauty and suit their individual features. </p>
-          <p>
-            This program is perfect for makeup artists who want to specialize in high-end makeup artistry and become experts in the latest trends and techniques. </p>
-        </div>
-      </div>
+<section class="responsive-makeup-banner">
+  <img
+    src="{% static 'images/ds_banner.jpg' %}"
+    alt="Makeup Artistry Banner"
+    class="makeup-banner-image"
+  />
+  <div class="makeup-banner-content">
+    <h1>Makeup Artistry</h1>
+  </div>
 </section>
+<style>
+  /* Section Styling */
+.responsive-makeup-banner {
+  margin-top: 100px;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow: hidden; /* Ensures the image doesn't exceed the section dimensions */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-<!-- HTML -->
-<section class="mackup-offerings-section">
-      <div class="mackup-offerings-container">
-        <div class="mackup-offerings-image">
-            <img src="{% static 'images/makeup12.jpeg' %}" alt="Makeup artist at work" />
-        </div>
-        <div class="mackup-offerings-text">
-          <h2 class="mackup-offerings-title">Our Makeup Artistry Course Offerings</h2>
-          <ul class="mackup-offerings-list">
-            <li><span class="mackup-check-icon blue">&#10003;</span> Basic Makeup Techniques</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Bridal and Party Makeup</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Special Effects Makeup</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Airbrush Makeup Application</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Advanced Contouring and Highlighting</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Makeup for Photography and Film</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Skin Care for Makeup Artists</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Professional Makeup Kit Essentials</li>
-          </ul>
-        </div>
-        
-      </div>
+/* Image Styling */
+.makeup-banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the section without distortion */
+  z-index: -1; /* Places the image behind the content */
+}
+
+/* Title Styling */
+.makeup-banner-content h1 {
+  font-size: 2.3rem; /* Adjust font size for responsiveness */
+  font-weight: bold;
+  color: white; /* Ensure contrast against the background image */
+  margin: 0;
+  z-index: 1; /* Keeps the text above the image */
+}
+.makeup-banner-content h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: white;
+  margin: 10px auto 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .makeup-banner-content h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .makeup-banner-content h1 {
+    font-size: 1.2rem;
+  }
+}
+
+</style>
+
+<section class="makeup-artistry-section">
+  <div class="makeup-container">
+    <div class="makeup-category">
+      <h2 class="makeup-title">
+        Discover the Finest Makeup Artistry Courses in India
+      </h2>
+      <p>
+        Elevate your creativity with Tokyo AnalyticX's exclusive makeup artistry
+        courses, designed to inspire budding artists and professionals. Our
+        programs combine technique, artistry, and modern trends, empowering
+        individuals to master the art of makeup design.
+      </p>
+      <p>
+        Embark on a journey to create stunning makeup looks, learn about
+        cutting-edge tools, and stay ahead in the glamorous world of makeup
+        artistry.
+      </p>
+    </div>
+
+    <div class="makeup-category">
+      <h2 class="makeup-title">Professional Makeup Design Course</h2>
+      <p>
+        Gain in-depth knowledge of professional makeup design through hands-on
+        training. From basic makeup applications to advanced techniques, our
+        course covers everything you need to excel in the beauty industry. Learn
+        about face anatomy, color theory, and the latest trends in makeup design
+        to create breathtaking looks.
+      </p>
+    </div>
+
+    <div class="makeup-category">
+      <h2 class="makeup-title">Advanced Makeup Art Techniques</h2>
+      <p>
+        Explore advanced techniques like contouring, intricate eye makeup, and
+        the application of special effects. Our comprehensive curriculum ensures
+        that students understand not just the artistic side but also the science
+        behind durable and safe makeup practices. Elevate your skills to build a
+        standout portfolio and attract elite clientele.
+      </p>
+
+      <p>
+        Begin your artistic voyage to perfect the craft of makeup artistry, blend
+        creativity with precision, and establish yourself as a leading expert in
+        this flourishing industry.
+      </p>
+    </div>
+  </div>
 </section>
+<style>
+  body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .makeup-artistry-section {
+    background-color: #f7f9fc;
+    padding-top: 50px;
+    padding-bottom: 0px;
+  }
+  
+  .makeup-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .makeup-title {
+    font-size: 1.8rem;
+    color: #162020;
+    font-weight: bold;
+  
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .makeup-title::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    background-color: #ff5252;
+  }
+  
+  .makeup-category {
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+  
+  .makeup-category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .makeup-title {
+      font-size: 1.5rem;
+    }
+  
+    .makeup-category p {
+      font-size: 0.95rem;
+    }
+  }
+  
+</style>
+<section class="makeup-artistry-section">
+  <div class="makeup-artistry-container">
+    <div class="makeup-artistry-text">
+      <h2 class="makeup-artistry-title">
+        Explore Our Exclusive Makeup Artistry Courses
+      </h2>
+      <ul class="makeup-artistry-list">
+        <li>
+          <span class="makeup-check-icon makeup-blue">&#10003;</span> Makeup
+          Anatomy and Hygiene Practices
+        </li>
+        <li>
+          <span class="makeup-check-icon makeup-blue">&#10003;</span> Foundation
+          in Makeup Application Techniques
+        </li>
+        <li>
+          <span class="makeup-check-icon makeup-blue">&#10003;</span> Creative
+          Makeup Art Designs and Trends
+        </li>
+        <li>
+          <span class="makeup-check-icon makeup-blue">&#10003;</span> Advanced
+          Makeup Art and Embellishment Application
+        </li>
+        <li>
+          <span class="makeup-check-icon makeup-blue">&#10003;</span> Airbrush,
+          Contouring, and Highlighting Techniques
+        </li>
+        <li>
+          <span class="makeup-check-icon makeup-blue">&#10003;</span> Safe
+          Practices and Chemical Handling
+        </li>
+        <li>
+          <span class="makeup-check-icon makeup-blue">&#10003;</span> Building a
+          Professional Makeup Portfolio
+        </li>
+      </ul>
+    </div>
+    <div class="makeup-artistry-image">
+      <img src="{% static 'images/makeup_girl.png' %}" alt="Makeup Artistry Tools" />
+    </div>
+  </div>
+</section>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .makeup-artistry-section {
+    background-color: #f9f9fb;
+    padding-bottom: 50px;
+  }
+  
+  .makeup-artistry-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .makeup-artistry-text {
+    text-align: left;
+  }
+  
+  .makeup-artistry-title {
+    font-size: 1.8rem;
+    color: #162020;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .makeup-artistry-title::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    background-color: #ff5252;
+    margin-top: 10px;
+  }
+  
+  .makeup-artistry-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .makeup-artistry-list li {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .makeup-check-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  .makeup-blue {
+    color: blue;
+  }
+  
+  .makeup-artistry-image {
+    text-align: center;
+  }
+  
+  .makeup-artistry-image img {
+    width: 100%;
+    max-width: 500px;
+    height: 70vh;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 1024px) {
+    .makeup-artistry-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .makeup-artistry-title {
+      text-align: center;
+    }
+  
+    .makeup-artistry-list li {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .makeup-artistry-title {
+      font-size: 1.5rem;
+    }
+  
+    .makeup-artistry-list li {
+      font-size: 0.95rem;
+    }
+  }
+  
+</style>
 
-<!-- HTML -->
-<section class="mackup-why-choose-section">
-      <div class="mackup-container">
-        <h2 class="mackup-section-title">Why Choose Our Makeup Artistry Courses?</h2>
-        <div class="mackup-cards-wrapper">
-          <!-- Row 1 -->
-          <div class="mackup-card">
-            <h3 class="mackup-card-title">Comprehensive Curriculum</h3>
-            <p>Our curriculum covers a broad range of topics, from basic makeup techniques to advanced special effects and bridal makeup. Learn everything you need to become a skilled makeup artist.</p>
-          </div>
-          <div class="mackup-card">
-            <h3 class="mackup-card-title">Hands-On Experience</h3>
-            <p>Get practical experience by working on real models, practicing techniques, and refining your skills under the guidance of expert instructors.</p>
-          </div>
-          <div class="mackup-card">
-            <h3 class="mackup-card-title">Experienced Instructors</h3>
-            <p>Learn from seasoned makeup artists who bring their expertise and industry experience to the classroom, ensuring you receive the best training available.</p>
-          </div>
-          <!-- Row 2 -->
-          <div class="mackup-card">
-            <h3 class="mackup-card-title">Career Opportunities</h3>
-            <p>Whether you're looking to work in bridal makeup, fashion, film, or the beauty industry, our course equips you with the skills to pursue various career paths as a makeup artist.</p>
-          </div>
-          <div class="mackup-card">
-            <h3 class="mackup-card-title">Personalized Coaching</h3>
-            <p>Our instructors provide individual attention to ensure that you receive tailored feedback to improve your skills and techniques throughout the course.</p>
-          </div>
-          <div class="mackup-card">
-            <h3 class="mackup-card-title">Flexible Learning Options</h3>
-            <p>Choose from online, in-person, or hybrid learning modes to fit your schedule and learning preferences.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <div class="mackup-programs-section">
-      <h2 class="mackup-section-title">Our Makeup Artistry Training Programs</h2>
-      <div class="mackup-programs-container">
-        <div class="mackup-program-card">
-          <div class="mackup-program-badge">4 MONTHS</div>
-          <h3 class="mackup-program-title">Makeup Artistry Certification</h3>
-          <p class="mackup-program-description">
-            Duration: 4 Months (100 Hours Weekend Course)
+<div class="makeup-artistry-career-section">
+  <h2 class="makeup-artistry-career-title">Why Choose Our Makeup Artistry Courses?</h2>
+  <div class="makeup-artistry-career-carousel">
+    <div class="makeup-artistry-career-cards-wrapper">
+      <div class="makeup-artistry-career-cards" id="makeupArtistryCareerCards">
+        <div class="makeup-artistry-career-card">
+          <h3>Comprehensive Curriculum</h3>
+          <p>
+            Our curriculum covers techniques such as foundation application, contouring, makeup trends, and more.
           </p>
         </div>
-        
-      </div>
-    </div>
-    
-
-    <div class="mackup-enrollment-section">
-      <h2 class="mackup-section-title">Individuals Who Can Enroll for the Makeup Artistry Course</h2>
-      <div class="mackup-enrollment-container">
-        <div class="mackup-enrollment-card">
-          <div class="mackup-card-number">01</div>
-          <p class="mackup-card-content">Aspiring makeup artists looking to build a career in beauty.</p>
-        </div>
-        <div class="mackup-enrollment-card">
-          <div class="mackup-card-number">02</div>
-          <p class="mackup-card-content">Students pursuing a career in fashion, bridal makeup, or film.</p>
-        </div>
-        <div class="mackup-enrollment-card">
-          <div class="mackup-card-number">03</div>
-          <p class="mackup-card-content">
-            Beauty enthusiasts looking to enhance their skills and knowledge in makeup artistry.
+        <div class="makeup-artistry-career-card">
+          <h3>Hands-On Training</h3>
+          <p>
+            Gain practical experience with hands-on training, real-world scenarios, and professional-grade tools.
           </p>
         </div>
-        <div class="mackup-enrollment-card">
-          <div class="mackup-card-number">04</div>
-          <p class="mackup-card-content">Professionals seeking to advance their makeup artistry skills and career.</p>
+        <div class="makeup-artistry-career-card">
+          <h3>Experienced Instructors</h3>
+          <p>
+            Learn from skilled makeup artists with extensive industry experience and a passion for teaching.
+          </p>
+        </div>
+        <div class="makeup-artistry-career-card">
+          <h3>Creative Community</h3>
+          <p>
+            Join a network of like-minded individuals, share ideas, and stay inspired in a creative environment.
+          </p>
+        </div>
+        <div class="makeup-artistry-career-card">
+          <h3>Career Opportunities</h3>
+          <p>
+            Whether you're starting out or upskilling, our course opens doors to roles like professional makeup artist, salon technician, or freelance stylist.
+          </p>
         </div>
       </div>
     </div>
-    
+    <button
+      class="makeup-artistry-carousel-arrow makeup-artistry-right-arrow"
+      id="makeupArtistryNextButton"
+    >
+      &#10095;
+    </button>
+    <button
+      class="makeup-artistry-carousel-arrow makeup-artistry-left-arrow"
+      id="makeupArtistryPrevButton"
+    >
+      &#10094;
+    </button>
+  </div>
+  <div class="makeup-artistry-carousel-dots" id="makeupArtistryCarouselDots"></div>
+</div>
+<style>
+  .makeup-artistry-career-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9fb; /* Matches skills section background */
+  }
+  
+  .makeup-artistry-career-title {
+    font-size: 1.8rem; /* Matches skills section title font size */
+    color: #162020;
+    margin-bottom: 25px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .makeup-artistry-career-title::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background-color: #ff5252; /* Underline color */
+    margin: 15px auto 0;
+  }
+  
+  .makeup-artistry-career-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .makeup-artistry-career-cards-wrapper {
+    overflow: hidden;
+    width: 80%;
+  }
+  
+  .makeup-artistry-career-cards {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .makeup-artistry-career-card {
+    flex: 0 0 32.5%;
+    box-sizing: border-box;
+    padding: 25px;
+    margin: 5px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .makeup-artistry-career-card {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+  }
+  .makeup-artistry-career-card p {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+  
+  .makeup-artistry-career-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .makeup-artistry-career-card:hover {
+    background-color: #dc3545;
+    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .makeup-artistry-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(143, 145, 145);
+    z-index: 10;
+  }
+  
+  .makeup-artistry-left-arrow {
+    left: 50px;
+  }
+  
+  .makeup-artistry-right-arrow {
+    right: 50px;
+  }
+  
+  .makeup-artistry-carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .makeup-artistry-carousel-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  
+  .makeup-artistry-carousel-dots button.active {
+    background-color: #dc3545;
+  }
+  
+  .makeup-artistry-carousel-arrow {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .makeup-artistry-career-carousel:hover .makeup-artistry-carousel-arrow,
+  .makeup-artistry-carousel-arrow:hover {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .makeup-artistry-career-cards-wrapper {
+      width: 100%;
+    }
+  
+    .makeup-artistry-career-card {
+      flex: 0 0 100%; /* Cards will take full width on mobile */
+    }
+  }
+  
+</style>
 
-    <section class="mackup-offerings-section">
-      <div class="mackup-offerings-container">
-       
-        <div class="mackup-offerings-text">
-          <h2 class="mackup-offerings-title">Career Opportunities in Makeup Artistry You Can Apply For</h2>
-          <ul class="mackup-offerings-list">
-            <li><span class="mackup-check-icon blue">&#10003;</span> Bridal Makeup Artist</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Fashion Makeup Artist</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Film/TV Makeup Artist</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Special Effects Makeup Artist</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Makeup Instructor</li>
-            <li><span class="mackup-check-icon blue">&#10003;</span> Freelance Makeup Artist</li>
-          </ul>
-        </div>
-        <div class="mackup-offerings-image">
-            <img src="{% static 'images/makeup11.jpg' %}" alt="Makeup artist at work" />
-        </div>
-      </div>
+<script>
+  const makeupArtistryCareerCards = document.getElementById("makeupArtistryCareerCards");
+const makeupArtistryDotsContainer = document.getElementById("makeupArtistryCarouselDots");
+const makeupArtistryPrevButton = document.getElementById("makeupArtistryPrevButton");
+const makeupArtistryNextButton = document.getElementById("makeupArtistryNextButton");
+
+const makeupArtistryCards = document.querySelectorAll(".makeup-artistry-career-card");
+let makeupArtistryCurrentIndex = 0;
+let isAutoScrolling = true;
+
+function makeupArtistryUpdateCarousel() {
+  const cardWidth = makeupArtistryCareerCards.children[0].offsetWidth + 10; // Including margin
+  makeupArtistryCareerCards.style.transform = `translateX(-${
+    makeupArtistryCurrentIndex * cardWidth
+  }px)`;
+  makeupArtistryUpdateDots();
+}
+
+function makeupArtistryUpdateDots() {
+  makeupArtistryDotsContainer.innerHTML = "";
+  const totalDots = Math.ceil(makeupArtistryCards.length / (isMobile() ? 1 : 3)); // 1 card per slide on mobile, 3 per slide on desktop
+  for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement("button");
+    dot.classList.add("dot");
+    if (i === makeupArtistryCurrentIndex) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      makeupArtistryCurrentIndex = i;
+      makeupArtistryUpdateCarousel();
+    });
+    makeupArtistryDotsContainer.appendChild(dot);
+  }
+}
+
+makeupArtistryPrevButton.addEventListener("click", () => {
+  if (makeupArtistryCurrentIndex > 0) {
+    makeupArtistryCurrentIndex--;
+    makeupArtistryUpdateCarousel();
+  }
+});
+
+makeupArtistryNextButton.addEventListener("click", () => {
+  const totalDots = Math.ceil(makeupArtistryCards.length / (isMobile() ? 1 : 3));
+  if (makeupArtistryCurrentIndex < totalDots - 1) {
+    makeupArtistryCurrentIndex++;
+    makeupArtistryUpdateCarousel();
+  }
+});
+
+window.addEventListener("resize", () => {
+  makeupArtistryCurrentIndex = 0;
+  makeupArtistryUpdateCarousel();
+});
+
+// Auto-scroll functionality
+setInterval(() => {
+  if (isAutoScrolling) {
+    const totalDots = Math.ceil(makeupArtistryCards.length / (isMobile() ? 1 : 3));
+    if (makeupArtistryCurrentIndex < totalDots - 1) {
+      makeupArtistryCurrentIndex++;
+    } else {
+      makeupArtistryCurrentIndex = 0; // Reset to first slide
+    }
+    makeupArtistryUpdateCarousel();
+  }
+}, 5000);
+
+// Pause auto-scroll on mobile touch
+const makeupArtistryCareerCarousel = document.querySelector(
+  ".makeup-artistry-career-carousel"
+);
+makeupArtistryCareerCarousel.addEventListener("touchstart", () => {
+  isAutoScrolling = false;
+});
+
+makeupArtistryCareerCarousel.addEventListener("touchend", () => {
+  isAutoScrolling = true;
+});
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+makeupArtistryUpdateCarousel();
+
+</script>
+
+<div class="makeup-artistry-training-section">
+  <h2 class="makeup-artistry-training-title">Our Makeup Artistry Training Programs</h2>
+  <div class="makeup-artistry-training-container">
+    <div class="makeup-artistry-training-card">
+      <div class="makeup-artistry-training-badge">4 MONTHS</div>
+      <h3 class="makeup-artistry-training-heading">Hybrid Module</h3>
+      <p class="makeup-artistry-training-details">
+        Get Certified for 55k + GST<br />
+        Duration: 4 Months (100 hours of training + internship)
+      </p>
+    </div>
+  </div>
+</div>
+<style>
+  /* Makeup Artistry Training Section */
+.makeup-artistry-training-section {
+  background-color: #f9f9fb; /* Matches skills section background */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Makeup Artistry Training Title (matches skills section style) */
+.makeup-artistry-training-title {
+  font-size: 1.8rem;
+  color: #162020;
+  margin-bottom: 25px;
+  font-weight: bold;
+  position: relative;
+}
+
+.makeup-artistry-training-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background-color: #ff5252; /* Red underlining for makeup artistry theme */
+  margin: 15px auto 0;
+}
+
+/* Makeup Artistry Training Container */
+.makeup-artistry-training-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Makeup Artistry Training Card */
+.makeup-artistry-training-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 600px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.makeup-artistry-training-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  background-color: #ff5252; /* Makeup Artistry Theme Background Color */
+  color: white; /* White Text on Hover */
+}
+
+/* Ensure child elements like links or headings also change color */
+.makeup-artistry-training-card:hover * {
+  color: white; /* Applies to all text elements inside the card */
+}
+
+/* Makeup Artistry Training Badge */
+.makeup-artistry-training-badge {
+  background-color: #ff5252; /* Red badge color for makeup artistry */
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 14px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* Makeup Artistry Training Heading */
+.makeup-artistry-training-heading {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #2e8b57; /* Green heading color */
+}
+
+/* Makeup Artistry Training Details */
+.makeup-artistry-training-details {
+  margin-top: 10px;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .makeup-artistry-training-card {
+    width: 100%;
+  }
+}
+
+</style>
+
+<div class="makeup-artistry-nail-section">
+  <h2 class="makeup-artistry-nail-title">
+    Individuals who can enroll for Makeup Artistry and Design Course
+  </h2>
+  <div class="makeup-artistry-nail-cards-wrapper">
+    <div class="makeup-artistry-nail-card">
+      <h3>01</h3>
+      <p>
+        Beginner makeup artists looking to learn the fundamentals of makeup application and design
+      </p>
+    </div>
+    <div class="makeup-artistry-nail-card">
+      <h3>02</h3>
+      <p>
+        Experienced beauty professionals aiming to expand their skillset with makeup artistry
+      </p>
+    </div>
+    <div class="makeup-artistry-nail-card">
+      <h3>03</h3>
+      <p>
+        Creative individuals passionate about exploring artistic makeup designs and techniques
+      </p>
+    </div>
+    <div class="makeup-artistry-nail-card">
+      <h3>04</h3>
+      <p>
+        Beauty salon owners and workers who wish to offer makeup artistry services to their clients
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Makeup Artistry Nail Section */
+.makeup-artistry-nail-section {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 70px;
+}
+
+/* Makeup Artistry Nail Title */
+.makeup-artistry-nail-title {
+  font-size: 1.8rem; /* Matches skills section title font size */
+  color: #162020;
+  margin-bottom: 25px;
+  font-weight: bold;
+  position: relative;
+}
+
+.makeup-artistry-nail-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background-color: #ff5252; /* Underline color for makeup artistry */
+  margin: 15px auto 0;
+}
+
+/* Makeup Artistry Nail Cards Wrapper */
+.makeup-artistry-nail-cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0 10px;
+}
+
+/* Makeup Artistry Nail Card */
+.makeup-artistry-nail-card {
+  flex: 0 0 24%; /* Ensures 4 cards in one row */
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  color: #555;
+}
+
+.makeup-artistry-nail-card p {
+  margin-top: 15px;
+}
+
+.makeup-artistry-nail-card:hover {
+  background-color: #ff5252; /* Red background on hover */
+  color: white;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .makeup-artistry-nail-card {
+    flex: 0 0 48%; /* Adjusts to 2 cards per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .makeup-artistry-nail-card {
+    flex: 0 0 100%; /* Stacks cards vertically on very small screens */
+  }
+}
+
+</style>
+
+<section class="makeup-artistry-nail-offerings-section">
+  <div class="makeup-artistry-nail-offerings-container">
+    <div class="makeup-artistry-nail-offerings-text">
+      <h2 class="makeup-artistry-nail-offerings-title">
+        Career Opportunities in Makeup Artistry and Design
+      </h2>
+      <ul class="makeup-artistry-nail-offerings-list">
+        <li><span class="makeup-artistry-nail-check-icon blue">&#10003;</span> Makeup Artist</li>
+        <li><span class="makeup-artistry-nail-check-icon blue">&#10003;</span> Makeup Technician</li>
+        <li><span class="makeup-artistry-nail-check-icon blue">&#10003;</span> Makeup Art Educator</li>
+        <li><span class="makeup-artistry-nail-check-icon blue">&#10003;</span> Beauty Specialist</li>
+        <li><span class="makeup-artistry-nail-check-icon blue">&#10003;</span> Makeup Salon Owner</li>
+        <li><span class="makeup-artistry-nail-check-icon blue">&#10003;</span> Cosmetic Product Specialist</li>
+      </ul>
+    </div>
+    <div class="makeup-artistry-nail-offerings-image">
+      <img
+        style="height: 60vh"
+        src="{% static 'images/makeup_banner.png' %}"
+        alt="Nail Artistry Learning"
+      />
+    </div>
+  </div>
 </section>
+<style>
+  /* Makeup Artistry Nail Offerings Section */
+.makeup-artistry-nail-offerings-section {
+  background-color: #f9f9fb;
+  padding-bottom: 50px;
+}
 
-    
-    <!-- CSS -->
-    <style>
-      .mackup-why-choose-section {
-        background-color: #f9f9fb;
-        padding: 60px 20px;
-        display: flex;
-        justify-content: center;
-      }
-    
-      .mackup-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-    
-      .mackup-section-title::after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 3px;
-        background-color: #f93939;
-        margin-top: 10px;
-      }
-    
-      .mackup-course-category {
-        background-color: #fff;
-        padding: 40px 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-      }
-    
-      .mackup-course-title {
-        font-size: 2em;
-        color: #333;
-        align-items: center;
-      }
-    
-      .mackup-section-description {
-        font-size: 1.1em;
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 20px;
-      }
-    
-      .mackup-course-title {
-        font-size: 1.8em;
-        color: #333;
-      }
-    
-      .mackup-cards-wrapper {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-    
-      .mackup-card {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        width: 30%;
-        text-align: center;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      }
-    
-      .mackup-card-title {
-        font-size: 1.5em;
-        font-weight: 600;
-        color: #333;
-      }
-    
-      .mackup-programs-container {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    
-      .mackup-program-card {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        width: 48%;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-    
-      .mackup-program-badge {
-        font-size: 16px;
-        color: #fff;
-        background-color: #f93939;
-        display: inline-block;
-        padding: 8px 15px;
-        border-radius: 20px;
-        margin-bottom: 10px;
-      }
-    
-      .mackup-program-title {
-        font-size: 1.2em;
-        font-weight: 600;
-        color: #333;
-      }
-    
-      .mackup-program-description {
-        font-size: 1em;
-        color: #555;
-      }
-    
-      .mackup-enrollment-section {
-        background-color: #f7f7f7;
-        padding: 60px 20px;
-      }
-    
-      .mackup-enrollment-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-      }
-    
-      .mackup-enrollment-card {
-        background: #fff;
-        border-radius: 10px;
-        padding: 30px;
-        width: 22%;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-    
-      .mackup-card-number {
-        background-color: #f93939;
-        color: #fff;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.2em;
-        margin: 0 auto 10px;
-      }
-    
-      .mackup-offerings-section {
-        background-color: #fff;
-        padding: 60px 20px;
-      }
-    
-      .mackup-offerings-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-      }
-    
-      .mackup-offerings-title {
-        font-size: 1.8em;
-        color: #333;
-        margin-bottom: 15px;
-      }
-    
-      .mackup-offerings-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 1.2em;
-        color: #555;
-      }
-    
-      .mackup-check-icon {
-        font-size: 1.5em;
-        color: #f93939;
-        margin-right: 10px;
-      }
-    
-      .mackup-offerings-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-      }
-    
-    </style>
+.makeup-artistry-nail-offerings-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.makeup-artistry-nail-offerings-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.makeup-artistry-nail-offerings-title {
+  font-size: 1.8rem;
+  color: #162020;
+  margin-bottom: 20px;
+  font-weight: bold;
+  position: relative;
+}
+
+.makeup-artistry-nail-offerings-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #ff5252; /* Red underline color */
+  margin-top: 10px;
+}
+
+.makeup-artistry-nail-offerings-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.makeup-artistry-nail-offerings-list li {
+  font-size: 1rem;
+  color: #555;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.makeup-artistry-nail-check-icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.blue {
+  color: #1a73e8;
+}
+
+.makeup-artistry-nail-offerings-image {
+  flex: 1;
+  max-width: 550px;
+  text-align: center;
+}
+
+.makeup-artistry-nail-offerings-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .makeup-artistry-nail-offerings-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .makeup-artistry-nail-offerings-text,
+  .makeup-artistry-nail-offerings-image {
+    max-width: 100%;
+  }
+
+  .makeup-artistry-nail-offerings-title {
+    font-size: 1.8rem;
+  }
+
+  .makeup-artistry-nail-offerings-list li {
+    font-size: 0.95rem;
+  }
+}
+
+</style>
+
 
 {% endblock %}
