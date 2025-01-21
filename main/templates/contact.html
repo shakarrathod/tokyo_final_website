@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="contact-header">
+  <h1>Contact Us</h1>
+</div>
+
+<section class="contact-section">
+  
+
+  <div class="contact-info-cards">
+    <div class="contact-info-box contact-address">
+      <div class="contact-icon-wrapper">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <h3>Address</h3>
+      <p>
+        Office No. 1123, 11th Floor, Omkar The Summit Business Bay, Gundavali, Andheri East, 
+        Mumbai, Maharashtra 400093
+      </p>
+    </div>
+    <div class="contact-info-box contact-phone">
+      <div class="contact-icon-wrapper">
+        <i class="fas fa-phone"></i>
+      </div>
+      <h3>Phone</h3>
+      <p>+91 9136545355</p>
+    </div>
+
+    <div class="contact-info-box contact-email">
+      <div class="contact-icon-wrapper">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <h3>Email</h3>
+      <p>admission@tokyoanalytics.com</p>
+    </div>
+  </div>
+</section>
+
+<section class="enquiry-form-section">
+  <h2>Enquire Now</h2>
+  <form class="contact-form">
+    <div class="form-row">
+      <input type="text" placeholder="First Name" />
+      <input type="text" placeholder="Last Name" />
+    </div>
+    <div class="form-row">
+      <input type="text" placeholder="Phone Number" />
+      <input type="email" placeholder="Email" />
+    </div>
+    <div class="form-row">
+      <select>
+        <option>-- Select an Option --</option>
+        <option>Cyber Security</option>
+        <option>Data Science</option>
+        <option>Data Analytics</option>
+        <option>Chess Analytics</option>
+        <option>Event Management</option>
+      </select>
+    </div>
+    <textarea placeholder="How can we help you?"></textarea>
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</section>
+
+<style>
+  /* General Styles */
+  
+
+  .contact-section {
+    width: 80%;
+    margin: auto;
+  }
+
+  .contact-header {
+    text-align: center;
+    padding: 40px;
+    color: white;
+    background-color: black;
+    width: 100%;
+    height: 200px;
+    font-weight: 700;
+  }
+
+  .contact-header h1 {
+    font-size: 3.2rem;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  /* Info Cards */
+  .contact-info-cards {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px auto;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .contact-info-box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 30%;
+    color: black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  }
+
+  .contact-info-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    background-color: rgb(229, 21, 21);
+    color: white;
+  }
+
+  .contact-icon-wrapper {
+    font-size: 3rem;
+    color: rgb(51, 92, 240);
+    margin-bottom: 15px;
+  }
+  .contact-icon-wrapper:hover {
+    color: white;
+  }
+
+  .contact-info-box h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-info-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Enquiry Form Section */
+  .enquiry-form-section {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .enquiry-form-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 20px;
+  }
+
+  .form-row input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  textarea {
+    resize: none;
+    min-height: 120px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    background-color:red;
+    color: white;
+    border:non;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+    width: auto;
+  }
+
+  .submit-btn:hover {
+    background-color: rgb(229, 21, 21);
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .contact-info-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-info-box {
+      width: 100%%;
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      flex-direction: row;
+      gap: 15px;
+    }
+
+    .form-row input,
+    select,
+    textarea {
+      width: 100%;
+    }
+
+    .submit-btn {
+     color: white;
+     background-color: red;
+    }
+  }
+</style>
+
+{% endblock %}

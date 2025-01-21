@@ -1,0 +1,159 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="course-container">
+  <div class="course-boxes">
+    <!-- Course 1 -->
+    <div class="course-box">
+      <a href="{% url 'data_science_business_analytics' %}">
+        <img
+          src="{% static 'images/datascience_image.jpg' %}"
+          alt="Data Science"
+          class="course-box-image"
+        />
+
+        <h2 class="course-box-title">Data Science & Business abalytics</h2>
+      </a>
+    </div>
+    <!-- Course 2 -->
+    <div class="course-box">
+      <a href="{% url 'cyber_security_and_ethical_hacking' %}"><img
+        src="{% static 'images\cyber_secure_image.jpeg' %}"
+        alt="cyber Security"
+        class="course-box-image"
+      />
+      <h2 class="course-box-title">Cyber Security & Ethical Hacking</h2></a>
+    </div>
+    <!-- Course 3 -->
+    <div class="course-box">
+      <img
+        src="{% static 'images/cloud_computing_image.jpg' %}"
+        alt="Cyber Security"
+        class="course-box-image"
+      />
+      <h2 class="course-box-title">Cloud Computing</h2>
+    </div>
+    <!-- Course 4 -->
+    <div class="course-box">
+      <img
+        src="{% static 'images/devops_image.jpg' %}"
+        alt="devops"
+        class="course-box-image"
+      />
+      <h2 class="course-box-title">DEVops</h2>
+    </div>
+    <!-- Course 5 -->
+    <div class="course-box">
+      <img
+        src="{% static 'images/ethical_hacking.jpg' %}"
+        alt="Ethical Hacking"
+        class="course-box-image"
+      />
+      <h2 class="course-box-title">Ethical Hacking</h2>
+    </div>
+  </div>
+</div>
+
+<style>
+
+/* Course Container */
+.course-container {
+    padding: 2rem;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 150px;
+  }
+
+  .course-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  /* Course Boxes */
+  .course-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  /* Course Box */
+  .course-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .course-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Remove Anchor Underline and Style */
+  .course-box a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  /* Course Image */
+  .course-box-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  /* Course Title */
+  .course-box-title {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .course-container {
+      padding: 1rem;
+    }
+
+    .course-heading {
+      font-size: 1.5rem;
+    }
+
+    .course-box {
+      max-width: 200px;
+      padding: 0.8rem;
+    }
+
+    .course-box-image {
+      height: 130px;
+    }
+
+    .course-box-title {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .course-box-title {
+      font-size: 0.9rem;
+    }
+
+    .course-box {
+      max-width: 180px;
+      padding: 0.5rem;
+    }
+
+    .course-box-image {
+      height: 120px;
+    }
+  }
+</style>
+
+{% endblock content %}

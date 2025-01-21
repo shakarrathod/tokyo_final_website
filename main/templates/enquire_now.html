@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+  <section class="contact-us">
+    <div class="enquiry-section">
+        <h2>Enquire Now</h2>
+        <form class="enquiry-form">
+            <div class="form-row">
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
+            </div>
+            <div class="form-row">
+            <input type="text" placeholder="Phone Number" />
+            <input type="email" placeholder="Email" />
+            </div>
+            <div class="form-row">
+            <select>
+                <option>-- Select an Option --</option>
+                <option>Cyber Security</option>
+                <option>Data Science</option>
+                <option>Data Analytics</option>
+            </select>
+            </div>
+            <textarea placeholder="How can we help you?"></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        </div>
+  </section>
+  
+  
+
+  <style>
+
+    
+    /* Enquiry Section */
+    .enquiry-section {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .enquiry-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #333;
+    }
+    
+    .enquiry-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .form-row input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    
+    textarea {
+      resize: none;
+      min-height: 120px;
+    }
+    
+    .submit-btn {
+      padding: 15px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+    }
+    
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .info-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .info-box {
+        width: 80%;
+      }
+    
+      .form-row {
+        flex-direction: column;
+      }
+    }
+    
+      
+  </style>
+
+{% endblock %}

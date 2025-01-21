@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="faq-container">
+    <h1 class="faq-title">FAQs</h1>
+    <div class="faq-row">
+        <div class="faq-column">
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">What is Data Science?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Data Science is a multidisciplinary field that involves extracting insights and knowledge from data using techniques from statistics, machine learning, and domain expertise. It encompasses data collection, cleaning, analysis, and interpretation to inform decision-making and solve complex problems..</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">What is the difference between Data Analytics and Data Science?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Data Analytics primarily focuses on examining historical data to identify trends, patterns, and insights that help organizations make informed decisions. It often involves descriptive and diagnostic analysis, aiming to answer specific questions based on existing data.
+
+                    Data Science, on the other hand, encompasses a broader range of activities. It involves not only analyzing historical data but also using advanced techniques like machine learning to predict future outcomes and prescribe actions. Data Science goes beyond descriptive and diagnostic analysis to include predictive and prescriptive analysis, often involving more complex and diverse data sources. It also emphasizes the development of models and algorithms to automate decision-making processes.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">Career opportunities in Data Science?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Career opportunities in Data Science are diverse and expanding rapidly. Some key roles include Data Scientist, Machine Learning Engineer...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">Job titles in Cyber Security?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Security Analyst, Network Security Engineer, Information Security Specialist...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">What are the Benefits of Data Analytics training?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Incorporating data analytics training empowers individuals to extract meaningful insights from data...</div>
+            </div>
+        </div>
+
+        <div class="faq-column">
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">Can we complete the Data Science course in 3 months?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Completing a comprehensive data science course in just 3 months can be challenging...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">Is Cyber Security a good career?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Yes, Cyber Security is a promising and rewarding career choice due to high demand...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">Is coding required for Cyber Security course?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Yes, coding is often required or highly beneficial in a cyber security course...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">What are the challenges of ethical hacking?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Ethical hacking involves identifying vulnerabilities in computer systems...</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-header">
+                    <button class="faq-question">What basic knowledge is required for ethical hacking?</button>
+                    <span class="faq-icon">&#9662;</span>
+                </div>
+                <div class="faq-answer">Basic knowledge required for ethical hacking includes an understanding of computer networking...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const faqHeaders = document.querySelectorAll('.faq-header');
+
+    faqHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const answer = header.nextElementSibling;
+            const icon = header.querySelector('.faq-icon');
+
+            header.classList.toggle('active');
+            if (header.classList.contains('active')) {
+                answer.style.display = 'block';
+                icon.innerHTML = '&#9652;'; // Change to an upward arrow
+            } else {
+                answer.style.display = 'none';
+                icon.innerHTML = '&#9662;'; // Change back to a downward arrow
+            }
+        });
+    });
+</script>
+
+<style>
+    
+    .faq-container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .faq-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #007bff;
+        margin: 10px auto 0;
+        border-radius: 5px;
+    }
+
+    .faq-row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .faq-column {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+
+    .faq-item {
+        margin-bottom: 10px;
+    }
+
+    .faq-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #f5f5f5;
+        transition: background 0.3s;
+    }
+
+    .faq-header:hover {
+        background: #eaeaea;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+        background: none;
+        border: none;
+        text-align: left;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    /* Add hover effect */
+    .faq-question:hover {
+        color: red; /* Change text color to red on hover */
+    }
+
+    .faq-icon {
+        font-size: 1.2rem;
+        color: #333;
+        transition: transform 0.3s;
+    }
+
+    .faq-answer {
+        padding: 15px;
+        background: #fafafa;
+        border-left: 3px solid #007bff;
+        border-radius: 5px;
+        margin-top: 5px;
+        display: none;
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .faq-header.active .faq-icon {
+        transform: rotate(180deg);
+    }
+
+    @media (max-width: 800px) {
+        .faq-column {
+            width: 100%;
+        }
+    }
+</style>
+
+
+
+{% endblock %}

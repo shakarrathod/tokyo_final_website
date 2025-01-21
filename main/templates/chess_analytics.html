@@ -1,0 +1,1483 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<!-- Banner Section -->
+<section class="responsive-banner">
+  <img
+    src="{% static 'images/ds_banner.jpg' %}"
+    alt="Chess Analytics Banner"
+    class="banner-image"
+  />
+  <div class="banner-content">
+    <h1>Chess Analytics</h1>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="chess-courses-section">
+  <div class="chess-container">
+    
+
+    <div class="chess-course-category">
+      <h2 class="chess-course-title">Chess AnalyticX Curriculums</h2>
+      <p>
+        <b>Chess Foundations:</b> Board Setup and Basic Movements Learn the
+        Chessboard Layout, Mastering the Movement of Each Piece, Understanding
+        Chess Notation. Intro to Chess Tactics: Pattern Recognition Recognizing
+        Basic Tactical Themes (Forks, Pins, Skewers), Simple Tactics and Traps,
+        Early Tactical Puzzles and Exercises. Strategic Chess Thinking: Planning
+        and Decision Making Introduction to Positional Play, Developing Pieces
+        and Controlling the Center, Castling and King Safety. Advanced Tactical
+        Patterns: Mastering Complex Ideas Discovered Attacks and Discovered
+        Check, Double Attacks, Zwischenzug, and Back-rank Checkmates Chess
+        Combinations and Calculating Sequences.
+      </p>
+      <br />
+      <p>
+        <b>Mastering the Middlegame:</b> Transitioning from Opening to Endgame,
+        Recognizing Key Middlegame Plans and Plans for Each Opening, Handling
+        Imbalanced Positions (Material Imbalance, Positional Imbalance),
+        Evaluating the Strength of Attacks and Defenses. Advanced Chess Tactics:
+        Unleashing Creativity, Sacrifices and the Art of Calculating Tactical
+        Combinations, How to Spot Attacking Opportunities, Defending Against
+        Tactical Threats. Chess Psychology: Managing Time, Pressure, and
+        Mistakes, How to Play Under Time Pressure: Practical Tips, Staying Calm
+        and Focused After Mistakes, Mental Strategies for Long Games and
+        Tournaments. The Road to Mastery: From Analysis to Action, How to
+        Transition Chess Knowledge into Practical Play. Developing a
+        Personalized Chess Style: Tactical, Positional, or Balanced, Setting
+        Goals for Chess Improvement and Tracking Progress.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  /* Banner Section Styling */
+  .responsive-banner {
+    margin-top: 100px;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .banner-content h1 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    z-index: 1;
+  }
+
+  .banner-content h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: white;
+    margin: 10px auto 0;
+  }
+
+  @media (max-width: 768px) {
+    .banner-content h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner-content h1 {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* About Section Styling */
+  .chess-courses-section {
+    background-color: #f7f9fc;
+    padding: 50px 20px;
+  }
+
+  .chess-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .chess-section-title {
+    font-size: 1.8rem;
+    color: #162020;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .chess-section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #ff5252;
+  }
+
+  .chess-section-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+  }
+
+  .chess-course-category {
+    margin-bottom: 30px;
+  }
+
+  .chess-course-title {
+    font-size: 1.8rem;
+    color: #162020;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .chess-course-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff5252;
+    margin: 8px 0;
+  }
+
+  .chess-course-category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .chess-section-title {
+      font-size: 2rem;
+    }
+
+    .chess-course-title {
+      font-size: 1.5rem;
+    }
+
+    .chess-section-description {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<!-- Chess Offerings Section -->
+<section class="chess-offerings-section">
+  <div class="chess-offerings-container">
+    <div class="chess-offerings-text">
+      <h2 class="chess-offerings-title">Our Diverse Course Offerings</h2>
+      <ul class="chess-offerings-list">
+        <li>
+          <span class="chess-check-icon chess-blue">&#10003;</span> Chess
+          Foundations: Board Setup and Basic
+        </li>
+        <li>
+          <span class="chess-check-icon chess-blue">&#10003;</span> Intro to
+          Chess Tactics: Pattern Recognition
+        </li>
+        <li>
+          <span class="chess-check-icon chess-blue">&#10003;</span> Strategic
+          Chess Thinking: Planning and Decision Making
+        </li>
+        <li>
+          <span class="chess-check-icon chess-blue">&#10003;</span> Advanced
+          Tactical Patterns: Mastering Complex Ideas
+        </li>
+        <li>
+          <span class="chess-check-icon chess-blue">&#10003;</span> Endgames:
+          Fundamentals and Key Concepts
+        </li>
+        <li>
+          <span class="chess-check-icon chess-blue">&#10003;</span> Positional
+          Play: Evaluating Good vs. Bad Pieces
+        </li>
+        <li>
+          <span class="chess-check-icon chess-blue">&#10003;</span> Chess
+          Analysis: Thinking Like a Grandmaster
+        </li>
+        <li>
+          <span class="chess-check-icon chess-blue">&#10003;</span> Chess
+          Psychology: Managing Time, Pressure, and Mistakes
+        </li>
+      </ul>
+    </div>
+    <div class="chess-offerings-image">
+      <img src="{% static 'images/chess-1.jpg' %}" alt="Chess Learning" />
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .chess-offerings-section {
+    background-color: #f9f9fb;
+    padding-bottom: 50px;
+  }
+
+  .chess-offerings-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .chess-offerings-text {
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .chess-offerings-title {
+    font-size: 1.8rem;
+    color: #162020;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .chess-offerings-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff3131;
+    margin-top: 10px;
+  }
+
+  .chess-offerings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .chess-offerings-list li {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .chess-check-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+
+  .chess-blue {
+    color: #1a73e8;
+  }
+
+  .chess-offerings-image {
+    flex: 1;
+    max-width: 550px;
+    text-align: center;
+  }
+
+  .chess-offerings-image img {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  @media (max-width: 768px) {
+    .chess-offerings-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chess-offerings-text,
+    .chess-offerings-image {
+      max-width: 100%;
+    }
+
+    .chess-offerings-title {
+      font-size: 1.8rem;
+    }
+
+    .chess-offerings-list li {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<!-- why choose us section starts here -================= -->
+<div class="chess-career-section">
+  <h2 class="chess-career-title">Why Choose Our Chess Analytics Courses?</h2>
+  <div class="chess-career-carousel">
+    <div class="chess-career-cards-wrapper">
+      <div class="chess-career-cards" id="chessCareerCards">
+        <div class="chess-career-card">
+          <h3>Advanced Analytics Tools</h3>
+          <p>
+            Learn to use cutting-edge analytics tools to evaluate games, study
+            player patterns, and uncover winning strategies.
+          </p>
+        </div>
+        <div class="chess-career-card">
+          <h3>Practical Training</h3>
+          <p>
+            Engage in hands-on exercises to analyze real-world games, simulate
+            match scenarios, and develop practical skills.
+          </p>
+        </div>
+        <div class="chess-career-card">
+          <h3>Expert Coaches</h3>
+          <p>
+            Gain insights from professional chess players and data analysts with
+            years of experience in the field.
+          </p>
+        </div>
+        <div class="chess-career-card">
+          <h3>Global Community</h3>
+          <p>
+            Connect with chess enthusiasts, professionals, and analysts
+            worldwide, sharing knowledge and insights.
+          </p>
+        </div>
+        <div class="chess-career-card">
+          <h3>Career Growth</h3>
+          <p>
+            Build a strong foundation for roles such as chess coach, tournament
+            analyst, or AI-based chess developer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <button class="chess-carousel-arrow chess-right-arrow" id="chessNextButton">
+      &#10095;
+    </button>
+    <button class="chess-carousel-arrow chess-left-arrow" id="chessPrevButton">
+      &#10094;
+    </button>
+  </div>
+  <div class="chess-carousel-dots" id="chessCarouselDots"></div>
+</div>
+
+<!-- CSS -->
+<style>
+  .chess-career-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9fb; /* Matches skills section background */
+  }
+
+  .chess-career-title {
+    font-size: 1.8rem; /* Matches skills section title font size */
+    color: #162020;
+    margin-bottom: 25px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .chess-career-title::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background-color: #ff3131; /* Underline color */
+    margin: 15px auto 0;
+  }
+
+  /* Carousel and card styles */
+
+  .chess-career-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chess-career-cards-wrapper {
+    overflow: hidden;
+    width: 80%;
+  }
+
+  .chess-career-cards {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .chess-career-card {
+    flex: 0 0 32.5%;
+    box-sizing: border-box;
+    padding: 25px;
+    margin: 5px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .chess-career-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .chess-career-card:hover {
+    background-color: #dc3545;
+    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .chess-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(143, 145, 145);
+    z-index: 10;
+  }
+
+  .chess-left-arrow {
+    left: 50px;
+  }
+
+  .chess-right-arrow {
+    right: 50px;
+  }
+
+  .chess-carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .chess-carousel-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+
+  .chess-carousel-dots button.active {
+    background-color: #dc3545;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  const chessCareerCards = document.getElementById("chessCareerCards");
+  const chessDotsContainer = document.getElementById("chessCarouselDots");
+  const chessPrevButton = document.getElementById("chessPrevButton");
+  const chessNextButton = document.getElementById("chessNextButton");
+
+  const chessCards = document.querySelectorAll(".chess-career-card");
+  let chessCurrentIndex = 0;
+
+  function chessUpdateCarousel() {
+    const cardWidth = chessCareerCards.children[0].offsetWidth + 10; // Including margin
+    chessCareerCards.style.transform = `translateX(-${
+      chessCurrentIndex * cardWidth
+    }px)`;
+    chessUpdateDots();
+  }
+
+  function chessUpdateDots() {
+    chessDotsContainer.innerHTML = "";
+    const totalDots = Math.ceil(chessCards.length / 3);
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement("button");
+      if (i === chessCurrentIndex) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        chessCurrentIndex = i;
+        chessUpdateCarousel();
+      });
+      chessDotsContainer.appendChild(dot);
+    }
+  }
+
+  chessPrevButton.addEventListener("click", () => {
+    if (chessCurrentIndex > 0) {
+      chessCurrentIndex--;
+      chessUpdateCarousel();
+    }
+  });
+
+  chessNextButton.addEventListener("click", () => {
+    if (chessCurrentIndex < Math.ceil(chessCards.length / 3) - 1) {
+      chessCurrentIndex++;
+      chessUpdateCarousel();
+    }
+  });
+
+  chessUpdateCarousel();
+</script>
+<!-- why choose us section ends here -================= -->
+
+<!-- Our Training Programs section ends here -================= -->
+<div class="chess-training-section">
+  <h2 class="chess-training-title">Our Training Programs</h2>
+  <div class="chess-training-container">
+    <div class="chess-training-card">
+      <div class="chess-training-badge">4 MONTHS</div>
+      <h3 class="chess-training-heading">Hybrid Module</h3>
+      <p class="chess-training-details">
+        Get Certified for 55k + GST<br />
+        Duration: 4 Months (100 hours of training + internship)
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Training Section */
+  .chess-training-section {
+    background-color: #f9f9fb; /* Matches skills section background */
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  /* Training Title (matches skills section style) */
+  .chess-training-title {
+    font-size: 1.8rem;
+    color: #162020;
+    margin-bottom: 25px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .chess-training-title::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background-color: #ff3131;
+    margin: 15px auto 0;
+  }
+
+  /* Training Container */
+  .chess-training-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Training Card */
+  .chess-training-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 600px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .chess-training-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #ff3131; /* Changes background color */
+    color: white; /* Changes text color */
+  }
+
+  /* Ensure child elements like links or headings also change color */
+  .chess-training-card:hover * {
+    color: white; /* Applies to all text elements inside the card */
+  }
+
+  /* Training Badge */
+  .chess-training-badge {
+    background-color: #ff3131; /* Red-orange badge color */
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  /* Training Heading */
+  .chess-training-heading {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #2e8b57; /* Green heading color */
+  }
+
+  /* Training Details */
+  .chess-training-details {
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .chess-training-card {
+      width: 100%;
+    }
+  }
+</style>
+<!-- Our Training Programs section ends here -================= -->
+
+<!-- enrollment section starts here -================= -->
+<div class="chess-enrollment-section">
+  <h2 class="chess-section-title">CHESS ANALYTICX WILL HELP YOUR KIDZ</h2>
+  <div class="chess-enrollment-container">
+    <div class="chess-enrollment-card">
+      <div class="chess-card-number">01</div>
+      <p class="chess-card-content">Cognitive Development</p>
+    </div>
+    <div class="chess-enrollment-card">
+      <div class="chess-card-number">02</div>
+      <p class="chess-card-content">Emotional and Psychological Benefits</p>
+    </div>
+    <div class="chess-enrollment-card">
+      <div class="chess-card-number">03</div>
+      <p class="chess-card-content">Academic Achievements</p>
+    </div>
+    <div class="chess-enrollment-card">
+      <div class="chess-card-number">04</div>
+      <p class="chess-card-content">Physical and Brain Development</p>
+    </div>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+  .chess-enrollment-section {
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 70px;
+    background-color: #f9f9fb;
+  }
+
+  .chess-section-title {
+    font-size: 1.8rem; /* Matches skills section title font size */
+    color: #162020;
+    margin-bottom: 25px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+  }
+
+  .chess-section-title::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background-color: #ff3131; /* Underline color */
+    margin: 15px auto 0;
+  }
+
+  .chess-enrollment-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .chess-enrollment-card {
+    flex: 0 0 24%; /* Ensures 4 cards in one row */
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .chess-card-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff3131;
+  }
+
+  .chess-card-content {
+    margin-top: 15px;
+  }
+
+  .chess-enrollment-card:hover {
+    background-color: #dc3545;
+    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .chess-enrollment-card:hover .chess-card-number {
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .chess-enrollment-card {
+      flex: 0 0 48%; /* Adjusts to 2 cards per row on smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chess-enrollment-card {
+      flex: 0 0 100%; /* Stacks cards vertically on very small screens */
+    }
+  }
+</style>
+<!-- enrollment section ends here -================= -->
+
+<!-- Chess career starts here --============= Section -->
+<section class="chess-offerings-section">
+  <div class="chess-offerings-container">
+    <div class="chess-offerings-text">
+      <h2 class="chess-offerings-title">
+        Trust the Market Leader to Grow your Child's Career
+      </h2>
+      <ul class="chess-offerings-list">
+        <li>
+          <span class="chess-check-icon blue">&#10003;</span> 600 Happy
+          Customers
+        </li>
+        <li>
+          <span class="chess-check-icon blue">&#10003;</span> 72,000 Hours
+        </li>
+        <li>
+          <span class="chess-check-icon blue">&#10003;</span> 100+ Corporate
+          Placement Partners
+        </li>
+        <li>
+          <span class="chess-check-icon blue">&#10003;</span> 24 Locations
+        </li>
+        <li>
+          <span class="chess-check-icon blue">&#10003;</span> 110 Franchise
+          Partners
+        </li>
+        <li>
+          <span class="chess-check-icon blue">&#10003;</span> 10 Academic
+          Collaborations
+        </li>
+      </ul>
+    </div>
+    <div class="chess-offerings-image">
+      <img
+        src="{% static 'images/chess_career.jpg' %}"
+        alt="Student learning"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .chess-offerings-section {
+    background-color: #f9f9fb;
+    padding-bottom: 50px;
+  }
+
+  .chess-offerings-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .chess-offerings-text {
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .chess-offerings-title {
+    font-size: 1.8rem;
+    color: #162020;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .chess-offerings-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff3131;
+    margin-top: 10px;
+  }
+
+  .chess-offerings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .chess-offerings-list li {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .chess-check-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+
+  .chess-offerings-image {
+    flex: 1;
+    max-width: 550px;
+    text-align: center;
+  }
+
+  .chess-offerings-image img {
+    width: 100%;
+    max-width: 550px;
+  }
+
+  @media (max-width: 768px) {
+    .chess-offerings-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chess-offerings-text,
+    .chess-offerings-image {
+      max-width: 100%;
+    }
+
+    .chess-offerings-title {
+      font-size: 1.8rem;
+    }
+
+    .chess-offerings-list li {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+<!-- Chess career ends here --============= Section -->
+<!-- Inter State Level Competition Section -->
+<section class="chess-competition-section">
+  <div class="chess-container3">
+    <h1 class="chess-section-title">Inter State Level Competition</h1>
+    <div class="chess-content-wrapper">
+      <img
+        src="{% static 'images/chess-2.jpg' %}"
+        alt="Chess Competition"
+        class="chess-competition-image"
+      />
+      <div class="chess-content2">
+        <p>
+          <strong>1. Planning the Event:</strong> Competition inter-state
+          collaboration and sportsmanship. Promote chess across states. Provide
+          a competitive platform for players.
+        </p>
+        <p>
+          <strong>2. Our Structure:</strong> Time controls: Blitz, Rapid, or
+          Classical. Number of rounds: Swiss format (common for large events) or
+          Round Robin. Age/Skill categories: Open, U-5, U-12.
+        </p>
+        <p>
+          <strong
+            >1st Prize: ₹50,000 and Lifetime Free Education in Tokyo
+            Analytics</strong
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .chess-competition-section {
+    background-color: #f9f9fb; /* Same as the background of Chess Offerings */
+    padding-bottom: 50px;
+  }
+
+  .chess-container3 {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .chess-section-title {
+    font-size: 1.8rem;
+    color: #162020; /* Darker color like the title in Chess Offerings */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .chess-section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff3131; /* Red color like Chess Offerings */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .chess-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .chess-competition-image {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .chess-content2 {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .chess-content2 p {
+    font-size: 1.1rem;
+    color: #555; /* Same text color as in Chess Offerings */
+    margin-bottom: 20px;
+  }
+
+  .chess-content2 strong {
+    color: #555; /* Red color for emphasis like in Chess Offerings */
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .chess-content-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .chess-competition-image {
+      max-width: 100%;
+    }
+
+    .chess-section-title {
+      font-size: 1.8rem;
+    }
+
+    .chess-content2 p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<!-- CSS -->
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .why-choose-section {
+    background-color: #f9f9fb;
+    padding: 60px 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: rgb(249, 56, 56);
+    margin: 10px auto 0;
+  }
+
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    color: #ff5252;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Section Title */
+  .section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #1e90ff; /* Blue title color */
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  /* Programs Section */
+  .programs-section {
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  /* Programs Container */
+  .programs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Program Card */
+  .program-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 410px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(69, 61, 61, 0.2);
+  }
+
+  /* Program Badge */
+  .program-badge {
+    background-color: #ff4500; /* Red-orange badge color */
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  /* Program Title */
+  .program-title {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #2e8b57; /* Green title color */
+  }
+
+  /* Program Description */
+  .program-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .program-card {
+      width: 100%;
+    }
+  }
+
+  /* General Body Styling */
+
+  /* Section Styling */
+  .enrollment-section {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin: o auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+    color: rgb(9, 87, 164); /* Blue title color */
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .section-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff0000;
+    margin: 10px auto 0;
+  }
+
+  /* Enrollment Cards Container */
+  .enrollment-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Enrollment Card Styling */
+  .enrollment-card {
+    background-color: #fff;
+    border-radius: 12px;
+    width: 325px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .enrollment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f08080;
+  }
+
+  .card-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(39, 2, 221);
+  }
+
+  .card-content {
+    font-size: 14px;
+    color: rgb(86, 86, 87);
+    line-height: 1.5;
+  }
+
+  .card-content:hover {
+    color: white;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .enrollment-card {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-heading {
+      font-size: 20px;
+    }
+
+    .card-number {
+      font-size: 28px;
+    }
+
+    .card-content {
+      font-size: 13px;
+    }
+  }
+
+  .container3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .competition-image {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .content2 {
+    flex: 1;
+  }
+
+  .content2 p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .content2 strong {
+    font-weight: bold;
+    color: #000;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .competition-image {
+      max-width: 80%;
+    }
+
+    .content2 {
+      margin-top: 20px;
+    }
+  }
+</style>
+
+<!-- CSS -->
+<style>
+  .offerings-section {
+    background-color: #f9f9fb;
+    padding: 60px 20px;
+  }
+
+  .offerings-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .offerings-text {
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .offerings-title {
+    font-size: 2rem;
+    color: #1a73e8;
+    margin-bottom: 20px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .offerings-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff5252;
+    margin-top: 10px;
+  }
+
+  .offerings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .offerings-list li {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .check-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+
+  .red {
+    color: #ff5252;
+  }
+
+  .blue {
+    color: #1a73e8;
+  }
+
+  .offerings-image {
+    flex: 1;
+    max-width: 550px;
+    text-align: center;
+  }
+
+  .offerings-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .offerings-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .offerings-text,
+    .offerings-image {
+      max-width: 100%;
+    }
+
+    .offerings-title {
+      font-size: 1.8rem;
+    }
+
+    .offerings-list li {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<!-- CSS -->
+<style>
+  body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .courses-section {
+    background-color: #f7f9fc;
+    padding: 50px 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #ff5252;
+    margin: 10px auto 0;
+  }
+
+  .section-description {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .course-category {
+    margin-bottom: 30px;
+  }
+
+  .course-title {
+    font-size: 1.8rem;
+    color: #1a73e8;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .course-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff5252;
+    margin: 8px 0;
+  }
+
+  .course-category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .course-title {
+      font-size: 1.5rem;
+    }
+
+    .section-description {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+{% endblock %}

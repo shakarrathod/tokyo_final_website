@@ -1,0 +1,157 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+
+<div class="section-title">
+    <h1>Our Centers Across India</h1>
+    <p>
+      Explore our centers in major cities offering world-class facilities and
+      expert guidance.
+    </p>
+  </div>
+
+<div class="container">
+  <!-- Title Section -->
+  
+
+  <!-- City Grid -->
+  <div class="city-grid">
+    <div class="city-box">
+      <a href="#">
+        <img src="{% static 'images/mumbai-image-image.jpg' %}" alt="Mumbai" />
+        <h2>Mumbai</h2>
+      </a>
+    </div>
+    <div class="city-box">
+      <a href="#">
+        <img src="{% static 'images/indore.jpg' %}" alt="Indore" />
+        <h2>Indore</h2>
+      </a>
+    </div>
+    <div class="city-box">
+      <a href="#">
+        <img src="{% static 'images/bangalore.jpg' %}" alt="Bangalore" />
+        <h2>Bangalore</h2>
+      </a>
+    </div>
+    <div class="city-box">
+      <a href="#">
+        <img src="{% static 'images/dehli.jpg' %}" alt="Delhi" />
+        <h2>Delhi</h2>
+      </a>
+    </div>
+    <div class="city-box">
+      <a href="#">
+        <img src="{% static 'images/chennai.jpg' %}" alt="Chennai" />
+        <h2>Chennai</h2>
+      </a>
+    </div>
+    <div class="city-box">
+      <a href="#">
+        <img src="{% static 'images/kolkata.jpg' %}" alt="Kolkata" />
+        <h2>Kolkata</h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Container */
+  .container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* Title Section */
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-title h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    color: #333;
+  }
+
+  .section-title p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+  }
+
+  /* Grid Container */
+  .city-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns in a row */
+    gap: 20px;
+  }
+
+  /* Grid Items (City Box) */
+  .city-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+      background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-align: center;
+  }
+
+  /* Hover Effect */
+  .city-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    background-color: red; /* Change background color to red */
+    color: white; /* Change text color to white */
+  }
+
+  .city-box:hover h2 {
+    color: white; /* Ensure title text also changes to white */
+    background-color: rgb(255, 49, 49);
+  }
+
+  /* Images */
+  .city-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Titles */
+  .city-box h2 {
+    margin: 0;
+    padding: 15px;
+    background-color: white; /* Primary color */
+    color: black;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+  }
+
+  /* Links */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .city-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .city-grid {
+      grid-template-columns: 1fr; /* One column on small screens */
+    }
+
+    .section-title h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+{% endblock content %}

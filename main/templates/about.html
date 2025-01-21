@@ -1,0 +1,372 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<section class="about-us-banner">
+  <div class="about-us-first">
+    <h1>About Us</h1>
+  </div>
+
+  <p>
+    Envision being a part of the most advanced learning system with Tokyo
+    AnalyticX
+  </p>
+</section>
+<section class="about-us">
+  <div class="about-container">
+    <!-- Image Section -->
+    <div class="about-image">
+      <img
+        src="{% static 'images/about-us-girl.png' %}"
+        alt="Tokyo AnalyticX"
+      />
+    </div>
+
+    <!-- Content Section -->
+    <div class="about-content">
+      <h2>About Tokyo AnalyticX</h2>
+      <!-- Desktop Text -->
+      <p class="desktop-text">
+        <strong>Tokyo AnalyticX</strong>, based in Tokyo, Japan, is a globally
+        recognized leader in educational technology, specializing in innovative
+        IT programs and professional crash courses focused on practical skill
+        development. Committed to delivering world-class education, the company
+        empowers learners to excel by providing comprehensive programs that
+        build a strong foundation in advanced tools, techniques, and
+        methodologies.
+
+      <!-- Mobile Text -->
+      <p class="mobile-text">
+        <strong>Tokyo AnalyticX</strong>, based in Tokyo, Japan, is a globally
+        recognized leader in educational technology, specializing in innovative
+        IT programs and professional crash courses focused on practical
+        skill development. Committed to delivering world-class education, the
+        company empowers learners to excel by providing comprehensive programs
+        that build a strong foundation in advanced tools, techniques, and
+        methodologies.
+      </p>
+      <p class="mobile-text">
+        We offer courses that build a strong foundation in data techniques,
+        empowering learners to succeed in tomorrow's technologies.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% comment %} css for about us {% endcomment %}
+
+<style>
+  /* General Styles (Unchanged) */
+  .about-us {
+    padding: 60px 20px;
+  }
+
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .about-image {
+    flex: 1;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+  }
+
+  .about-content {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #162020;
+  }
+
+  .about-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+    }
+
+    .about-content .desktop-text {
+      display: none !important; /* Ensure desktop text is hidden */
+    }
+
+    .about-content .mobile-text {
+      display: block !important; /* Ensure mobile text is visible */
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Default: Hide mobile content for larger screens */
+  .about-content .mobile-text {
+    display: none;
+  }
+</style>
+
+<section
+  style="
+    background-color: white;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  "
+>
+  <h1
+    style="
+      color: black;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+      font-family: Arial, sans-serif;
+    "
+  >
+    Shape Your Tomorrow with Tokyo AnalyticX
+  </h1>
+  <p
+    style="
+      color: rgb(221, 6, 6);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      font-family: 'Verdana, sans-serif';
+    "
+  >
+    Explore Limitless Career Horizons
+  </p>
+  <div style="display: flex; justify-content: center">
+    <video
+      style="
+        border-radius: 1rem;
+        border: 4px solid #ffffff;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 1200px;
+        height: 700px;
+      "
+      controls
+      onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(0, 0, 0, 0.4)';"
+      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.3)';"
+    >
+      <source
+        src="{%static 'videos\Tokyo-AnalyticX-Intro-Video-Composition_3.mp4' %}"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+<section class="visionary-section">
+  <div class="info-cards">
+    <div class="info-card vision-info">
+      <h3>Our Mission</h3>
+      <p>
+        Our mission is to bring transformative learning experiences directly to
+        you, unlocking new opportunities in modern fields such as Data Science
+        and Cybersecurity. We strive to nurture innovation, inspire growth, and
+        build skills for a brighter tomorrow.
+      </p>
+    </div>
+    <div class="info-card vision-info">
+      <h3>Our Vision</h3>
+      <p>
+        We envision a world where knowledge bridges the gap between ambition and
+        achievement. At Tokyo AnalyticX, we aim to equip learners with practical
+        expertise and cutting-edge knowledge, ensuring they're prepared for the
+        dynamic future of technology and security.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-gradient">
+  <h2 class="section-title">Achieve Excellence with Trusted Expertise</h2>
+
+  <div class="info-grid">
+    <!-- Row 1 -->
+    <div class="info-box">
+      <h3>600</h3>
+      <p>Happy Customers</p>
+    </div>
+    <div class="info-box">
+      <h3>72,000</h3>
+      <p>Hours of Training</p>
+    </div>
+    <div class="info-box">
+      <h3>100</h3>
+      <p>Corporate Placement Partners</p>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="info-box">
+      <h3>110</h3>
+      <p>Franchise Partners</p>
+    </div>
+    <div class="info-box">
+      <h3>24</h3>
+      <p>Locations</p>
+    </div>
+    <div class="info-box">
+      <h3>10</h3>
+      <p>Academic Collaborations</p>
+    </div>
+  </div>
+
+  <p class="section-footer">Vision for Financial Year 2024-25 and Beyond</p>
+</section>
+
+<section class="unique-section">
+  <div class="unique-container">
+    <p class="unique-title">
+      Accelerate your growth with <strong>Tokyo AnalyticX </strong>by choosing our uniquely
+      designed learning systems.<strong>Tokyo AnalyticX‘s</strong> extensive courses deliver a
+      thorough understanding of the streams, whether a data science and business
+      analytics course or a cyber security and ethical hacking course. We offer
+      a hybrid model, which includes offline, online, and recorded lessons that
+      you can learn conveniently as per your time. We offer additional perks
+      that include:
+    </p>
+    <p class="unique-subtitle">
+      Learn with our hybrid model and unlock career opportunities with globally
+      recognized certifications.
+    </p>
+    <div class="unique-cards">
+      <div class="unique-card">
+        <h3>Free Placements Consultation</h3>
+        <p>Get expert guidance to secure your dream job.</p>
+      </div>
+      <div class="unique-card">
+        <h3>Hybrid Learning Module</h3>
+        <p>Flexible learning options tailored to your schedule.</p>
+      </div>
+      <div class="unique-card">
+        <h3>Professional Tutors</h3>
+        <p>Learn from experienced industry professionals.</p>
+      </div>
+      <div class="unique-card">
+        <h3>Well-equipped Classrooms</h3>
+        <p>Engage in hands-on, practical training sessions.</p>
+      </div>
+      <div class="unique-card">
+        <h3>Globally Recognized Certifications</h3>
+        <p>Earn certifications that boost your career prospects.</p>
+      </div>
+      <div class="unique-card">
+        <h3>24X7 Student Support</h3>
+        <p>Access help anytime you need it, day or night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <h2 class="gallery-title">Moments to Treasure</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="{% static 'images/g9.jpg' %}" alt="Gallery Image 1" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g1.jpg' %}" alt="Gallery Image 2" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g13.jpg' %}" alt="Gallery Image 3" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g18.jpg' %}" alt="Gallery Image 4" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g14.jpg' %}" alt="Gallery Image 5" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g6.jpg' %}" alt="Gallery Image 6" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g2.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g3.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g4.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g5.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g10.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g11.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g12.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g15.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g16.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g7.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g8.jpg' %}" alt="Gallery Image 7" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g17.jpg' %}" alt="Gallery Image 7" />
+    </div>
+  </div>
+</section>
+
+{% comment %}
+<section class="gallery-section">
+  <h2 class="gallery-title">Moments to Treasure</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="{% static 'images/g1.jpg' %}" alt="Gallery Image 1" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g2.jpg' %}" alt="Gallery Image 2" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g3.jpg' %}" alt="Gallery Image 3" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g4.jpg' %}" alt="Gallery Image 4" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g5.jpg' %}" alt="Gallery Image 5" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g6.jpg' %}" alt="Gallery Image 6" />
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'images/g7.jpg' %}" alt="Gallery Image 7" />
+    </div>
+  </div>
+</section>
+{% endcomment %} {% endblock %}

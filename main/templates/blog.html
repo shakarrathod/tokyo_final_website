@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="blog-section">
+    <!-- Blog Card 1 -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <a href="#">
+          <img src="{% static 'images/blog1.webp'  %}" alt="Cyber Security Importance: Need and Advantages">
+        </a>
+        <div class="date">
+          <span>06</span>
+          <span>Jan</span>
+        </div>
+        <div class="category">
+          Cyber Security
+        </div>
+      </div>
+      <div class="blog-content">
+        <h3><a href="#">Cyber Security Importance: Need and Advantages</a></h3>
+        <p>By <span>Tokyo AnalyticX</span> <span><div class="share-container">
+            <i class="fas fa-share-alt icon-share"></i>
+            <div class="social-icon">
+                <a href="#" class="facebook"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div> </span> </p>
+        <p>Cyber Security stands as the fortification between our online lives and potential threats...</p>
+        <a href="#" class="read-more">Continue Reading</a>
+        <div class="share-icons">
+          <i class="icon-share" onclick="share('Cyber Security Importance: Need and Advantages')"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Card 2 -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <a href="#">
+          <img src="https://via.placeholder.com/300x200" alt="Understanding What is Cyber Security">
+        </a>
+        <div class="date">
+          <span>29</span>
+          <span>Nov</span>
+        </div>
+        <div class="category">
+          Cyber Security
+        </div>
+      </div>
+      <div class="blog-content">
+        <h3><a href="#">Understanding What is Cyber Security</a></h3>
+        <p>By <span>Tokyo AnalyticX</span></p>
+        <p>In today's hyper-connected world, ensuring the safety of our online presence...</p>
+        <a href="#" class="read-more">Continue Reading</a>
+        <div class="share-icons">
+          <i class="icon-share" onclick="share('Understanding What is Cyber Security')"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Card 3 -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <a href="#">
+          <img src="https://via.placeholder.com/300x200" alt="Why Become a Data Scientist? Top 5 Reasons">
+        </a>
+        <div class="date">
+          <span>29</span>
+          <span>Nov</span>
+        </div>
+        <div class="category">
+          Data Science
+        </div>
+      </div>
+      <div class="blog-content">
+        <h3><a href="#">Why Become a Data Scientist? Top 5 Reasons</a></h3>
+        <p>By <span>Tokyo AnalyticX</span></p>
+        <p>Data scientists are the architects of innovation in the digital age...</p>
+        <a href="#" class="read-more">Continue Reading</a>
+        <div class="share-icons">
+          <i class="icon-share" onclick="share('Why Become a Data Scientist? Top 5 Reasons')"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+      
+      .blog-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px;
+      }
+      
+      .blog-card {
+        width: 350px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+        transition: transform 0.3s;
+      }
+      
+      .blog-card:hover {
+        transform: scale(1.05);
+        background: rgb(255, 49, 49);
+        color: white;
+      }
+      
+      .blog-image {
+        position: relative;
+      }
+      
+      .blog-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .blog-image .date {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: white;
+        color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: center;
+      }
+      
+      .blog-image .category {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      
+      .blog-content {
+        padding: 15px;
+      }
+      
+      .blog-content h3 a {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      .blog-content .read-more {
+        color: red;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+      .blog-content .read-more:hover {
+        text-decoration: underline;
+      }
+      
+      .share-icons {
+        margin-top: 10px;
+      }
+      
+      .share-icons .icon-share {
+        cursor: pointer;
+      }
+      
+      .share-icons:hover {
+        background: black;
+        color: white;
+      }
+      
+    
+</style>
+
+<script>
+
+    function share(blogTitle) {
+        const shareText = `Check out this blog: ${blogTitle}`;
+        const platforms = {
+          facebook: `https://www.facebook.com/sharer/sharer.php?u=${document.location.href}`,
+          twitter: `https://twitter.com/intent/tweet?text=${shareText}`,
+          linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${document.location.href}`,
+          instagram: '#', // Instagram doesn't support direct share
+          telegram: `https://t.me/share/url?url=${document.location.href}&text=${shareText}`,
+        };
+      
+        let shareLinks = '';
+        for (const [key, url] of Object.entries(platforms)) {
+          shareLinks += `<a href="${url}" target="_blank" class="share-${key}">${key}</a>`;
+        }
+      
+        alert("Sharing options:\n" + Object.values(platforms).join("\n"));
+      }
+      
+    
+</script>
+{% endblock %}
