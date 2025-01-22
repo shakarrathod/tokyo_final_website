@@ -71,17 +71,21 @@
   <div class="data-science-container">
     <div class="data-science-category">
       <h2 class="data-science-title">
-        Discover the Finest Data Science Courses in India
+        Data Science & Business Analytics Course in India
       </h2>
       <p>
-        Tokyo AnalyticX equips individuals with essential skills in data science and business analytics, focusing on critical areas like cybersecurity and ethical hacking to excel in a tech-driven world.
+        <strong>Tokyo AnalyticX </strong>empowers individuals with key skills in data science and
+        business analytics, emphasizing crucial areas such as cybersecurity and
+        ethical hacking to thrive in a technology-driven world.
       </p>
     </div>
 
     <div class="data-science-category">
-      <h2 class="data-science-title">Data Science and Business Analytics Course</h2>
       <p>
-        Tokyo AnalyticX’s combined course offers insights into data analysis, visualization, machine learning, and business analytics, empowering students to make informed decisions and drive growth through data.
+        <strong>Tokyo AnalyticX’s</strong> comprehensive course provides expertise in data
+        analysis, visualization, machine learning, and business analytics,
+        enabling students to make informed decisions and foster growth through
+        data-driven strategies.
       </p>
     </div>
   </div>
@@ -91,12 +95,13 @@
 <style>
   .data-science--section {
     padding-top: 50px;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
   }
 
   .data-science-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
   }
 
   .data-science-title {
@@ -129,16 +134,33 @@
 
   @media (max-width: 768px) {
     .data-science-title {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+y    }
+
+    .data-science-category {
+      margin-bottom: 30px;
     }
 
     .data-science-category p {
-      font-size: 0.95rem;
+      font-size: 0.87rem;
+    }
+
+    .data-science-container {
+      padding: 0 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .data-science-title {
+      font-size: 1.2rem;
+    }
+
+    .data-science-category p {
+      font-size: 0.8rem;
+      text-align: start;
     }
   }
 </style>
-
-
 
 <section class="offerings-section">
   <div class="offerings-container">
@@ -178,54 +200,52 @@
 </section>
 
 <!-- HTML -->
-<section class="why-choose-section">
-  <div class="container">
-    <h2 class="section-title">
+<section class="data-science--why-choose-section">
+  <div class="data-science-container">
+    <h2 class="data-science-section-title">
       Why Choose Our Data Science and Business Analytics Course?
     </h2>
-    <div class="cards-wrapper">
-      <!-- Row 1 -->
-      <div class="card">
-        <h3 class="card-title">In-Depth Curriculum</h3>
+    <div class="data-science-cards-wrapper">
+      <div class="data-science-card">
+        <h3 class="data-science-card-title">In-Depth Curriculum</h3>
         <p>
           Our curriculum covers a wide range of topics, including data
           analytics, databases, statistics, modeling, and data visualization.
         </p>
       </div>
-      <div class="card">
-        <h3 class="card-title">Hands-On Training</h3>
+      <div class="data-science-card">
+        <h3 class="data-science-card-title">Hands-On Training</h3>
         <p>
           Get hands-on experience through practical labs, simulations, and
           real-world scenarios that mirror the challenges faced by professionals
           in the field.
         </p>
       </div>
-      <div class="card">
-        <h3 class="card-title">Experienced Instructors</h3>
+      <div class="data-science-card">
+        <h3 class="data-science-card-title">Experienced Instructors</h3>
         <p>
           Learn from seasoned experts with years of industry experience who
           bring real-world insights into the classroom.
         </p>
       </div>
-      <!-- Row 2 -->
-      <div class="card">
-        <h3 class="card-title">Networking Opportunities</h3>
+      <div class="data-science-card">
+        <h3 class="data-science-card-title">Networking Opportunities</h3>
         <p>
           Connect with fellow students, instructors, and professionals in the
           Data Science community, expanding your network and learning from
           others' experiences.
         </p>
       </div>
-      <div class="card">
-        <h3 class="card-title">Career Advancement</h3>
+      <div class="data-science-card">
+        <h3 class="data-science-card-title">Career Advancement</h3>
         <p>
           Whether you're just starting or looking to advance in your career,
           this course provides a solid foundation for roles like data analyst,
           business analyst, marketing analyst, python developer, and more.
         </p>
       </div>
-      <div class="card">
-        <h3 class="card-title">Flexible Learning Options</h3>
+      <div class="data-science-card">
+        <h3 class="data-science-card-title">Flexible Learning Options</h3>
         <p>
           Choose from online, in-person, or hybrid learning modes to fit your
           schedule and learning preferences.
@@ -234,6 +254,97 @@
     </div>
   </div>
 </section>
+
+<!-- CSS -->
+<style>
+  .data-science--why-choose-section {
+    padding: 60px 20px;
+  }
+
+  .data-science-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .data-science-section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: rgb(249, 56, 56);
+    margin: 10px auto 0;
+  }
+
+  .data-science-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .data-science-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .data-science-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  .data-science-card-title {
+    font-size: 1.2rem;
+    color: #ff5252;
+    font-weight: bold;
+    margin-bottom: 15px;
+    
+  }
+
+  .data-science-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Responsive Design for Single Card Scrolling */
+  @media (max-width: 768px) {
+    .data-science--why-choose-section {
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+    }
+    .data-science-cards-wrapper {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 0;
+    }
+
+    .data-science-card {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .data-science-section-title {
+      font-size: 1.2rem;
+    }
+
+    .data-science-card p {
+      font-size: 0.87rem;
+    }
+
+    .data-science-cards-wrapper::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for better UX */
+    }
+  }
+</style>
+
 
 <div class="data-science-programs-section">
   <h2 class="data-science-section-title">Our Training Program</h2>
@@ -446,7 +557,7 @@
 
   @media (max-width: 480px) {
     .data-science-section-title {
-      font-size: 2rem;
+      font-size: 1.2rem;
     }
 
     .data-science-program-title {
@@ -469,7 +580,6 @@
     }
   }
 </style>
-
 
 <section class="offerings-section">
   <div class="offerings-container">
@@ -591,11 +701,11 @@
     }
 
     .offerings-title {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
     }
 
     .offerings-list li {
-      font-size: 0.95rem;
+      font-size: 0.87rem;
     }
   }
 </style>
@@ -766,16 +876,10 @@
 
 <!-- CSS -->
 <style>
-  body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  
 
   .courses-section {
-    background-color: #f7f9fc;
     padding: 50px 20px;
-    {% comment %} margin-top: 100px; {% endcomment %}
   }
 
   .container {
