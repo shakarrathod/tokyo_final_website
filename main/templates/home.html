@@ -213,7 +213,7 @@
   }
 
   .box p {
-    font-size: 14px;
+    font-size: 0.7rem;
     color: #333;
     line-height: 1.5;
     margin: 0;
@@ -245,7 +245,7 @@
 
     <!-- Content Section with Scroll Animation -->
     <div class="about-content" data-aos="fade-left" data-aos-duration="1000">
-      <h2>About Tokyo AnalyticX</h2>
+      <h2>About Us</h2>
       <!-- Desktop Text -->
       <p class="desktop-text" data-aos="fade-up" data-aos-duration="1000">
         <strong>Tokyo AnalyticX</strong>,based in Tokyo, Japan, is a globally
@@ -293,8 +293,6 @@
 
   .about-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
     gap: 20px;
@@ -321,13 +319,15 @@
   }
 
   .about-content h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #162020;
+    display: flex;
+    justify-content: start;
   }
 
   .about-content p {
-    font-size: 14px;
+    font-size: 0.87rem;
     color: #555;
     margin-bottom: 15px;
   }
@@ -400,7 +400,7 @@
 {% comment %} courese sections starts here ================== {% endcomment %}
 
 <div class="career-section" id="careerSection3">
-  <h2 class="career-title">Unlock The Power Of Data</h2>
+  <h2 class="career-title">Unlock The Power Of New Skills</h2>
   <div class="career-carousel">
     <div class="career-cards-wrapper">
       <div class="career-cards" id="careerCards3">
@@ -438,6 +438,15 @@
             With the rising demand for Ethical Hackers who can identify
             vulnerabilities in systems and ensure robust security measures,
             Tokyo AnalyticX offers courses in Ethical Hacking.
+          </p>
+        </div>
+        <div class="career-card">
+          <img src="{% static 'images/eh.png' %}" alt="chess analytics" />
+          <h3>Chess Analytics</h3>
+          <p>
+            With the growing popularity of chess and the increasing need for
+            data-driven insights to enhance gameplay, Tokyo AnalyticX offers
+            courses in Chess Analytics.
           </p>
         </div>
       </div>
@@ -530,8 +539,7 @@
         margin-bottom: 2rem;
       "
     >
-      Prominent Companies Hiring Data Analysts and Cybersecurity Professionals
-    </h2>
+      Trusted By Top Companies For Hiring Talent
 
     <div class="image-grid">
       <div class="image-wrapper">
@@ -610,7 +618,6 @@
     </div>
   </div>
 </section>
-
 
 {% comment %} career opportunities section ============= {% endcomment %}
 
@@ -709,7 +716,7 @@
     padding: 25px;
     margin: 5px;
     background-color: white;
-    color: black;
+    color: #666666;
     border-radius: 8px;
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -717,6 +724,9 @@
   }
   .career-card h3 {
     font-size: 1.5rem;
+  }
+  .career-card p{
+    font-size: 0.87rem;
   }
 
   .career-card:hover {
@@ -740,10 +750,13 @@
 
   .left-arrow {
     left: 50px;
+    color: #666666;
   }
 
   .right-arrow {
     right: 50px;
+    color: #666666;
+
   }
 
   .carousel-dots {
@@ -873,7 +886,7 @@
   updateCarousel();
 </script>
 
- {%comment %} Why choos us section {% endcomment %}
+{%comment %} Why choos us section {% endcomment %}
 
 <section class="why-choose-us">
   <h2 class="section-title">Why Choose Us</h2>
@@ -1002,7 +1015,7 @@
 
   .text-box p,
   .text-box span {
-    font-size: 12px;
+    font-size: inherit;
     margin: 0;
   }
 
@@ -1064,6 +1077,7 @@
     background: white;
     padding: 0;
     margin: 5px;
+    
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -1080,6 +1094,10 @@
   .image-wrapper img {
     max-width: 100%;
     height: auto;
+  }
+
+  .custom-enroll-section p{
+    font-size: inherit;
   }
 
   @media (max-width: 768px) {
@@ -1121,7 +1139,7 @@
   color: black;
   }
 
-  
+
   /* Enroll Section */
   .custom-enroll-section {
   flex: 1;
@@ -1144,7 +1162,7 @@
   }
 
   .custom-enroll-section p {
-  font-size: 16px;
+  font-size: 0.87rem;
   line-height: 1.5;
   margin-bottom: 10px;
   }
@@ -1217,11 +1235,11 @@
   }
 
   .custom-enroll-section p {
-      font-size: 14px;
+      font-size: 0.87rem;
   }
 
   .custom-enroll-btn {
-      font-size: 14px;
+      font-size: 0.87rem;
       padding: 8px 16px;
       margin-top: 20px;
   }
