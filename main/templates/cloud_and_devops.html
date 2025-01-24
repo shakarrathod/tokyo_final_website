@@ -1,6 +1,5 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<!--banner html  section start here ============= -->
 <section class="responsive-banner">
   <img
     src="{% static 'images/ds_banner.jpg' %}"
@@ -12,7 +11,6 @@
   </div>
 </section>
 
-<!--banner  section css start here ============= -->
 <style>
   /* Section Styling */
   .responsive-banner {
@@ -68,205 +66,554 @@
     }
   }
 </style>
-<!--banner  section start here ============= -->
 
-<!--about section start here ============= -->
-<section class="cloudevops-courses-section">
-    <div class="cloudevops-container">
-      <div class="cloudevops-course-category">
-        <h2 class="cloudevops-course-title">
-          Best Cloud and DevOps Courses in India
-        </h2>
-        <p>
-          Tokyo AnalyticX offers a comprehensive range of courses tailored to
-          equip professionals with the expertise to thrive in today’s
-          cloud-centric and DevOps-driven technological landscape. We focus on
-          cloud computing, DevOps practices, and automation for their critical
-          roles in streamlining business operations and fostering innovation.
-        </p>
-        <p>
-          Embark on a transformative journey that empowers you with the skills to
-          build, deploy, and manage scalable cloud solutions, automate processes,
-          and optimize workflows to become a highly valued professional in this
-          rapidly growing field.
-        </p>
-      </div>
-  
-      <div class="cloudevops-course-category">
-        <h2 class="cloudevops-course-title">Cloud Computing Course in India</h2>
-        <p>
-          In an era of digital transformation, Tokyo AnalyticX offers cutting-edge
-          cloud computing courses to help professionals master the skills required
-          to design, deploy, and manage cloud solutions. These courses cover
-          popular cloud platforms like AWS, Azure, and Google Cloud, focusing on
-          areas such as cloud architecture, migration strategies, and cost
-          optimization, preparing individuals to lead in cloud-centric initiatives.
-        </p>
-      </div>
-  
-      <div class="cloudevops-course-category">
-        <h2 class="cloudevops-course-title">DevOps Course in India</h2>
-        <p>
-          With the growing demand for professionals who can streamline software
-          development and IT operations, Tokyo AnalyticX offers specialized DevOps
-          courses. These programs cover tools and practices such as CI/CD
-          pipelines, containerization, Kubernetes, and monitoring solutions,
-          enabling students to drive faster and more reliable software delivery.
-        </p>
-        <br />
-        <p>
-          Begin a transformative journey that equips you with the knowledge to
-          automate workflows, improve system reliability, and become a
-          sought-after expert in the DevOps ecosystem.
-        </p>
-      </div>
+<!-- Cloud and DevOps Courses Section Start -->
+<section class="cloud-devops-courses-section">
+  <div class="cloud-devops-container">
+    <!-- Introductory Category -->
+    <div class="cloud-devops-course-category">
+      <h2 class="cloud-devops-course-title"></h2>
+      <p>
+        <strong>Tokyo AnalyticX</strong> equips professionals with the expertise
+        to excel in today’s cloud-centric and DevOps-driven world. Our focus on
+        cloud computing, DevOps practices, and automation helps streamline
+        business operations and foster innovation.
+      </p>
+      <br />
+      <p>
+        Through cutting-edge courses on AWS, Azure, and Google Cloud,
+        <strong>Tokyo AnalyticX </strong> empowers professionals to master cloud
+        architecture, migration, and cost optimization. Embark on a journey to
+        develop skills in building, deploying, and managing scalable cloud
+        solutions, automating processes, and optimizing workflows to become a
+        highly valued professional in this rapidly growing field.
+      </p>
     </div>
+  </div>
 </section>
-  
-  <!-- CSS -->
-  <style>
-    body {
-      font-family: "Roboto", sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .cloudevops-courses-section {
-      background-color: #f7f9fc;
-      padding: 50px 20px;
-    }
-  
-    .cloudevops-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-  
-    .cloudevops-section-title {
-      font-size: 1.8rem;
-      color: #162020;
-      font-weight: bold;
-      text-align: left;
-      margin-bottom: 20px;
-      position: relative;
-    }
-  
-    .cloudevops-section-title::after {
-      content: "";
-      display: block;
-      width: 100px;
-      height: 4px;
-      background-color: #ff5252;
-    }
-  
-    .cloudevops-section-description {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 40px;
-    }
-  
-    .cloudevops-course-category {
+<!-- Cloud and DevOps Courses Section End -->
+
+<!-- CSS -->
+<style>
+  .cloud-devops-courses-section {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .cloud-devops-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .cloud-devops-course-category {
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+
+  .cloud-devops-course-category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .cloud-devops-course-category {
       margin-bottom: 30px;
     }
-  
-    .cloudevops-course-title {
-      font-size: 1.8rem;
-      color: #162020;
-      margin-bottom: 15px;
-      position: relative;
-    }
-  
-    .cloudevops-course-title::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background-color: #ff5252;
-      margin: 8px 0;
-    }
-  
-    .cloudevops-course-category p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.6;
-      margin: 0;
-    }
-  
-    @media (max-width: 768px) {
-      .cloudevops-section-title {
-        font-size: 2rem;
-      }
-  
-      .cloudevops-course-title {
-        font-size: 1.5rem;
-      }
-  
-      .cloudevops-section-description {
-        font-size: 1rem;
-      }
-    }
-  </style>
-  <!--about section ends here ============= -->
-  
 
+    .cloud-devops-course-category p {
+      font-size: 0.87rem;
+    }
 
+    .cloud-devops-container {
+      padding: 0 15px;
+    }
+  }
 
-<!-- course section starts here -================= -->
-<!-- HTML -->
-<section class="cloudevops-offerings-section">
-  <div class="cloudevops-offerings-container">
-    
-    <div class="cloudevops-offerings-text">
-      <h2 class="cloudevops-offerings-title">Our Diverse Cloud and DevOps Course Offerings</h2>
-      <ul class="cloudevops-offerings-list">
+  @media (max-width: 480px) {
+    .cloud-devops-course-category p {
+      font-size: 0.8rem;
+      text-align: start;
+    }
+  }
+</style>
+
+<section class="offerings-section">
+  <div class="offerings-container">
+    <div class="offerings-image">
+      <img src="{% static 'images/cloud_img.jpg' %}" alt="Student learning" />
+    </div>
+    <div class="offerings-text">
+      <h2 class="offerings-title">Our Diverse Course Offerings</h2>
+      <ul class="offerings-list">
         <li>
-          <span class="cloudevops-check-icon cloudevops-blue">&#10003;</span> Introduction to Cloud Computing and DevOps Practices
+          <span class="check-icon blue">&#10003;</span>Introduction to Cloud
+          Computing and DevOps
         </li>
         <li>
-          <span class="cloudevops-check-icon cloudevops-blue">&#10003;</span> Infrastructure as Code (IaC) with Terraform and Ansible
+          <span class="check-icon blue">&#10003;</span> Infrastructure as Code
+          (IaC) with Terraform & Ansible
         </li>
         <li>
-          <span class="cloudevops-check-icon cloudevops-blue">&#10003;</span> Continuous Integration and Continuous Deployment (CI/CD)
+          <span class="check-icon blue">&#10003;</span> Continuous Integration
+          and Deployment (CI/CD)
         </li>
         <li>
-          <span class="cloudevops-check-icon cloudevops-blue">&#10003;</span> Containerization with Docker and Kubernetes
+          <span class="check-icon blue">&#10003;</span>Containerization with
+          Docker & Kubernetes
         </li>
         <li>
-          <span class="cloudevops-check-icon cloudevops-blue">&#10003;</span> Monitoring and Logging with Prometheus and Grafana
+          <span class="check-icon blue">&#10003;</span>Monitoring & Logging with
+          Prometheus & Grafana
         </li>
         <li>
-          <span class="cloudevops-check-icon cloudevops-blue">&#10003;</span> Cloud Platforms: AWS, Azure, and Google Cloud
+          <span class="check-icon blue">&#10003;</span> Cloud Platforms: AWS,
+          Azure, Google Cloud
+        </li>
+
+        <li>
+          <span class="check-icon blue">&#10003;</span> Security & Compliance in
+          Cloud Environments
         </li>
         <li>
-          <span class="cloudevops-check-icon cloudevops-blue">&#10003;</span> Security and Compliance in Cloud Environments
-        </li>
-        <li>
-          <span class="cloudevops-check-icon cloudevops-blue">&#10003;</span> Agile Methodologies and DevOps Culture
+          <span class="check-icon blue">&#10003;</span> Agile Methodologies &
+          DevOps Culture
         </li>
       </ul>
     </div>
-    <div class="cloudevops-offerings-image">
-        <img
-          src="{% static 'images/cloud_img.jpg' %}"
-          alt="Cloud and DevOps Learning"
-        />
+  </div>
+</section>
+
+<!-- HTML -->
+<section class="cloudevops--why-choose-section">
+  <div class="cloudevops-container">
+    <h2 class="cloudevops-section-title">Why Choose Tokyo AnalyticX ?</h2>
+    <div class="cloudevops-cards-wrapper">
+      <div class="cloudevops-card">
+        <h3 class="cloudevops-card-title">Comprehensive Curriculum</h3>
+        <p>
+          Our Cloud and DevOps curriculum covers essential topics like cloud
+          architecture, Kubernetes, AWS, Azure, automation, and CI/CD.
+        </p>
+      </div>
+      <div class="cloudevops-card">
+        <h3 class="cloudevops-card-title">Hands-On Learning</h3>
+        <p>
+          Gain practical experience through labs, simulations, and real-world
+          scenarios that simulate the challenges faced by professionals in the
+          Cloud and DevOps field.
+        </p>
+      </div>
+      <div class="cloudevops-card">
+        <h3 class="cloudevops-card-title">Industry-Experienced Instructors</h3>
+        <p>
+          Learn from experts with years of experience in cloud computing, DevOps
+          tools, and automation who bring real-world insights into the
+          classroom.
+        </p>
+      </div>
+      <div class="cloudevops-card">
+        <h3 class="cloudevops-card-title">Networking Access</h3>
+        <p>
+          Connect with other students, instructors, and professionals in the
+          Cloud and DevOps community, expanding your network and learning from
+          others' experiences.
+        </p>
+      </div>
+      <div class="cloudevops-card">
+        <h3 class="cloudevops-card-title">Career Growth Potential</h3>
+        <p>
+          Whether you're starting or advancing your career, our courses provide
+          a strong foundation for roles like Cloud Engineer, DevOps Engineer,
+          Site Reliability Engineer, and more.
+        </p>
+      </div>
+      <div class="cloudevops-card">
+        <h3 class="cloudevops-card-title">Adaptable Learning</h3>
+        <p>
+          Choose from online, in-person, or hybrid learning modes to fit your
+          schedule and learning preferences.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CSS -->
 <style>
-  body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
+  .cloudevops--why-choose-section {
+    padding: 60px 20px;
   }
 
-  .cloudevops-offerings-section {
-    background-color: #f9f9fb;
-    padding-bottom: 50px;
+  .cloudevops-container {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .cloudevops-offerings-container {
+  .cloudevops-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .cloudevops-section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: rgb(249, 56, 56);
+    margin: 10px auto 0;
+  }
+
+  .cloudevops-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .cloudevops-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .cloudevops-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  .cloudevops-card-title {
+    font-size: 1.2rem;
+    color: #ff5252;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .cloudevops-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Responsive Design for Single Card Scrolling */
+  @media (max-width: 768px) {
+    .cloudevops--why-choose-section {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .cloudevops-cards-wrapper {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 0;
+    }
+
+    .cloudevops-card {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .cloudevops-section-title {
+      font-size: 1.2rem;
+    }
+
+    .cloudevops-card p {
+      font-size: 0.87rem;
+    }
+
+    .cloudevops-cards-wrapper::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for better UX */
+    }
+  }
+</style>
+
+<div class="cloud-devops-programs-section">
+  <h2 class="cloud-devops-section-title">Our Training Program</h2>
+  <div class="cloud-devops-program-card">
+    <div class="cloud-devops-program-header">
+      <h3 class="cloud-devops-program-title">Cloud Computing and DevOps</h3>
+    </div>
+
+    <table class="cloud-devops-program-table">
+      <tr>
+        <td><strong>Mode:</strong></td>
+        <td>Hybrid</td>
+      </tr>
+      <tr>
+        <td><strong>Duration:</strong></td>
+        <td>6 Months</td>
+      </tr>
+      <tr>
+        <td><strong>Hours of Teaching:</strong></td>
+        <td>150 Hours </td>
+      </tr>
+      <tr>
+        <td><strong>Minimum Eligibility:</strong></td>
+        <td>12th Grade or Equivalent</td>
+      </tr>
+      <tr>
+        <td><strong>Centers in India:</strong></td>
+        <td>Available Nationwide</td>
+      </tr>
+      <tr>
+        <td><strong>Career Opportunities:</strong></td>
+        <td>
+          Cloud Engineer, DevOps Engineer, Site Reliability Engineer, Cloud
+          Architect
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Placement:</strong></td>
+        <td>100% Assistance</td>
+      </tr>
+    </table>
+
+    <div class="cloud-devops-button-container">
+      <button class="cloud-devops-brochure-btn" id="brochure-btn">
+        📄 Brochure
+      </button>
+      <button class="cloud-devops-enroll-btn" id="enroll-btn">
+        🖊 Enroll Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Form Container -->
+  <div id="form-container" style="display: none">
+    <form id="dynamic-form" class="cloud-devops-form">
+      <h3 id="form-title">Form</h3>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Enter your name"
+      />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+      />
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  .cloud-devops-programs-section {
+    padding: 40px 20px;
+  }
+
+  .cloud-devops-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .cloud-devops-program-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    padding: 25px;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  .cloud-devops-program-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .cloud-devops-program-title {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .cloud-devops-program-table {
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .cloud-devops-program-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .cloud-devops-button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .cloud-devops-enroll-btn,
+  .cloud-devops-brochure-btn {
+    background-color: rgb(36, 184, 49);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cloud-devops-enroll-btn:hover,
+  .cloud-devops-brochure-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .cloud-devops-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cloud-devops-form label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .cloud-devops-form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .cloud-devops-form button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .cloud-devops-program-card {
+      width: 90%;
+      padding: 20px;
+    }
+
+    .cloud-devops-program-title {
+      font-size: 1.4rem;
+    }
+
+    .cloud-devops-program-table {
+      font-size: 0.9rem;
+    }
+
+    .cloud-devops-enroll-btn,
+    .cloud-devops-brochure-btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cloud-devops-section-title {
+      font-size: 1.2rem;
+    }
+
+    .cloud-devops-program-title {
+      font-size: 1.2rem;
+    }
+
+    .cloud-devops-program-table td {
+      font-size: 0.8rem;
+      padding: 5px;
+    }
+
+    .cloud-devops-button-container {
+      gap: 10px;
+    }
+
+    .cloud-devops-enroll-btn,
+    .cloud-devops-brochure-btn {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+  }
+</style>
+
+<section class="offerings-section">
+  <div class="offerings-container">
+    <div class="offerings-text">
+      <h2 class="offerings-title">Career Paths with Us</h2>
+      <ul class="offerings-list">
+        <li>
+          <span class="check-icon blue">&#10003;</span> Cloud Solutions
+          Architect
+        </li>
+        <li><span class="check-icon blue">&#10003;</span> DevOps Engineer</li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Cloud Security Engineer
+        </li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Cloud Infrastructure
+          Engineer
+        </li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Site Reliability
+          Engineer (SRE)
+        </li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Cloud and DevOps
+          Consultants
+        </li>
+      </ul>
+    </div>
+    <div class="offerings-image">
+      <img
+        src="{% static 'images/cloud_career.jpg' %}"
+        alt="Student learning"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .offerings-section {
+    padding: 60px 20px;
+  }
+
+  .offerings-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -276,19 +623,20 @@
     gap: 20px;
   }
 
-  .cloudevops-offerings-text {
+  .offerings-text {
     flex: 1;
     max-width: 550px;
   }
 
-  .cloudevops-offerings-title {
-    font-size: 1.8rem;
+  .offerings-title {
+    font-size: 2rem;
     color: #162020;
     margin-bottom: 20px;
+    font-weight: bold;
     position: relative;
   }
 
-  .cloudevops-offerings-title::after {
+  .offerings-title::after {
     content: "";
     display: block;
     width: 80px;
@@ -297,13 +645,13 @@
     margin-top: 10px;
   }
 
-  .cloudevops-offerings-list {
+  .offerings-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .cloudevops-offerings-list li {
+  .offerings-list li {
     font-size: 1rem;
     color: #555;
     margin: 10px 0;
@@ -311,665 +659,294 @@
     align-items: center;
   }
 
-  .cloudevops-check-icon {
+  .check-icon {
     font-size: 1.2rem;
     margin-right: 10px;
   }
 
-  .cloudevops-blue {
+  .red {
+    color: #ff5252;
+  }
+
+  .blue {
     color: #1a73e8;
   }
 
-  .cloudevops-offerings-image {
+  .offerings-image {
     flex: 1;
     max-width: 550px;
     text-align: center;
   }
 
-  .cloudevops-offerings-image img {
+  .offerings-image img {
     width: 100%;
     max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   @media (max-width: 768px) {
-    .cloudevops-offerings-container {
+    .offerings-container {
       flex-direction: column;
       align-items: center;
     }
 
-    .cloudevops-offerings-text,
-    .cloudevops-offerings-image {
+    .offerings-text,
+    .offerings-image {
       max-width: 100%;
     }
 
-    .cloudevops-offerings-title {
-      font-size: 1.8rem;
+    .offerings-title {
+      font-size: 1.2rem;
     }
 
-    .cloudevops-offerings-list li {
-      font-size: 0.95rem;
+    .offerings-list li {
+      font-size: 0.87rem;
     }
   }
 </style>
-<!-- course section starts here -================= -->
 
-
-<!-- why choose us section starts here -================= -->
-<div class="cloudevops-career-section">
-    <h2 class="cloudevops-career-title">
-      Why Choose Our Cloud and DevOps Courses at Tokyo Analytics?
-    </h2>
-    <div class="cloudevops-career-carousel">
-      <div class="cloudevops-career-cards-wrapper">
-        <div class="cloudevops-career-cards" id="cloudevopsCareerCards">
-          <div class="cloudevops-career-card">
-            <h3>Comprehensive Curriculum</h3>
-            <p>
-              Our Cloud and DevOps curriculum covers key topics like cloud architecture, Kubernetes, AWS, Azure, automation, continuous integration, and deployment (CI/CD).
-            </p>
-          </div>
-          <div class="cloudevops-career-card">
-            <h3>Hands-On Learning</h3>
-            <p>
-              Gain practical experience through labs, simulations, and real-world scenarios that simulate the challenges faced by professionals in the Cloud and DevOps field.
-            </p>
-          </div>
-          <div class="cloudevops-career-card">
-            <h3>Industry-Experienced Instructors</h3>
-            <p>
-              Learn from experts with years of experience in cloud computing, DevOps tools, and automation who bring real-world insights into the classroom.
-            </p>
-          </div>
-          <div class="cloudevops-career-card">
-            <h3>Networking Opportunities</h3>
-            <p>
-              Connect with other students, instructors, and professionals in the Cloud and DevOps community, expanding your network and learning from others' experiences.
-            </p>
-          </div>
-          <div class="cloudevops-career-card">
-            <h3>Career Growth Potential</h3>
-            <p>
-              Whether you're starting out or looking to advance in your career, our courses offer a solid foundation for roles like Cloud Engineer, DevOps Engineer, Site Reliability Engineer, and more.
-            </p>
-          </div>
-        </div>
-      </div>
-      <button class="cloudevops-carousel-arrow cloudevops-right-arrow" id="cloudevopsNextButton">
-        &#10095;
-      </button>
-      <button class="cloudevops-carousel-arrow cloudevops-left-arrow" id="cloudevopsPrevButton">
-        &#10094;
-      </button>
-    </div>
-    <div class="cloudevops-carousel-dots" id="cloudevopsCarouselDots"></div>
-  </div>
-  
-  <!-- CSS -->
+<!-- CSS -->
 <style>
-            .cloudevops-career-section {
-            text-align: center;
-            padding: 20px;
-            background-color: #f9f9fb; /* Matches skills section background */
-            }
-        
-            .cloudevops-career-title {
-            font-size: 1.8rem; /* Matches skills section title font size */
-            color: #162020;
-            margin-bottom: 25px;
-            font-weight: bold;
-            position: relative;
-            }
-        
-            .cloudevops-career-title::after {
-            content: "";
-            display: block;
-            width: 90px;
-            height: 4px;
-            background-color: #ff3131; /* Underline color */
-            margin: 15px auto 0;
-            }
-        
-            /* Existing carousel and card styles remain unchanged */
-        
-            .cloudevops-career-carousel {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            }
-        
-            .cloudevops-career-cards-wrapper {
-            overflow: hidden;
-            width: 80%;
-            }
-        
-            .cloudevops-career-cards {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            }
-        
-            .cloudevops-career-card {
-            flex: 0 0 32.5%;
-            box-sizing: border-box;
-            padding: 25px;
-            margin: 5px;
-            background-color: white;
-            color: black;
-            border-radius: 8px;
-            text-align: center;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            }
-        
-            .cloudevops-career-card {
-            font-size: 1rem;
-            color: #555;
-            margin-top: 10px;
-            }
-        
-            .cloudevops-career-card p {
-            font-size: 1rem;
-            margin-top: 15px;
-            }
-        
-            .cloudevops-career-card h3 {
-            font-size: 1.5rem;
-            }
-        
-            .cloudevops-career-card:hover {
-            background-color: #dc3545;
-            color: white;
-            transform: translateY(-10px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            }
-        
-            .cloudevops-carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: transparent;
-            border: none;
-            font-size: 30px;
-            cursor: pointer;
-            color: rgb(143, 145, 145);
-            z-index: 10;
-            }
-        
-            .cloudevops-left-arrow {
-            left: 50px;
-            }
-        
-            .cloudevops-right-arrow {
-            right: 50px;
-            }
-        
-            .cloudevops-carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 15px;
-            }
-        
-            .cloudevops-carousel-dots button {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin: 0 5px;
-            border: none;
-            background-color: #ddd;
-            cursor: pointer;
-            }
-        
-            .cloudevops-carousel-dots button.active {
-            background-color: #dc3545;
-            }
-        
-            .cloudevops-carousel-arrow {
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            }
-        
-            .cloudevops-career-carousel:hover .cloudevops-carousel-arrow,
-            .cloudevops-carousel-arrow:hover {
-            opacity: 1;
-            pointer-events: auto;
-            }
-        
-            @media (max-width: 768px) {
-            .cloudevops-career-cards-wrapper {
-                width: 100%;
-            }
-        
-            .cloudevops-career-card {
-                flex: 0 0 100%; /* Cards will take full width on mobile */
-            }
-            }
-</style>
-  
-  <!-- JavaScript -->
-  <script>
-    const cloudevopsCareerCards = document.getElementById("cloudevopsCareerCards");
-    const cloudevopsDotsContainer = document.getElementById("cloudevopsCarouselDots");
-    const cloudevopsPrevButton = document.getElementById("cloudevopsPrevButton");
-    const cloudevopsNextButton = document.getElementById("cloudevopsNextButton");
-  
-    const cloudevopsCards = document.querySelectorAll(".cloudevops-career-card");
-    let cloudevopsCurrentIndex = 0;
-    let isAutoScrolling = true;
-  
-    function cloudevopsUpdateCarousel() {
-      const cardWidth = cloudevopsCareerCards.children[0].offsetWidth + 10; // Including margin
-      cloudevopsCareerCards.style.transform = `translateX(-${cloudevopsCurrentIndex * cardWidth}px)`;
-      cloudevopsUpdateDots();
-    }
-  
-    function cloudevopsUpdateDots() {
-      cloudevopsDotsContainer.innerHTML = "";
-      const totalDots = Math.ceil(cloudevopsCards.length / (isMobile() ? 1 : 3)); // 1 card per slide on mobile, 3 per slide on desktop
-      for (let i = 0; i < totalDots; i++) {
-        const dot = document.createElement("button");
-        dot.classList.add("dot");
-        if (i === cloudevopsCurrentIndex) dot.classList.add("active");
-        dot.addEventListener("click", () => {
-          cloudevopsCurrentIndex = i;
-          cloudevopsUpdateCarousel();
-        });
-        cloudevopsDotsContainer.appendChild(dot);
-      }
-    }
-  
-    cloudevopsPrevButton.addEventListener("click", () => {
-      if (cloudevopsCurrentIndex > 0) {
-        cloudevopsCurrentIndex--;
-        cloudevopsUpdateCarousel();
-      }
-    });
-  
-    cloudevopsNextButton.addEventListener("click", () => {
-      const totalDots = Math.ceil(cloudevopsCards.length / (isMobile() ? 1 : 3));
-      if (cloudevopsCurrentIndex < totalDots - 1) {
-        cloudevopsCurrentIndex++;
-        cloudevopsUpdateCarousel();
-      }
-    });
-  
-    window.addEventListener("resize", () => {
-      cloudevopsCurrentIndex = 0;
-      cloudevopsUpdateCarousel();
-    });
-  
-    // Auto-scroll functionality
-    setInterval(() => {
-      if (isAutoScrolling) {
-        const totalDots = Math.ceil(cloudevopsCards.length / (isMobile() ? 1 : 3));
-        cloudevopsCurrentIndex = (cloudevopsCurrentIndex + 1) % totalDots;
-        cloudevopsUpdateCarousel();
-      }
-    }, 5000);
-  
-    function isMobile() {
-      return window.innerWidth <= 768;
-    }
-  
-    cloudevopsUpdateCarousel();
-  </script>
-  <!-- why choose us section ends here -================= -->
+  .why-choose-section {
+    padding: 60px 20px;
+  }
 
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: rgb(249, 56, 56);
+    margin: 10px auto 0;
+  }
 
-<!-- Our Training Programs section ends here -================= -->
-<div class="training-section">
-  <h2 class="training-title">Our Training Programs</h2>
-  <div class="training-container">
-    <div class="training-card">
-      <div class="training-badge">4 MONTHS</div>
-      <h3 class="training-heading">Hybrid Module</h3>
-      <p class="training-details">
-        Get Certified for 55k + GST<br />
-        Duration: 4 Months (100 hours of training + internship)
-      </p>
-    </div>
-  </div>
-</div>
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
 
-<style>
-  /* Training Section */
-  .training-section {
-    background-color: #f9f9fb; /* Matches skills section background */
-    padding: 40px 20px;
+  .card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
   }
 
-  /* Training Title (matches skills section style) */
-  .training-title {
-    font-size: 1.8rem;
-    color: #162020;
-    margin-bottom: 25px;
-    font-weight: bold;
-    position: relative;
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white;
   }
 
-  .training-title::after {
+  .card-title {
+    font-size: 1.2rem;
+    color: #ff5252;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* General Body Styling */
+
+  /* Section Styling */
+  .enrollment-section {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin: o auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+    color: rgb(9, 87, 164); /* Blue title color */
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .section-heading::after {
     content: "";
     display: block;
-    width: 90px;
-    height: 4px;
+    width: 80px;
+    height: 3px;
     background-color: #ff3131;
-    margin: 15px auto 0;
+    margin: 10px auto 0;
   }
 
-  /* Training Container */
-  .training-container {
+  /* Enrollment Cards Container */
+  .enrollment-container {
     display: flex;
     flex-wrap: wrap;
+    align-items: start;
     gap: 20px;
     justify-content: center;
   }
 
-  /* Training Card */
-  .training-card {
-    background: #fff;
+  /* Enrollment Card Styling */
+  .enrollment-card {
+    background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 325px;
     padding: 20px;
-    width: 600px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
 
-  .training-card:hover {
+  .enrollment-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #ff3131; /* Changes background color */
-    color: white; /* Changes text color */
+    background-color: #ff3131;
   }
 
-  /* Ensure child elements like links or headings also change color */
-  .training-card:hover * {
-    color: white; /* Applies to all text elements inside the card */
+  .card-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(39, 2, 221);
   }
 
-  /* Training Badge */
-  .training-badge {
-    background-color: #ff3131; /* Red-orange badge color */
-    color: #fff;
-    padding: 5px 15px;
+  .card-content {
     font-size: 14px;
-    border-radius: 20px;
-    display: inline-block;
-    font-weight: bold;
+    color: rgb(86, 86, 87);
+    line-height: 1.5;
   }
 
-  /* Training Heading */
-  .training-heading {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 22px;
-    color: #2e8b57; /* Green heading color */
-  }
-
-  /* Training Details */
-  .training-details {
-    margin-top: 10px;
-
-    line-height: 1.6;
-    font-size: 1rem;
-    color: #555;
+  .card-content:hover {
+    color: white;
   }
 
   /* Responsive Design */
   @media (max-width: 768px) {
-    .training-card {
+    .enrollment-card {
       width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-heading {
+      font-size: 20px;
+    }
+
+    .card-number {
+      font-size: 28px;
+    }
+
+    .card-content {
+      font-size: 13px;
     }
   }
 </style>
-<!-- Our Training Programs section ends here -================= -->
+
+<!-- CSS -->
+<style>
 
 
-<!-- enroll section starts here -================= -->
-<div class="cloudevops-section">
-    <h2 class="cloudevops-title">
-      Individuals who can enroll for Cloud and DevOps Course at Tokyo Analytics
-    </h2>
-    <div class="cloudevops-cards-wrapper">
-      <div class="cloudevops-card">
-        <h3>01</h3>
-        <p>IT professionals looking to shift to Cloud and DevOps careers</p>
-      </div>
-      <div class="cloudevops-card">
-        <h3>02</h3>
-        <p>Developers aiming to enhance their skills with DevOps practices</p>
-      </div>
-      <div class="cloudevops-card">
-        <h3>03</h3>
-        <p>System administrators and network engineers aspiring to specialize in cloud technologies</p>
-      </div>
-      <div class="cloudevops-card">
-        <h3>04</h3>
-        <p>Professionals eager to learn the latest cloud computing platforms and tools</p>
-      </div>
-    </div>
-  </div>
-  
-  <!-- CSS -->
-  <style>
-    .cloudevops-section {
-      text-align: center;
-      padding: 20px;
-      padding-bottom: 70px;
-      background-color: #f9f9fb; /* Light background color */
+  .courses-section {
+    padding: 50px 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+    color: #162020;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #ff5252;
+    margin: 10px auto 0;
+  }
+
+  .section-description {
+    font-size: 1.2rem;
+    color: #555;
+    {% comment %} text-align: center; {% endcomment %}
+    margin-bottom: 40px;
+  }
+
+  .course-category {
+    margin-bottom: 30px;
+  }
+
+  .course-title {
+    font-size: 1.8rem;
+    color: #162020;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .course-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff5252;
+    margin: 8px 0;
+  }
+
+  .course-category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
     }
-  
-    .cloudevops-title {
-      font-size: 1.8rem; /* Matches skills section title font size */
-      color: #162020;
-      margin-bottom: 25px;
-      font-weight: bold;
-      position: relative;
+
+    .course-title {
+      font-size: 1.5rem;
     }
-  
-    .cloudevops-title::after {
-      content: "";
-      display: block;
-      width: 90px;
-      height: 4px;
-      background-color: #ff3131; /* Underline color */
-      margin: 15px auto 0;
-    }
-  
-    .cloudevops-cards-wrapper {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 0 10px;
-    }
-  
-    .cloudevops-card {
-      flex: 0 0 24%; /* Ensures 4 cards in one row */
-      box-sizing: border-box;
-      padding: 20px;
-      background-color: white;
-      color: black;
-      border-radius: 8px;
-      text-align: center;
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+    .section-description {
       font-size: 1rem;
-      color: #555;
     }
-  
-    .cloudevops-card p {
-      margin-top: 15px;
-    }
-  
-    .cloudevops-card:hover {
-      background-color: #dc3545;
-      color: white;
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-  
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .cloudevops-card {
-        flex: 0 0 48%; /* Adjusts to 2 cards per row on smaller screens */
-      }
-    }
-  
-    @media (max-width: 480px) {
-      .cloudevops-card {
-        flex: 0 0 100%; /* Stacks cards vertically on very small screens */
-      }
-    }
-  </style>
-  <!-- enroll section ends here ============= -->
-  
-
-<!-- cloud and devops career opportunity section starts here ============= -->
-<section class="cloudevops-offerings-section">
-    <div class="cloudevops-offerings-container">
-      <div class="cloudevops-offerings-text">
-        <h2 class="cloudevops-offerings-title">
-          Career Opportunities in Cloud and DevOps at Tokyo Analytics
-        </h2>
-        <ul class="cloudevops-offerings-list">
-          <li>
-            <span class="cloudevops-check-icon blue">&#10003;</span> Cloud Solutions Architect
-          </li>
-          <li>
-            <span class="cloudevops-check-icon blue">&#10003;</span> DevOps Engineer
-          </li>
-          <li>
-            <span class="cloudevops-check-icon blue">&#10003;</span> Cloud Security Engineer
-          </li>
-          <li>
-            <span class="cloudevops-check-icon blue">&#10003;</span> Cloud Infrastructure Engineer
-          </li>
-          <li>
-            <span class="cloudevops-check-icon blue">&#10003;</span> Site Reliability Engineer (SRE)
-          </li>
-          <li>
-            <span class="cloudevops-check-icon blue">&#10003;</span> Cloud and DevOps Consultants
-          </li>
-        </ul>
-      </div>
-      <div class="cloudevops-offerings-image">
-        <img
-          style="height: 60vh"
-          src="{% static 'images/cloud_career.jpg' %}"
-          alt="Cloud and DevOps learning"
-        />
-      </div>
-    </div>
-  </section>
-  
-  <!-- CSS -->
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .cloudevops-offerings-section {
-      background-color: #f9f9fb;
-      
-    }
-  
-    .cloudevops-offerings-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      gap: 20px;
-    }
-  
-    .cloudevops-offerings-text {
-      flex: 1;
-      max-width: 550px;
-    }
-  
-    .cloudevops-offerings-title {
-      font-size: 1.8rem;
-      color: #162020;
-      margin-bottom: 20px;
-      font-weight: bold;
-      position: relative;
-    }
-  
-    .cloudevops-offerings-title::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background-color: #ff3131;
-      margin-top: 10px;
-    }
-  
-    .cloudevops-offerings-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-  
-    .cloudevops-offerings-list li {
-      font-size: 1rem;
-      color: #555;
-      margin: 10px 0;
-      display: flex;
-      align-items: center;
-    }
-  
-    .cloudevops-check-icon {
-      font-size: 1.2rem;
-      margin-right: 10px;
-    }
-
-    .blue{
-        color: #1a73e8;
-    }
-  
-    .cloudevops-offerings-image {
-      flex: 1;
-      max-width: 550px;
-      text-align: center;
-    }
-  
-    .cloudevops-offerings-image img {
-      width: 100%;
-      max-width: 450px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-  
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .cloudevops-offerings-container {
-        flex-direction: column;
-        align-items: center;
-      }
-  
-      .cloudevops-offerings-text,
-      .cloudevops-offerings-image {
-        max-width: 100%;
-      }
-  
-      .cloudevops-offerings-title {
-        font-size: 1.8rem;
-      }
-  
-      .cloudevops-offerings-list li {
-        font-size: 0.95rem;
-      }
-    }
-  </style>
-  
-  <!-- cloud and devops career opportunity section ends here ============= -->
-  
-
-
+  }
+</style>
 
 {% endblock %}

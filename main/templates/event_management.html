@@ -12,7 +12,6 @@
 </section>
 
 <style>
-
   /* Section Styling */
   .responsive-banner {
     margin-top: 100px;
@@ -44,6 +43,7 @@
     color: white; /* Ensure contrast against the background image */
     margin: 0;
     z-index: 1; /* Keeps the text above the image */
+    font-family: inherit;
   }
   .banner-content h1::after {
     content: "";
@@ -68,298 +68,641 @@
   }
 </style>
 
+<section class="event-offerings-section">
+  <div class="event-offerings-container">
+    <!-- Text Section -->
 
-
-
-<section class="offerings-section">
-  <div class="offerings-container">
-    <div class="offerings-text">
-      <h2 class="offerings-title">Why Event Management?</h2>
+    <div class="event-offerings-text">
       <p>
-        <b>Event management</b> is essential because it transforms ideas into
-        unforgettable experiences, ensuring events are executed seamlessly and
-        leave a lasting impression. Whether for personal celebrations or
-        corporate milestones, professional event management ensures that every
-        detail, from planning to execution, is handled with precision and
-        creativity. It saves time and reduces stress for clients by leveraging
-        expertise, industry connections, and organizational skills. Moreover, it
-        adds value by creating unique, engaging experiences that resonate with
-        attendees and achieve the desired objectives, be it networking, brand
-        promotion, or celebration. Event management is the key to turning
-        visions into successful, impactful events.
+        <strong> Tokyo AnalyticX</strong> offers an event management course that
+        transforms ideas into exceptional experiences, emphasizing precision and
+        creativity. Whether for personal celebrations or corporate milestones,
+        this course ensures stress-free planning, flawless execution, and
+        unforgettable moments.
       </p>
     </div>
-    <div class="offerings-image">
-      <img src="{% static 'images/event_img.jpg' %}" alt="Student learning" />
+
+    <!-- Image Section -->
+    <div class="event-offerings-image">
+      <img src="{% static 'images/event_img.jpg' %}" alt="Event Management" />
     </div>
   </div>
 </section>
 
-<div class="career-section">
-  <h2 class="career-title">Why Tokyo Analytics</h2>
-  <div class="career-carousel">
-    <div class="career-cards-wrapper">
-      <div class="career-cards" id="careerCards">
-        <div class="career-card">
-          <h3>International Certification</h3>
-          <p>
-            Gain globally recognized credentials that enhance your professional
-            credibility and open doors to opportunities worldwide, setting you
-            apart in the competitive event management industry.
-          </p>
-        </div>
-        <div class="career-card">
-          <h3>Industry-Approved Curriculum</h3>
-          <p>
-            Learn from a curriculum designed and endorsed by industry leaders,
-            ensuring you acquire the skills and knowledge that align with
-            current market demands.
-          </p>
-        </div>
-        <div class="career-card">
-          <h3>Hands-On Learning with Live Events</h3>
-          <p>
-            Experience real-world event planning through live projects and
-            events, allowing you to apply theoretical knowledge practically and
-            build confidence.
-          </p>
-        </div>
-        <div class="career-card">
-          <h3>Hybrid Learning</h3>
-          <p>
-            Benefit from a flexible learning approach that combines online and
-            in-person sessions, giving you the convenience of learning anytime,
-            anywhere.
-          </p>
-        </div>
-        <div class="career-card">
-          <h3>Industry Expert Trainers</h3>
-          <p>
-            Learn from seasoned professionals with extensive industry
-            experience, gaining valuable insights, mentorship, and practical
-            tips to excel in event management.
-          </p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-arrow right-arrow" id="nextButton">&#10095;</button>
-    <button class="carousel-arrow left-arrow" id="prevButton">&#10094;</button>
-  </div>
-  <div class="carousel-dots" id="carouselDots"></div>
-</div>
-
-<!-- CSS -->
 <style>
-  .career-section {
-    text-align: center;
-    padding-bottom: 40px;
-    background-color: #f9f9fb; /* Matches skills section background */
+  .event-offerings-section {
+    padding: 40px 20px;
   }
 
-  .career-title {
-    font-size: 2.2rem; /* Matches skills section title font size */
+  .event-offerings-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+
+  .event-offerings-text {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+  }
+
+  .event-offerings-title {
+    font-size: 2.2rem;
     color: #162020;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+
     font-weight: bold;
-    position: relative;
   }
 
-  .career-title::after {
+  .event-offerings-title::after {
     content: "";
     display: block;
-    width: 90px;
+    width: 80px;
     height: 4px;
-    background-color: #ff3131; /* Underline color */
-    margin: 15px auto 0;
+    background-color: #ff3131;
+    margin-top: 8px;
   }
 
-  /* Existing carousel and card styles remain unchanged */
-
-  .career-carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .event-offerings-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 
-  .career-cards-wrapper {
-    overflow: hidden;
-    width: 80%;
+  .event-red {
+    color: #ff3131;
   }
 
-  .career-cards {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+  .event-blue {
+    color: #1a73e8;
   }
 
-  .career-card {
-    flex: 0 0 32.5%;
-    box-sizing: border-box;
-    padding: 25px;
-    margin: 5px;
-    background-color: white;
-    color: black;
-    border-radius: 8px;
+  .event-offerings-image {
+    flex: 1;
+    max-width: 580px;
     text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   }
 
-  .career-card h3 {
-    font-size: 1.5rem;
+  .event-offerings-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .career-card:hover {
-    background-color: #dc3545;
-    color: white;
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: rgb(143, 145, 145);
-    z-index: 10;
-  }
-
-  .left-arrow {
-    left: 50px;
-  }
-
-  .right-arrow {
-    right: 50px;
-  }
-
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-  .carousel-dots button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 5px;
-    border: none;
-    background-color: #ddd;
-    cursor: pointer;
-  }
-
-  .carousel-dots button.active {
-    background-color: #dc3545;
-  }
-
-  .carousel-arrow {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .career-carousel:hover .carousel-arrow,
-  .carousel-arrow:hover {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
+  /* Responsive Design */
   @media (max-width: 768px) {
-    .career-cards-wrapper {
-      width: 100%;
+    .event-offerings-container {
+      flex-direction: column;
+      text-align: center;
     }
 
-    .career-card {
-      flex: 0 0 100%; /* Cards will take full width on mobile */
+    .event-offerings-text,
+    .event-offerings-image {
+      max-width: 100%;
+    }
+
+    .event-offerings-title {
+      font-size: 1.8rem;
+    }
+
+    .event-offerings-text p {
+      font-size: 0.95rem;
+    }
+
+    .event-offerings-list li {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .event-offerings-title {
+      font-size: 1.6rem;
+    }
+
+    .event-offerings-text p {
+      font-size: 0.85rem;
+    }
+
+    .event-offerings-list li {
+      font-size: 0.85rem;
+    }
+
+    .event-check-icon {
+      font-size: 1rem;
+    }
+  }
+</style>
+<section class="event-management-section">
+  <div class="event-management-container">
+    <div class="event-management-image">
+      <img
+        src="{% static 'images/event_image11.png' %}"
+        alt="Event Management"
+      />
+    </div>
+    <div class="event-management-text">
+      <ul class="event-management-list">
+        <li>
+          <span class="check-icon blue">&#10003;</span> Event Planning &
+          Strategy
+        </li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Budgeting & Financial
+          Management
+        </li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Marketing & Promotion
+        </li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Venue Selection &
+          Logistics
+        </li>
+        <li><span class="check-icon blue">&#10003;</span> Vendor Management</li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Post-Event Evaluation &
+          Reporting
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Section Styling */
+  .event-management-section {
+    padding: 40px 20px;
+  }
+
+  .event-management-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+
+  /* Image Styling */
+  .event-management-image {
+    flex: 1.2;
+    padding-right: 20px;
+  }
+
+  .event-management-image img {
+    width: 100%;
+    border-radius: 10px;
+
+    height: auto;
+    max-width: 400px; /* Ensure image is not too large */
+  }
+
+  /* Text Styling */
+  .event-management-text {
+    flex: 0.8;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .event-management-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .event-management-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .event-management-list li {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+
+  .check-icon {
+    color: #007bff;
+    margin-right: 10px;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .event-management-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .event-management-image {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .event-management-text {
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .event-management-title {
+      font-size: 2rem;
+    }
+
+    .event-management-list li {
+      font-size: 1rem;
     }
   }
 </style>
 
-<!-- JavaScript -->
-<script>
-  const careerCards = document.getElementById("careerCards");
-  const dotsContainer = document.getElementById("carouselDots");
-  const prevButton = document.getElementById("prevButton");
-  const nextButton = document.getElementById("nextButton");
+<section class="event-course-section">
+  <div class="event-course-container">
+    <h2 class="event-course-title">Why Choose Tokyo AnalyticX ?</h2>
+    <div class="event-course-cards-wrapper">
+      <div class="event-course-card">
+        <h3 class="event-course-card-title">In-Depth Curriculum</h3>
+        <p>
+          Our course covers essential topics like event planning, budgeting,
+          marketing, logistics, and client management.
+        </p>
+      </div>
 
-  const cards = document.querySelectorAll(".career-card");
-  let currentIndex = 0;
-  let isAutoScrolling = true;
+      <div class="event-course-card">
+        <h3 class="event-course-card-title">Practical Training</h3>
+        <p>
+          Gain hands-on experience through live projects, case studies, and
+          industry simulations.
+        </p>
+      </div>
 
-  function updateCarousel() {
-    const cardWidth = careerCards.children[0].offsetWidth + 10; // Including margin
-    careerCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    updateDots();
+      <div class="event-course-card">
+        <h3 class="event-course-card-title">Expert Mentors</h3>
+        <p>
+          Learn from professionals with extensive experience in organizing
+          successful events worldwide.
+        </p>
+      </div>
+
+      <div class="event-course-card">
+        <h3 class="event-course-card-title">Networking Access</h3>
+        <p>
+          Build connections with industry leaders, event organizers, and fellow
+          students to enhance your career.
+        </p>
+      </div>
+
+      <div class="event-course-card">
+        <h3 class="event-course-card-title">Career Growth</h3>
+        <p>
+          Open doors to roles like Event Planner, Marketing Specialist, or Venue
+          Manager with our career-focused training.
+        </p>
+      </div>
+
+      <div class="event-course-card">
+        <h3 class="event-course-card-title">Flexible Learning</h3>
+        <p>
+          Choose from online, in-person, or hybrid learning options to fit your
+          schedule and preferences.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+  .event-course-section {
+    padding: 60px 20px;
   }
 
-  function updateDots() {
-    dotsContainer.innerHTML = "";
-    const totalDots = Math.ceil(cards.length / (isMobile() ? 1 : 3)); // 1 card per slide on mobile, 3 per slide on desktop
-    for (let i = 0; i < totalDots; i++) {
-      const dot = document.createElement("button");
-      dot.classList.add("dot");
-      if (i === currentIndex) dot.classList.add("active");
-      dot.addEventListener("click", () => {
-        currentIndex = i;
-        updateCarousel();
-      });
-      dotsContainer.appendChild(dot);
+  .event-course-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Center child elements */
+  }
+
+  .event-course-title {
+    text-align: center; /* Center title text */
+    font-size: 2.5rem;
+    margin: 0 auto 30px; /* Adds spacing below */
+    color: #333;
+    font-weight: bold;
+  }
+
+  .event-course-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: rgb(255, 49, 49);
+    margin: 10px auto 0; /* Centers the underline */
+  }
+
+  .event-course-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .event-course-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .event-course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  .event-course-card-title {
+    font-size: 1.2rem;
+    color: #ff5252;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .event-course-card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Responsive Design for Single Card Scrolling */
+  @media (max-width: 768px) {
+    .event-course-section {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .event-course-cards-wrapper {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 0;
+    }
+
+    .event-course-card {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .event-course-title {
+      font-size: 1.2rem;
+    }
+
+    .event-course-card p {
+      font-size: 0.87rem;
+    }
+
+    .event-course-cards-wrapper::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for better UX */
+    }
+  }
+</style>
+
+<div class="event-management-programs-section">
+  <h2 class="event-management-section-title">Our Training Program</h2>
+  <div class="event-management-program-card">
+    <div class="event-management-program-header">
+      <h3 class="event-management-program-title">
+        Event Management and Planning
+      </h3>
+    </div>
+
+    <table class="event-management-program-table">
+      <tr>
+        <td><strong>Mode:</strong></td>
+        <td>Hybrid</td>
+      </tr>
+      <tr>
+        <td><strong>Duration:</strong></td>
+        <td>6 Months</td>
+      </tr>
+      <tr>
+        <td><strong>Hours of Teaching:</strong></td>
+        <td>120 Hours (Weekend Course)</td>
+      </tr>
+      <tr>
+        <td><strong>Minimum Eligibility:</strong></td>
+        <td>12th Grade</td>
+      </tr>
+      <tr>
+        <td><strong>Centers in India:</strong></td>
+        <td>Available Nationwide</td>
+      </tr>
+      <tr>
+        <td><strong>Career Opportunities:</strong></td>
+        <td>
+          Event Manager, Event Planner, Conference Coordinator, Marketing
+          Specialist
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Placement:</strong></td>
+        <td>Interview Guarantee</td>
+      </tr>
+    </table>
+
+    <div class="event-management-button-container">
+      <button class="event-management-brochure-btn" id="brochure-btn">
+        📄 Brochure
+      </button>
+      <button class="event-management-enroll-btn" id="enroll-btn">
+        🖊 Enroll Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Form Container -->
+  <div id="form-container" style="display: none">
+    <form id="dynamic-form" class="event-management-form">
+      <h3 id="form-title">Form</h3>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Enter your name"
+      />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+      />
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<style>
+  .event-management-programs-section {
+    padding: 40px 20px;
+  }
+
+  .event-management-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .event-management-program-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    padding: 25px;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  .event-management-program-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .event-management-program-title {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .event-management-program-table {
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .event-management-program-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .event-management-button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .event-management-enroll-btn,
+  .event-management-brochure-btn {
+    background-color: rgb(36, 184, 49);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .event-management-enroll-btn:hover,
+  .event-management-brochure-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .event-management-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-management-form label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .event-management-form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .event-management-form button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .event-management-program-card {
+      width: 90%;
+      padding: 20px;
+    }
+
+    .event-management-program-title {
+      font-size: 1.4rem;
+    }
+
+    .event-management-program-table {
+      font-size: 0.9rem;
+    }
+
+    .event-management-enroll-btn,
+    .event-management-brochure-btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
     }
   }
 
-  prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarousel();
+  @media (max-width: 480px) {
+    .event-management-section-title {
+      font-size: 1.2rem;
     }
-  });
 
-  nextButton.addEventListener("click", () => {
-    const totalDots = Math.ceil(cards.length / (isMobile() ? 1 : 3));
-    if (currentIndex < totalDots - 1) {
-      currentIndex++;
-      updateCarousel();
+    .event-management-program-title {
+      font-size: 1.2rem;
     }
-  });
 
-  window.addEventListener("resize", () => {
-    currentIndex = 0;
-    updateCarousel();
-  });
-
-  // Auto-scroll functionality
-  setInterval(() => {
-    if (isAutoScrolling) {
-      const totalDots = Math.ceil(cards.length / (isMobile() ? 1 : 3));
-      if (currentIndex < totalDots - 1) {
-        currentIndex++;
-      } else {
-        currentIndex = 0; // Reset to first slide
-      }
-      updateCarousel();
+    .event-management-program-table td {
+      font-size: 0.8rem;
+      padding: 5px;
     }
-  }, 5000);
 
-  // Pause auto-scroll on mobile touch
-  const careerCarousel = document.querySelector(".career-carousel");
-  careerCarousel.addEventListener("touchstart", () => {
-    isAutoScrolling = false;
-  });
+    .event-management-button-container {
+      gap: 10px;
+    }
 
-  careerCarousel.addEventListener("touchend", () => {
-    isAutoScrolling = true;
-  });
-
-  function isMobile() {
-    return window.innerWidth <= 768;
+    .event-management-enroll-btn,
+    .event-management-brochure-btn {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
   }
-
-  updateCarousel();
-</script>
+</style>
 
 <section class="learning-skills-section">
   <div class="learning-skills-container">
@@ -368,36 +711,22 @@
       <h2 class="learning-title">What You Will Learn</h2>
       <ul class="learning-list">
         <li>
-          <span class="icon-check primary">&#10003;</span> Scope and Nature of
-          Event Management
+          <span class="icon-check primary">&#10003;</span> Event Scope & Nature
         </li>
         <li>
-          <span class="icon-check primary">&#10003;</span> Developing the
-          Concept, Event Leadership, and Team Management
+          <span class="icon-check primary">&#10003;</span> Concept & Team
+          Management
         </li>
         <li>
-          <span class="icon-check primary">&#10003;</span> Event Finance,
-          Budgeting, and Client Servicing
+          <span class="icon-check primary">&#10003;</span> Finance & Client
+          Services
         </li>
         <li>
-          <span class="icon-check primary">&#10003;</span> Staging the Event,
-          Logistics, Security, and Legal Issues
+          <span class="icon-check primary">&#10003;</span> Logistics &
+          Legalities
         </li>
         <li>
-          <span class="icon-check primary">&#10003;</span> Advertising, Public
-          Relations, and Managing Clients, Celebrities, and Guests
-        </li>
-        <li>
-          <span class="icon-check primary">&#10003;</span> Event Promotion,
-          Marketing, and Technology for Events
-        </li>
-        <li>
-          <span class="icon-check primary">&#10003;</span> Crisis Management,
-          Post Event Analysis, and Case Studies
-        </li>
-        <li>
-          <span class="icon-check primary">&#10003;</span> Entrepreneurship and
-          Networking in the Event Industry
+          <span class="icon-check primary">&#10003;</span> PR & Guest Management
         </li>
       </ul>
     </div>
@@ -407,23 +736,23 @@
       <h2 class="skills-title">Skill Set Covered</h2>
       <ul class="skills-list">
         <li>
-          <span class="icon-check highlight">&#10003;</span> Strategic Planning
+          <span class="icon-check highlight1">&#10003;</span> Strategic Planning
           and Organization
         </li>
         <li>
-          <span class="icon-check highlight">&#10003;</span> Budgeting and
+          <span class="icon-check highlight1">&#10003;</span> Budgeting and
           Financial Management
         </li>
         <li>
-          <span class="icon-check highlight">&#10003;</span> Creative Thinking
+          <span class="icon-check highlight1">&#10003;</span> Creative Thinking
           and Problem-Solving
         </li>
         <li>
-          <span class="icon-check highlight">&#10003;</span> Communication and
+          <span class="icon-check highlight1">&#10003;</span> Communication and
           Interpersonal Skills
         </li>
         <li>
-          <span class="icon-check highlight">&#10003;</span> Marketing and
+          <span class="icon-check highlight1">&#10003;</span> Marketing and
           Branding
         </li>
       </ul>
@@ -432,14 +761,8 @@
 </section>
 
 <style>
-  body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
   .learning-skills-section {
-    background-color: #f9f9fb;
+    padding: 50px 20px;
   }
 
   .learning-skills-container {
@@ -449,7 +772,7 @@
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 100px;
+    gap: 40px;
   }
 
   .learning-content,
@@ -457,16 +780,22 @@
     flex: 1;
     max-width: 48%;
     background: #fff;
-
+    padding: 20px 25px;
     border-radius: 10px;
-    background-color: #f9f9fb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .learning-content:hover,
+  .skills-content:hover {
+    transform: translateY(-5px);
   }
 
   .learning-title,
   .skills-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #162020;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: bold;
     position: relative;
   }
@@ -475,10 +804,10 @@
   .skills-title::after {
     content: "";
     display: block;
-    width: 70px;
-    height: 3px;
+    width: 80px;
+    height: 4px;
     background-color: #ff3131;
-    margin-top: 8px;
+    margin-top: 10px;
   }
 
   .learning-list,
@@ -490,9 +819,9 @@
 
   .learning-list li,
   .skills-list li {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #555;
-    margin: 10px 0;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
   }
@@ -506,7 +835,7 @@
     color: #1a73e8;
   }
 
-  .highlight {
+  .highlight1 {
     color: #ff5252;
   }
 
@@ -522,6 +851,18 @@
 
     .learning-title,
     .skills-title {
+      font-size: 1.8rem;
+    }
+
+    .learning-list li,
+    .skills-list li {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .learning-title,
+    .skills-title {
       font-size: 1.6rem;
     }
 
@@ -529,366 +870,17 @@
     .skills-list li {
       font-size: 0.9rem;
     }
-  }
-</style>
 
-<div class="training-section">
-  <h2 class="training-title">Our Training Programs</h2>
-  <div class="training-container">
-    <div class="training-card">
-      <div class="training-badge">4 MONTHS</div>
-      <h3 class="training-heading">Hybrid Module</h3>
-      <p class="training-details">
-        Get Certified <br />
-        Duration: 4 Months (100 hours of training + internship)
-      </p>
-    </div>
-  </div>
-</div>
-
-<style>
-  /* Training Section */
-  .training-section {
-    background-color: #f9f9fb; /* Matches skills section background */
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  /* Training Title (matches skills section style) */
-  .training-title {
-    font-size: 2.2rem;
-    color: #162020;
-    margin-bottom: 25px;
-    font-weight: bold;
-    position: relative;
-  }
-
-  .training-title::after {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 4px;
-    background-color: #ff3131;
-    margin: 15px auto 0;
-  }
-
-  /* Training Container */
-  .training-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  /* Training Card */
-  .training-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 600px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .training-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #ff3131; /* Changes background color */
-    color: white; /* Changes text color */
-  }
-
-  /* Ensure child elements like links or headings also change color */
-  .training-card:hover * {
-    color: white; /* Applies to all text elements inside the card */
-  }
-
-  /* Training Badge */
-  .training-badge {
-    background-color: #ff3131; /* Red-orange badge color */
-    color: #fff;
-    padding: 5px 15px;
-    font-size: 14px;
-    border-radius: 20px;
-    display: inline-block;
-    font-weight: bold;
-  }
-
-  /* Training Heading */
-  .training-heading {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 22px;
-    color: #2e8b57; /* Green heading color */
-  }
-
-  /* Training Details */
-  .training-details {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .training-card {
-      width: 100%;
-    }
-  }
-</style>
-
-<style>
-  .why-choose-section {
-    background-color: #f9f9fb;
-    padding: 60px 20px;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-title::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: rgb(249, 56, 56);
-    margin: 10px auto 0;
-  }
-
-  .cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-
-  .card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-  }
-
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    color: white;
-  }
-
-  .card-title {
-    font-size: 1.2rem;
-    color: #ff5252;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-
-  .card p {
-    font-size: 0.95rem;
-    color: #555;
-  }
-
-  @media (max-width: 768px) {
-    .section-title {
-      font-size: 1.8rem;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-    }
-  }
-
-  /* Section Title */
-  .section-title {
-    text-align: center;
-    font-size: 28px;
-    color: #1e90ff; /* Blue title color */
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-
-  /* Programs Section */
-  .programs-section {
-    padding: 20px;
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-
-  /* Programs Container */
-  .programs-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  /* Program Card */
-  .program-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 410px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #ff3131; /* Changes background color */
-    color: white; /* Changes text color */
-  }
-
-  /* Ensure child elements like links or headings also change color */
-  .program-card:hover * {
-    color: white; /* Applies to all text elements inside the card */
-  }
-
-  /* Program Badge */
-  .program-badge {
-    background-color: #ff3131; /* Red-orange badge color */
-    color: #fff;
-    padding: 5px 15px;
-    font-size: 14px;
-    border-radius: 20px;
-    display: inline-block;
-    font-weight: bold;
-  }
-
-  /* Program Title */
-  .program-title {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 22px;
-    color: #2e8b57; /* Green title color */
-  }
-
-  /* Program Description */
-  .program-description {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .program-card {
-      width: 100%;
-    }
-  }
-
-  /* General Body Styling */
-
-  /* Section Styling */
-  .enrollment-section {
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    margin: o auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .section-heading {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    position: relative;
-    text-align: center;
-    color: rgb(9, 87, 164); /* Blue title color */
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-
-  .section-heading::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: #ff3131;
-    margin: 10px auto 0;
-  }
-
-  /* Enrollment Cards Container */
-  .enrollment-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: start;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  /* Enrollment Card Styling */
-  .enrollment-card {
-    background-color: #fff;
-    border-radius: 12px;
-    width: 325px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-
-  .enrollment-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #ff3131;
-  }
-
-  .card-number {
-    font-size: 36px;
-    font-weight: bold;
-    color: rgb(39, 2, 221);
-  }
-
-  .card-content {
-    color: rgb(86, 86, 87);
-    line-height: 1.5;
-  }
-
-  .card-content:hover {
-    color: white;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .enrollment-card {
-      width: 100%;
-      max-width: 300px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .section-heading {
-      font-size: 20px;
-    }
-
-    .card-number {
-      font-size: 28px;
-    }
-
-    .card-content {
-      font-size: 13px;
+    .icon-check {
+      font-size: 1rem;
     }
   }
 </style>
 
 <!-- CSS -->
 <style>
-  
-
   .offerings-section {
-    background-color: #f9f9fb;
-    padding-bottom: 60px;
+    padding: 60px 20px;
   }
 
   .offerings-container {
@@ -958,7 +950,9 @@
 
   .offerings-image img {
     width: 100%;
-
+    max-width: 450px;
+    height: 60vh;
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
@@ -974,92 +968,11 @@
     }
 
     .offerings-title {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
     }
 
     .offerings-list li {
-      font-size: 0.95rem;
-    }
-  }
-</style>
-
-<!-- CSS -->
-<style>
-  
-
-  .courses-section {
-    background-color: #f7f9fc;
-    padding: 50px 20px;
-    {% comment %} margin-top: 100px; {% endcomment %}
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    font-size: 2.1rem;
-    color: #162020;
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative;
-  }
-
-  .section-title::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: #ff5252;
-    margin: 10px auto 0;
-  }
-
-  .section-description {
-    font-size: 1.2rem;
-    color: #555;
-    {% comment %} text-align: center; {% endcomment %}
-    margin-bottom: 40px;
-  }
-
-  .course-category {
-    margin-bottom: 30px;
-  }
-
-  .course-title {
-    font-size: 1.8rem;
-    color: #162020;
-    margin-bottom: 15px;
-    position: relative;
-  }
-
-  .course-title::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: #ff5252;
-    margin: 8px 0;
-  }
-
-  .course-category p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    .section-title {
-      font-size: 2rem;
-    }
-
-    .course-title {
-      font-size: 1.5rem;
-    }
-
-    .section-description {
-      font-size: 1rem;
+      font-size: 0.87rem;
     }
   }
 </style>

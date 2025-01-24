@@ -1,149 +1,313 @@
-{% extends "base.html" %} {% load static %} {% block content %}
-
-<div class="section-title">
-    <h1>Our Centers Across India</h1>
-    <p>
-      Explore our centers in major cities offering world-class facilities and
-      expert guidance.
-    </p>
-</div>
-
-<div class="container">
-  <!-- Title Section -->
-
-  <!-- City Grid -->
-  <div class="city-grid">
-    <div class="city-box mumbai">
-      <h2>Mumbai</h2>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="section">
+  <div class="video-background">
+    <video autoplay muted loop id="myVideo">
+      <source src="{% static 'videos/centers-earth.mp4' %}" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+  <div class="content">
+    <div class="section-header">
+      <h1 class="title">Explore Our Centers</h1>
+      <button id="resetFilters" class="reset-btn">Reset Filters</button>
     </div>
-    <div class="city-box indore">
-      <h2>Indore</h2>
-    </div>
-    <div class="city-box bangalore">
-      <h2>Bangalore</h2>
-    </div>
-    <div class="city-box delhi">
-      <h2>Delhi</h2>
-    </div>
-    <div class="city-box chennai">
-      <h2>Chennai</h2>
-    </div>
-    <div class="city-box kolkata">
-      <h2>Kolkata</h2>
+    <div class="section-container">
+      <div class="section-sidebar">
+        <h2 class="sidebar-title">Available Locations</h2>
+        <div class="filter-group">
+          <select id="centerFilter" class="dropdown">
+            <option value="">Select City</option>
+            <option value="bangalore">Bangalore</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="delhi">Delhi</option>
+            <option value="chennai">Chennai</option>
+            <option value="kolkata">Kolkata</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="tokyo">Tokyo</option>
+          </select>
+        </div>
+        <ul id="branchList" class="branch-list"></ul>
+      </div>
     </div>
   </div>
 </div>
 
-<style>
-  /* Container */
-  .container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    margin-bottom: 6rem;
-    margin-top: 5rem;
-  }
+<script>
+  const data = {
+    bangalore: [
+      { branch: "Indiranagar", link: "{% url 'indiranagar' %}"},
+      { branch: "Whitefield", link: "/bangalore/whitefield" },
+      { branch: "Koramangala", link: "/bangalore/koramangala" }
+    ],
+    mumbai: [
+      { branch: "Andheri", link: "{% url 'mumbai_landing_page' %}" },
+      { branch: "Thane", link: "/mumbai/thane" },
+      { branch: "Vasai", link: "/mumbai/vasai" }
+    ],
+    delhi: [
+      { branch: "Connaught Place", link: "/delhi/connaught-place" },
+      { branch: "Dwarka", link: "/delhi/dwarka" },
+      { branch: "Karol Bagh", link: "/delhi/karol-bagh" }
+    ],
+    chennai: [
+      { branch: "OMR", link: "/chennai/omr" },
+      { branch: "Vadapalani", link: "/chennai/vadapalani" },
+      { branch: "Anna Nagar", link: "/chennai/anna-nagar" }
+    ],
+    kolkata: [
+      { branch: "Salt Lake", link: "/kolkata/salt-lake" },
+      { branch: "Park Street", link: "/kolkata/park-street" },
+      { branch: "Howrah", link: "/kolkata/howrah" }
+    ],
+    hyderabad: [
+      { branch: "Banjara Hills", link: "/hyderabad/banjara-hills" },
+      { branch: "Gachibowli", link: "/hyderabad/gachibowli" },
+      { branch: "Secunderabad", link: "/hyderabad/secunderabad" }
+    ],
+    tokyo: [
+      { branch: "Shinjuku", link: "/tokyo/shinjuku" }
+    ]
+  };
 
-  /* Title Section */
-  .section-title {
-    text-align: center;
-    margin-bottom: 40px;
+  function populateBranches(center) {
+    const branchList = document.getElementById("branchList");
+    branchList.innerHTML = "";
+
+    if (center === "") {
+      branchList.style.display = "none";
+      return;
+    }
+
+    branchList.style.display = "block";
     
+    const branches = data[center];
+
+    branches.forEach(branch => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("branch-item");
+      const link = document.createElement("a");
+      link.href = branch.link; // Updated link
+      link.textContent = branch.branch;
+      link.classList.add("branch-link");
+      listItem.appendChild(link);
+      branchList.appendChild(listItem);
+    });
+
+    // Adjust height of sidebar
+    const sidebar = document.querySelector('.section-sidebar');
+    sidebar.style.maxHeight = sidebar.scrollHeight + "px";
   }
 
-  .section-title h1 {
+  document.addEventListener("DOMContentLoaded", () => {
+    const centerFilter = document.getElementById("centerFilter");
+    const resetFilters = document.getElementById("resetFilters");
+
+    centerFilter.addEventListener("change", (e) => {
+      populateBranches(e.target.value);
+    });
+
+    resetFilters.addEventListener("click", () => {
+      centerFilter.value = "";
+      populateBranches("");
+
+      // Reset height of sidebar
+      const sidebar = document.querySelector('.section-sidebar');
+      sidebar.style.maxHeight = "";
+    });
+  });
+</script>
+<style>
+  .section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust height as needed */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -150px;
+  }
+  
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  #myVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    width: 100%;
+  }
+  
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 10px;
-    padding: 10px 0;
-    color: #333;
+    color:white;
+    position: relative;
+    text-align: center;
   }
-
-  .section-title p {
+  
+  .title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    margin: 10px auto;
+  }
+  
+  .reset-btn {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
     font-size: 1rem;
-    color: #555;
-    margin: 0;
+    transition: background 0.3s ease;
   }
-
-  /* Grid Container */
-  .city-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns in a row */
+  
+  .reset-btn:hover {
+    background: #2c80b4;
+  }
+  
+  .section-container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
-
-  /* Grid Items (City Box) */
-  .city-box {
+  
+  .section-sidebar {
+    background: #ffffff;
     border-radius: 8px;
     padding: 20px;
-    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .sidebar-title {
     font-size: 1.5rem;
+    color:rgb(12, 104, 196);
     text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 20px;
   }
-
-  .city-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
   }
-
-  .mumbai {
-    background: linear-gradient(135deg, #ff6b6b, #f06595);
+  
+  .dropdown {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
   }
-
-  .indore {
-    background: linear-gradient(135deg, #48c6ef, #6f86d6);
+  
+  .branch-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
   }
-
-  .bangalore {
-    background: linear-gradient(135deg, #ffe259, #ffa751);
+  
+  .branch-item {
+    background: #f9f9f9;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
   }
-
-  .delhi {
-    background: linear-gradient(135deg, #43e97b, #38f9d7);
+  
+  .branch-link {
+    text-decoration: none;
+    color: #3498db;
   }
-
-  .chennai {
-    background: linear-gradient(135deg, #fa709a, #fee140);
+  
+  .branch-link:hover {
+    text-decoration: underline;
   }
-
-  .kolkata {
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  
+  .branch-item:hover {
+    transform: translateY(-3px);
   }
-
-  /* Animations */
-  .city-box {
-    animation: fadeInUp 0.5s ease-in-out;
+  
+  .no-result {
+    text-align: center;
+    color: #999;
+    font-style: italic;
   }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
+  
+  @media (max-width: 768px) {
+    .section-container {
+      padding: 0 10px;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+  
+    .title {
+      font-size: 1.2rem;
+    }
+  
+    .reset-btn {
+      width: 100%;
+    }
+  
+    .dropdown {
+      width: 100%;
+      font-size: 0.9rem;
     }
   }
-
-  /* Responsive Design */
-  @media (max-width: 992px) {
-    .city-grid {
-      grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
-    }
-  }
-
+  
   @media (max-width: 576px) {
-    .city-grid {
-      grid-template-columns: 1fr; /* One column on small screens */
+    .title {
+      font-size: 1rem;
     }
-
-    .section-title h1 {
-      font-size: 2rem;
+    .section-container {
+      padding: 0 5px;
+    }
+    .reset-btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+    .sidebar-title {
+      font-size: 1.2rem;
+    }
+    .dropdown {
+      padding: 10px;
+      font-size: 0.8rem;
     }
   }
-</style>
 
-{% endblock content %}
+</style>
+{% endblock %}

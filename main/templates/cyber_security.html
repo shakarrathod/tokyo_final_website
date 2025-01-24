@@ -1,6 +1,5 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<!--banner html  section start here ============= -->
 <section class="responsive-banner">
   <img
     src="{% static 'images/ds_banner.jpg' %}"
@@ -12,7 +11,6 @@
   </div>
 </section>
 
-<!--banner  section css start here ============= -->
 <style>
   /* Section Styling */
   .responsive-banner {
@@ -69,120 +67,51 @@
   }
 </style>
 
+<section class="cyber-security-section">
+  <div class="cyber-security-container">
+    <div class="cyber-security-category">
+      <h2 class="cyber-security-title"></h2>
+      <p>
+        <strong>Tokyo AnalyticX</strong> offers advanced cybersecurity courses
+        designed to equip professionals with the skills needed to protect
+        digital systems and networks. Covering key areas like network security,
+        vulnerability assessment, secure coding, and incident response, these
+        courses prepare individuals to tackle cyber threats effectively.
+      </p>
 
-<!--about  section start here ============= -->
-<section class="cyber-courses-section">
-  <div class="cyber-container">
-    
-    <div class="cyber-course-category">
-      <h2 class="cyber-course-title">
-        Best Cyber Security and Ethical Hacking Course in India
-      </h2>
-      <p>
-        Tokyo AnalyticX offers an extensive portfolio of courses designed to
-        equip individuals with the skills and knowledge necessary to excel in
-        today’s technology-driven world. The company prioritizes data science,
-        business analytics, cybersecurity, and ethical hacking for their growing
-        importance in various industries.
-      </p>
-      <p>
-        Begin an enriching expedition that empowers you with the expertise to
-        convert data into intelligence and emerge as a highly sought-after
-        specialist in this high-demand domain.
-      </p>
-    </div>
-
-    <div class="cyber-course-category">
-      <h2 class="cyber-course-title">Cyber Security Course in India</h2>
-      <p>
-        In an era of increasing cyber threats, Tokyo AnalyticX provides
-        cutting-edge cyber security courses to help professionals develop the
-        necessary skills to safeguard digital systems and networks. These
-        courses cover areas such as network security, vulnerability assessment,
-        secure coding practices, and incident response, preparing individuals to
-        protect organizations from cyber threats and mitigate potential risks
-        effectively
-      </p>
-    </div>
-    <div class="cyber-course-category">
-      <h2 class="cyber-course-title">Ethical Hacking Course in India</h2>
-      <p>
-        With the rising demand for ethical hackers who can identify
-        vulnerabilities in systems and ensure robust security measures, Tokyo
-        AnalyticX offers courses in ethical hacking. These programs teach
-        students the ethical and responsible techniques used by cybersecurity
-        professionals to identify and mitigate potential security breaches. By
-        understanding the hacker’s mindset, learners gain insights into how to
-        protect digital assets effectively.
-      </p>
-      <br />
-      <p>
-        Begin an enriching expedition that empowers you with the expertise to
-        shield digital resources, counter cyber risks, fortify networks, and
-        emerge as a highly sought-after specialist in this high-demand domain.
-      </p>
+      <div class="cyber-security-category">
+        <p>
+          With a focus on ethical hacking,
+          <strong>Tokyo AnalyticX</strong> teaches students the techniques used
+          by cybersecurity experts to identify and prevent security breaches,
+          providing valuable insights into safeguarding digital assets. Develop
+          expertise in defending against cyber risks and emerge as a
+          sought-after specialist in this high-demand field.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CSS -->
 <style>
-  
-
-  .cyber-courses-section {
-    background-color: #f7f9fc;
-    padding: 50px 20px;
+  .cyber-security-section {
+    padding-top: 50px;
+    padding-bottom: 20px;
   }
 
-  .cyber-container {
+  .cyber-security-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
   }
 
-  .cyber-section-title {
-    font-size: 1.8rem;
-    color: #162020;
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 20px;
-    position: relative;
-  }
-
-  .cyber-section-title::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: #ff5252;
-  }
-
-  .cyber-section-description {
-    font-size: 1rem;
-    color: #555;
+  .cyber-security-category {
     margin-bottom: 40px;
+    text-align: justify;
   }
 
-  .cyber-course-category {
-    margin-bottom: 30px;
-  }
-
-  .cyber-course-title {
-    font-size: 1.8rem;
-    color: #162020;
-    margin-bottom: 15px;
-    position: relative;
-  }
-
-  .cyber-course-title::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: #ff5252;
-    margin: 8px 0;
-  }
-
-  .cyber-course-category p {
+  .cyber-security-category p {
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
@@ -190,732 +119,508 @@
   }
 
   @media (max-width: 768px) {
-    .cyber-section-title {
-      font-size: 2rem;
+    .cyber-security-title {
+      font-size: 1.2rem;
     }
 
-    .cyber-course-title {
-      font-size: 1.5rem;
+    .cyber-security-category {
+      margin-bottom: 30px;
     }
 
-    .cyber-section-description {
-      font-size: 1rem;
+    .cyber-security-category p {
+      font-size: 0.87rem;
+    }
+
+    .cyber-security-container {
+      padding: 0 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cyber-security-title {
+      font-size: 1.2rem;
+    }
+
+    .cyber-security-category p {
+      font-size: 0.8rem;
+      text-align: start;
     }
   }
 </style>
-<!--about  section ends  here ============= -->
 
-
-
-<!-- course section starts here -================= -->
-<!-- HTML -->
-<section class="cyber-offerings-section">
-  <div class="cyber-offerings-container">
-    <div class="cyber-offerings-image">
+<section class="offerings-section">
+  <div class="offerings-container">
+    <div class="offerings-image">
       <img
         src="{% static 'images/diverse_course.png' %}"
         alt="Student learning"
       />
     </div>
-    <div class="cyber-offerings-text">
-      <h2 class="cyber-offerings-title">Our Diverse Course Offerings</h2>
-      <ul class="cyber-offerings-list">
+    <div class="offerings-text">
+      <h2 class="offerings-title">Our Diverse Course Offerings</h2>
+      <ul class="offerings-list">
         <li>
-          <span class="cyber-check-icon cyber-blue">&#10003;</span> Introduction
-          to Cyber Security and Ethical Hacking
+          <span class="check-icon blue">&#10003;</span> Introduction to Cyber
+          Security and Ethical Hacking
         </li>
         <li>
-          <span class="cyber-check-icon cyber-blue">&#10003;</span> Network
-          Security and Infrastructure
+          <span class="check-icon blue">&#10003;</span> Network Security and
+          Infrastructure
         </li>
         <li>
-          <span class="cyber-check-icon cyber-blue">&#10003;</span> Ethical
-          Hacking Methodology
+          <span class="check-icon blue">&#10003;</span> Ethical Hacking
+          Methodology
         </li>
         <li>
-          <span class="cyber-check-icon cyber-blue">&#10003;</span> Penetration
-          Testing and Vulnerability Assessment
+          <span class="check-icon blue">&#10003;</span>Penetration Testing and
+          Vulnerability Assessment
         </li>
         <li>
-          <span class="cyber-check-icon cyber-blue">&#10003;</span> Malware
-          Analysis and Incident Response
+          <span class="check-icon blue">&#10003;</span> Malware Analysis and
+          Incident Response
         </li>
         <li>
-          <span class="cyber-check-icon cyber-blue">&#10003;</span> Cryptography
-          and Data Protection
+          <span class="check-icon blue">&#10003;</span> Cryptography and Data
+          Protection
         </li>
         <li>
-          <span class="cyber-check-icon cyber-blue">&#10003;</span> Secure
-          Coding Practices
+          <span class="check-icon blue">&#10003;</span> Secure Coding Practices
         </li>
         <li>
-          <span class="cyber-check-icon cyber-blue">&#10003;</span> Legal and
-          Ethical Considerations
+          <span class="check-icon blue">&#10003;</span> Legal and Ethical
+          Considerations
         </li>
       </ul>
     </div>
   </div>
 </section>
 
+<section class="cyber-security-why-choose-section">
+  <div class="cyber-security-container">
+    <h2 class="cyber-security-section-title">Why Choose Tokyo AnalyticX ?</h2>
+    <div class="cyber-security-cards-wrapper">
+      <div class="cyber-security-card">
+        <h3 class="cyber-security-card-title">In-Depth Curriculum</h3>
+        <p>
+          Our curriculum covers topics like network security, cryptography,
+          penetration testing, malware analysis, and more.
+        </p>
+      </div>
+
+      <div class="cyber-security-card">
+        <h3 class="cyber-security-card-title">Hands-On Training</h3>
+        <p>
+          Get hands-on experience through labs, simulations, and scenarios that
+          mirror professional challenges.
+        </p>
+      </div>
+      <div class="cyber-security-card">
+        <h3 class="cyber-security-card-title">Experienced Instructors</h3>
+        <p>
+          Learn from seasoned experts with years of industry experience who
+          bring real-world insights into the classroom.
+        </p>
+      </div>
+      <div class="cyber-security-card">
+        <h3 class="cyber-security-card-title">Networking Access</h3>
+        <p>
+          Connect with students, instructors, and professionals in the
+          cybersecurity community to expand your network and learn from their
+          experiences.
+        </p>
+      </div>
+
+      <div class="cyber-security-card">
+        <h3 class="cyber-security-card-title">Career Advancement</h3>
+        <p>
+          Whether starting or advancing your career, this course provides a
+          strong foundation for roles like ethical hacker, security analyst, and
+          penetration tester.
+        </p>
+      </div>
+
+      <div class="cyber-security-card">
+        <h3 class="cyber-security-card-title">Adaptable Learning</h3>
+        <p>
+          Choose from a variety of learning modes, including online, in-person,
+          or hybrid, to best fit your schedule, preferences, and learning style.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CSS -->
 <style>
-  body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
+  .cyber-security-why-choose-section {
+    padding: 60px 20px;
   }
 
-  .cyber-offerings-section {
-    background-color: #f9f9fb;
-    padding-bottom: 50px;
-  }
-
-  .cyber-offerings-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+  .cyber-security-container {
     max-width: 1200px;
     margin: 0 auto;
-    gap: 20px;
   }
 
-  .cyber-offerings-text {
-    flex: 1;
-    max-width: 550px;
+  .cyber-security-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
   }
 
-  .cyber-offerings-title {
-    font-size: 1.8rem;
-    color: #162020;
-    margin-bottom: 20px;
-
-    position: relative;
-  }
-
-  .cyber-offerings-title::after {
+  .cyber-security-section-title::after {
     content: "";
     display: block;
     width: 80px;
     height: 3px;
-    background-color: #ff3131;
-    margin-top: 10px;
+    background-color: rgb(249, 56, 56);
+    margin: 10px auto 0;
   }
 
-  .cyber-offerings-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .cyber-offerings-list li {
-    font-size: 1rem;
-    color: #555;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .cyber-check-icon {
-    font-size: 1.2rem;
-    margin-right: 10px;
-  }
-
-  .cyber-red {
-    color: #ff5252;
-  }
-
-  .cyber-blue {
-    color: #1a73e8;
-  }
-
-  .cyber-offerings-image {
-    flex: 1;
-    max-width: 550px;
-    text-align: center;
-  }
-
-  .cyber-offerings-image img {
-    width: 100%;
-    max-width: 450px;
-  }
-
-  @media (max-width: 768px) {
-    .cyber-offerings-container {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .cyber-offerings-text,
-    .cyber-offerings-image {
-      max-width: 100%;
-    }
-
-    .cyber-offerings-title {
-      font-size: 1.8rem;
-    }
-
-    .cyber-offerings-list li {
-      font-size: 0.95rem;
-    }
-  }
-</style>
-<!-- course section starts here -================= -->
-
-<!-- why choose us section starts here -================= -->
-<div class="cyber-career-section">
-  <h2 class="cyber-career-title">
-    Why Choose Our Cyber Security and Ethical Hacking Courses?
-  </h2>
-  <div class="cyber-career-carousel">
-    <div class="cyber-career-cards-wrapper">
-      <div class="cyber-career-cards" id="cyberCareerCards">
-        <div class="cyber-career-card">
-          <h3>In-Depth Curriculum</h3>
-          <p>
-            Our curriculum covers a wide range of topics, including network
-            security, cryptography, penetration testing, malware analysis, and
-            more.
-          </p>
-        </div>
-        <div class="cyber-career-card">
-          <h3>Hands-On Training</h3>
-          <p>
-            Get hands-on experience through practical labs, simulations, and
-            real-world scenarios that mirror the challenges faced by
-            professionals in the field.
-          </p>
-        </div>
-        <div class="cyber-career-card">
-          <h3>Experienced Instructors</h3>
-          <p>
-            Learn from seasoned experts with years of industry experience who
-            bring real-world insights into the classroom.
-          </p>
-        </div>
-        <div class="cyber-career-card">
-          <h3>Networking Opportunities</h3>
-          <p>
-            Connect with fellow students, instructors, and professionals in the
-            cyber security community, expanding your network and learning from
-            others' experiences.
-          </p>
-        </div>
-        <div class="cyber-career-card">
-          <h3>Career Advancement</h3>
-          <p>
-            Whether you're just starting or looking to advance in your career,
-            this course provides a solid foundation for roles like ethical
-            hacker, security analyst, penetration tester, and more.
-          </p>
-        </div>
-      </div>
-    </div>
-    <button class="cyber-carousel-arrow cyber-right-arrow" id="cyberNextButton">
-      &#10095;
-    </button>
-    <button class="cyber-carousel-arrow cyber-left-arrow" id="cyberPrevButton">
-      &#10094;
-    </button>
-  </div>
-  <div class="cyber-carousel-dots" id="cyberCarouselDots"></div>
-</div>
-
-<!-- CSS -->
-<style>
-  .cyber-career-section {
-    text-align: center;
-    padding: 20px;
-    background-color: #f9f9fb; /* Matches skills section background */
-  }
-
-  .cyber-career-title {
-    font-size: 1.8rem; /* Matches skills section title font size */
-    color: #162020;
-    margin-bottom: 25px;
-    font-weight: bold;
-    position: relative;
-  }
-
-  .cyber-career-title::after {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 4px;
-    background-color: #ff3131; /* Underline color */
-    margin: 15px auto 0;
-  }
-
-  /* Existing carousel and card styles remain unchanged */
-
-  .cyber-career-carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .cyber-career-cards-wrapper {
-    overflow: hidden;
-    width: 80%;
-  }
-
-  .cyber-career-cards {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .cyber-career-card {
-    flex: 0 0 32.5%;
-    box-sizing: border-box;
-    padding: 25px;
-    margin: 5px;
-    background-color: white;
-    color: black;
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .cyber-career-card {
-    font-size: 1rem;
-    color: #555;
-    margin-top: 10px;
-  }
-  .cyber-career-card p {
-    font-size: 1rem;
-
-    margin-top: 15px;
-  }
-
-  .cyber-career-card h3 {
-    font-size: 1.5rem;
-  }
-
-  .cyber-career-card:hover {
-    background-color: #dc3545;
-    color: white;
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .cyber-carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: rgb(143, 145, 145);
-    z-index: 10;
-  }
-
-  .cyber-left-arrow {
-    left: 50px;
-  }
-
-  .cyber-right-arrow {
-    right: 50px;
-  }
-
-  .cyber-carousel-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-  .cyber-carousel-dots button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 5px;
-    border: none;
-    background-color: #ddd;
-    cursor: pointer;
-  }
-
-  .cyber-carousel-dots button.active {
-    background-color: #dc3545;
-  }
-
-  .cyber-carousel-arrow {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .cyber-career-carousel:hover .cyber-carousel-arrow,
-  .cyber-carousel-arrow:hover {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  @media (max-width: 768px) {
-    .cyber-career-cards-wrapper {
-      width: 100%;
-    }
-
-    .cyber-career-card {
-      flex: 0 0 100%; /* Cards will take full width on mobile */
-    }
-  }
-</style>
-
-<!-- JavaScript -->
-<script>
-  const cyberCareerCards = document.getElementById("cyberCareerCards");
-  const cyberDotsContainer = document.getElementById("cyberCarouselDots");
-  const cyberPrevButton = document.getElementById("cyberPrevButton");
-  const cyberNextButton = document.getElementById("cyberNextButton");
-
-  const cyberCards = document.querySelectorAll(".cyber-career-card");
-  let cyberCurrentIndex = 0;
-  let isAutoScrolling = true;
-
-  function cyberUpdateCarousel() {
-    const cardWidth = cyberCareerCards.children[0].offsetWidth + 10; // Including margin
-    cyberCareerCards.style.transform = `translateX(-${
-      cyberCurrentIndex * cardWidth
-    }px)`;
-    cyberUpdateDots();
-  }
-
-  function cyberUpdateDots() {
-    cyberDotsContainer.innerHTML = "";
-    const totalDots = Math.ceil(cyberCards.length / (isMobile() ? 1 : 3)); // 1 card per slide on mobile, 3 per slide on desktop
-    for (let i = 0; i < totalDots; i++) {
-      const dot = document.createElement("button");
-      dot.classList.add("dot");
-      if (i === cyberCurrentIndex) dot.classList.add("active");
-      dot.addEventListener("click", () => {
-        cyberCurrentIndex = i;
-        cyberUpdateCarousel();
-      });
-      cyberDotsContainer.appendChild(dot);
-    }
-  }
-
-  cyberPrevButton.addEventListener("click", () => {
-    if (cyberCurrentIndex > 0) {
-      cyberCurrentIndex--;
-      cyberUpdateCarousel();
-    }
-  });
-
-  cyberNextButton.addEventListener("click", () => {
-    const totalDots = Math.ceil(cyberCards.length / (isMobile() ? 1 : 3));
-    if (cyberCurrentIndex < totalDots - 1) {
-      cyberCurrentIndex++;
-      cyberUpdateCarousel();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    cyberCurrentIndex = 0;
-    cyberUpdateCarousel();
-  });
-
-  // Auto-scroll functionality
-  setInterval(() => {
-    if (isAutoScrolling) {
-      const totalDots = Math.ceil(cyberCards.length / (isMobile() ? 1 : 3));
-      if (cyberCurrentIndex < totalDots - 1) {
-        cyberCurrentIndex++;
-      } else {
-        cyberCurrentIndex = 0; // Reset to first slide
-      }
-      cyberUpdateCarousel();
-    }
-  }, 5000);
-
-  // Pause auto-scroll on mobile touch
-  const cyberCareerCarousel = document.querySelector(".cyber-career-carousel");
-  cyberCareerCarousel.addEventListener("touchstart", () => {
-    isAutoScrolling = false;
-  });
-
-  cyberCareerCarousel.addEventListener("touchend", () => {
-    isAutoScrolling = true;
-  });
-
-  function isMobile() {
-    return window.innerWidth <= 768;
-  }
-
-  cyberUpdateCarousel();
-</script>
-<!-- why choose us section ends here -================= -->
-
-<!-- Our Training Programs section ends here -================= -->
-<div class="training-section">
-  <h2 class="training-title">Our Training Programs</h2>
-  <div class="training-container">
-    <div class="training-card">
-      <div class="training-badge">4 MONTHS</div>
-      <h3 class="training-heading">Hybrid Module</h3>
-      <p class="training-details">
-        Get Certified for 55k + GST<br />
-        Duration: 4 Months (100 hours of training + internship)
-      </p>
-    </div>
-  </div>
-</div>
-
-<style>
-  /* Training Section */
-  .training-section {
-    background-color: #f9f9fb; /* Matches skills section background */
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  /* Training Title (matches skills section style) */
-  .training-title {
-    font-size: 1.8rem;
-    color: #162020;
-    margin-bottom: 25px;
-    font-weight: bold;
-    position: relative;
-  }
-
-  .training-title::after {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 4px;
-    background-color: #ff3131;
-    margin: 15px auto 0;
-  }
-
-  /* Training Container */
-  .training-container {
-    display: flex;
-    flex-wrap: wrap;
+  .cyber-security-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: center;
   }
 
-  /* Training Card */
-  .training-card {
+  .cyber-security-card {
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 600px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
   }
 
-  .training-card:hover {
+  .cyber-security-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #ff3131; /* Changes background color */
-    color: white; /* Changes text color */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: white;
   }
 
-  /* Ensure child elements like links or headings also change color */
-  .training-card:hover * {
-    color: white; /* Applies to all text elements inside the card */
-  }
-
-  /* Training Badge */
-  .training-badge {
-    background-color: #ff3131; /* Red-orange badge color */
-    color: #fff;
-    padding: 5px 15px;
-    font-size: 14px;
-    border-radius: 20px;
-    display: inline-block;
+  .cyber-security-card-title {
+    font-size: 1.2rem;
+    color: #ff5252;
     font-weight: bold;
+    margin-bottom: 15px;
   }
 
-  /* Training Heading */
-  .training-heading {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 22px;
-    color: #2e8b57; /* Green heading color */
-  }
-
-  /* Training Details */
-  .training-details {
-    margin-top: 10px;
-
-    line-height: 1.6;
-    font-size: 1rem;
+  .cyber-security-card p {
+    font-size: 0.95rem;
     color: #555;
   }
 
-  /* Responsive Design */
+  /* Responsive Design for Single Card Scrolling */
   @media (max-width: 768px) {
-    .training-card {
+    .cyber-security-why-choose-section {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .cyber-security-cards-wrapper {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 0;
+    }
+
+    .cyber-security-card {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      margin: 0 auto;
       width: 100%;
+    }
+
+    .cyber-security-section-title {
+      font-size: 1.2rem;
+    }
+
+    .cyber-security-card p {
+      font-size: 0.87rem;
+    }
+
+    .cyber-security-cards-wrapper::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for better UX */
     }
   }
 </style>
-<!-- Our Training Programs section ends here -================= -->
 
-<div class="cyber-section">
-  <h2 class="cyber-title">
-    Individuals who can enroll for Data Science and Business Analytics Course
-  </h2>
-  <div class="cyber-cards-wrapper">
-    <div class="cyber-card">
-      <h3>01</h3>
-      <p>IT professionals interested in entering the field of data science</p>
+<div class="cyber-security-programs-section">
+  <h2 class="cyber-security-section-title">Our Training Program</h2>
+  <div class="cyber-security-program-card">
+    <div class="cyber-security-program-header">
+      <h3 class="cyber-security-program-title">
+        Cyber Security and Ethical Hacking
+      </h3>
     </div>
-    <div class="cyber-card">
-      <h3>02</h3>
-      <p>Students pursuing a career in data science and business analytics</p>
+
+    <table class="cyber-security-program-table">
+      <tr>
+        <td><strong>Mode:</strong></td>
+        <td>Hybrid</td>
+      </tr>
+      <tr>
+        <td><strong>Duration:</strong></td>
+        <td>4 Months</td>
+      </tr>
+      <tr>
+        <td><strong>Hours of Teaching:</strong></td>
+        <td>100 Hours (Weekend Course)</td>
+      </tr>
+      <tr>
+        <td><strong>Minimum Eligibility:</strong></td>
+        <td>12th Grade</td>
+      </tr>
+      <tr>
+        <td><strong>Centers in India:</strong></td>
+        <td>Available Nationwide</td>
+      </tr>
+      <tr>
+        <td><strong>Career Opportunities:</strong></td>
+        <td>
+          Ethical Hacker, Security Analyst, Penetration Tester, Cyber Forensics
+          Expert
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Placement:</strong></td>
+        <td>100% Assistance</td>
+      </tr>
+    </table>
+
+    <div class="cyber-security-button-container">
+      <button class="cyber-security-brochure-btn" id="brochure-btn">
+        📄 Brochure
+      </button>
+      <button class="cyber-security-enroll-btn" id="enroll-btn">
+        🖊 Enroll Now
+      </button>
     </div>
-    <div class="cyber-card">
-      <h3>03</h3>
-      <p>
-        Business management, marketing, HR, and operations professionals wanting
-        to augment their skills in data analysis
-      </p>
-    </div>
-    <div class="cyber-card">
-      <h3>04</h3>
-      <p>
-        Professionals seeking to switch or advance their careers in data science
-      </p>
-    </div>
+  </div>
+
+  <!-- Form Container -->
+  <div id="form-container" style="display: none">
+    <form id="dynamic-form" class="cyber-security-form">
+      <h3 id="form-title">Form</h3>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Enter your name"
+      />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+      />
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </div>
 
-<!-- CSS -->
 <style>
-  .cyber-section {
-    text-align: center;
-    padding: 20px;
-    padding-bottom: 70px;
+  .cyber-security-programs-section {
+    padding: 40px 20px;
   }
 
-  .cyber-title {
-    font-size: 1.8rem; /* Matches skills section title font size */
-    color: #162020;
-    margin-bottom: 25px;
+  .cyber-security-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
     font-weight: bold;
-    position: relative;
   }
 
-  .cyber-title::after {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 4px;
-    background-color: #ff3131; /* Underline color */
-    margin: 15px auto 0;
-  }
-
-  .cyber-cards-wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 0 10px;
-  }
-
-  .cyber-card {
-    flex: 0 0 24%; /* Ensures 4 cards in one row */
-    box-sizing: border-box;
-    padding: 20px;
-    background-color: white;
-    color: black;
-    border-radius: 8px;
+  .cyber-security-program-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    padding: 25px;
+    width: 80%;
+    max-width: 1200px;
     text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .cyber-security-program-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .cyber-security-program-title {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .cyber-security-program-table {
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
     font-size: 1rem;
     color: #555;
   }
 
-  .cyber-card p {
-    margin-top: 15px;
+  .cyber-security-program-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
   }
 
-  .cyber-card:hover {
-    background-color: #dc3545;
-    color: white;
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  .cyber-security-button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .cyber-security-enroll-btn,
+  .cyber-security-brochure-btn {
+    background-color: rgb(36, 184, 49);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cyber-security-enroll-btn:hover,
+  .cyber-security-brochure-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .cyber-security-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cyber-security-form label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .cyber-security-form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .cyber-security-form button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {
-    .cyber-card {
-      flex: 0 0 48%; /* Adjusts to 2 cards per row on smaller screens */
+    .cyber-security-program-card {
+      width: 90%;
+      padding: 20px;
+    }
+
+    .cyber-security-program-title {
+      font-size: 1.4rem;
+    }
+
+    .cyber-security-program-table {
+      font-size: 0.9rem;
+    }
+
+    .cyber-security-enroll-btn,
+    .cyber-security-brochure-btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
     }
   }
 
   @media (max-width: 480px) {
-    .cyber-card {
-      flex: 0 0 100%; /* Stacks cards vertically on very small screens */
+    .cyber-security-section-title {
+      font-size: 1.2rem;
+    }
+
+    .cyber-security-program-title {
+      font-size: 1.2rem;
+    }
+
+    .cyber-security-program-table td {
+      font-size: 0.8rem;
+      padding: 5px;
+    }
+
+    .cyber-security-button-container {
+      gap: 10px;
+    }
+
+    .cyber-security-enroll-btn,
+    .cyber-security-brochure-btn {
+      padding: 6px 12px;
+      font-size: 0.8rem;
     }
   }
 </style>
-<!-- enroll section ends here ============= -->
 
-<!--html skill set covered section start here ============= -->
-<section class="cyber-offerings-section">
-  <div class="cyber-offerings-container">
-    <div class="cyber-offerings-text">
-      <h2 class="cyber-offerings-title">
-        Career Opportunities in Cyber Security
-      </h2>
-      <ul class="cyber-offerings-list">
+<section class="offerings-section">
+  <div class="offerings-container">
+    <div class="offerings-text">
+      <h2 class="offerings-title">Career Paths with Us</h2>
+      <ul class="offerings-list">
         <li>
-          <span class="cyber-check-icon blue">&#10003;</span> Cyber Security
-          Expert
+          <span class="check-icon blue">&#10003;</span> Cyber Security Expert
         </li>
         <li>
-          <span class="cyber-check-icon blue">&#10003;</span> Cyber Security
+          <span class="check-icon blue">&#10003;</span> Cyber Security Engineer
+        </li>
+        <li>
+          <span class="check-icon blue">&#10003;</span> Application Security
           Engineer
         </li>
         <li>
-          <span class="cyber-check-icon blue">&#10003;</span> Application
-          Security Engineer
+          <span class="check-icon blue">&#10003;</span>Network Security Manager
         </li>
         <li>
-          <span class="cyber-check-icon blue">&#10003;</span> Network Security
-          Manager
+          <span class="check-icon blue">&#10003;</span> Cyber Security Analyst
         </li>
         <li>
-          <span class="cyber-check-icon blue">&#10003;</span> Cyber Security
-          Analyst
-        </li>
-        <li>
-          <span class="cyber-check-icon blue">&#10003;</span> Cyber Security
+          <span class="check-icon blue">&#10003;</span>Cyber Security
           Consultants
         </li>
       </ul>
     </div>
-    <div class="cyber-offerings-image">
-      <img
-        style="height: 60vh"
-        src="{% static 'images/cs_course.jpg' %}"
-        alt="Cyber security learning"
-      />
+    <div class="offerings-image">
+      <img src="{% static 'images/cs_course.jpg' %}" alt="Student learning" />
     </div>
   </div>
 </section>
 
 <!-- CSS -->
 <style>
-  body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
+  .offerings-section {
+    padding: 60px 20px;
   }
 
-  .cyber-offerings-section {
-    background-color: #f9f9fb;
-    padding-bottom: 50px;
-  }
-
-  .cyber-offerings-container {
+  .offerings-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -925,12 +630,13 @@
     gap: 20px;
   }
 
-  .cyber-offerings-text {
+  .offerings-text {
     flex: 1;
     max-width: 550px;
+    line-height: 1.6;
   }
 
-  .cyber-offerings-title {
+  .offerings-title {
     font-size: 1.8rem;
     color: #162020;
     margin-bottom: 20px;
@@ -938,7 +644,7 @@
     position: relative;
   }
 
-  .cyber-offerings-title::after {
+  .offerings-title::after {
     content: "";
     display: block;
     width: 80px;
@@ -947,22 +653,24 @@
     margin-top: 10px;
   }
 
-  .cyber-offerings-list {
+  .offerings-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .cyber-offerings-list li {
+  .offerings-list li {
     font-size: 1rem;
     color: #555;
     margin: 10px 0;
     display: flex;
     align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  .cyber-check-icon {
-    font-size: 1.2rem;
+  .check-icon {
+    font-size: 1rem;
     margin-right: 10px;
   }
 
@@ -974,47 +682,44 @@
     color: #1a73e8;
   }
 
-  .cyber-offerings-image {
+  .offerings-image {
     flex: 1;
     max-width: 550px;
     text-align: center;
   }
 
-  .cyber-offerings-image img {
+  .offerings-image img {
     width: 100%;
-
     max-width: 450px;
+    height: 60vh;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   @media (max-width: 768px) {
-    .cyber-offerings-container {
+    .offerings-container {
       flex-direction: column;
       align-items: center;
     }
 
-    .cyber-offerings-text,
-    .cyber-offerings-image {
+    .offerings-text,
+    .offerings-image {
       max-width: 100%;
     }
 
-    .cyber-offerings-title {
-      font-size: 1.8rem;
+    .offerings-title {
+      font-size: 1.2rem;
     }
 
-    .cyber-offerings-list li {
-      font-size: 0.95rem;
+    .offerings-list li {
+      font-size: 0.87rem;
     }
   }
 </style>
 
-<!-- skill set covered section ends here ============= -->
-
 <!-- CSS -->
 <style>
   .why-choose-section {
-    background-color: #f9f9fb;
     padding: 60px 20px;
   }
 
@@ -1072,88 +777,6 @@
 
     .card p {
       font-size: 0.9rem;
-    }
-  }
-
-  /* Section Title */
-  .section-title {
-    text-align: center;
-    font-size: 28px;
-    color: #1e90ff; /* Blue title color */
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-
-  /* Programs Section */
-  .programs-section {
-    padding: 20px;
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-
-  /* Programs Container */
-  .programs-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  /* Program Card */
-  .program-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 410px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .program-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #ff3131; /* Changes background color */
-    color: white; /* Changes text color */
-  }
-
-  /* Ensure child elements like links or headings also change color */
-  .program-card:hover * {
-    color: white; /* Applies to all text elements inside the card */
-  }
-
-  /* Program Badge */
-  .program-badge {
-    background-color: #ff3131; /* Red-orange badge color */
-    color: #fff;
-    padding: 5px 15px;
-    font-size: 14px;
-    border-radius: 20px;
-    display: inline-block;
-    font-weight: bold;
-  }
-
-  /* Program Title */
-  .program-title {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 22px;
-    color: #2e8b57; /* Green title color */
-  }
-
-  /* Program Description */
-  .program-description {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .program-card {
-      width: 100%;
     }
   }
 
@@ -1254,6 +877,85 @@
 
     .card-content {
       font-size: 13px;
+    }
+  }
+</style>
+
+<!-- CSS -->
+<style>
+
+
+  .courses-section {
+    padding: 50px 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+    color: #162020;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #ff5252;
+    margin: 10px auto 0;
+  }
+
+  .section-description {
+    font-size: 1.2rem;
+    color: #555;
+    {% comment %} text-align: center; {% endcomment %}
+    margin-bottom: 40px;
+  }
+
+  .course-category {
+    margin-bottom: 30px;
+  }
+
+  .course-title {
+    font-size: 1.8rem;
+    color: #162020;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .course-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #ff5252;
+    margin: 8px 0;
+  }
+
+  .course-category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .course-title {
+      font-size: 1.5rem;
+    }
+
+    .section-description {
+      font-size: 1rem;
     }
   }
 </style>

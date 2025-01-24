@@ -28,4 +28,9 @@ urlpatterns = [
     path('faq/', views.faq, name='faq'),
     path('enquire_now/', views.enquire_now, name='enquire_now'),
     path('blog/', views.blog, name='blog'),
+    path('mumbai_landing-page/', views.mumbai_landing_page, name='mumbai_landing_page'),
+
+    path('indiranagar/', views.indiranagar, name='indiranagar'),
+
+
 ]

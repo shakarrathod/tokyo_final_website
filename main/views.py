@@ -61,3 +61,8 @@ def enquire_now(request):
 
 def blog(request):
     return render(request, 'blog.html')
+def mumbai_landing_page(request):
+    return render(request, 'mumbai_landing_page.html')
+
+def indiranagar(request):
+    return render(request, 'indiranagar.html')
