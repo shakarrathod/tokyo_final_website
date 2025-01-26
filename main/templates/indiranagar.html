@@ -23,96 +23,253 @@
   <body>
     <!-- Header -->
     <header>
-      <div class="header-container">
-        <div class="logo-container">
-          <img
-            src="{% static 'images/logo.png' %}"
-            alt="Tokyo Analytics Logo"
-          />
-          <h2>Indira Nagar, Bangalore</h2>
+      <div class="indira-header-container">
+        <!-- Top Row: Social Media Icons & Flag Icons -->
+        <div class="indira-top-row">
+          <!-- Social Media Icons -->
+          <div class="indira-left-icons">
+            <a href="https://www.facebook.com" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+    
+          <!-- Flag Icons (India and Tokyo) using Image -->
+          <div class="indira-right-icons">
+            <img src="{% static 'images/india.png' %}" alt="India Flag" class="indira-flag-icon" />
+            <img src="{% static 'images/japan.png' %}" alt="Tokyo Flag" class="indira-flag-icon" />
+          </div>
         </div>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Gallery</a></li>
-          </ul>
-        </nav>
+    
+        <!-- Bottom Row: Logo Image, Branch Name & Navigation Menu -->
+        <div class="indira-bottom-row">
+          <!-- Logo and Branch Name -->
+          <div class="indira-logo-container">
+            <img src="{% static 'images/logo.png' %}" alt="Tokyo Analytics Logo" class="indira-logo-image" />
+            <h2 class="indira-logo-text">Indira Nagar, Bangalore</h2>
+          </div>
+    
+          <!-- Navigation Menu -->
+          <nav class="indira-nav">
+            <ul class="indira-nav-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#courses">Courses</a></li>
+              <li><a href="#admission">Admission</a></li>
+              <li><a href="#">Gallery</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    
+      <!-- Menu Icon (only for responsive layout) -->
+      <div class="indira-menu-icon" id="indira-menu-icon">
+        <i class="fas fa-bars"></i> <!-- Menu icon -->
       </div>
     </header>
-
+    
+    <!-- Include Font Awesome CDN for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
     <style>
       /* Header with 100% width */
       header {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%; /* Full width of the screen */
+        width: 100%;
         z-index: 1000;
         background-color: white;
         padding: 15px 20px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out; /* Smooth transition */
       }
-
-      /* Centered container for header content */
-      .header-container {
-        max-width: 1200px; /* Content width restricted to 1200px */
-        margin: 0 auto; /* Center the header content */
+    
+      /* Container for header content */
+      .indira-header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+    
+      /* Top Row: Social Icons and Flags */
+      .indira-top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+    
+      .indira-left-icons a {
+        margin-right: 15px;
+        font-size: 20px;
+        color: #333;
+        transition: color 0.3s;
+      }
+    
+      .indira-left-icons a:hover {
+        color: red; /* Change to theme color on hover */
+      }
+    
+      .indira-right-icons img {
+        width: 30px;
+        height: 20px;
+        margin-left: 10px;
+      }
+    
+      /* Bottom Row: Logo & Branch Name + Nav Links */
+      .indira-bottom-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-
-      .logo-container img {
-        height: 40px; /* Adjust logo size */
-        margin-right: 10px;
+    
+      .indira-logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
       }
-
-      header h2 {
-        font-size: 18px;
+    
+      .indira-logo-image {
+        height: 40px;
+        margin-bottom: 5px;
       }
-
-      nav {
+    
+      .indira-logo-text {
+        font-size: 14px; /* Smaller font for branch name */
+        color: #333;
+        margin: 0;
+      }
+    
+      /* Navigation Menu */
+      .indira-nav {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         flex-grow: 1;
       }
-
-      nav ul {
+    
+      .indira-nav-list {
         display: flex;
         list-style-type: none;
         margin: 0;
         padding: 0;
       }
-
-      nav ul li {
+    
+      .indira-nav-list li {
         margin-left: 20px;
       }
-
-      nav ul li a {
+    
+      .indira-nav-list li a {
         text-decoration: none;
-        color: #333;
+        color: red; /* Red color for the theme */
         font-size: 16px;
         font-weight: bold;
         padding: 10px;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, color 0.3s;
       }
-
-      nav ul li a:hover {
-        background-color: #f1f1f1;
+    
+      .indira-nav-list li a:hover {
+        background-color: red;
+        color: white;
         border-radius: 5px;
       }
-
+    
+      /* Menu icon on bottom right (removed from system layout) */
+      .indira-menu-icon {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        display: none; /* Menu icon is hidden in system layout */
+      }
+    
       /* Ensure the header doesn't overlap content */
       body {
         padding-top: 80px;
       }
+    
+      /* Mobile Styling */
+      @media screen and (max-width: 768px) {
+        .indira-bottom-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+    
+        .indira-nav-list {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background-color: white;
+          width: 200px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .indira-nav-list.active {
+          display: flex;
+        }
+    
+        .indira-menu-icon {
+          display: block; /* Menu icon appears in responsive layout */
+        }
+    
+        .indira-nav-list li a {
+          font-size: 18px;
+        }
+      }
     </style>
+    
+    <script>
+      // Toggle navigation menu on mobile
+      const indiraMenuIcon = document.getElementById('indira-menu-icon');
+      const indiraNavList = document.querySelector('.indira-nav-list');
+      const indiraNavLinks = document.querySelectorAll('.indira-nav-list li a');
+    
+      // Open/Close menu when the menu icon is clicked
+      indiraMenuIcon.addEventListener('click', () => {
+        indiraNavList.classList.toggle('active');
+      });
+    
+      // Close the menu when a link is clicked
+      indiraNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          indiraNavList.classList.remove('active');
+        });
+      });
+    
+      // Hide the header on scroll down and show it on scroll up
+      let lastScrollTop = 0;
+      const header = document.querySelector('header');
+    
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // If scrolling down, hide the header
+        if (scrollTop > lastScrollTop) {
+          header.style.transform = 'translateY(-100%)'; // Hide the header
+        } else {
+          // If scrolling up, show the header
+          header.style.transform = 'translateY(0)'; // Show the header
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+      });
+    </script>
+    
 
     {% comment %} banner {% endcomment %}
 
     <!-- HTML Section -->
-    <div class="indira-banner-section-container">
+    <div id="home" class="indira-banner-section-container">
       <video autoplay muted loop class="indira-banner-section-video">
         <source
           src="{% static 'videos/indiranagar_banner_video.mp4' %}"
@@ -127,19 +284,22 @@
         </p>
       </div>
     </div>
+    
     <style>
       /* CSS Section */
       .indira-banner-section-container {
         position: relative;
         width: 100%;
-        height: auto;
+        height: 100vh; /* Make it full screen */
+        overflow: hidden; /* Ensure content doesn't overflow */
       }
-
+    
       .indira-banner-section-video {
         width: 100%;
-        height: auto;
+        height: 100%; /* Ensure video takes up full screen */
+        object-fit: cover; /* Cover the screen while maintaining aspect ratio */
       }
-
+    
       .indira-banner-section-text {
         position: absolute;
         top: 50%;
@@ -147,27 +307,51 @@
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
+        padding: 20px; /* Add padding for better spacing */
+        width: 100%; /* Ensure the text does not overflow */
       }
-
+    
       .indira-banner-section-text h1 {
         font-size: 2em;
         margin: 0;
       }
-
+    
       .indira-banner-section-quote {
         font-size: 1em;
         margin-top: 10px;
       }
+    
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        .indira-banner-section-text h1 {
+          font-size: 1.5em; /* Smaller font size for tablets */
+        }
+    
+        .indira-banner-section-quote {
+          font-size: 0.9em; /* Smaller font size for tablets */
+        }
+      }
+    
+      @media screen and (max-width: 480px) {
+        .indira-banner-section-text h1 {
+          font-size: 0.87rem; /* Even smaller font size for mobile devices */
+        }
+    
+        .indira-banner-section-quote {
+          font-size: 0.7rem; /* Even smaller font size for mobile devices */
+        }
+      }
     </style>
+    
     <!-- Main Content -->
-    <div class="indira-container">
+    <div id="about" class="indira-container">
       <!-- Image and About Section Side by Side -->
       <div class="indira-content">
         <!-- Image Box -->
         <div class="indira-image-box">
-          <img src="{% static "images/about1.png" %}" alt="About Us Image">
+          <img src="{% static 'images/about1.png' %}" alt="About Us Image">
         </div>
-
+    
         <!-- About Section -->
         <div class="indira-about-section">
           <h1>About Tokyo Analytics - Indira Nagar</h1>
@@ -180,30 +364,34 @@
         </div>
       </div>
     </div>
-
+    
     <style>
       .indira-container {
         max-width: 1200px;
         margin: 0 auto;
         margin-top: 160px;
       }
-
+    
       .indira-content {
         display: flex;
         justify-content: center;
         align-items: flex-start;
+        flex-wrap: wrap; /* Ensure content wraps on small screens */
       }
-
+    
       .indira-image-box {
         flex: 1;
+        min-width: 300px; /* Minimum width for the image container */
+        padding: 10px; /* Add some padding to the image box */
       }
-
+    
       .indira-image-box img {
         width: 100%;
         height: auto;
         border-radius: 8px;
+        object-fit: cover; /* Prevent image stretching */
       }
-
+    
       .indira-about-section {
         flex: 1;
         background-color: #fff;
@@ -213,417 +401,708 @@
         margin-left: 20px;
         margin-top: 80px;
       }
-
+    
       .indira-about-section h1 {
         margin-bottom: 1rem;
+        font-size: 1.5rem; /* Reduce font size */
       }
-
+    
       .indira-about-section p {
         margin-bottom: 0.6rem;
+        font-size: 1rem; /* Reduce font size */
+      }
+    
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        .indira-about-section {
+          margin-top: 20px;
+          margin-left: 0;
+        }
+    
+        .indira-about-section h1 {
+          font-size: 1.2rem; /* Smaller heading for mobile */
+        }
+    
+        .indira-about-section p {
+          font-size: 0.9rem; /* Smaller text for mobile */
+        }
+      }
+    
+      @media screen and (max-width: 480px) {
+        .indira-content {
+          flex-direction: column; /* Stack content vertically */
+          align-items: center;
+          margin-top: 0%;
+        }
+    
+        .indira-about-section {
+          margin-top: 20px;
+          padding: 20px;
+        }
+    
+        .indira-about-section h1 {
+          font-size: 1rem; /* Further reduce heading size for smaller mobile devices */
+        }
+    
+        .indira-about-section p {
+          font-size: 0.87rem; /* Further reduce text size for smaller devices */
+        }
       }
     </style>
+    
 
     <!-- Courses Section -->
-    <section class="indira-course-offered-section-2">
-      <h2>Courses We Offer</h2>
-      <div class="indira-course-offered-section-2-list">
-        <div class="indira-course-offered-section-2-item">
-          <div
-            class="indira-course-offered-section-2-card indira-course-offered-section-2-card-blue"
-          >
-            <div class="indira-course-offered-section-2-card-body">
-              <h5 class="indira-course-offered-section-2-title">
-                Data Science & Business Analytics
-              </h5>
-              <p class="indira-course-offered-section-2-duration">
-                Duration: 6 months
-              </p>
+    <section id="courses" class="indira-course-offered-section-2" style="background-image: url('{% static 'images/home-company-back.jpg' %}');">
+      <h2 class="text-white">Courses We Offer</h2>
+      <div class="indira-course-offered-section-2-wrapper">
+        <div class="indira-course-offered-section-2-list">
+          <!-- Course Items -->
+          <div class="indira-course-offered-section-2-item">
+            <div class="indira-course-offered-section-2-card indira-course-offered-section-2-card-blue">
+              <div class="indira-course-offered-section-2-card-body">
+                <h5 class="indira-course-offered-section-2-title">Data Science & Business Analytics</h5>
+                <p class="indira-course-offered-section-2-duration">Duration: 6 months</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="indira-course-offered-section-2-item">
-          <div
-            class="indira-course-offered-section-2-card indira-course-offered-section-2-card-green"
-          >
-            <div class="indira-course-offered-section-2-card-body">
-              <h5 class="indira-course-offered-section-2-title">
-                Cyber Security & Ethical Hacking
-              </h5>
-              <p class="indira-course-offered-section-2-duration">
-                Duration: 4 months
-              </p>
+          <div class="indira-course-offered-section-2-item">
+            <div class="indira-course-offered-section-2-card indira-course-offered-section-2-card-green">
+              <div class="indira-course-offered-section-2-card-body">
+                <h5 class="indira-course-offered-section-2-title">Cyber Security & Ethical Hacking</h5>
+                <p class="indira-course-offered-section-2-duration">Duration: 4 months</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="indira-course-offered-section-2-item">
-          <div
-            class="indira-course-offered-section-2-card indira-course-offered-section-2-card-yellow"
-          >
-            <div class="indira-course-offered-section-2-card-body">
-              <h5 class="indira-course-offered-section-2-title">
-                Cloud & DevOps
-              </h5>
-              <p class="indira-course-offered-section-2-duration">
-                Duration: 5 months
-              </p>
+          <div class="indira-course-offered-section-2-item">
+            <div class="indira-course-offered-section-2-card indira-course-offered-section-2-card-yellow">
+              <div class="indira-course-offered-section-2-card-body">
+                <h5 class="indira-course-offered-section-2-title">Cloud & DevOps</h5>
+                <p class="indira-course-offered-section-2-duration">Duration: 5 months</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="indira-course-offered-section-2-item">
-          <div
-            class="indira-course-offered-section-2-card indira-course-offered-section-2-card-pink"
-          >
-            <div class="indira-course-offered-section-2-card-body">
-              <h5 class="indira-course-offered-section-2-title">
-                Chess Analytics
-              </h5>
-              <p class="indira-course-offered-section-2-duration">
-                Duration: 3 months
-              </p>
+          <div class="indira-course-offered-section-2-item">
+            <div class="indira-course-offered-section-2-card indira-course-offered-section-2-card-pink">
+              <div class="indira-course-offered-section-2-card-body">
+                <h5 class="indira-course-offered-section-2-title">Chess Analytics</h5>
+                <p class="indira-course-offered-section-2-duration">Duration: 3 months</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="indira-course-offered-section-2-item">
-          <div
-            class="indira-course-offered-section-2-card indira-course-offered-section-2-card-orange"
-          >
-            <div class="indira-course-offered-section-2-card-body">
-              <h5 class="indira-course-offered-section-2-title">
-                Event Management
-              </h5>
-              <p class="indira-course-offered-section-2-duration">
-                Duration: 2 months
-              </p>
+          <div class="indira-course-offered-section-2-item">
+            <div class="indira-course-offered-section-2-card indira-course-offered-section-2-card-orange">
+              <div class="indira-course-offered-section-2-card-body">
+                <h5 class="indira-course-offered-section-2-title">Event Management</h5>
+                <p class="indira-course-offered-section-2-duration">Duration: 2 months</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="indira-course-offered-section-2-item">
-          <div
-            class="indira-course-offered-section-2-card indira-course-offered-section-2-card-purple"
-          >
-            <div class="indira-course-offered-section-2-card-body">
-              <h5 class="indira-course-offered-section-2-title">
-                Spoken English
-              </h5>
-              <p class="indira-course-offered-section-2-duration">
-                Duration: 2 months
-              </p>
+          <div class="indira-course-offered-section-2-item">
+            <div class="indira-course-offered-section-2-card indira-course-offered-section-2-card-purple">
+              <div class="indira-course-offered-section-2-card-body">
+                <h5 class="indira-course-offered-section-2-title">Spoken English</h5>
+                <p class="indira-course-offered-section-2-duration">Duration: 2 months</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="indira-course-offered-section-2-item">
-          <div
-            class="indira-course-offered-section-2-card indira-course-offered-section-2-card-teal"
-          >
-            <div class="indira-course-offered-section-2-card-body">
-              <h5 class="indira-course-offered-section-2-title">
-                Nail Artistry
-              </h5>
-              <p class="indira-course-offered-section-2-duration">
-                Duration: 3 months
-              </p>
+          <div class="indira-course-offered-section-2-item">
+            <div class="indira-course-offered-section-2-card indira-course-offered-section-2-card-teal">
+              <div class="indira-course-offered-section-2-card-body">
+                <h5 class="indira-course-offered-section-2-title">Nail Artistry</h5>
+                <p class="indira-course-offered-section-2-duration">Duration: 3 months</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="indira-course-offered-section-2-item">
-          <div
-            class="indira-course-offered-section-2-card indira-course-offered-section-2-card-red"
-          >
-            <div class="indira-course-offered-section-2-card-body">
-              <h5 class="indira-course-offered-section-2-title">
-                Makeup Artistry
-              </h5>
-              <p class="indira-course-offered-section-2-duration">
-                Duration: 4 months
-              </p>
+          <div class="indira-course-offered-section-2-item">
+            <div class="indira-course-offered-section-2-card indira-course-offered-section-2-card-red">
+              <div class="indira-course-offered-section-2-card-body">
+                <h5 class="indira-course-offered-section-2-title">Makeup Artistry</h5>
+                <p class="indira-course-offered-section-2-duration">Duration: 4 months</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
+    
+    <!-- Include jQuery and Slick Carousel CSS and JS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
     <style>
+      /* Background section styles */
       .indira-course-offered-section-2 {
-        text-align: center;
-        margin: 3rem;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 30px 0;
+        height: 300px;
       }
-
-      .indira-course-offered-section-2 h2 {
-        margin-bottom: 40px;
-      }
-
-      .indira-course-offered-section-2-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
+    
+      .indira-course-offered-section-2-wrapper {
         max-width: 1200px;
         margin: 0 auto;
+        justify-content: baseline;
+        align-items: center;
       }
-
+    
+      .indira-course-offered-section-2 h2 {
+        text-align: center;
+        color: white;
+        margin-bottom: 40px;
+      }
+    
+      .indira-course-offered-section-2-list {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+    
       .indira-course-offered-section-2-item {
         flex: 1 1 calc(33.33% - 20px);
         max-width: calc(33.33% - 20px);
       }
-
+    
       .indira-course-offered-section-2-card {
         background-color: #fff;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
-
+    
       .indira-course-offered-section-2-card-body {
         padding: 20px;
       }
-
+    
       .indira-course-offered-section-2-title {
         font-size: 18px;
         font-weight: bold;
       }
-
+    
       .indira-course-offered-section-2-duration {
         font-size: 14px;
         color: #555;
       }
+    
+      /* Color classes */
+      .indira-course-offered-section-2-card-blue { background-color: #e0f7fa; }
+      .indira-course-offered-section-2-card-green { background-color: #e8f5e9; }
+      .indira-course-offered-section-2-card-yellow { background-color: #fffde7; }
+      .indira-course-offered-section-2-card-pink { background-color: #fce4ec; }
+      .indira-course-offered-section-2-card-orange { background-color: #fff3e0; }
+      .indira-course-offered-section-2-card-purple { background-color: #f3e5f5; }
+      .indira-course-offered-section-2-card-teal { background-color: #e0f2f1; }
+      .indira-course-offered-section-2-card-red { background-color: #ffebee; }
+    
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .indira-course-offered-section-2{
+          height: 50vh;
+        }
+        .indira-course-offered-section-2-list {
+          flex-wrap: wrap;  /* Stack items vertically */
 
-      .indira-course-offered-section-2-card-blue {
-        background-color: #e0f7fa;
-      }
-
-      .indira-course-offered-section-2-card-green {
-        background-color: #e8f5e9;
-      }
-
-      .indira-course-offered-section-2-card-yellow {
-        background-color: #fffde7;
-      }
-
-      .indira-course-offered-section-2-card-pink {
-        background-color: #fce4ec;
-      }
-
-      .indira-course-offered-section-2-card-orange {
-        background-color: #fff3e0;
-      }
-
-      .indira-course-offered-section-2-card-purple {
-        background-color: #f3e5f5;
-      }
-
-      .indira-course-offered-section-2-card-teal {
-        background-color: #e0f2f1;
-      }
-
-      .indira-course-offered-section-2-card-red {
-        background-color: #ffebee;
-      }
-    </style>
-
-    <!-- Admission Section -->
-    <h2 style="text-align: center; margin-top: 20px">Take Admission Now</h2>
-    <section class="indira-from-section-3-admission-section">
-      <form action="/submit_admission" method="POST">
-        <div class="indira-from-section-3-form-row">
-          <div class="indira-from-section-3-form-group">
-            <label for="first-name">First Name</label>
-            <input
-              type="text"
-              id="first-name"
-              name="first_name"
-              class="indira-from-section-3-form-control"
-            />
-          </div>
-          <div class="indira-from-section-3-form-group">
-            <label for="last-name">Last Name</label>
-            <input
-              type="text"
-              id="last-name"
-              name="last_name"
-              class="indira-from-section-3-form-control"
-            />
-          </div>
-        </div>
-        <div class="indira-from-section-3-form-row">
-          <div class="indira-from-section-3-form-group">
-            <label for="phone-number">Phone Number</label>
-            <input
-              type="tel"
-              id="phone-number"
-              name="phone_number"
-              class="indira-from-section-3-form-control"
-            />
-          </div>
-          <div class="indira-from-section-3-form-group">
-            <label for="otp">OTP</label>
-            <input
-              type="text"
-              id="otp"
-              name="otp"
-              class="indira-from-section-3-form-control"
-            />
-          </div>
-          <div class="indira-from-section-3-form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="indira-from-section-3-form-control"
-            />
-          </div>
-        </div>
-        <div class="indira-from-section-3-form-row">
-          <div class="indira-from-section-3-form-group">
-            <label for="category">Course Category</label>
-            <select
-              id="category"
-              name="category"
-              class="indira-from-section-3-form-control"
-              onchange="updateCourseOptions()"
-            >
-              <option value="it">IT Courses</option>
-              <option value="professional">Professional Courses</option>
-            </select>
-          </div>
-          <div class="indira-from-section-3-form-group">
-            <label for="course">Select Course</label>
-            <select
-              id="course"
-              name="course"
-              class="indira-from-section-3-form-control"
-            >
-              <!-- Default IT courses -->
-              <option value="data_science">
-                Data Science & Business Analytics
-              </option>
-              <option value="cyber_security">
-                Cyber Security & Ethical Hacking
-              </option>
-              <option value="cloud_devops">Cloud & DevOps</option>
-              <option value="chess_analytics">Chess Analytics</option>
-            </select>
-          </div>
-        </div>
-        <button
-          type="submit"
-          class="indira-from-section-3-btn indira-from-section-3-btn-primary"
-        >
-          Submit
-        </button>
-      </form>
-    </section>
-
-    <style>
-      .indira-from-section-3-admission-section {
-        background-color: #f0f8ff;
-        padding: 40px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        max-width: 1200px;
-        margin: 0 auto;
-        margin-top: 20px; /* Added margin from top */
-      }
-
-      .indira-from-section-3-form-row {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 20px;
-      }
-
-      .indira-from-section-3-form-group {
-        flex: 1;
-      }
-
-      .indira-from-section-3-form-group label {
-        display: block;
-        margin-bottom: 8px;
-        font-size: 14px;
-        font-weight: bold;
-        color: #333;
-      }
-
-      .indira-from-section-3-form-group input,
-      .indira-from-section-3-form-group select {
-        width: 100%;
-        padding: 12px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-        color: #333;
-        background-color: #fff;
-      }
-
-      .indira-from-section-3-form-group input:focus,
-      .indira-from-section-3-form-group select:focus {
-        border-color: #007bff;
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
-      }
-
-      .indira-from-section-3-btn {
-        display: inline-block;
-        padding: 12px 20px;
-        border-radius: 4px;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
-        text-align: center;
-      }
-
-      .indira-from-section-3-btn-primary {
-        background-color: #007bff;
-        color: #fff;
-      }
-
-      .indira-from-section-3-btn-primary:hover {
-        background-color: #0056b3;
-      }
-    </style>
-
-    <script>
-      function updateCourseOptions() {
-        const category = document.getElementById("category").value;
-        const courseSelect = document.getElementById("course");
-
-        // Clear existing options
-        courseSelect.innerHTML = "";
-
-        if (category === "it") {
-          const itCourses = [
-            {
-              value: "data_science",
-              text: "Data Science & Business Analytics",
-            },
-            {
-              value: "cyber_security",
-              text: "Cyber Security & Ethical Hacking",
-            },
-            { value: "cloud_devops", text: "Cloud & DevOps" },
-            { value: "chess_analytics", text: "Chess Analytics" },
-          ];
-          itCourses.forEach((course) => {
-            const option = document.createElement("option");
-            option.value = course.value;
-            option.text = course.text;
-            courseSelect.appendChild(option);
-          });
-        } else if (category === "professional") {
-          const professionalCourses = [
-            { value: "event_management", text: "Event Management" },
-            { value: "spoken_english", text: "Spoken English" },
-            { value: "nail_artistry", text: "Nail Artistry" },
-            { value: "makeup_artistry", text: "Makeup Artistry" },
-          ];
-          professionalCourses.forEach((course) => {
-            const option = document.createElement("option");
-            option.value = course.value;
-            option.text = course.text;
-            courseSelect.appendChild(option);
-          });
+        }
+    
+        .indira-course-offered-section-2-item {
+          flex: 1 1 100%; /* Show one card at a time on small screens */
+          max-width: 100%;
+          margin: 20px;
         }
       }
+    </style>
+    
+    <script>
+      $(document).ready(function(){
+        $('.indira-course-offered-section-2-list').slick({
+          infinite: true,
+          slidesToShow: 3,  // Show 3 cards at a time on larger screens
+          slidesToScroll: 1,
+          dots: true,  // Show dots for navigation
+          arrows: false,  // Remove arrow navigation
+          autoplay: true,
+          autoplaySpeed: 2000,  // Slide every 2 seconds
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1, // Show 1 card at a time in responsive view
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+              }
+            }
+          ]
+        });
+      });
     </script>
+    
+
+<!-- Form Management Container -->
+<h1 id="admission" class="admission-title">Admission</h1>
+<div id="form-container">
+  <!-- Step 1: Admission Form -->
+  <section id="form1" class="form-step">
+    <h2 class="form-title">Take Admission Now</h2>
+    <form id="admission-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first_name" class="form-control" placeholder="Enter your first name" required />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last_name" class="form-control" placeholder="Enter your last name" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone-number">Phone Number</label>
+          <input type="tel" id="phone-number" name="phone_number" class="form-control" placeholder="Enter your phone number" required />
+        </div>
+        <div class="form-group">
+          <label for="otp">OTP</label>
+          <input type="text" id="otp" name="otp" class="form-control" placeholder="Enter OTP"  />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required />
+        </div>
+        <div class="form-group">
+          <label for="category">Course Category</label>
+          <select id="category" name="category" class="form-control" onchange="updateCourseOptions()" required>
+            <option value="it">IT Courses</option>
+            <option value="professional">Professional Courses</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group full-width">
+          <label for="course">Select Course</label>
+          <select id="course" name="course" class="form-control" required>
+            <option value="data_science">Data Science & Business Analytics</option>
+            <option value="cyber_security">Cyber Security & Ethical Hacking</option>
+            <option value="cloud_devops">Cloud & DevOps</option>
+            <option value="chess_analytics">Chess Analytics</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="button" id="form1-next" class="btn1 btn-primary">Next</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Step 2: Personal Details Form -->
+  <section id="form2" class="form-step" style="display: none;">
+    <h2 class="form-title">Personal Details</h2>
+    <form id="personal-details-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" class="form-control" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" class="form-control" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" class="form-control" placeholder="Enter your address" required></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" class="form-control" placeholder="Enter your city" required />
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" class="form-control" placeholder="Enter your state" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="guardian-name">Guardian's Name</label>
+          <input type="text" id="guardian-name" name="guardian_name" class="form-control" placeholder="Enter guardian's name" required />
+        </div>
+        <div class="form-group">
+          <label for="guardian-contact">Guardian's Contact Number</label>
+          <input type="tel" id="guardian-contact" name="guardian_contact" class="form-control" placeholder="Enter guardian's contact number" required />
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="button" id="form2-next" class="btn1 btn-primary">Next</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Step 3: Payment Form -->
+  <section id="form3" class="form-step" style="display: none;">
+    <h2 class="form-title">Payment</h2>
+    <form id="payment-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="payment-method">Payment Method</label>
+          <select id="payment-method" name="payment_method" class="form-control" onchange="updatePaymentMethod()" required>
+            <option value="debit_card">Debit Card</option>
+            <option value="credit_card">Credit Card</option>
+            <option value="net_banking">Net Banking</option>
+          </select>
+        </div>
+      </div>
+      <div id="card-details" style="display: none;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card_number" class="form-control" placeholder="Enter card number" />
+          </div>
+          <div class="form-group">
+            <label for="expiry-date">Expiry Date</label>
+            <input type="month" id="expiry-date" name="expiry_date" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" class="form-control" placeholder="Enter CVV" />
+          </div>
+        </div>
+      </div>
+      <div id="net-banking-options" style="display: none;">
+        <div class="form-group">
+          <label for="bank-options">Choose Payment Option</label>
+          <select id="bank-options" name="bank_options" class="form-control">
+            <option value="phonepe">PhonePe</option>
+            <option value="googlepay">Google Pay</option>
+            <option value="paytm">Paytm</option>
+            <option value="upi">UPI</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" id="form3-submit" class="btn1 btn-success">Pay Now</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<script>
+  document.getElementById("form1-next").addEventListener("click", function () {
+    const form1 = document.getElementById("admission-form");
+    if (form1.checkValidity()) {
+      document.getElementById("form1").style.display = "none";
+      document.getElementById("form2").style.display = "block";
+    } else {
+      form1.reportValidity();
+    }
+  });
+
+  document.getElementById("form2-next").addEventListener("click", function () {
+    const form2 = document.getElementById("personal-details-form");
+    if (form2.checkValidity()) {
+      document.getElementById("form2").style.display = "none";
+      document.getElementById("form3").style.display = "block";
+    } else {
+      form2.reportValidity();
+    }
+  });
+
+  function updateCourseOptions() {
+    const category = document.getElementById("category").value;
+    const courseSelect = document.getElementById("course");
+
+    courseSelect.innerHTML = "";
+
+    if (category === "it") {
+      const itCourses = [
+        { value: "data_science", text: "Data Science & Business Analytics" },
+        { value: "cyber_security", text: "Cyber Security & Ethical Hacking" },
+        { value: "cloud_devops", text: "Cloud & DevOps" },
+        { value: "chess_analytics", text: "Chess Analytics" },
+      ];
+      itCourses.forEach((course) => {
+        const option = document.createElement("option");
+        option.value = course.value;
+        option.text = course.text;
+        courseSelect.appendChild(option);
+      });
+    } else if (category === "professional") {
+      const professionalCourses = [
+        { value: "event_management", text: "Event Management" },
+        { value: "spoken_english", text: "Spoken English" },
+        { value: "nail_artistry", text: "Nail Artistry" },
+        { value: "makeup_artistry", text: "Makeup Artistry" },
+      ];
+      professionalCourses.forEach((course) => {
+        const option = document.createElement("option");
+        option.value = course.value;
+        option.text = course.text;
+        courseSelect.appendChild(option);
+      });
+    }
+  }
+
+  function updatePaymentMethod() {
+    const paymentMethod = document.getElementById("payment-method").value;
+    document.getElementById("card-details").style.display =
+      paymentMethod === "debit_card" || paymentMethod === "credit_card" ? "block" : "none";
+    document.getElementById("net-banking-options").style.display =
+      paymentMethod === "net_banking" ? "block" : "none";
+  }
+</script>
+
+<style>
+  /* Form Container */
+  .form-step {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    padding: 40px;
+    margin: 30px auto;
+    border-radius: 16px;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    max-width: 1000px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .form-step:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-color: #007bff;
+  }
+
+  /* Form Title */
+  .form-title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 1000;
+    letter-spacing: 1px;
+  
+    border-bottom: 4px double #007bff;
+    display: inline-block;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .form-title:hover {
+    color: #0056b3;
+  }
+  
+  .admission-title {
+    color: #333;
+    padding-top: 50px;
+    font-size: 2.5rem; /* Slightly larger font size for a professional feel */
+    font-weight: bold; /* Ensures boldness while being less intense than 1000 */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Corrected to vertically center the title */
+    margin: 0 auto 30px; /* Ensures proper spacing from the top and bottom */
+    padding-bottom: 15px; /* Increased padding for emphasis */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #007bff; /* Thinner and more elegant underline */
+    width: fit-content; /* Adjusts the width to fit the content */
+    transition: color 0.3s ease;
+  }
+  
+  .admission-title:hover {
+    color: #007bff; /* Adds color change on hover for interactivity */
+  }
+  
+  /* Form Group Styles */
+  .form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+  }
+
+  .form-group label:hover {
+    color: #007bff;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+    background: #f8f9fa;
+    color: #495057;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #007bff;
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    outline: none;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .form-row .form-group {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .form-group.full-width {
+    flex-basis: 100%;
+  }
+
+  /* Form Buttons */
+  .form-actions {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .btn1 {
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: linear-gradient(to right, #007bff, #0056b3);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, #0056b3, #003a75);
+    box-shadow: 0 6px 20px rgba(0, 91, 187, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .btn-success {
+    background: linear-gradient(to right, #28a745, #218838);
+  }
+
+  .btn-success:hover {
+    background: linear-gradient(to right, #218838, #186d31);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    transform: translateY(-3px);
+  }
+
+  /* Animations */
+  .form-step {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Input Validation */
+  .form-group input:invalid,
+  .form-group select:invalid,
+  .form-group textarea:invalid {
+    border-color: #dc3545;
+    background: #fff5f5;
+    animation: shake 0.3s ease-in-out;
+  }
+
+  .form-group input:valid,
+  .form-group select:valid,
+  .form-group textarea:valid {
+    border-color: #28a745;
+    background: #f8fff4;
+  }
+
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-4px);
+    }
+    50% {
+      transform: translateX(4px);
+    }
+    75% {
+      transform: translateX(-4px);
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-step {
+      padding: 30px;
+    }
+
+    .form-title {
+      font-size: 2rem;
+    }
+
+    .form-row {
+      flex-direction: column;
+    }
+
+    .form-group {
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-step {
+      padding: 20px;
+    }
+
+    .form-title {
+      font-size: 1.8rem;
+    }
+
+    .btn1 {
+      font-size: 14px;
+      padding: 12px 20px;
+    }
+  }
+</style>
+
+
 
     <!-- Contact Section -->
     <section class="indira-location-section-4-contact-section">
