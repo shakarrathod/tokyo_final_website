@@ -17,12 +17,19 @@
       content="This is landing page template made by Suresh Jadhav"
     />
 
-     <!-- Favicon -->
-     <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/favicon.png' %}"
+    />
 
     <!-- Custom CSS Link -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
 
     <!-- Google Font Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,9 +64,8 @@
   </head>
 
   <body id="top">
-
-    
-    {% comment %} <header class="header" data-header>
+    {% comment %}
+    <header class="header" data-header>
       <div class="container">
         <a href="#" class="logo">
           <img
@@ -142,186 +148,218 @@
 
         <div class="overlay" data-nav-toggler data-overlay></div>
       </div>
-    </header> {% endcomment %}
+    </header>
+    {% endcomment %}
 
-    
-<!-- Updated Header Section -->
-<header class="header" data-header>
-  <div class="container">
-    <!-- Mobile Menu Button (hamburger icon) -->
-    <button class="header-action-btn menu-btn mobile-only" aria-label="open menu" data-nav-toggler>
-      <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-    </button>
-
-    <a href="#" class="logo">
-      <img src="{% static 'images/logo_new.png' %}" width="162" height="50" alt="tokyo logo" />
-      Kudlu Bangalore
-    </a>
-
-    <!-- Mobile Navigation Menu -->
-    <nav class="navbar" data-navbar>
-      <div class="wrapper">
-        <!-- Mobile Close Button -->
-        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+    <!-- Updated Header Section -->
+    <header class="header" data-header>
+      <div class="container">
+        <!-- Mobile Menu Button (hamburger icon) -->
+        <button
+          class="header-action-btn menu-btn mobile-only"
+          aria-label="open menu"
+          data-nav-toggler
+        >
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
         </button>
+
+        <a href="#" class="logo">
+          <img
+            src="{% static 'images/logo_new.png' %}"
+            width="162"
+            height="50"
+            alt="tokyo logo"
+          />
+          Kudlu Bangalore
+        </a>
+
+        <!-- Mobile Navigation Menu -->
+        <nav class="navbar" data-navbar>
+          <div class="wrapper">
+            <!-- Mobile Close Button -->
+            <button
+              class="nav-close-btn"
+              aria-label="close menu"
+              data-nav-toggler
+            >
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="#home" class="navbar-link" data-nav-link>Home</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#about" class="navbar-link" data-nav-link>About</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#courses" class="navbar-link" data-nav-link>Courses</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#courses" class="btn has-before enroll-btn">
+            <span class="span">Enroll Now</span>
+            <ion-icon
+              name="arrow-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </div>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
       </div>
+    </header>
 
-      <ul class="navbar-list">
-        <li class="navbar-item"><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
-        <li class="navbar-item"><a href="#about" class="navbar-link" data-nav-link>About</a></li>
-        <li class="navbar-item"><a href="#courses" class="navbar-link" data-nav-link>Courses</a></li>
-        <li class="navbar-item"><a href="#blog" class="navbar-link" data-nav-link>Blog</a></li>
-        <li class="navbar-item"><a href="#contact" class="navbar-link" data-nav-link>Contact</a></li>
-      </ul>
-    </nav>
+    <!-- CSS -->
+    <style>
+      /* Header remains sticky */
+      .header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: inherit;
+      }
 
-    <div class="header-actions">
-      <a href="#courses" class="btn has-before enroll-btn">
-        <span class="span">Enroll Now</span>
-        <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-      </a>
-    </div>
+      .hero {
+        padding-block-start: calc(var(--section-padding) + 0px);
+      }
 
-    <div class="overlay" data-nav-toggler data-overlay></div>
-  </div>
-</header>
+      /* Mobile Styles Only (Scoped to header only) */
+      @media (max-width: 768px) {
+        header[data-header] .mobile-only {
+          display: block;
+        }
+        header[data-header] .container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        header[data-header] .menu-btn {
+          order: -1;
+          font-size: 40px;
+        }
+        header[data-header] .logo {
+          order: 1;
+        }
+        header[data-header] .enroll-btn {
+          display: none;
+        }
+        /* Navbar container sliding in from left */
+        header[data-header] .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 250px;
+          height: 100%;
+          background: #fff;
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          /* Initially hidden off-screen */
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        header[data-header] .navbar.active {
+          transform: translateX(0);
+        }
+        /* Navbar list items animation */
+        header[data-header] .navbar-list {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          width: 100%;
+          opacity: 0;
+          transform: translateX(-20px);
+          transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        header[data-header] .navbar.active .navbar-list {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        header[data-header] .nav-close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+        /* Overlay styles */
+        header[data-header] .overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease-in-out;
+        }
+        header[data-header] .overlay.active {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
 
-<!-- CSS -->
-<style>
-  /* Header remains sticky */
-  .header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: inherit;
-  }
+      /* Hide mobile-only elements on larger screens */
+      @media (min-width: 769px) {
+        header[data-header] .mobile-only {
+          display: none;
+        }
+      }
+    </style>
 
-  .hero { padding-block-start: calc(var(--section-padding) + 0px); }
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+      // Select toggler elements (menu button, close button, overlay)
+      const navToggler = document.querySelectorAll("[data-nav-toggler]");
+      const navbar = document.querySelector("[data-navbar]");
+      const overlay = document.querySelector("[data-overlay]");
+      const navLinks = document.querySelectorAll("[data-nav-link]");
 
-  /* Mobile Styles Only (Scoped to header only) */
-  @media (max-width: 768px) {
-    header[data-header] .mobile-only {
-      display: block;
-    }
-    header[data-header] .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header[data-header] .menu-btn {
-      order: -1;
-      font-size: 40px;
-    }
-    header[data-header] .logo {
-      order: 1;
-    }
-    header[data-header] .enroll-btn {
-      display: none;
-    }
-    /* Navbar container sliding in from left */
-    header[data-header] .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100%;
-      background: #fff;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      /* Initially hidden off-screen */
-      transform: translateX(-100%);
-      transition: transform 0.3s ease-in-out;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    header[data-header] .navbar.active {
-      transform: translateX(0);
-    }
-    /* Navbar list items animation */
-    header[data-header] .navbar-list {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      opacity: 0;
-      transform: translateX(-20px);
-      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    }
-    header[data-header] .navbar.active .navbar-list {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    header[data-header] .nav-close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-    /* Overlay styles */
-    header[data-header] .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease-in-out;
-    }
-    header[data-header] .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
+      // Function to close the menu
+      function closeMenu() {
+        if (navbar.classList.contains("active")) {
+          navbar.classList.remove("active");
+          overlay.classList.remove("active");
+        }
+      }
 
-  /* Hide mobile-only elements on larger screens */
-  @media (min-width: 769px) {
-    header[data-header] .mobile-only {
-      display: none;
-    }
-  }
-</style>
+      // Toggle the menu when clicking toggler elements
+      navToggler.forEach((toggler) => {
+        toggler.addEventListener("click", () => {
+          navbar.classList.toggle("active");
+          overlay.classList.toggle("active");
+        });
+      });
 
-<!-- JavaScript for Menu Toggle -->
-<script>
-  // Select toggler elements (menu button, close button, overlay)
-  const navToggler = document.querySelectorAll("[data-nav-toggler]");
-  const navbar = document.querySelector("[data-navbar]");
-  const overlay = document.querySelector("[data-overlay]");
-  const navLinks = document.querySelectorAll("[data-nav-link]");
+      // Close the menu when a nav link is clicked
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          closeMenu();
+        });
+      });
+    </script>
 
-  // Function to close the menu
-  function closeMenu() {
-    if (navbar.classList.contains("active")) {
-      navbar.classList.remove("active");
-      overlay.classList.remove("active");
-    }
-  }
-
-  // Toggle the menu when clicking toggler elements
-  navToggler.forEach((toggler) => {
-    toggler.addEventListener("click", () => {
-      navbar.classList.toggle("active");
-      overlay.classList.toggle("active");
-    });
-  });
-
-  // Close the menu when a nav link is clicked
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
-  });
-</script>
-
-<!-- Ionicons CDN -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-
-    
+    <!-- Ionicons CDN -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
 
     <main>
       <article>
@@ -637,8 +675,18 @@
             <ul class="grid-list">
               <li>
                 <div class="course-card">
-                  <figure class="card-banner img-holder" style="--width: 370; --height: 220">
-                    <img src="{% static 'images/course-1.jpg' %}" width="370" height="220" loading="lazy" alt="Build Responsive Real- World Websites with HTML and CSS" class="img-cover" />
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 370; --height: 220"
+                  >
+                    <img
+                      src="{% static 'images/course-1.jpg' %}"
+                      width="370"
+                      height="220"
+                      loading="lazy"
+                      alt="Build Responsive Real- World Websites with HTML and CSS"
+                      class="img-cover"
+                    />
                   </figure>
                   <div class="abs-badge">
                     <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
@@ -647,7 +695,9 @@
                   <div class="card-content">
                     <span class="badge">Beginner - Pro</span>
                     <h3 class="h3">
-                      <a href="#" class="card-title">Mastering Data Science & Business Analytics</a>
+                      <a href="#" class="card-title"
+                        >Mastering Data Science & Business Analytics</a
+                      >
                     </h3>
                     <div class="wrapper">
                       <div class="rating-wrapper">
@@ -662,22 +712,49 @@
                     <data class="price" value="29">Data-Driven Future</data>
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
-                        <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="library-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">32 Lessons</span>
                       </li>
                       <li class="card-meta-item">
-                        <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="people-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">50 Students</span>
                       </li>
                     </ul>
-                    <a href="{% url 'payment_form' %}" style="padding: 10px 20px; background-color: rgb(255, 49, 49); color: white; text-align: center; text-decoration: none; border-radius: 5px;">Apply Now</a>
+                    <a
+                      href="{% url 'payment_form' %}"
+                      style="
+                        padding: 10px 20px;
+                        background-color: rgb(255, 49, 49);
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      "
+                      >Apply Now</a
+                    >
                   </div>
                 </div>
               </li>
               <li>
                 <div class="course-card">
-                  <figure class="card-banner img-holder" style="--width: 370; --height: 220">
-                    <img src="{% static 'images/course-2.jpg' %}" width="370" height="220" loading="lazy" alt="Java Programming Masterclass for Software Developers" class="img-cover" />
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 370; --height: 220"
+                  >
+                    <img
+                      src="{% static 'images/course-2.jpg' %}"
+                      width="370"
+                      height="220"
+                      loading="lazy"
+                      alt="Java Programming Masterclass for Software Developers"
+                      class="img-cover"
+                    />
                   </figure>
                   <div class="abs-badge">
                     <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
@@ -686,7 +763,9 @@
                   <div class="card-content">
                     <span class="badge">Beginner - Pro</span>
                     <h3 class="h3">
-                      <a href="#" class="card-title">Cybersecurity Essentials & Ethical Hacking</a>
+                      <a href="#" class="card-title"
+                        >Cybersecurity Essentials & Ethical Hacking</a
+                      >
                     </h3>
                     <div class="wrapper">
                       <div class="rating-wrapper">
@@ -701,22 +780,49 @@
                     <data class="price" value="49">Secure Your Future</data>
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
-                        <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="library-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">34 Lessons</span>
                       </li>
                       <li class="card-meta-item">
-                        <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="people-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">45 Students</span>
                       </li>
                     </ul>
-                    <a href="{% url 'payment_form' %}" style="padding: 10px 20px; background-color: rgb(255, 49, 49); color: white; text-align: center; text-decoration: none; border-radius: 5px;">Apply Now</a>
+                    <a
+                      href="{% url 'payment_form' %}"
+                      style="
+                        padding: 10px 20px;
+                        background-color: rgb(255, 49, 49);
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      "
+                      >Apply Now</a
+                    >
                   </div>
                 </div>
               </li>
               <li>
                 <div class="course-card">
-                  <figure class="card-banner img-holder" style="--width: 370; --height: 220">
-                    <img src="{% static 'images/course-3.jpg' %}" width="370" height="220" loading="lazy" alt="The Complete Camtasia Course for Content Creators" class="img-cover" />
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 370; --height: 220"
+                  >
+                    <img
+                      src="{% static 'images/course-3.jpg' %}"
+                      width="370"
+                      height="220"
+                      loading="lazy"
+                      alt="The Complete Camtasia Course for Content Creators"
+                      class="img-cover"
+                    />
                   </figure>
                   <div class="abs-badge">
                     <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
@@ -725,7 +831,9 @@
                   <div class="card-content">
                     <span class="badge">Beginner - Pro</span>
                     <h3 class="h3">
-                      <a href="#" class="card-title">Mastering Cloud Computing & DevOps</a>
+                      <a href="#" class="card-title"
+                        >Mastering Cloud Computing & DevOps</a
+                      >
                     </h3>
                     <div class="wrapper">
                       <div class="rating-wrapper">
@@ -740,23 +848,50 @@
                     <data class="price" value="35">Cloud-Powered Growth</data>
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
-                        <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="library-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">32 Lessons</span>
                       </li>
                       <li class="card-meta-item">
-                        <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="people-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">30 Students</span>
                       </li>
                     </ul>
-                    <a href="{% url 'payment_form' %}" style="padding: 10px 20px; background-color: rgb(255, 49, 49); color: white; text-align: center; text-decoration: none; border-radius: 5px;">Apply Now</a>
+                    <a
+                      href="{% url 'payment_form' %}"
+                      style="
+                        padding: 10px 20px;
+                        background-color: rgb(255, 49, 49);
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      "
+                      >Apply Now</a
+                    >
                   </div>
                 </div>
               </li>
               <li class="course-item more-courses" style="display: none">
                 <!-- Course 4 Content Here -->
                 <div class="course-card">
-                  <figure class="card-banner img-holder" style="--width: 370; --height: 220">
-                    <img src="{% static 'images/chess_image.webp' %}" width="370" height="220" loading="lazy" alt="Chess Analytics Course image" class="img-cover" />
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 370; --height: 220"
+                  >
+                    <img
+                      src="{% static 'images/chess_image.webp' %}"
+                      width="370"
+                      height="220"
+                      loading="lazy"
+                      alt="Chess Analytics Course image"
+                      class="img-cover"
+                    />
                   </figure>
                   <div class="abs-badge">
                     <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
@@ -765,7 +900,9 @@
                   <div class="card-content">
                     <span class="badge">Beginner - Pro</span>
                     <h3 class="h3">
-                      <a href="#" class="card-title">Become a Pro In Chess Analytics & Decision Making</a>
+                      <a href="#" class="card-title"
+                        >Become a Pro In Chess Analytics & Decision Making</a
+                      >
                     </h3>
                     <div class="wrapper">
                       <div class="rating-wrapper">
@@ -780,23 +917,50 @@
                     <data class="price" value="49">Master Strategic Moves</data>
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
-                        <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="library-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">34 Lessons</span>
                       </li>
                       <li class="card-meta-item">
-                        <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="people-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">45 Students</span>
                       </li>
                     </ul>
-                    <a href="{% url 'payment_form' %}" style="padding: 10px 20px; background-color: rgb(255, 49, 49); color: white; text-align: center; text-decoration: none; border-radius: 5px;">Apply Now</a>
+                    <a
+                      href="{% url 'payment_form' %}"
+                      style="
+                        padding: 10px 20px;
+                        background-color: rgb(255, 49, 49);
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      "
+                      >Apply Now</a
+                    >
                   </div>
                 </div>
               </li>
               <li class="course-item more-courses" style="display: none">
                 <!-- Course 5 Content Here -->
                 <div class="course-card">
-                  <figure class="card-banner img-holder" style="--width: 370; --height: 220">
-                    <img src="{% static 'images/event_image.jpg' %}" width="370" height="220" loading="lazy" alt="Event Management Course" class="img-cover" />
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 370; --height: 220"
+                  >
+                    <img
+                      src="{% static 'images/event_image.jpg' %}"
+                      width="370"
+                      height="220"
+                      loading="lazy"
+                      alt="Event Management Course"
+                      class="img-cover"
+                    />
                   </figure>
                   <div class="abs-badge">
                     <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
@@ -805,7 +969,9 @@
                   <div class="card-content">
                     <span class="badge">Beginner - Pro</span>
                     <h3 class="h3">
-                      <a href="#" class="card-title">Mastering Advanced Stratergies For Event Management</a>
+                      <a href="#" class="card-title"
+                        >Mastering Advanced Stratergies For Event Management</a
+                      >
                     </h3>
                     <div class="wrapper">
                       <div class="rating-wrapper">
@@ -820,23 +986,50 @@
                     <data class="price" value="49">Craft Memorable Events</data>
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
-                        <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="library-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">34 Lessons</span>
                       </li>
                       <li class="card-meta-item">
-                        <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="people-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">45 Students</span>
                       </li>
                     </ul>
-                    <a href="{% url 'payment_form' %}" style="padding: 10px 20px; background-color: rgb(255, 49, 49); color: white; text-align: center; text-decoration: none; border-radius: 5px;">Apply Now</a>
+                    <a
+                      href="{% url 'payment_form' %}"
+                      style="
+                        padding: 10px 20px;
+                        background-color: rgb(255, 49, 49);
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      "
+                      >Apply Now</a
+                    >
                   </div>
                 </div>
               </li>
               <li class="course-item more-courses" style="display: none">
                 <!-- Course 6 Content Here -->
                 <div class="course-card">
-                  <figure class="card-banner img-holder" style="--width: 370; --height: 220">
-                    <img src="{% static 'images/spoken_image.jpg' %}" width="370" height="220" loading="lazy" alt="spoken english" class="img-cover" />
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 370; --height: 220"
+                  >
+                    <img
+                      src="{% static 'images/spoken_image.jpg' %}"
+                      width="370"
+                      height="220"
+                      loading="lazy"
+                      alt="spoken english"
+                      class="img-cover"
+                    />
                   </figure>
                   <div class="abs-badge">
                     <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
@@ -845,7 +1038,9 @@
                   <div class="card-content">
                     <span class="badge">Beginner - Pro</span>
                     <h3 class="h3">
-                      <a href="#" class="card-title">Master The Communication & Become Expert</a>
+                      <a href="#" class="card-title"
+                        >Master The Communication & Become Expert</a
+                      >
                     </h3>
                     <div class="wrapper">
                       <div class="rating-wrapper">
@@ -860,23 +1055,50 @@
                     <data class="price" value="49">Speak with Confidence</data>
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
-                        <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="library-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">34 Lessons</span>
                       </li>
                       <li class="card-meta-item">
-                        <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="people-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">45 Students</span>
                       </li>
                     </ul>
-                    <a href="{% url 'payment_form' %}" style="padding: 10px 20px; background-color: rgb(255, 49, 49); color: white; text-align: center; text-decoration: none; border-radius: 5px;">Apply Now</a>
+                    <a
+                      href="{% url 'payment_form' %}"
+                      style="
+                        padding: 10px 20px;
+                        background-color: rgb(255, 49, 49);
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      "
+                      >Apply Now</a
+                    >
                   </div>
                 </div>
               </li>
               <li class="course-item more-courses" style="display: none">
                 <!-- Course 7 Content Here -->
                 <div class="course-card">
-                  <figure class="card-banner img-holder" style="--width: 370; --height: 220">
-                    <img src="{% static 'images/nail_artistry_image.jpg' %}" width="370" height="220" loading="lazy" alt="spoken english" class="img-cover" />
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 370; --height: 220"
+                  >
+                    <img
+                      src="{% static 'images/nail_artistry_image.jpg' %}"
+                      width="370"
+                      height="220"
+                      loading="lazy"
+                      alt="spoken english"
+                      class="img-cover"
+                    />
                   </figure>
                   <div class="abs-badge">
                     <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
@@ -885,7 +1107,9 @@
                   <div class="card-content">
                     <span class="badge">Beginner - Pro</span>
                     <h3 class="h3">
-                      <a href="#" class="card-title">Become Expert And Learn Modern Nail Artistry</a>
+                      <a href="#" class="card-title"
+                        >Become Expert And Learn Modern Nail Artistry</a
+                      >
                     </h3>
                     <div class="wrapper">
                       <div class="rating-wrapper">
@@ -897,26 +1121,55 @@
                       </div>
                       <p class="rating-text">(4.5 /5 Rating)</p>
                     </div>
-                    <data class="price" value="49">Express Your Creativity</data>
+                    <data class="price" value="49"
+                      >Express Your Creativity</data
+                    >
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
-                        <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="library-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">34 Lessons</span>
                       </li>
                       <li class="card-meta-item">
-                        <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="people-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">45 Students</span>
                       </li>
                     </ul>
-                    <a href="{% url 'payment_form' %}" style="padding: 10px 20px; background-color: rgb(255, 49, 49); color: white; text-align: center; text-decoration: none; border-radius: 5px;">Apply Now</a>
+                    <a
+                      href="{% url 'payment_form' %}"
+                      style="
+                        padding: 10px 20px;
+                        background-color: rgb(255, 49, 49);
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      "
+                      >Apply Now</a
+                    >
                   </div>
                 </div>
               </li>
               <li class="course-item more-courses" style="display: none">
                 <!-- Course 8 Content Here -->
                 <div class="course-card">
-                  <figure class="card-banner img-holder" style="--width: 370; --height: 220">
-                    <img src="{% static 'images/makeup_artistry_image.jpg' %}" width="370" height="220" loading="lazy" alt="makeup course" class="img-cover" />
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 370; --height: 220"
+                  >
+                    <img
+                      src="{% static 'images/makeup_artistry_image.jpg' %}"
+                      width="370"
+                      height="220"
+                      loading="lazy"
+                      alt="makeup course"
+                      class="img-cover"
+                    />
                   </figure>
                   <div class="abs-badge">
                     <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
@@ -925,7 +1178,9 @@
                   <div class="card-content">
                     <span class="badge">Beginner - Pro</span>
                     <h3 class="h3">
-                      <a href="#" class="card-title">Master & learn Modern Makeup Artistry</a>
+                      <a href="#" class="card-title"
+                        >Master & learn Modern Makeup Artistry</a
+                      >
                     </h3>
                     <div class="wrapper">
                       <div class="rating-wrapper">
@@ -937,43 +1192,80 @@
                       </div>
                       <p class="rating-text">(4.5 /5 Rating)</p>
                     </div>
-                    <data class="price" value="49">Beauty Beyond Boundaries</data>
+                    <data class="price" value="49"
+                      >Beauty Beyond Boundaries</data
+                    >
                     <ul class="card-meta-list">
                       <li class="card-meta-item">
-                        <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="library-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">34 Lessons</span>
                       </li>
                       <li class="card-meta-item">
-                        <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                        <ion-icon
+                          name="people-outline"
+                          aria-hidden="true"
+                        ></ion-icon>
                         <span class="span">45 Students</span>
                       </li>
                     </ul>
-                    <a href="{% url 'payment_form' %}" style="padding: 10px 20px; background-color: rgb(255, 49, 49); color: white; text-align: center; text-decoration: none; border-radius: 5px;">Apply Now</a>
+                    <a
+                      href="{% url 'payment_form' %}"
+                      style="
+                        padding: 10px 20px;
+                        background-color: rgb(255, 49, 49);
+                        color: white;
+                        text-align: center;
+                        text-decoration: none;
+                        border-radius: 5px;
+                      "
+                      >Apply Now</a
+                    >
                   </div>
                 </div>
               </li>
             </ul>
             <!-- Button to Show More Courses -->
-            <div style="display: flex; justify-content: center; align-items: center; margin-top: 30px;">
-              <button id="browse-more-btn" style="background-color: rgb(255, 49, 49); color: white; padding: 10px 20px; border-radius: 5px;">Browse More Courses</button>
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 30px;
+              "
+            >
+              <button
+                id="browse-more-btn"
+                style="
+                  background-color: rgb(255, 49, 49);
+                  color: white;
+                  padding: 10px 20px;
+                  border-radius: 5px;
+                "
+              >
+                Browse More Courses
+              </button>
             </div>
           </div>
         </section>
 
         <script>
-          document.getElementById('browse-more-btn').addEventListener('click', function() {
-            // Get all the hidden course items
-            const moreCourses = document.querySelectorAll('.more-courses');
-            
-            // Show all the hidden courses
-            moreCourses.forEach(course => {
-              course.style.display = 'list-item';
+          document
+            .getElementById("browse-more-btn")
+            .addEventListener("click", function () {
+              // Get all the hidden course items
+              const moreCourses = document.querySelectorAll(".more-courses");
+
+              // Show all the hidden courses
+              moreCourses.forEach((course) => {
+                course.style.display = "list-item";
+              });
+
+              // Hide the button after showing all courses
+              this.style.display = "none";
             });
-          
-            // Hide the button after showing all courses
-            this.style.display = 'none';
-          });
-          
         </script>
         <!-- 
     - #VIDEO
@@ -1272,101 +1564,206 @@
           </div>
         </section>
       </article>
-  </main>
+    </main>
 
+    <style>
+      .hero {
+        padding-block-start: calc(var(--section-padding) + 0px);
+      }
+
+      @media only screen and (max-width: 768px) {
+        /* Ensure the blog section container fits within the viewport */
+        #blog .container {
+          max-width: 100%;
+          padding: 0 20px; /* Adjust side padding as needed */
+          box-sizing: border-box;
+        }
+
+        /* Stack the blog cards vertically and remove list styling */
+        #blog .grid-list {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+
+        /* Make each blog card and its content fluid */
+        #blog .blog-card {
+          width: 100%;
+          margin: 0 auto;
+          box-sizing: border-box;
+        }
+
+        /* Override fixed dimensions for the image container */
+        #blog .card-banner {
+          width: 100% !important;
+          height: auto !important;
+          /* Optionally, maintain a square aspect ratio */
+          aspect-ratio: 1 / 1;
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Make images responsive so they fill their container properly */
+        #blog .card-banner img,
+        #blog .img-cover {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        /* Ensure the card content does not overflow */
+        #blog .card-content {
+          padding: 15px;
+          box-sizing: border-box;
+        }
+
+        /* Force text and metadata to wrap correctly */
+        #blog .card-title,
+        #blog .card-text,
+        #blog .card-meta-list,
+        #blog .card-subtitle {
+          word-break: break-word;
+          overflow-wrap: break-word;
+        }
+
+        /* Adjust the decorative shape image if necessary */
+        #blog .blog-shape {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    </style>
+
+    {% comment %} location and map {% endcomment %}
+
+    <section class="location-section">
+      <div class="info">
+          <h2>Visit Us</h2>
+          <p>Explore our center and discover a world of opportunities. We provide the best learning and support environment for your growth. Join us and experience excellence firsthand.</p>
+      </div>
+      <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3889.2471580187007!2d77.63876377507503!3d12.891822587416291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDUzJzMwLjYiTiA3N8KwMzgnMjguOCJF!5e0!3m2!1sen!2sin!4v1741080480091!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+  </section>
+  
   <style>
-    .hero { padding-block-start: calc(var(--section-padding) + 0px); }
-
-    @media only screen and (max-width: 768px) {
-      /* Ensure the blog section container fits within the viewport */
-      #blog .container {
-        max-width: 100%;
-        padding: 0 20px; /* Adjust side padding as needed */
-        box-sizing: border-box;
+      .location-section {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto 50px;
+          background: #fff;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       }
-    
-      /* Stack the blog cards vertically and remove list styling */
-      #blog .grid-list {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+  
+      .location-section .info {
+          flex: 1 1 400px;
+          background: #b10f2e;
+          color: white;
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
       }
-    
-      /* Make each blog card and its content fluid */
-      #blog .blog-card {
-        width: 100%;
-        margin: 0 auto;
-        box-sizing: border-box;
+  
+      .location-section .info h2 {
+          margin: 0 0 20px;
+          font-size: 28px;
       }
-    
-      /* Override fixed dimensions for the image container */
-      #blog .card-banner {
-        width: 100% !important;
-        height: auto !important;
-        /* Optionally, maintain a square aspect ratio */
-        aspect-ratio: 1 / 1;
-        position: relative;
-        overflow: hidden;
+  
+      .location-section .info p {
+          font-size: 16px;
+          line-height: 1.5;
       }
-    
-      /* Make images responsive so they fill their container properly */
-      #blog .card-banner img,
-      #blog .img-cover {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+  
+      .location-section .map {
+          flex: 2 1 600px;
+          min-height: 300px;
       }
-    
-      /* Ensure the card content does not overflow */
-      #blog .card-content {
-        padding: 15px;
-        box-sizing: border-box;
+  
+      .location-section .map iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
       }
-    
-      /* Force text and metadata to wrap correctly */
-      #blog .card-title,
-      #blog .card-text,
-      #blog .card-meta-list,
-      #blog .card-subtitle {
-        word-break: break-word;
-        overflow-wrap: break-word;
+  
+      /* Mobile View Adjustments */
+      @media (max-width: 768px) {
+          .location-section {
+              flex-direction: column;
+              margin-bottom: 30px; /* Reduced margin for mobile */
+          }
+  
+          .location-section .info, .location-section .map {
+              flex: 1 1 100%;
+          }
+  
+          .location-section .map {
+              height: 25vh; /* Reduced map height for mobile */
+          }
+  
+          .location-section .info {
+              padding: 15px; /* Reduced padding for mobile */
+          }
+  
+          .location-section .info h2 {
+              font-size: 22px; /* Smaller font size for mobile */
+          }
+  
+          .location-section .info p {
+              font-size: 14px; /* Smaller text for mobile */
+          }
       }
-    
-      /* Adjust the decorative shape image if necessary */
-      #blog .blog-shape {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
+  
+      @media (max-width: 480px) {
+          .location-section .map {
+              height: 20vh; /* Further reduced height for very small screens */
+          }
+  
+          .location-section .info {
+              padding: 10px; /* Compact padding for small screens */
+          }
+  
+          .location-section .info h2 {
+              font-size: 20px; /* Smaller heading for small screens */
+          }
+  
+          .location-section .info p {
+              font-size: 12px; /* Smaller text for small screens */
+          }
       }
-    }
-    
   </style>
+  
+  
 
     <!-- 
     - #FOOTER
 -->
 
- 
-<footer
+    <footer
       style="
         background: rgb(255, 49, 49);
         color: white;
         font-family: 'Glacial Indifference', sans-serif;
-        
       "
     >
       <div class="footer-container">
         <div class="footer-logo">
           <img src="{% static 'images/logo.png' %}" alt="Your Logo" />
           <p>
-            Novel Tech Park, 4th Floor, Kudlu Gate, <br>Bengaluru, Karnataka – 560100
-        </p>
-        
+            Novel Tech Park, 4th Floor, Kudlu Gate, <br />Bengaluru, Karnataka –
+            560100
+          </p>
         </div>
         <div class="footer-links">
           <h3 class="footer-heading">Contact Links</h3>
@@ -1393,24 +1790,24 @@
           <h3 class="footer-heading">Follow Us</h3>
           <ul class="social-icons">
             <li>
-              <a href="https://www.facebook.com/Tokyoanalyticx/" target="_blank"
+              <a
+                href="https://www.facebook.com/people/Tokyo-Analyticx-Kudlugate/61573517763954/"
+                target="_blank"
                 ><i class="fab fa-facebook-f"></i
               ></a>
             </li>
             <li>
               <a
-                href="https://www.instagram.com/tokyoanalyticx/?igshid=MzRlODBiNWFlZA=="
+                href="https://www.instagram.com/tokyoanalyticx_kudlugate/"
                 target="_blank"
-                ><i class="fab fa-instagram"></i
-              > </a>
+                ><i class="fab fa-instagram"></i>
+              </a>
             </li>
             <li>
-              <a href="http://127.0.0.1:8000/#" target="_blank"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
+              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </li>
           </ul>
-          <hr style=" solid white; margin: 10px 0" class="responsive-hide"/>
+          <hr style=" solid white; margin: 10px 0" class="responsive-hide" />
           <div class="contact-info">
             <p>
               <a
@@ -1422,8 +1819,8 @@
                   padding: 10px;
                 "
                 href="https://wa.me/919136545355"
-                ><i class="fas fa-phone-alt" style="margin-right: 8px" ></i> +91
-                9136545355</a
+                ><i class="fas fa-phone-alt" style="margin-right: 8px"></i> +91
+                6366558251</a
               >
             </p>
             <p>
@@ -1435,24 +1832,29 @@
                   align-items: center;
                   padding: 10px;
                 "
-                href="mailto:admission@tokyoanalyticx.com"
+                href="mailto:swechcha@tokyoanalyticx.com"
                 ><i class="fas fa-envelope" style="margin-right: 8px"></i>
-                admission@tokyoanalyticx.com</a
+                swechcha@tokyoanalyticx.com</a
               >
             </p>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p style="padding: 10px; font-size: 12px; margin-bottom: 0px; font-weight: normal">
+        <p
+          style="
+            padding: 10px;
+            font-size: 12px;
+            margin-bottom: 0px;
+            font-weight: normal;
+          "
+        >
           &copy; 2022 Tokyo Analytics, all rights reserved.
         </p>
       </div>
-</footer>
+    </footer>
 
     <style>
-      
-
       .footer-container {
         display: flex;
         flex-wrap: wrap;
@@ -1520,14 +1922,13 @@
       .social-icons li {
         display: inline-block;
         margin-right: 8px;
-        
       }
 
       .social-icons a {
         font-size: 16px;
         padding: 8px;
         color: white;
-        
+
         border-radius: 50%;
         text-align: center;
       }
@@ -1559,81 +1960,79 @@
       }
 
       /* Mobile Styles */
-    /* Mobile Styles */
-@media screen and (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0px;
-  }
+      /* Mobile Styles */
+      @media screen and (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0px;
+        }
 
-  .footer-logo p {
-    margin-bottom: 20px;
-  }
-  .responsive-hide {
-    display: none;
-  }
+        .footer-logo p {
+          margin-bottom: 20px;
+        }
+        .responsive-hide {
+          display: none;
+        }
 
-  .contact-info {
-    margin-top: 10px;
-    font-size: 0.7rem;
-    
-  }
+        .contact-info {
+          margin-top: 10px;
+          font-size: 0.7rem;
+        }
 
-  .footer-social h3 {
-    margin-bottom: 0px;
-    margin-top: 15px;
-    font-size: 1rem;
-  }
+        .footer-social h3 {
+          margin-bottom: 0px;
+          margin-top: 15px;
+          font-size: 1rem;
+        }
 
-  .footer-logo img {
-    max-width: 200px;
-  }
+        .footer-logo img {
+          max-width: 200px;
+        }
 
-  .footer-links,
-  .footer-social {
-    width: 100%;
-  }
+        .footer-links,
+        .footer-social {
+          width: 100%;
+        }
 
-  .footer-links ul {
-    display: none; /* Dropdowns are hidden by default */
-  }
+        .footer-links ul {
+          display: none; /* Dropdowns are hidden by default */
+        }
 
-  .footer-links h3,
-  .footer-social h3 {
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
-    text-align: left;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
+        .footer-links h3,
+        .footer-social h3 {
+          cursor: pointer;
+          font-size: 16px;
+          padding: 10px;
+          text-align: left;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
 
-  .footer-links h3::after,
-  .footer-social h3::after {
-    content: " ▼";
-    position: absolute;
-    right: 15px;
-  }
+        .footer-links h3::after,
+        .footer-social h3::after {
+          content: " ▼";
+          position: absolute;
+          right: 15px;
+        }
 
-  .footer-links h3.open::after,
-  .footer-social h3.open::after {
-    content: " ▲";
-  }
+        .footer-links h3.open::after,
+        .footer-social h3.open::after {
+          content: " ▲";
+        }
 
-  .footer-links h3.open + ul,
-  .footer-social h3.open + ul {
-    display: block; /* Show the dropdown when the heading is clicked */
-  }
+        .footer-links h3.open + ul,
+        .footer-social h3.open + ul {
+          display: block; /* Show the dropdown when the heading is clicked */
+        }
 
-  .social-icons {
-    text-align: left;
-  }
-}
-
+        .social-icons {
+          text-align: left;
+        }
+      }
     </style>
 
     <script>
@@ -1642,7 +2041,7 @@
         const dropdownHeadings = document.querySelectorAll(
           ".footer-links h3, .footer-social h3"
         );
-      
+
         dropdownHeadings.forEach((heading) => {
           heading.addEventListener("click", () => {
             // Close any other open dropdowns
@@ -1655,7 +2054,7 @@
                 }
               }
             });
-      
+
             // Toggle the current dropdown
             heading.classList.toggle("open");
             const dropdown = heading.nextElementSibling;
@@ -1667,9 +2066,6 @@
         });
       });
     </script>
-
-   
-  
 
     <!-- 
     - #BACK TO TOP
@@ -1687,14 +2083,15 @@
     <!-- 
     - custom js link
   -->
-  <script src="{% static 'js/script.js' %}">
-    <!-- 
-    - ionicon link
-  -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
+    <script src="{% static 'js/script.js' %}">
+        <!--
+        - ionicon link
+      -->
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        >
+    </script>
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
