@@ -76,6 +76,8 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     
     <style>
+
+      .hero { padding-block-start: calc(var(--section-padding) + 0px); }
       /* Header with 100% width */
       header {
         position: fixed;
@@ -645,6 +647,13 @@
 <!-- Form Management Container -->
 <h1 id="admission" class="admission-title">Admission</h1>
 <div id="form-container">
+  <!-- Step Navigation -->
+  <div id="progress-steps">
+    <div class="step" id="step1" onclick="navigateToStep(1)">Step 1</div>
+    <div class="step" id="step2" onclick="navigateToStep(2)">Step 2</div>
+    <div class="step" id="step3" onclick="navigateToStep(3)">Step 3</div>
+  </div>
+
   <!-- Step 1: Admission Form -->
   <section id="form1" class="form-step">
     <h2 class="form-title">Take Admission Now</h2>
@@ -666,7 +675,7 @@
         </div>
         <div class="form-group">
           <label for="otp">OTP</label>
-          <input type="text" id="otp" name="otp" class="form-control" placeholder="Enter OTP"  />
+          <input type="text" id="otp" name="otp" class="form-control" placeholder="Enter OTP" />
         </div>
       </div>
       <div class="form-row">
@@ -798,11 +807,31 @@
 </div>
 
 <script>
+  function navigateToStep(step) {
+    document.getElementById("form1").style.display = "none";
+    document.getElementById("form2").style.display = "none";
+    document.getElementById("form3").style.display = "none";
+
+    document.getElementById("step1").classList.remove("active");
+    document.getElementById("step2").classList.remove("active");
+    document.getElementById("step3").classList.remove("active");
+
+    if (step === 1) {
+      document.getElementById("form1").style.display = "block";
+      document.getElementById("step1").classList.add("active");
+    } else if (step === 2) {
+      document.getElementById("form2").style.display = "block";
+      document.getElementById("step2").classList.add("active");
+    } else if (step === 3) {
+      document.getElementById("form3").style.display = "block";
+      document.getElementById("step3").classList.add("active");
+    }
+  }
+
   document.getElementById("form1-next").addEventListener("click", function () {
     const form1 = document.getElementById("admission-form");
     if (form1.checkValidity()) {
-      document.getElementById("form1").style.display = "none";
-      document.getElementById("form2").style.display = "block";
+      navigateToStep(2);
     } else {
       form1.reportValidity();
     }
@@ -811,8 +840,7 @@
   document.getElementById("form2-next").addEventListener("click", function () {
     const form2 = document.getElementById("personal-details-form");
     if (form2.checkValidity()) {
-      document.getElementById("form2").style.display = "none";
-      document.getElementById("form3").style.display = "block";
+      navigateToStep(3);
     } else {
       form2.reportValidity();
     }
@@ -821,286 +849,159 @@
   function updateCourseOptions() {
     const category = document.getElementById("category").value;
     const courseSelect = document.getElementById("course");
-
-    courseSelect.innerHTML = "";
-
     if (category === "it") {
-      const itCourses = [
-        { value: "data_science", text: "Data Science & Business Analytics" },
-        { value: "cyber_security", text: "Cyber Security & Ethical Hacking" },
-        { value: "cloud_devops", text: "Cloud & DevOps" },
-        { value: "chess_analytics", text: "Chess Analytics" },
-      ];
-      itCourses.forEach((course) => {
-        const option = document.createElement("option");
-        option.value = course.value;
-        option.text = course.text;
-        courseSelect.appendChild(option);
-      });
-    } else if (category === "professional") {
-      const professionalCourses = [
-        { value: "event_management", text: "Event Management" },
-        { value: "spoken_english", text: "Spoken English" },
-        { value: "nail_artistry", text: "Nail Artistry" },
-        { value: "makeup_artistry", text: "Makeup Artistry" },
-      ];
-      professionalCourses.forEach((course) => {
-        const option = document.createElement("option");
-        option.value = course.value;
-        option.text = course.text;
-        courseSelect.appendChild(option);
-      });
+      courseSelect.innerHTML = ` 
+        <option value="data_science">Data Science & Business Analytics</option>
+        <option value="cyber_security">Cyber Security & Ethical Hacking</option>
+        <option value="cloud_devops">Cloud & DevOps</option>
+      `;
+    } else {
+      courseSelect.innerHTML = `
+        <option value="chess_analytics">Chess Analytics</option>
+        <option value="business">Business Management</option>
+      `;
     }
   }
 
   function updatePaymentMethod() {
     const paymentMethod = document.getElementById("payment-method").value;
-    document.getElementById("card-details").style.display =
-      paymentMethod === "debit_card" || paymentMethod === "credit_card" ? "block" : "none";
-    document.getElementById("net-banking-options").style.display =
-      paymentMethod === "net_banking" ? "block" : "none";
+    document.getElementById("card-details").style.display = "none";
+    document.getElementById("net-banking-options").style.display = "none";
+
+    if (paymentMethod === "debit_card" || paymentMethod === "credit_card") {
+      document.getElementById("card-details").style.display = "block";
+    } else {
+      document.getElementById("net-banking-options").style.display = "block";
+    }
   }
+
+  // Initialize Step 1
+  navigateToStep(1);
 </script>
 
 <style>
-  /* Form Container */
-  .form-step {
-    background: linear-gradient(135deg, #ffffff, #f9f9f9);
-    padding: 40px;
-    margin: 30px auto;
-    border-radius: 16px;
-    border: 1px solid #e3e3e3;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    max-width: 1000px;
-    transition: all 0.4s ease-in-out;
-  }
-
-  .form-step:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    border-color: #007bff;
-  }
-
-  /* Form Title */
-  .form-title {
-    color: #333;
+  #admission {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
-    font-weight: 1000;
-    letter-spacing: 1px;
-  
-    border-bottom: 4px double #007bff;
-    display: inline-block;
-    padding-bottom: 10px;
-    transition: color 0.3s ease;
+    margin: 30px 0;
+    font-size: 2.5rem;
   }
 
-  .form-title:hover {
-    color: #0056b3;
+  #form-container {
+    width: 70%;
+    margin: 0 auto;
+    background: linear-gradient(to right, #00b4d8, #0077b6);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
   }
-  
-  .admission-title {
-    color: #333;
-    padding-top: 50px;
-    font-size: 2.5rem; /* Slightly larger font size for a professional feel */
-    font-weight: bold; /* Ensures boldness while being less intense than 1000 */
-    text-align: center;
+
+  #progress-steps {
     display: flex;
     justify-content: center;
-    align-items: center; /* Corrected to vertically center the title */
-    margin: 0 auto 30px; /* Ensures proper spacing from the top and bottom */
-    padding-bottom: 15px; /* Increased padding for emphasis */
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #007bff; /* Thinner and more elegant underline */
-    width: fit-content; /* Adjusts the width to fit the content */
-    transition: color 0.3s ease;
+    gap: 15px;
+    margin-bottom: 20px;
   }
-  
-  .admission-title:hover {
-    color: #007bff; /* Adds color change on hover for interactivity */
+
+  .step {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
   }
-  
-  /* Form Group Styles */
-  .form-group label {
-    font-size: 16px;
+
+  .step:hover {
+    background-color: #0077b6;
+    border-radius: 5px;
+  }
+
+  .step.active {
+    color: #00b4d8;
+    font-weight: bold;
+    border-bottom: 2px solid #00b4d8;
+  }
+
+  .form-step {
+    display: none;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
     font-weight: 600;
-    color: #2c3e50;
-    display: block;
-    margin-bottom: 8px;
-    text-transform: capitalize;
-    transition: color 0.3s ease;
-  }
-
-  .form-group label:hover {
-    color: #007bff;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 14px 18px;
-    font-size: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 8px;
-    margin-top: 5px;
-    transition: all 0.3s ease-in-out;
-    background: #f8f9fa;
-    color: #495057;
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: #007bff;
-    background: #ffffff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
-    outline: none;
-  }
-
-  .form-group textarea {
-    resize: vertical;
-    min-height: 100px;
   }
 
   .form-row {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    margin-bottom: 15px;
   }
 
-  .form-row .form-group {
+  .form-group {
     flex: 1;
-    min-width: 280px;
+    margin-right: 15px;
   }
 
   .form-group.full-width {
-    flex-basis: 100%;
+    flex: 2;
+    margin-right: 0;
   }
 
-  /* Form Buttons */
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+  }
+
+  .form-control:focus {
+    border-color: #00b4d8;
+  }
+
   .form-actions {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .btn1 {
-    padding: 14px 30px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
+    padding: 10px 20px;
+    background: #00b4d8;
+    color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
+    transition: background-color 0.3s;
+  }
+
+  .btn1:hover {
+    background-color: #0077b6;
   }
 
   .btn-primary {
-    background: linear-gradient(to right, #007bff, #0056b3);
-  }
-
-  .btn-primary:hover {
-    background: linear-gradient(to right, #0056b3, #003a75);
-    box-shadow: 0 6px 20px rgba(0, 91, 187, 0.4);
-    transform: translateY(-3px);
+    background-color: #00b4d8;
   }
 
   .btn-success {
-    background: linear-gradient(to right, #28a745, #218838);
-  }
-
-  .btn-success:hover {
-    background: linear-gradient(to right, #218838, #186d31);
-    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-    transform: translateY(-3px);
-  }
-
-  /* Animations */
-  .form-step {
-    animation: fadeIn 0.6s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Input Validation */
-  .form-group input:invalid,
-  .form-group select:invalid,
-  .form-group textarea:invalid {
-    border-color: #dc3545;
-    background: #fff5f5;
-    animation: shake 0.3s ease-in-out;
-  }
-
-  .form-group input:valid,
-  .form-group select:valid,
-  .form-group textarea:valid {
-    border-color: #28a745;
-    background: #f8fff4;
-  }
-
-  @keyframes shake {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-4px);
-    }
-    50% {
-      transform: translateX(4px);
-    }
-    75% {
-      transform: translateX(-4px);
-    }
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .form-step {
-      padding: 30px;
-    }
-
-    .form-title {
-      font-size: 2rem;
-    }
-
-    .form-row {
-      flex-direction: column;
-    }
-
-    .form-group {
-      min-width: 100%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .form-step {
-      padding: 20px;
-    }
-
-    .form-title {
-      font-size: 1.8rem;
-    }
-
-    .btn1 {
-      font-size: 14px;
-      padding: 12px 20px;
-    }
+    background-color: #28a745;
   }
 </style>
+
+
+
+
+
 
 
 
@@ -1162,8 +1063,8 @@
         <div class="footer-links">
           <h3 class="footer-heading">Contact Links</h3>
           <ul>
-            <li><a href="#">Admissions</a></li>
-            <li><a href="#">Fee Payment</a></li>
+            <li><a href="{% url 'admissions' %}">Admissions</a></li>
+            <li><a href="{% url 'admissions' %}">Fee Payment</a></li>
             <li><a href="{% url 'enquire_now' %}">Enquire Now</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
           </ul>

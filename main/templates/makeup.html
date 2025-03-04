@@ -1,19 +1,31 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<section class="responsive-makeup-banner">
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<section class="responsive-makeup-banner" data-aos="fade-up" data-aos-duration="1200">
   <img
     src="{% static 'images/makeup_banner.jpg' %}"
     alt="Makeup Artistry Banner"
     class="makeup-banner-image"
+    data-aos="zoom-in" data-aos-duration="1000"
   />
-  <div class="makeup-banner-content">
+  <div class="makeup-banner-content" data-aos="fade-up" data-aos-duration="1000">
     <h1>Makeup Artistry</h1>
   </div>
 </section>
+
 <style>
   /* Section Styling */
 .responsive-makeup-banner {
-  margin-top: 100px;
+ 
   position: relative;
   height: 300px;
   width: 100%;
@@ -67,12 +79,10 @@
 
 </style>
 
-<section class="makeup-artistry-section">
+<section class="makeup-artistry-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="makeup-container">
-    <div class="makeup-category">
-      <h2 class="makeup-title">
-        Discover the Finest Makeup Artistry Courses in India
-      </h2>
+    <div class="makeup-category" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="makeup-title">Discover the Finest Makeup Artistry Courses in India</h2>
       <p>
         Elevate your creativity with Tokyo AnalyticX's exclusive makeup artistry
         courses, designed to inspire budding artists and professionals. Our
@@ -86,7 +96,7 @@
       </p>
     </div>
 
-    <div class="makeup-category">
+    <div class="makeup-category" data-aos="fade-up" data-aos-duration="1000">
       <h2 class="makeup-title">Professional Makeup Design Course</h2>
       <p>
         Gain in-depth knowledge of professional makeup design through hands-on
@@ -97,7 +107,7 @@
       </p>
     </div>
 
-    <div class="makeup-category">
+    <div class="makeup-category" data-aos="fade-up" data-aos-duration="1000">
       <h2 class="makeup-title">Advanced Makeup Art Techniques</h2>
       <p>
         Explore advanced techniques like contouring, intricate eye makeup, and
@@ -115,12 +125,9 @@
     </div>
   </div>
 </section>
+
 <style>
-  body {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+
   
   .makeup-artistry-section {
     padding-top: 50px;
@@ -161,20 +168,28 @@
     margin: 0;
   }
   
-  @media (max-width: 768px) {
-    .makeup-title {
-      font-size: 1.5rem;
-    }
-  
-    .makeup-category p {
-      font-size: 0.95rem;
-    }
+/* Media Query for mobile view */
+@media (max-width: 768px) {
+  .makeup-title {
+    font-size: 1.2rem;
+    margin: 0; /* Remove unwanted margin */
+    padding: 0; /* Remove unwanted padding */
+    margin-bottom: 15px;
   }
   
+  .makeup-category p {
+    font-size: 0.8rem;
+    margin: 0; /* Reset margin for paragraphs */
+    padding: 0; /* Remove padding */
+  }
+}
+
+  
 </style>
-<section class="makeup-artistry-section">
+
+<section class="makeup-artistry-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="makeup-artistry-container">
-    <div class="makeup-artistry-text">
+    <div class="makeup-artistry-text" data-aos="fade-up" data-aos-duration="1000">
       <h2 class="makeup-artistry-title">
         Explore Our Exclusive Makeup Artistry Courses
       </h2>
@@ -209,20 +224,17 @@
         </li>
       </ul>
     </div>
-    <div class="makeup-artistry-image">
+    <div class="makeup-artistry-image" data-aos="fade-up" data-aos-duration="1000">
       <img src="{% static 'images/makeup_image1.png' %}" alt="Makeup Artistry Tools" />
     </div>
   </div>
 </section>
+
 <style>
-  body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+
   
   .makeup-artistry-section {
-    padding-bottom: 50px;
+    
   }
   
   .makeup-artistry-container {
@@ -295,57 +307,54 @@
       text-align: center;
     }
   
-    .makeup-artistry-title {
-      text-align: center;
-    }
   
-    .makeup-artistry-list li {
-      justify-content: center;
-    }
+   
   }
   
   @media (max-width: 768px) {
     .makeup-artistry-title {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   
     .makeup-artistry-list li {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
     }
   }
   
 </style>
 
-<div class="makeup-artistry-career-section">
-  <h2 class="makeup-artistry-career-title">Why Choose Our Makeup Artistry Courses?</h2>
-  <div class="makeup-artistry-career-carousel">
+<div class="makeup-artistry-career-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="makeup-artistry-career-title" data-aos="fade-up" data-aos-duration="1000">
+    Why Choose Our Makeup Artistry Courses?
+  </h2>
+  <div class="makeup-artistry-career-carousel" data-aos="fade-up" data-aos-duration="1000">
     <div class="makeup-artistry-career-cards-wrapper">
       <div class="makeup-artistry-career-cards" id="makeupArtistryCareerCards">
-        <div class="makeup-artistry-career-card">
+        <div class="makeup-artistry-career-card" data-aos="fade-up" data-aos-duration="800">
           <h3>Comprehensive Curriculum</h3>
           <p>
             Our curriculum covers techniques such as foundation application, contouring, makeup trends, and more.
           </p>
         </div>
-        <div class="makeup-artistry-career-card">
+        <div class="makeup-artistry-career-card" data-aos="fade-up" data-aos-duration="800">
           <h3>Hands-On Training</h3>
           <p>
             Gain practical experience with hands-on training, real-world scenarios, and professional-grade tools.
           </p>
         </div>
-        <div class="makeup-artistry-career-card">
+        <div class="makeup-artistry-career-card" data-aos="fade-up" data-aos-duration="800">
           <h3>Experienced Instructors</h3>
           <p>
             Learn from skilled makeup artists with extensive industry experience and a passion for teaching.
           </p>
         </div>
-        <div class="makeup-artistry-career-card">
+        <div class="makeup-artistry-career-card" data-aos="fade-up" data-aos-duration="800">
           <h3>Creative Community</h3>
           <p>
             Join a network of like-minded individuals, share ideas, and stay inspired in a creative environment.
           </p>
         </div>
-        <div class="makeup-artistry-career-card">
+        <div class="makeup-artistry-career-card" data-aos="fade-up" data-aos-duration="800">
           <h3>Career Opportunities</h3>
           <p>
             Whether you're starting out or upskilling, our course opens doors to roles like professional makeup artist, salon technician, or freelance stylist.
@@ -356,18 +365,23 @@
     <button
       class="makeup-artistry-carousel-arrow makeup-artistry-right-arrow"
       id="makeupArtistryNextButton"
+      data-aos="fade-up"
+      data-aos-duration="800"
     >
       &#10095;
     </button>
     <button
       class="makeup-artistry-carousel-arrow makeup-artistry-left-arrow"
       id="makeupArtistryPrevButton"
+      data-aos="fade-up"
+      data-aos-duration="800"
     >
       &#10094;
     </button>
   </div>
-  <div class="makeup-artistry-carousel-dots" id="makeupArtistryCarouselDots"></div>
+  <div class="makeup-artistry-carousel-dots" id="makeupArtistryCarouselDots" data-aos="fade-up" data-aos-duration="800"></div>
 </div>
+
 <style>
   .makeup-artistry-career-section {
     text-align: center;
@@ -429,6 +443,7 @@
   .makeup-artistry-career-card p {
     font-size: 1rem;
     margin-top: 15px;
+    font-weight: bold;
   }
   
   .makeup-artistry-career-card h3 {
@@ -497,6 +512,19 @@
   @media (max-width: 768px) {
     .makeup-artistry-career-cards-wrapper {
       width: 100%;
+    }
+    .makeup-artistry-career-title {
+      font-size: 1.2rem; /* Matches skills section title font size */
+     
+    }
+    .makeup-artistry-career-card p {
+      font-size: 0.8rem;
+      font-weight: normal;
+    }
+    .makeup-artistry-career-card h3 {
+      font-size: 1rem;
+      font-weight: bold;
+
     }
   
     .makeup-artistry-career-card {
@@ -592,135 +620,239 @@ makeupArtistryUpdateCarousel();
 
 </script>
 
-<div class="makeup-artistry-training-section">
-  <h2 class="makeup-artistry-training-title">Our Makeup Artistry Training Programs</h2>
-  <div class="makeup-artistry-training-container">
-    <div class="makeup-artistry-training-card">
-      <div class="makeup-artistry-training-badge">4 MONTHS</div>
-      <h3 class="makeup-artistry-training-heading">Hybrid Module</h3>
-      <p class="makeup-artistry-training-details">
-        Get Certified Here<br />
-        Duration: 4 Months (100 hours of training + internship)
-      </p>
+<div class="makeup-art-programs-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="makeup-art-section-title" data-aos="fade-down" data-aos-duration="1000">
+    Our Makeup Artistry Training Program
+  </h2>
+  <div class="makeup-art-program-card" data-aos="fade-right" data-aos-duration="1000">
+    <div class="makeup-art-program-header">
+      <h3 class="makeup-art-program-title">Makeup Artistry and Design</h3>
+    </div>
+
+    <table class="makeup-art-program-table" data-aos="fade-left" data-aos-duration="1200">
+      <tr>
+        <td><strong>Mode:</strong></td>
+        <td>Hybrid</td>
+      </tr>
+      <tr>
+        <td><strong>Duration:</strong></td>
+        <td>4 Months</td>
+      </tr>
+      <tr>
+        <td><strong>Hours of Teaching:</strong></td>
+        <td>100 Hours (Weekend Course)</td>
+      </tr>
+      <tr>
+        <td><strong>Minimum Eligibility:</strong></td>
+        <td>12th Grade</td>
+      </tr>
+      <tr>
+        <td><strong>Centers in India:</strong></td>
+        <td>Available Nationwide</td>
+      </tr>
+      <tr>
+        <td><strong>Career Opportunities:</strong></td>
+        <td>
+          Professional Makeup Artist, Beauty Consultant, Salon Owner, Freelance Makeup Artist
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Placement:</strong></td>
+        <td>Interview Guarantee</td>
+      </tr>
+    </table>
+
+    <div class="makeup-art-button-container" data-aos="fade-up" data-aos-duration="1200">
+      <a href="resume_shankar_rathod.pdf" download class="makeup-art-brochure-btn">
+        📄 Download Brochure
+      </a>
+      <a href="{% url 'payment_form' %}" class="makeup-art-enroll-btn">
+        🖊 Enroll Now
+      </a>
     </div>
   </div>
 </div>
+
+
 <style>
-  /* Makeup Artistry Training Section */
-.makeup-artistry-training-section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-/* Makeup Artistry Training Title (matches skills section style) */
-.makeup-artistry-training-title {
-  font-size: 1.8rem;
-  color: #162020;
-  margin-bottom: 25px;
-  font-weight: bold;
-  position: relative;
-}
-
-.makeup-artistry-training-title::after {
-  content: "";
-  display: block;
-  width: 90px;
-  height: 4px;
-  background-color: #ff5252; /* Red underlining for makeup artistry theme */
-  margin: 15px auto 0;
-}
-
-/* Makeup Artistry Training Container */
-.makeup-artistry-training-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* Makeup Artistry Training Card */
-.makeup-artistry-training-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 600px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.makeup-artistry-training-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  background-color: #ff5252; /* Makeup Artistry Theme Background Color */
-  color: white; /* White Text on Hover */
-}
-
-/* Ensure child elements like links or headings also change color */
-.makeup-artistry-training-card:hover * {
-  color: white; /* Applies to all text elements inside the card */
-}
-
-/* Makeup Artistry Training Badge */
-.makeup-artistry-training-badge {
-  background-color: #ff5252; /* Red badge color for makeup artistry */
-  color: #fff;
-  padding: 5px 15px;
-  font-size: 14px;
-  border-radius: 20px;
-  display: inline-block;
-  font-weight: bold;
-}
-
-/* Makeup Artistry Training Heading */
-.makeup-artistry-training-heading {
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 22px;
-  color: #2e8b57; /* Green heading color */
-}
-
-/* Makeup Artistry Training Details */
-.makeup-artistry-training-details {
-  margin-top: 10px;
-  line-height: 1.6;
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .makeup-artistry-training-card {
-    width: 100%;
+  .makeup-art-programs-section {
+    padding: 40px 20px;
   }
-}
 
+  .makeup-art-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .makeup-art-program-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    padding: 25px;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  .makeup-art-program-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .makeup-art-program-title {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .makeup-art-program-table {
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .makeup-art-program-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .makeup-art-button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .makeup-art-enroll-btn,
+  .makeup-art-brochure-btn {
+    background-color: rgb(36, 184, 49);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .makeup-art-enroll-btn:hover,
+  .makeup-art-brochure-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .makeup-art-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .makeup-art-form label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .makeup-art-form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .makeup-art-form button {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .makeup-art-program-card {
+      width: 90%;
+      padding: 20px;
+    }
+
+    .makeup-art-program-title {
+      font-size: 1.4rem;
+    }
+
+    .makeup-art-program-table {
+      font-size: 0.9rem;
+    }
+
+    .makeup-art-enroll-btn,
+    .makeup-art-brochure-btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .makeup-art-section-title {
+      font-size: 1.2rem;
+    }
+
+    .makeup-art-program-title {
+      font-size: 1.2rem;
+    }
+
+    .makeup-art-program-table td {
+      font-size: 0.8rem;
+      padding: 5px;
+    }
+
+    .makeup-art-button-container {
+      gap: 10px;
+    }
+
+    .makeup-art-enroll-btn,
+    .makeup-art-brochure-btn {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+  }
 </style>
 
-<div class="makeup-artistry-nail-section">
-  <h2 class="makeup-artistry-nail-title">
+<div class="makeup-artistry-nail-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="makeup-artistry-nail-title" data-aos="fade-up" data-aos-duration="1000">
     Individuals who can enroll for Makeup Artistry and Design Course
   </h2>
   <div class="makeup-artistry-nail-cards-wrapper">
-    <div class="makeup-artistry-nail-card">
+    <div class="makeup-artistry-nail-card" data-aos="fade-up" data-aos-duration="800">
       <h3>01</h3>
       <p>
         Beginner makeup artists looking to learn the fundamentals of makeup application and design
       </p>
     </div>
-    <div class="makeup-artistry-nail-card">
+    <div class="makeup-artistry-nail-card" data-aos="fade-up" data-aos-duration="800">
       <h3>02</h3>
       <p>
         Experienced beauty professionals aiming to expand their skillset with makeup artistry
       </p>
     </div>
-    <div class="makeup-artistry-nail-card">
+    <div class="makeup-artistry-nail-card" data-aos="fade-up" data-aos-duration="800">
       <h3>03</h3>
       <p>
         Creative individuals passionate about exploring artistic makeup designs and techniques
       </p>
     </div>
-    <div class="makeup-artistry-nail-card">
+    <div class="makeup-artistry-nail-card" data-aos="fade-up" data-aos-duration="800">
       <h3>04</h3>
       <p>
         Beauty salon owners and workers who wish to offer makeup artistry services to their clients
@@ -728,6 +860,7 @@ makeupArtistryUpdateCarousel();
     </div>
   </div>
 </div>
+
 
 <style>
   /* Makeup Artistry Nail Section */
@@ -801,13 +934,22 @@ makeupArtistryUpdateCarousel();
   .makeup-artistry-nail-card {
     flex: 0 0 100%; /* Stacks cards vertically on very small screens */
   }
+  /* Makeup Artistry Nail Title */
+.makeup-artistry-nail-title {
+  font-size: 1.2rem; /* Matches skills section title font size */
+  color: #162020;
+  
+}
+.makeup-artistry-nail-card p {
+  font-size: 0.8rem;
+}
 }
 
 </style>
 
-<section class="makeup-artistry-nail-offerings-section">
+<section class="makeup-artistry-nail-offerings-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="makeup-artistry-nail-offerings-container">
-    <div class="makeup-artistry-nail-offerings-text">
+    <div class="makeup-artistry-nail-offerings-text" data-aos="fade-up" data-aos-duration="1000">
       <h2 class="makeup-artistry-nail-offerings-title">
         Career Opportunities in Makeup Artistry and Design
       </h2>
@@ -820,7 +962,7 @@ makeupArtistryUpdateCarousel();
         <li><span class="makeup-artistry-nail-check-icon blue">&#10003;</span> Cosmetic Product Specialist</li>
       </ul>
     </div>
-    <div class="makeup-artistry-nail-offerings-image">
+    <div class="makeup-artistry-nail-offerings-image" data-aos="fade-up" data-aos-duration="1000">
       <img
         style="height: 60vh"
         src="{% static 'images/makeup_image2.png' %}"
@@ -829,6 +971,7 @@ makeupArtistryUpdateCarousel();
     </div>
   </div>
 </section>
+
 <style>
   /* Makeup Artistry Nail Offerings Section */
 .makeup-artistry-nail-offerings-section {
@@ -916,11 +1059,11 @@ makeupArtistryUpdateCarousel();
   }
 
   .makeup-artistry-nail-offerings-title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 
   .makeup-artistry-nail-offerings-list li {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
   }
 }
 

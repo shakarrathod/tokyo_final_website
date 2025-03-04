@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Success</title>
+  </head>
+  <body>
+    <h2>Payment Successful!</h2>
+    <p>Thank you for enrolling in {{ course }}.</p>
+
+    <h3>Student Details:</h3>
+    <p><strong>Name:</strong> {{ first_name }} {{ last_name }}</p>
+    <p><strong>Phone:</strong> {{ phone }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Gender:</strong> {{ gender }}</p>
+    <p><strong>Aadhar:</strong> {{ aadhar }}</p>
+    <p>
+      <strong>Address:</strong> {{ address }}, {{ city }}, {{ state }} - {{ zip
+      }}
+    </p>
+
+    <h3>Payment Details:</h3>
+    <p><strong>Course:</strong> {{ course }}</p>
+    <p><strong>Amount Paid:</strong> ₹{{ fee }}</p>
+    <p><strong>Payment ID:</strong> {{ payment_id }}</p>
+    <p><strong>Status:</strong> {{ payment_status }}</p>
+
+    <br />
+    <a
+      href="{% url 'generate_pdf' %}?first_name={{ first_name }}&last_name={{ last_name }}&phone={{ phone }}&email={{ email }}&gender={{ gender }}&aadhar={{ aadhar }}&address={{ address }}&state={{ state }}&city={{ city }}&zip={{ zip }}&course={{ course }}&fee={{ fee }}&payment_id={{ payment_id }}&payment_status={{ payment_status }}"
+      target="_blank"
+    >
+      <button>Download Receipt (PDF)</button>
+    </a>
+
+    <style>
+      body {
+        background: #ecf0f1;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        max-width: 500px;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      button {
+        background-color: #e74c3c;
+        color: white;
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </body>
+</html>

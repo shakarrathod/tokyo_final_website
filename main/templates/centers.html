@@ -1,14 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="section">
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+{% comment %} <div class="section" data-aos="fade-down" data-aos="fade-up" data-aos-delay="100">
   <div class="video-background">
     <video autoplay muted loop id="myVideo">
       <source src="{% static 'videos/centers-earth.mp4' %}" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
   </div>
-  <div class="content">
+  <div class="content" data-aos="fade-down" data-aos="fade-up" data-aos-delay="200">
     <div class="section-header">
       <h1 class="title">Explore Our Centers</h1>
       <button id="resetFilters" class="reset-btn">Reset Filters</button>
@@ -21,11 +32,8 @@
             <option value="">Select City</option>
             <option value="bangalore">Bangalore</option>
             <option value="mumbai">Mumbai</option>
-            <option value="delhi">Delhi</option>
+            <option value="indore">indore</option>
             <option value="chennai">Chennai</option>
-            <option value="kolkata">Kolkata</option>
-            <option value="hyderabad">Hyderabad</option>
-            <option value="tokyo">Tokyo</option>
           </select>
         </div>
         <ul id="branchList" class="branch-list"></ul>
@@ -37,37 +45,18 @@
 <script>
   const data = {
     bangalore: [
-      { branch: "Indiranagar", link: "{% url 'indiranagar' %}"},
-      { branch: "Whitefield", link: "/bangalore/whitefield" },
-      { branch: "Koramangala", link: "/bangalore/koramangala" }
+      { name: "Kudlu Gate", url: "{% url 'kudlu_center_benglore' %}" },
+      { name: "Murugeshpalya", url: "{% url 'murugeshpalya_center_benglore' %}" }
     ],
     mumbai: [
-      { branch: "Andheri", link: "{% url 'mumbai_landing_page' %}" },
-      { branch: "Thane", link: "/mumbai/thane" },
-      { branch: "Vasai", link: "/mumbai/vasai" }
+      { name: "Andheri", url: "{% url 'andheri_mumbai' %}" }
     ],
-    delhi: [
-      { branch: "Connaught Place", link: "/delhi/connaught-place" },
-      { branch: "Dwarka", link: "/delhi/dwarka" },
-      { branch: "Karol Bagh", link: "/delhi/karol-bagh" }
+    indore: [
+      { name: "Vijay Nagar Square", url: "{% url 'Vijay_Nagar_Square_indore' %}" } // No URL provided, added "#" as a placeholder
     ],
     chennai: [
-      { branch: "OMR", link: "/chennai/omr" },
-      { branch: "Vadapalani", link: "/chennai/vadapalani" },
-      { branch: "Anna Nagar", link: "/chennai/anna-nagar" }
-    ],
-    kolkata: [
-      { branch: "Salt Lake", link: "/kolkata/salt-lake" },
-      { branch: "Park Street", link: "/kolkata/park-street" },
-      { branch: "Howrah", link: "/kolkata/howrah" }
-    ],
-    hyderabad: [
-      { branch: "Banjara Hills", link: "/hyderabad/banjara-hills" },
-      { branch: "Gachibowli", link: "/hyderabad/gachibowli" },
-      { branch: "Secunderabad", link: "/hyderabad/secunderabad" }
-    ],
-    tokyo: [
-      { branch: "Shinjuku", link: "/tokyo/shinjuku" }
+      { name: "Sholinganallur", url: "{% url 'Sholinganallur_chennai' %}" },
+      { name: "Kodambakkam", url: "{% url 'Kodambakkam_chennai' %}" }
     ]
   };
 
@@ -75,22 +64,22 @@
     const branchList = document.getElementById("branchList");
     branchList.innerHTML = "";
 
-    if (center === "") {
+    if (!center || !data[center]) {
       branchList.style.display = "none";
       return;
     }
 
     branchList.style.display = "block";
-    
-    const branches = data[center];
 
-    branches.forEach(branch => {
+    data[center].forEach(branch => {
       const listItem = document.createElement("li");
       listItem.classList.add("branch-item");
+
       const link = document.createElement("a");
-      link.href = branch.link; // Updated link
-      link.textContent = branch.branch;
+      link.href = branch.url || "#"; // Fallback to "#" if no URL is provided
+      link.textContent = branch.name;
       link.classList.add("branch-link");
+
       listItem.appendChild(link);
       branchList.appendChild(listItem);
     });
@@ -117,8 +106,9 @@
       sidebar.style.maxHeight = "";
     });
   });
-</script>
-<style>
+</script> {% endcomment %}
+
+{% comment %} <style>
   .section {
     position: relative;
     width: 100%;
@@ -287,27 +277,203 @@
       width: 100%;
       font-size: 0.9rem;
     }
-  }
-  
-  @media (max-width: 576px) {
-    .title {
-      font-size: 1rem;
-    }
-    .section-container {
-      padding: 0 5px;
-    }
-    .reset-btn {
-      padding: 8px 16px;
-      font-size: 0.9rem;
-    }
-    .sidebar-title {
-      font-size: 1.2rem;
-    }
-    .dropdown {
-      padding: 10px;
-      font-size: 0.8rem;
-    }
+    .content h1 {
+      font-size: 1.3rem;
+      margin-top: 100px;
   }
 
+  }
+  
+   @media (max-width: 576px) {
+      .title {
+        font-size: 1.2rem;
+      }
+      .section-container {
+        padding: 0 5px;
+      }
+      .reset-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      .sidebar-title {
+        font-size: 1.2rem;
+      }
+      .dropdown {
+        padding: 10px;
+        font-size: 0.8rem;
+      }
+   }
+
+</style> {% endcomment %}
+
+
+
+<section class="centers-section">
+  <div class="container">
+      <h1 class="section-title">Our Premium Centers</h1>
+      <div class="centers-grid">
+          <div class="center-card">
+              <h2>Kudlu Gate</h2>
+              <p>Bangalore</p>
+              <a target="_blank" href="{% url 'kudlu_center_benglore' %}" class="visit-btn">Visit Center</a>
+          </div>
+          <div class="center-card">
+              <h2>Murugeshpalya</h2>
+              <p>Bangalore</p>
+              <a target="_blank" href="{% url 'murugeshpalya_center_benglore' %}" class="visit-btn">Visit Center</a>
+          </div>
+          <div class="center-card">
+              <h2>Andheri</h2>
+              <p>Mumbai</p>
+              <a target="_blank" href="{% url 'andheri_mumbai' %}" class="visit-btn">Visit Center</a>
+          </div>
+          <div class="center-card">
+              <h2>Vijay Nagar Square</h2>
+              <p>Indore</p>
+              <a target="_blank" href="{% url 'Vijay_Nagar_Square_indore' %}" class="visit-btn">Visit Center</a>
+          </div>
+          <div class="center-card">
+              <h2>Sholinganallur</h2>
+              <p>Chennai</p>
+              <a target="_blank" href="{% url 'Sholinganallur_chennai' %}" class="visit-btn">Visit Center</a>
+          </div>
+          <div class="center-card">
+              <h2>Kodambakkam</h2>
+              <p>Chennai</p>
+              <a target="_blank" href="{% url 'Kodambakkam_chennai' %}" class="visit-btn">Visit Center</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<style>
+  /* General Styling */
+  .centers-section {
+      padding: 80px 20px;
+      {% comment %} background: linear-gradient(135deg, #1A237E, #4A148C); /* Royal Blue to Neon Purple */ {% endcomment %}
+      text-align: center;
+      color: #fff;
+  }
+  
+  .section-title {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color:rgb(32, 31, 23); /* Bright Yellow */
+  }
+
+  .container {
+      max-width: 1200px;
+      margin: auto;
+  }
+
+  /* Centers Grid */
+  .centers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      justify-content: center;
+  }
+
+  /* Center Card */
+  .center-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s, background 0.3s;
+      color: #333;
+      text-align: center;
+      position: relative;
+      border-top: 6px solid #FFEB3B; /* Yellow Accent */
+      overflow: hidden;
+  }
+
+  .center-card h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #1A237E; /* Royal Blue */
+  }
+
+  .center-card p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 20px;
+  }
+
+  /* Hover Effect */
+  .center-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(135deg, #4A148C, #1A237E);
+      color: #fff;
+  }
+
+  .center-card:hover h2, 
+  .center-card:hover p {
+      color: #FFEB3B;
+  }
+
+  /* Visit Button */
+  .visit-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #FFEB3B, #FF4081);
+      color: #1A237E;
+      padding: 12px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.4s, background 0.3s;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .visit-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 235, 59, 0.7);
+      background: linear-gradient(45deg, #FF4081, #FFEB3B);
+  }
+
+  /* Glowing Button Effect */
+  .visit-btn::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120%;
+      height: 120%;
+      background: rgba(255, 235, 59, 0.3);
+      transition: 0.4s ease-in-out;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+  }
+
+  .visit-btn:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .section-title {
+          font-size: 2.2rem;
+      }
+
+      .centers-grid {
+          grid-template-columns: 1fr;
+      }
+
+      .center-card {
+          padding: 25px;
+      }
+  }
 </style>
+
+
+
+
+
 {% endblock %}

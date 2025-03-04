@@ -1,20 +1,33 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<section class="responsive-banner">
-  <img
-    src="{% static 'images/chess_banner.jpg' %}"
-    alt="Data Science Banner"
-    class="banner-image"
-  />
-  <div class="banner-content">
-    <h1>Chess Analytics</h1>
-  </div>
-</section>
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+  <section class="responsive-banner" data-aos="fade-up" data-aos-duration="1200">
+    <img
+      src="{% static 'images/chess_banner.jpg' %}"
+      alt="Chess Analytics Banner"
+      class="banner-image"
+      data-aos="zoom-in" data-aos-duration="1000"
+    />
+    <div class="banner-content" data-aos="fade-up" data-aos-duration="1000">
+      <h1>Chess Analytics</h1>
+    </div>
+  </section>
+
 
 <style>
   /* Section Styling */
   .responsive-banner {
-    margin-top: 100px;
+   
     position: relative;
     height: 300px;
     width: 100%;
@@ -67,12 +80,10 @@
   }
 </style>
 
-<section class="chess-analytics-section">
+<section class="chess-analytics-section" data-aos="fade-up" data-aos-duration="1500">
   <div class="chess-analytics-container">
-    <div class="chess-analytics-category">
-      <h2 class="chess-analytics-title">
-        Advanced Chess Analytics and Strategy Development
-      </h2>
+    <div class="chess-analytics-category" data-aos="fade-left" data-aos-duration="1200">
+      <h2 class="chess-analytics-title">Advanced Chess Analytics and Strategy Development</h2>
       <p>
         <strong>Tokyo AnalyticX</strong> offers a comprehensive curriculum for
         players of all levels, focusing on critical thinking, advanced tactics,
@@ -91,6 +102,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -163,12 +175,12 @@
   }
 </style>
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-up" data-aos-duration="1500">
   <div class="offerings-container">
-    <div class="offerings-image">
+    <div class="offerings-image" data-aos="fade-right" data-aos-duration="1200">
       <img src="{% static 'images/chess-1.jpg' %}" alt="Student learning" />
     </div>
-    <div class="offerings-text">
+    <div class="offerings-text" data-aos="fade-left" data-aos-duration="1200">
       <h2 class="offerings-title">Our Diverse Course Offerings</h2>
       <ul class="offerings-list">
         <li>
@@ -184,7 +196,7 @@
           Thinking: Planning and Decision Making
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span>Advanced Tactical
+          <span class="check-icon blue">&#10003;</span> Advanced Tactical
           Patterns: Mastering Complex Ideas
         </li>
         <li>
@@ -192,7 +204,7 @@
           and Key Concepts
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span>Positional Play:
+          <span class="check-icon blue">&#10003;</span> Positional Play:
           Evaluating Good vs. Bad Pieces
         </li>
         <li>
@@ -208,46 +220,47 @@
   </div>
 </section>
 
-<section class="chess-why-choose-section">
+
+<section class="chess-why-choose-section" data-aos="fade-up" data-aos-duration="1500">
   <div class="chess-container">
-    <h2 class="chess-section-title">Why Choose Tokyo AnalyticX ?</h2>
+    <h2 class="chess-section-title" data-aos="fade-in" data-aos-duration="1200">Why Choose Tokyo AnalyticX ?</h2>
     <div class="chess-cards-wrapper">
-      <div class="chess-card">
+      <div class="chess-card" data-aos="flip-left" data-aos-duration="1200">
         <h3 class="chess-card-title">Advanced Analytics Tools</h3>
         <p>
           Learn to use cutting-edge analytics tools to evaluate games, study
           player patterns, and uncover winning strategies.
         </p>
       </div>
-      <div class="chess-card">
+      <div class="chess-card" data-aos="flip-left" data-aos-duration="1200">
         <h3 class="chess-card-title">Practical Training</h3>
         <p>
           Engage in hands-on exercises to analyze real-world games, simulate
           match scenarios, and develop practical skills.
         </p>
       </div>
-      <div class="chess-card">
+      <div class="chess-card" data-aos="flip-left" data-aos-duration="1200">
         <h3 class="chess-card-title">Expert Coaches</h3>
         <p>
           Gain insights from professional chess players and data analysts with
           years of experience in the field.
         </p>
       </div>
-      <div class="chess-card">
+      <div class="chess-card" data-aos="flip-left" data-aos-duration="1200">
         <h3 class="chess-card-title">Global Community</h3>
         <p>
           Connect with chess enthusiasts, professionals, and analysts worldwide,
           sharing knowledge and insights.
         </p>
       </div>
-      <div class="chess-card">
+      <div class="chess-card" data-aos="flip-left" data-aos-duration="1200">
         <h3 class="chess-card-title">Career Growth</h3>
         <p>
           Build a strong foundation for roles such as chess coach, tournament
           analyst, or AI-based chess developer.
         </p>
       </div>
-      <div class="chess-card">
+      <div class="chess-card" data-aos="flip-left" data-aos-duration="1200">
         <h3 class="chess-card-title">Flexible Learning Options</h3>
         <p>
           Choose from online, in-person, or hybrid learning modes to fit your
@@ -257,6 +270,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -353,9 +367,9 @@
   }
 </style>
 
-<div class="chess-programs-section">
-  <h2 class="chess-section-title">Our Chess Training Program</h2>
-  <div class="chess-program-card">
+<div class="chess-programs-section" data-aos="fade-up" data-aos-duration="1500">
+  <h2 class="chess-section-title" data-aos="fade-in" data-aos-duration="1200">Our Chess Training Program</h2>
+  <div class="chess-program-card" data-aos="flip-left" data-aos-duration="1200">
     <div class="chess-program-header">
       <h3 class="chess-program-title">Mastering Chess Strategies</h3>
     </div>
@@ -384,8 +398,7 @@
       <tr>
         <td><strong>Key Skills Taught:</strong></td>
         <td>
-          Opening Theories, Endgame Techniques, Positional Play, Tactical
-          Mastery
+          Opening Theories, Endgame Techniques, Positional Play, Tactical Mastery
         </td>
       </tr>
       <tr>
@@ -395,37 +408,17 @@
     </table>
 
     <div class="chess-button-container">
-      <button class="chess-brochure-btn" id="brochure-btn">📄 Brochure</button>
-      <button class="chess-enroll-btn" id="enroll-btn">🖊 Enroll Now</button>
+      <a href="resume_shankar_rathod.pdf" download class="chess-brochure-btn">
+        📄 Download Brochure
+      </a>
+      <a href="{% url 'payment_form' %}" class="chess-enroll-btn">
+        🖊 Enroll Now
+      </a>
     </div>
   </div>
-
-  <!-- Form Container -->
-  <div id="form-container" style="display: none">
-    <form id="dynamic-form" class="chess-form">
-      <h3 id="form-title">Enrollment Form</h3>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Enter your name"
-      />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-      />
-      <label for="otp">OTP:</label>
-      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 </div>
+
+
 
 <style>
   .chess-programs-section {
@@ -542,7 +535,7 @@
     }
 
     .chess-program-title {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
 
     .chess-program-table {
@@ -691,10 +684,10 @@
 <!-- enrollment section ends here -================= -->
 {% endcomment %}
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-up" data-aos-duration="1500">
   <div class="offerings-container">
     <div class="offerings-text">
-      <h2 class="offerings-title">
+      <h2 class="offerings-title" data-aos="fade-in" data-aos-duration="1200">
         Trust the Market Leader to Grow your Career
       </h2>
       <ul class="offerings-list">
@@ -721,6 +714,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -822,36 +816,35 @@
   }
 </style>
 
-<section class="chess-competition-section">
-  <div class="chess-container3">
-    <h1 class="chess-section-title">Inter State Level Competition</h1>
-    <div class="chess-content-wrapper">
+<section class="chess-competition-section" data-aos="fade-up" data-aos-duration="1200">
+  <div class="chess-container3" data-aos="zoom-in" data-aos-duration="1300">
+    <h1 class="chess-section-title" data-aos="fade-right" data-aos-duration="1000">
+      Inter State Level Competition
+    </h1>
+    <div class="chess-content-wrapper" data-aos="slide-up" data-aos-duration="1200">
       <img
         src="{% static 'images/chess-2.jpg' %}"
         alt="Chess Competition"
         class="chess-competition-image"
+        data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300"
       />
-      <div class="chess-content2">
+      <div class="chess-content2" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="500">
         <p>
-          <strong>1. Planning the Event:</strong> Competition inter-state
-          collaboration and sportsmanship. Promote chess across states. Provide
-          a competitive platform for players.
+          <strong>1. Planning the Event:</strong> Competition inter-state collaboration and sportsmanship. 
+          Promote chess across states. Provide a competitive platform for players.
         </p>
         <p>
-          <strong>2. Our Structure:</strong> Time controls: Blitz, Rapid, or
-          Classical. Number of rounds: Swiss format (common for large events) or
-          Round Robin. Age/Skill categories: Open, U-5, U-12.
+          <strong>2. Our Structure:</strong> Time controls: Blitz, Rapid, or Classical. Number of rounds: 
+          Swiss format (common for large events) or Round Robin. Age/Skill categories: Open, U-5, U-12.
         </p>
         <p>
-          <strong
-            >1st Prize: ₹50,000 and Lifetime Free Education in Tokyo
-            Analytics</strong
-          >
+          <strong>1st Prize: ₹50,000 and Lifetime Free Education in Tokyo Analytics</strong>
         </p>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -910,7 +903,7 @@
 
   .chess-content2 strong {
     color: #555; /* Red color for emphasis like in Chess Offerings */
-    font-size: 1.2rem;
+    font-size: 1.rem;
   }
 
   @media (max-width: 768px) {
@@ -924,11 +917,11 @@
     }
 
     .chess-section-title {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
     }
 
     .chess-content2 p {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 </style>

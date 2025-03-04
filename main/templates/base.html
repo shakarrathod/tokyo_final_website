@@ -7,11 +7,18 @@
     <title>Tokyo Analytics</title>
     {% load static %}
    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
         <!-- AOS Library CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-      
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" >
     <link rel="stylesheet" href="{% static 'css/style_css.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -21,13 +28,18 @@
           top: 0;
           left: 0;
           width: 100%;
+          
+          border-bottom: 12px solid rgb(255, 49, 49);
+          box-shadow: 0px 0px 15px rgba(239, 239, 238, 0.6);
+
           height: auto;
           z-index: 1000;
+          box-sizing: border-box;
           background-color:white; /* Change to match your design */
         }
-      
+
         body {
-            margin-top: 132px; 
+            margin-top: 132px;
             font-family: 'Glacial Indifference', sans-serif;
             background-color: white;
             font-size: 1rem;
@@ -35,10 +47,65 @@
           }
           body p {
             
-            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+            font-family: 'Glacial Indifference', sans-serif;
             line-height: 1.6; 
             font-size: 1rem;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+    
+          /* Ensure body and HTML take full width without overflow */
+          html,
+          body {
+            width: 100%;
+            overflow-x: hidden;
+          }
+    
+          /* Header Styling */
+          header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 1000;
+            padding: 10px 20px;
+           
+            transition: all 0.3s ease-in-out;
+          }
+    
+          /* Ensuring content does not hide behind fixed header */
+          main {
+          /*  padding-top: 132px; */
+            width: 100%; /* Prevents accidental overflow */
+          }
+    
+          /* Responsive adjustments */
+          @media (max-width: 768px) {
+            header {
+              
+              padding: 8px 15px;
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+            }
+          }
+    
+          @media (max-width: 480px) {
+            header {
+              padding: 6px 10px;
+              
+            }
+          }
+    
+          /* Debugging: Ensuring no element overflows */
+          body * {
+            max-width: 100%;
+          }
         
       </style> 
 
@@ -46,72 +113,266 @@
 </head>
 
 <body>
-    <header>
+    <header id="main-header">
         {% comment %} Top Bar {% endcomment %}
         <div class="top-bar1">
-            <div class="social-links">
-                <a href="https://www.facebook.com/Tokyoanalyticx/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/tokyoanalyticx/?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/tokyoanalyticx/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="country">
-                <img src="{% static 'images/japan.png' %}" alt="Japan">
-                <img src="{% static 'images/india.png' %}" alt="India">
-            </div>
+          <div class="social-links">
+            <a href="https://www.facebook.com/Tokyoanalyticx/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/tokyoanalyticx/?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/tokyoanalyticx/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <div class="country">
+            <img src="{% static 'images/japan.png' %}" alt="Japan">
+            <img src="{% static 'images/india.png' %}" alt="India">
+          </div>
         </div>
-    
+      
         <nav class="navbar">
-            <button class="hamburger" onclick="toggleMenu()">☰ <span>Menu</span></button>
-            <div class="logo">
-                <a href="#"><img src="{% static 'images/logo.png' %}" alt="Tokyo Analytics"></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About Us</a></li>
-                <li>
-                    <a href="#" class="course" onclick="toggleSubmenu(event)">Courses <span class="dropdown-icon">&#9662;</span></a>
-
-                    <ul class="dropdown1">
-                        <li>
-                            <a href="#" class="it-courses" onclick="toggleSubmenu(event)">IT Courses <span class="dropdown-icon">&#9662;</span></a>
-                            <ul class="dropdown2">
-                                <li><a href="{% url 'data_science_business_analytics' %}">Data Science & Business Analytics</a></li>
-                                <li><a href="{% url 'cyber_security_and_ethical_hacking' %}">Cyber Security & Ethical Hacking</a></li>
-                                <li><a href="{% url 'cloud_and_devops' %}">Cloud & DevOps</a></li>
-                                <li><a href="{% url 'chess_analytics' %}">Chess Analytics</a></li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="professional-courses" onclick="toggleSubmenu(event)">Professional Courses <span class="dropdown-icon">&#9662;</span></a>
-                            <ul class="dropdown2">
-                                <li><a href="{% url 'event_management' %}">Event Management</a></li>
-                                <li><a href="{% url 'spoken_english' %}">Spoken English</a></li>
-
-                                <li><a href="{% url 'nail_artistry'%} ">Nail Artistry</a></li>
-                                <li><a href="{% url 'makeup' %}">Makeup Artistry</a></li>
-
-
-
-                            </ul>
-                        </li>
-                    </ul>
+          <!-- Hamburger Button for Mobile -->
+          <button class="hamburger" onclick="toggleMenu()">☰ <span>Menu</span></button>
+      
+          <!-- Logo (Remains Static) -->
+          <div class="logo">
+            <a href="#"><img src="{% static 'images/logo_new.png' %}" alt="Tokyo Analytics"></a>
+          </div>
+      
+          <!-- Navigation Links (Sliding Menu) -->
+          <ul class="nav-links">
+            <!-- Close Button positioned at top right inside the sliding panel -->
+            <button class="menu-close" onclick="toggleMenu()">×</button>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li class="dropdown-parent">
+              <a href="#" class="course" onclick="toggleSubmenu(event)">Courses <span class="dropdown-icon">&#9662;</span></a>
+              <ul class="dropdown1">
+                <li class="dropdown-parent">
+                  <a href="#" class="it-courses" onclick="toggleSubmenu(event)">IT Courses <span class="dropdown-icon">&#9662;</span></a>
+                  <ul class="dropdown2">
+                    <li><a href="{% url 'data_science_business_analytics' %}">Data Science & Business Analytics</a></li>
+                    <li><a href="{% url 'cyber_security_and_ethical_hacking' %}">Cyber Security & Ethical Hacking</a></li>
+                    <li><a href="{% url 'cloud_and_devops' %}">Cloud & DevOps</a></li>
+                    <li><a href="{% url 'chess_analytics' %}">Chess Analytics</a></li>
+                  </ul>
                 </li>
-                <li><a href="{% url 'centers' %}">Centers</a></li>
-
-             
-                
-
-                
-                <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                <li>
-                    <a href="{% url 'enquire_now' %}" class="enquire-btn">Enquire Now</a>
+                <li class="dropdown-parent">
+                  <a href="#" class="professional-courses" onclick="toggleSubmenu(event)">Professional Courses <span class="dropdown-icon">&#9662;</span></a>
+                  <ul class="dropdown2">
+                    <li><a href="{% url 'event_management' %}">Event Management</a></li>
+                    <li><a href="{% url 'spoken_english' %}">Spoken English</a></li>
+                    <li><a href="{% url 'nail_artistry' %}">Nail Artistry</a></li>
+                    <li><a href="{% url 'makeup' %}">Makeup Artistry</a></li>
+                  </ul>
                 </li>
-                
-            </ul>
+              </ul>
+            </li>
+            {% comment %} <li><a href="{% url 'admissions' %}">Admissions</a></li> {% endcomment %}
+            <li><a href="{% url 'centers' %}">Centers</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <!-- Enquire Now item with class on the list element -->
+            <li class="enquire-btn1"><a href="{% url 'enquire_now' %}">Enquire Now</a></li>
+          </ul>
         </nav>
-    </header>
-    <style>
+      </header>
+      
+      <style>
+        /* --------------------------- */
+        /*        Desktop Styles       */
+        /* --------------------------- */
+        .navbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.5rem 1rem;
+          background-color: #fff;
+          position: relative;
+          z-index: 100;
+        }
+        .navbar .logo img {
+          max-height: 50px;
+        }
+        .nav-links {
+          list-style: none;
+          display: flex;
+          margin: 0;
+          padding: 0;
+        }
+        .nav-links li {
+          position: relative;
+        }
+        .nav-links a {
+          display: block;
+          text-decoration: none;
+          color: #333;
+        }
+        /* Hamburger & Close Buttons */
+        .hamburger,
+        .menu-close {
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+        .hamburger {
+          font-size: 1.5rem;
+          display: none;
+        }
+        .menu-close {
+          font-size: 2rem;
+          display: none;
+        }
+        /* Desktop dropdown on hover */
+        .dropdown1, .dropdown2 {
+          list-style: none;
+          position: absolute;
+          background-color: #fff;
+          display: none;
+          padding: 0;
+          margin: 0;
+          top: 100%;
+          left: 0;
+          min-width: 200px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .dropdown1 li, .dropdown2 li {
+          position: relative;
+        }
+        .dropdown-parent:hover > .dropdown1,
+        .dropdown-parent:hover > .dropdown2 {
+          display: block;
+        }
+        
+        /* --------------------------- */
+        /*        Mobile Styles        */
+        /* --------------------------- */
+        @media (max-width: 768px) {
+          /* Show hamburger on mobile */
+          .hamburger {
+            display: block;
+          }
+          /* Disable desktop hover dropdown and enable click toggling */
+          .dropdown1, .dropdown2 {
+            position: relative;
+            box-shadow: none;
+            display: none;
+          }
+          .dropdown-parent.open > .dropdown1,
+          .dropdown-parent.open > .dropdown2 {
+            display: block;
+          }
+          .dropdown-parent:hover > .dropdown1,
+          .dropdown-parent:hover > .dropdown2 {
+            display: none;
+          }
+          /* Transform nav-links into a full-height sliding panel from the left */
+          .nav-links {
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 100vh;
+            background-color: #fff;
+            overflow-y: auto;
+            padding-top: 50px; /* Space for header content */
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+            box-shadow: 2px 0px 10px rgba(0,0,0,0.2);
+          }
+          .nav-links.active {
+            transform: translateX(0);
+          }
+          .nav-links li {
+            width: 100%;
+          }
+          .nav-links a {
+            padding: 0px;
+            border-bottom: 1px solid #ddd;
+          }
+          /* Display the mobile close button and position it at the top right */
+          .menu-close {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+          }
+          /* Hide the Enquire Now item in mobile view */
+          .enquire-btn1 {
+            display: none;
+          }
+        }
+      </style>
+      
+      <script>
+        /* Toggle the mobile menu slide-in/out */
+        function toggleMenu() {
+          const navLinks = document.querySelector('.nav-links');
+          navLinks.classList.toggle('active');
+        }
+        
+        /* Toggle dropdown submenus in mobile view */
+        function toggleSubmenu(event) {
+          if (window.innerWidth <= 768) {
+            event.preventDefault();
+            const dropdownParent = event.target.closest('.dropdown-parent');
+            if (dropdownParent) {
+              dropdownParent.classList.toggle('open');
+            }
+          }
+        }
+      </script>
+      
+
+    
+    
+{% comment %} script for header move out {% endcomment %}
+    
+    <script>
+        let lastScrollTop = 0;
+        const header = document.getElementById("main-header");
+    
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop) {
+                header.style.transform = "translateY(-100%)"; // Hide header on scroll down
+            } else {
+                header.style.transform = "translateY(0)"; // Show header on scroll up
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
+
+
+    {% comment %} script for menu  {% endcomment %}
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+</script>
+
+{% comment %} Script for dorpdown for course section in header {% endcomment %}
+<script>
+        // Function to toggle the submenu visibility
+    function toggleSubmenu(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        const submenu = event.target.nextElementSibling; // Get the next sibling (the dropdown2)
+
+        // Toggle the visibility of the clicked submenu
+        if (submenu.style.display === 'block') {
+            submenu.style.display = 'none';
+        } else {
+            submenu.style.display = 'block';
+        }
+    }
+
+</script>
+    
+    
+<style>
         /* Top Bar */
         .top-bar1 {
             display: flex;
@@ -120,8 +381,9 @@
             padding: 0 15px;
             margin-bottom: 0;
             padding-bottom: 0;
-
+            box-sizing: content-box;
             height: 40px;
+            
 
         }
         
@@ -132,7 +394,6 @@
         .country img {
             margin-left: 10px;
         }
-        
 
         /* Navbar */
         .navbar {
@@ -140,6 +401,8 @@
             padding: 10px 15px;
             position: relative;
             height: 100px;
+            box-shadow: none !important;
+            border: none !important;
         }
 
         .hamburger {
@@ -158,6 +421,7 @@
             gap: 15px;
             align-items: center;
             justify-content: flex-end;
+          
         }
 
         .nav-links a {
@@ -166,10 +430,10 @@
         }
 
 
-        .enquire-btn, .shop-btn {
+        .enquire-btn1, .shop-btn {
             color: white;
             background: rgb(255, 49, 49);
-            padding: 10px 15px;
+            
             border-radius: 5px;
             font-size: 16px;
             font-weight: bolder;
@@ -187,262 +451,206 @@
 
 
 
-/* General Dropdown Styling for course */
-/* Dropdown 1 Styling */
-.dropdown1 {
-    display: none;
-    position: absolute;
-    background: white;
-    padding: 12px;
-    border: 1px solid #ddd;
-    list-style-type: none;
-    z-index: 1000;
-    min-width: 240px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Show Dropdown on Hover for the First Level */
-.courses-link:hover + .dropdown1,
-.courses-link:focus + .dropdown1 {
-    display: block;
-}
-
-/* Dropdown Items */
-.dropdown1 li {
-    position: relative;
-    padding: 5px 10px; /* Add spacing for items */
-}
-
-/* Links Styling */
-.dropdown1 li a {
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    justify-content: flex-start; /* Align text to the left */
-    align-items: center;
-    padding: 8px 12px; /* Padding for better spacing */
-    transition: background-color 0.3s;
-    font-size: 14px;
-}
-
-.dropdown1 li a:hover {
-    background-color: red;
-    color: white;
-}
-
-/* Add Dropdown Icon */
-.dropdown-icon {
-    font-size: 12px;
-    color: #666;
-    margin-left: 10px;
-    transition: transform 0.3s; /* Add smooth rotation */
-}
-
-/* Rotate the icon when submenu is expanded */
-.dropdown1 li a[aria-expanded="true"] .dropdown-icon {
-    transform: rotate(180deg);
-}
-
-/* Submenu Styling */
-.dropdown2 {
-    display: none;
-    position: relative; /* Align inside the parent */
-    margin-top: 5px;
-    padding: 5px 0;
-    list-style-type: none;
-    border-top: 1px solid #ddd; /* Separator for sub-items */
-}
-
-.dropdown2 li {
-    padding: 5px 15px; /* Add spacing for submenu items */
-}
-
-.dropdown2 li a {
-    text-decoration: none;
-    color: #555;
-    display: block;
-    padding: 8px 12px;
-    transition: background-color 0.3s;
-}
-
-.dropdown2 li a:hover {
-    background-color: red;
-    color: white;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .dropdown {
-        position: static;
-        box-shadow: none;
-        border: none;
-        padding: 0;
-        text-align: left; /* Align text to the left */
-    }
-
-    .dropdown .dropdown2 {
-        padding: 0;
-        margin: 0;
-        border-top: none;
-    }
-
-    .dropdown li {
-        padding: 10px 0;
-        display: inline-block; /* Keep items in one line */
-    }
-
-    .dropdown li a {
-        padding: 10px;
-        white-space: nowrap; /* Prevent text from wrapping to the next line */
-    }
-
-    .dropdown-icon {
-        display: none; /* Hide icons in responsive view */
-    }
-}
-
-
-
-
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block; /* Show hamburger menu on small screens */
-            }
-
-            .nav-links {
-                display: none; /* Hide nav-links by default */
-                flex-direction: column;
-                gap: 0;
-                background: white;
+            /* General Dropdown Styling for course */
+            /* Dropdown 1 Styling */
+            .dropdown1 {
+                display: none;
                 position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                border-top: 1px solid #ddd;
+                background: white;
+                padding: 12px;
+                border: 1px solid #ddd;
+                list-style-type: none;
+                z-index: 1000;
+                min-width: 240px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
 
-            .nav-links.active {
-                display: flex; /* Show nav-links when active */
+            /* Show Dropdown on Hover for the First Level */
+            .courses-link:hover + .dropdown1,
+            .courses-link:focus + .dropdown1 {
+                display: block;
             }
 
-            .nav-links li {
-                text-align: center;
-                padding: 10px 0;
+            /* Dropdown Items */
+            .dropdown1 li {
+                position: relative;
+                padding: 5px 10px; /* Add spacing for items */
             }
+
+            /* Links Styling */
+            .dropdown1 li a {
+                text-decoration: none;
+                color: #333;
+                display: flex;
+                justify-content: flex-start; /* Align text to the left */
+                align-items: center;
+                padding: 8px 12px; /* Padding for better spacing */
+                transition: background-color 0.3s;
+                font-size: 14px;
+            }
+
+            .dropdown1 li a:hover {
+                background-color: red;
+                color: white;
+            }
+
+            /* Add Dropdown Icon */
+            .dropdown-icon {
+                font-size: 12px;
+                color: #666;
+                margin-left: 10px;
+                transition: transform 0.3s; /* Add smooth rotation */
+            }
+
+            /* Rotate the icon when submenu is expanded */
+            .dropdown1 li a[aria-expanded="true"] .dropdown-icon {
+                transform: rotate(180deg);
+            }
+
+            /* Submenu Styling */
+            .dropdown2 {
+                display: none;
+                position: relative; /* Align inside the parent */
+                margin-top: 5px;
+                padding: 5px 0;
+                list-style-type: none;
+                border-top: 1px solid #ddd; /* Separator for sub-items */
+            }
+
+            .dropdown2 li {
+                padding: 5px 15px; /* Add spacing for submenu items */
+            }
+
+            .dropdown2 li a {
+                text-decoration: none;
+                color: #555;
+                display: block;
+                padding: 8px 12px;
+                transition: background-color 0.3s;
+            }
+
+            .dropdown2 li a:hover {
+                background-color: red;
+                color: white;
+            } 
 
             
-        /* Top Bar */
-        .top-bar1 {
-            flex-wrap: nowrap; /* Keep it in one row */
-            justify-content: space-between; /* Maintain corners layout */
-            gap: 10px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .country {
-            display: flex;
-            gap: 10px;
-        }
-        /* Navbar */
-        .navbar {
-            background: white;
-            padding: 10px 15px;
-            position: relative;
-        }
-
-        .hamburger {
-            font-size: 16px;
-            cursor: pointer;
-            display: none; /* Hidden by default */
-            background: none;
-            border: none;
-            outline: none;
-        }
-
-        .nav-links {
-            margin-bottom: 0;
-            list-style-type: none;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .enquire-btn, .shop-btn {
-            color: white;
-            background: rgb(255, 49, 49);
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bolder;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .enquire-btn:hover {
-            background: rgb(1, 1, 249);
-        }
-
-        .shop-btn:hover {
-            background: rgb(1, 1, 249);
-        }
-
-        /* Dropdown */
-        .dropdown1 {
-            display: none;
-            list-style-type: none;
-        }
-
-        .courses-link:hover + .dropdown1, 
-        .courses-link:focus + .dropdown1 {
-            display: block;
-            position: absolute;
-            background: white;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block; /* Show hamburger menu on small screens */
+             @media (max-width: 768px)
+            {
+                .dropdown {
+                    position: static;
+                    box-shadow: none;
+                    border: none;
+                    padding: 0;
+                    text-align: left; /* Align text to the left */
+                }
+            
+                .dropdown .dropdown2 {
+                    padding: 0;
+                    margin: 0;
+                    border-top: none;
+                }
+            
+                .dropdown li {
+                    padding: 10px 0;
+                    display: inline-block; /* Keep items in one line */
+                }
+            
+                .dropdown li a {
+                    padding: 10px;
+                    white-space: nowrap; /* Prevent text from wrapping */
+                }
+            
+                .dropdown-icon {
+                    display: none; /* Hide icons in responsive view */
+                }
+            
+                .hamburger {
+                    display: block; /* Show hamburger menu on small screens */
+                    font-size: 16px;
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                    outline: none;
+                }
+            
+                .nav-links {
+                    display: none; /* Hide nav-links by default */
+                    flex-direction: column;
+                    gap: 0;
+                    background: white;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    border-top: 1px solid #ddd;
+                }
+            
+                .nav-links.active {
+                    display: flex; /* Show nav-links when active */
+                    width: 70%;
+                    height: auto;
+                    margin-left: -10px;
+                }
+            
+                .nav-links li {
+                    text-align: center;
+                    padding: 10px 0;
+                }
+            
+                /* Top Bar */
+                .top-bar1 {
+                    flex-wrap: nowrap; /* Keep it in one row */
+                    justify-content: space-between; /* Maintain corners layout */
+                    gap: 10px;
+                }
+            
+                .social-links, .country {
+                    display: flex;
+                    gap: 10px;
+                }
+            
+                /* Navbar */
+                .navbar {
+                    background: white;
+                    padding: 10px 15px;
+                    position: relative;
+                }
+            
+                .enquire-btn, .shop-btn {
+                    color: white;
+                    background: rgb(255, 49, 49);
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    font-weight: bolder;
+                    text-decoration: none;
+                    transition: background 0.3s ease;
+                }
+            
+                .enquire-btn:hover, .shop-btn:hover {
+                    background: rgb(1, 1, 249);
+                }
+            
+                /* Dropdown */
+                .dropdown1 {
+                    display: none;
+                    list-style-type: none;
+                }
+            
+                .courses-link:hover + .dropdown1, 
+                .courses-link:focus + .dropdown1 {
+                    display: block;
+                    position: absolute;
+                    background: white;
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                }
             }
 
-            .nav-links {
-                display: none; /* Hide nav-links by default */
-                flex-direction: column;
-                gap: 0;
-                background: white;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                border-top: 1px solid #ddd;
-            }
 
-            .nav-links.active {
-                display: flex; /* Show nav-links when active */
-            }
-
-            .nav-links li {
-                text-align: center;
-                padding: 10px 0;
-            }
-
-        }
-
-    </style>
+        
+</style>
 
    
 
@@ -462,19 +670,20 @@
 
 
 
-    <footer style="background: rgb(255, 49, 49); color: white; font-family: 'Montserrat', Arial, sans-serif;">
+    <footer style="background: rgb(255, 49, 49); color: white; font-family: 'Glacial Indifference', sans-serif;">
         <div class="footer-container">
             <div class="footer-logo">
                 <img src="{% static 'images/logo.png' %}" alt="Your Logo">
-                <p>Office No. 1123, Omkar The Summit Business Bay, Andheri - Kurla Rd, nr. Western Express Highway, Gundavali, Andheri East, Mumbai, Maharashtra 400093</p>
+                <p>Skyline Icon, Andheri - Kurla Rd, Mittal Industrial Estate, br Marol, Andheri East, Mumbai, Maharashtra 400059</p>
             </div>
             <div class="footer-links">
                 <h3 class="footer-heading">Contact Links</h3>
                 <ul>
-                    <li><a href="#">Admissions</a></li>
-                    <li><a href="#">Fee Payment</a></li>
+                    <li><a href="{% url 'admissions' %}">Admissions</a></li>
+                    <li><a href="{% url 'admissions' %}">Fee Payment</a></li>
                     <li><a href="{% url 'enquire_now' %}">Enquire Now</a></li>
                     <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <li><a href="{% url 'centers' %}">Centers</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -502,7 +711,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p style="margin-bottom: 0px; font-weight: normal;">&copy; 2022 Tokyo Analytics, all rights reserved.</p>
+            <p style="margin-bottom: 0px; font-weight: normal;">&copy; 2025 Tokyo Analytics, all rights reserved.</p>
         </div>
     </footer>
     
@@ -607,99 +816,96 @@
         .footer-bottom p {
             text-align: center;
             margin-top: 0;
-            font-size: 0.87rem;
+            font-size: 12px;
+            padding-bottom: 15px;
         }
     
         .footer-links h3 {
             font-size: 1rem;
         }
         .footer-bottom{
-            font-size: 0.7rem;
+            font-size: 12px;
         }
     
         /* Mobile Styles */
         @media screen and (max-width: 768px) {
             .footer-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0px;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0px;
             }
-    
+          
             .footer-logo p {
-                margin-bottom: 20px;
+              margin-bottom: 20px;
             }
-    
+            .responsive-hide {
+              display: none;
+            }
+          
             .contact-info {
-                margin-top: 10px;
-                font-size: 0.7rem;
-
+              margin-top: 10px;
+              font-size: 0.7rem;
+              
             }
-    
+          
             .footer-social h3 {
-                margin-bottom: 0px;
-                margin-top: 15px;
-                font-size: 1rem;
+              margin-bottom: 0px;
+              margin-top: 15px;
+              font-size: 1rem;
             }
-    
+          
             .footer-logo img {
-                max-width: 200px;
+              max-width: 200px;
             }
-    
+          
+            .footer-links,
+            .footer-social {
+              width: 100%;
+            }
+          
             .footer-links ul {
-                display: none; /* Dropdowns are hidden by default */
+              display: none; /* Dropdowns are hidden by default */
             }
-    
-            .footer-links h3 {
-                cursor: pointer;
-                font-size: 18px;
-                padding: 5px;
-                text-align: left;
-                position: relative;
-            }
-    
-            .footer-links h3::after {
-                content: " ▼";
-                right:10px;
-
-            }
-    
-            .footer-links h3.open::after {
-                content: " ▲";
-            }
-    
-            .footer-links h3.open + ul {
-                display: block; /* Show the dropdown when the heading is clicked */
-            }
-    
-            .social-icons {
-                text-align: left;
-            }
-    
-            .footer-social ul {
-                display: none; /* Dropdown for Follow Us hidden by default */
-            }
-    
+          
+            .footer-links h3,
             .footer-social h3 {
-                cursor: pointer;
-                font-size: 18px;
-                padding: 5px;
-                text-align: left;
-                position: relative;
+              cursor: pointer;
+              font-size: 16px;
+              padding: 10px;
+              text-align: left;
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
             }
-    
+          
+            .footer-links h3::after,
             .footer-social h3::after {
-                content: " ▼";
-                right: 10px;
+              content: " ▼";
+              position: absolute;
+              right: 15px;
             }
-    
+          
+            .footer-links h3.open::after,
             .footer-social h3.open::after {
-                content: " ▲";
+              content: " ▲";
             }
-    
+          
+            .footer-links h3.open + ul,
             .footer-social h3.open + ul {
-                display: block; /* Show the dropdown for Follow Us */
+              display: block; /* Show the dropdown when the heading is clicked */
             }
-        }
+          
+            .social-icons {
+              text-align: left;
+            }
+            .footer-bottom p{
+                font-size: 12px;
+            }
+          }
+
+
     </style>
     
     <script>
@@ -734,52 +940,18 @@
 
 
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+ 
 
-   {% comment %} Script for dorpdown for course section in header {% endcomment %}
-   <script>
-    // Function to toggle the submenu visibility
-function toggleSubmenu(event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    const submenu = event.target.nextElementSibling; // Get the next sibling (the dropdown2)
 
-    // Toggle the visibility of the clicked submenu
-    if (submenu.style.display === 'block') {
-        submenu.style.display = 'none';
-    } else {
-        submenu.style.display = 'block';
-    }
-}
-
-   </script>
-
-   {% comment %} Script for Centers section {% endcomment %}
-   <script>
-    // Function to toggle the submenu visibility
-function toggleSubmenu(event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    const submenu = event.target.nextElementSibling; // Get the next sibling (the dropdown-subcenters)
-
-    // Toggle the visibility of the clicked submenu
-    if (submenu.style.display === 'block') {
-        submenu.style.display = 'none';
-    } else {
-        submenu.style.display = 'block';
-    }
-}
-
-   </script>
 
 
     <script src="{% static 'js/slider.js' %}"> </scrip >
     
-
-
+        <script src="{% static 'js/enquiry.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
      
 </body>
 

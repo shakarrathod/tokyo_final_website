@@ -1,212 +1,758 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
-{% block content %}
+<!--banner html  section start here ============= -->
+<section class="responsive-banner">
+  <img
+    src="{% static 'images/ds_banner.jpg' %}"
+    alt="Data Science Banner"
+    class="banner-image"
+  />
+  <div class="banner-content">
+    <h1>Blogs</h1>
+  </div>
+</section>
+
+<!--banner  section css start here ============= -->
+<style>
+  /* Section Styling */
+  .responsive-banner {
+ 
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow: hidden; /* Ensures the image doesn't exceed the section dimensions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Image Styling */
+  .banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the section without distortion */
+    z-index: -1; /* Places the image behind the content */
+  }
+
+  /* Title Styling */
+  .banner-content h1 {
+    font-size: 2.3rem; /* Adjust font size for responsiveness */
+    font-weight: bold;
+    color: white; /* Ensure contrast against the background image */
+    margin: 0;
+    z-index: 1; /* Keeps the text above the image */
+  }
+  .banner-content h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: white;
+    margin: 10px auto 0;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .banner-content h1 {
+      font-size: 1.5rem;
+    }
+    .responsive-banner {
+      height: 150px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner-content h1 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+
+<!-- Category Filter Section -->
+<div class="category-filter">
+  <button class="filter-btn" data-category="all">All</button>
+  <button class="filter-btn" data-category="Cyber Security">Cyber Security</button>
+  <button class="filter-btn" data-category="Data Science">Data Science</button>
+</div>
 
 <div class="blog-section">
-    <!-- Blog Card 1 -->
-    <div class="blog-card">
-      <div class="blog-image">
-        <a href="#">
-          <img src="{% static 'images/blog1.webp'  %}" alt="Cyber Security Importance: Need and Advantages">
-        </a>
-        <div class="date">
-          <span>06</span>
-          <span>Jan</span>
-        </div>
-        <div class="category">
-          Cyber Security
-        </div>
+  <!-- Blog Card 1 -->
+  <div class="blog-card" data-category="Cyber Security">
+    <div class="blog-image">
+      <a href="{% url 'cyber_security_importance_need_and_advantages' %}">
+        <img
+          src="{% static 'images/blog1.webp' %}"
+          alt="{% url 'cyber_security_importance_need_and_advantages' %}"
+        />
+      </a>
+      <div class="date">
+        <span>15</span>
+        <span>Jan</span>
       </div>
-      <div class="blog-content">
-        <h3><a href="#">Cyber Security Importance: Need and Advantages</a></h3>
-        <p>By <span>Tokyo AnalyticX</span> <span><div class="share-container">
-            <i class="fas fa-share-alt icon-share"></i>
-            <div class="social-icon">
-                <a href="#" class="facebook"><i class="fab fa-facebook"></i> Facebook</a>
-                <a href="#" class="twitter"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
-        </div> </span> </p>
-        <p>Cyber Security stands as the fortification between our online lives and potential threats...</p>
-        <a href="#" class="read-more">Continue Reading</a>
-        <div class="share-icons">
-          <i class="icon-share" onclick="share('Cyber Security Importance: Need and Advantages')"></i>
-        </div>
+      <div class="category">
+        <a href="{% url 'cyber_security_importance_need_and_advantages' %}">Cyber Security</a>
       </div>
     </div>
+    <div class="blog-content">
+      <h3><a href="{% url 'cyber_security_importance_need_and_advantages' %}">Cyber Security Importance: Need and Advantages</a></h3>
 
-    <!-- Blog Card 2 -->
-    <div class="blog-card">
-      <div class="blog-image">
-        <a href="#">
-          <img src="https://via.placeholder.com/300x200" alt="Understanding What is Cyber Security">
-        </a>
-        <div class="date">
-          <span>29</span>
-          <span>Nov</span>
-        </div>
-        <div class="category">
-          Cyber Security
-        </div>
-      </div>
-      <div class="blog-content">
-        <h3><a href="#">Understanding What is Cyber Security</a></h3>
-        <p>By <span>Tokyo AnalyticX</span></p>
-        <p>In today's hyper-connected world, ensuring the safety of our online presence...</p>
-        <a href="#" class="read-more">Continue Reading</a>
-        <div class="share-icons">
-          <i class="icon-share" onclick="share('Understanding What is Cyber Security')"></i>
-        </div>
-      </div>
-    </div>
+      <p>
+        Cyber Security stands as the fortification between our online lives and potential threats. Whether you are a student navigating the web...
+      </p>
+      <div class="share-container">
+        <a href="{% url 'cyber_security_importance_need_and_advantages' %}" class="read-more">Continue Reading </a>
 
-    <!-- Blog Card 3 -->
-    <div class="blog-card">
-      <div class="blog-image">
-        <a href="#">
-          <img src="https://via.placeholder.com/300x200" alt="Why Become a Data Scientist? Top 5 Reasons">
-        </a>
-        <div class="date">
-          <span>29</span>
-          <span>Nov</span>
-        </div>
-        <div class="category">
-          Data Science
-        </div>
-      </div>
-      <div class="blog-content">
-        <h3><a href="#">Why Become a Data Scientist? Top 5 Reasons</a></h3>
-        <p>By <span>Tokyo AnalyticX</span></p>
-        <p>Data scientists are the architects of innovation in the digital age...</p>
-        <a href="#" class="read-more">Continue Reading</a>
-        <div class="share-icons">
-          <i class="icon-share" onclick="share('Why Become a Data Scientist? Top 5 Reasons')"></i>
+        <i class="fas fa-share-alt icon-share"></i>
+        <div class="social-icon">
+          <a
+            href="#"
+            class="facebook"
+            onclick="share('facebook', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="#"
+            class="twitter"
+            onclick="share('twitter', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="linkedin"
+            onclick="share('linkedin', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Blog Card 2 -->
+  <div class="blog-card" data-category="Cyber Security">
+    <div class="blog-image">
+      <a href="{% url 'understanding-what-is-cyber-security' %}">
+        <img
+          src="{% static 'images/blog2.jpg' %}"
+          alt="Cyber Security Importance: Need and Advantages"
+        />
+      </a>
+      <div class="date">
+        <span>15</span>
+        <span>Jan</span>
+      </div>
+      <div class="category">
+        <a href="{% url 'understanding-what-is-cyber-security' %}">Cyber Security</a>
+      </div>
+    </div>
+    <div class="blog-content">
+      <h3><a href="{% url 'understanding-what-is-cyber-security' %}">Understanding What is Cyber Security</a></h3>
+
+      <p>
+        In today's hyper-connected world, where every aspect of our lives finds its digital counterpart, ensuring the safety of our online pres...
+      </p>
+      <div class="share-container">
+        <a href="{% url 'understanding-what-is-cyber-security' %}" class="read-more">Continue Reading </a>
+
+        <i class="fas fa-share-alt icon-share"></i>
+        <div class="social-icon">
+          <a
+            href="#"
+            class="facebook"
+            onclick="share('facebook', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="#"
+            class="twitter"
+            onclick="share('twitter', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="linkedin"
+            onclick="share('linkedin', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Card 3 -->
+  <div class="blog-card" data-category="Data Science">
+    <div class="blog-image">
+      <a href="{% url 'why-become-a-data-scientist' %}">
+        <img
+          src="{% static 'images/blog3.jpg' %}"
+          alt=""
+        />
+      </a>
+      <div class="date">
+        <span>18</span>
+        <span>Jan</span>
+      </div>
+      <div class="category">
+        <a href="{% url 'why-become-a-data-scientist' %}">Data Science</a>
+      </div>
+    </div>
+    <div class="blog-content">
+      <h3><a href="{% url 'why-become-a-data-scientist' %}">Why Become a Data Scientist? Top 5 Reasons to Become a Data Scientist</a></h3>
+
+      <p>
+        Data scientists are the architects of innovation in the digital age, transforming raw data into actionable insights. In the 21st centur...
+      </p>
+      <div class="share-container">
+        <a href="{% url 'why-become-a-data-scientist' %}" class="read-more">Continue Reading </a>
+
+        <i class="fas fa-share-alt icon-share"></i>
+        <div class="social-icon">
+          <a
+            href="#"
+            class="facebook"
+            onclick="share('facebook', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="#"
+            class="twitter"
+            onclick="share('twitter', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="linkedin"
+            onclick="share('linkedin', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Card 4 -->
+  <div class="blog-card" data-category="Data Science">
+    <div class="blog-image">
+      <a href="{% url 'understanding-data-science-a-guide-for-beginners' %}">
+        <img
+          src="{% static 'images/blog4.jpg' %}"
+          alt="Cyber Security Importance: Need and Advantages"
+        />
+      </a>
+      <div class="date">
+        <span>20</span>
+        <span>Jan</span>
+      </div>
+      <div class="category">
+        <a href="{% url 'understanding-data-science-a-guide-for-beginners' %}">Data Science</a>
+      </div>
+    </div>
+    <div class="blog-content">
+      <h3><a href="{% url 'understanding-data-science-a-guide-for-beginners' %}">Understanding Data Science. A Guide for Beginners</a></h3>
+
+      <p>
+        Welcome to the exciting world of data science, where curiosity meets computation and transforms raw data into meaningful insights! In t...
+      </p>
+      <div class="share-container">
+        <a href="{% url 'understanding-data-science-a-guide-for-beginners' %}" class="read-more">Continue Reading </a>
+
+        <i class="fas fa-share-alt icon-share"></i>
+        <div class="social-icon">
+          <a
+            href="#"
+            class="facebook"
+            onclick="share('facebook', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="#"
+            class="twitter"
+            onclick="share('twitter', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="linkedin"
+            onclick="share('linkedin', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Card 5 -->
+  <div class="blog-card" data-category="Data Science">
+    <div class="blog-image">
+      <a href="{% url 'importance-of-data-science-simple-guide-in-6-step' %}">
+        <img
+          src="{% static 'images/blog5.jpg' %}"
+          alt="Cyber Security Importance: Need and Advantages"
+        />
+      </a>
+      <div class="date">
+        <span>15</span>
+        <span>Jan</span>
+      </div>
+      <div class="category">
+        <a href="{% url 'importance-of-data-science-simple-guide-in-6-step' %}">Data Science</a>
+      </div>
+    </div>
+    <div class="blog-content">
+      <h3><a href="{% url 'importance-of-data-science-simple-guide-in-6-step' %}">Importance of Data Science: Simple Guide in 6 Steps</a></h3>
+
+      <p>
+        We live in a world where data is king. From the social media posts we share to the products we buy online, every aspect of our lives ge...
+      </p>
+      <div class="share-container">
+        <a href="{% url 'importance-of-data-science-simple-guide-in-6-step' %}" class="read-more">Continue Reading </a>
+
+        <i class="fas fa-share-alt icon-share"></i>
+        <div class="social-icon">
+          <a
+            href="#"
+            class="facebook"
+            onclick="share('facebook', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="#"
+            class="twitter"
+            onclick="share('twitter', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="linkedin"
+            onclick="share('linkedin', 'Cyber Security Importance: Need and Advantages')"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+</div> 
+
+<
+
+<script>
+    // Handle category filtering
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const blogCards = document.querySelectorAll(".blog-card");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.getAttribute("data-category");
+
+        blogCards.forEach((card) => {
+          if (category === "all" || card.getAttribute("data-category") === category) {
+            card.style.display = "block"; // Show card
+          } else {
+            card.style.display = "none"; // Hide card
+          }
+        });
+      });
+    });
+
+    // Handle share button click
+    document.addEventListener("click", (e) => {
+      const shareIcons = document.querySelectorAll(".icon-share");
+      const socialIcons = document.querySelectorAll(".social-icon");
+
+      // Close all social icons if clicked outside
+      socialIcons.forEach((icon) => {
+        if (!icon.contains(e.target) && !e.target.classList.contains('icon-share')) {
+          icon.style.display = "none";
+        }
+      });
+
+      // Toggle social icons on share icon click
+      shareIcons.forEach((icon, index) => {
+        if (icon.contains(e.target)) {
+          const socialIcon = socialIcons[index];
+          // If the clicked share icon is already open, close it; otherwise, open it.
+          socialIcon.style.display =
+            socialIcon.style.display === "flex" ? "none" : "flex";
+        }
+      });
+    });
+
+    // Share function
+    function share(platform, blogTitle) {
+      const currentUrl = encodeURIComponent(window.location.href);
+      const shareText = encodeURIComponent(`Check out this blog: ${blogTitle}`);
+
+      const platforms = {
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
+        twitter: `https://twitter.com/intent/tweet?text=${shareText}&url=${currentUrl}`,
+        linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${shareText}`,
+        telegram: `https://t.me/share/url?url=${currentUrl}&text=${shareText}`,
+      };
+
+      const shareUrl = platforms[platform];
+
+      if (shareUrl) {
+        window.open(shareUrl, "_blank", "width=600,height=400");
+      } else {
+        alert("Sharing on this platform is not supported.");
+      }
+    }
+</script>
+
+
+
 
 
 <style>
+ 
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-      }
-      
-      .blog-section {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        padding: 20px;
-      }
-      
-      .blog-card {
-        width: 350px;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        overflow: hidden;
-        background: white;
-        transition: transform 0.3s;
-      }
-      
-      .blog-card:hover {
-        transform: scale(1.05);
-        background: rgb(255, 49, 49);
-        color: white;
-      }
-      
-      .blog-image {
-        position: relative;
-      }
-      
-      .blog-image img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-      
-      .blog-image .date {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: white;
-        color: black;
-        padding: 5px 10px;
-        border-radius: 5px;
-        text-align: center;
-      }
-      
-      .blog-image .category {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        background: red;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-      }
-      
-      .blog-content {
-        padding: 15px;
-      }
-      
-      .blog-content h3 a {
-        text-decoration: none;
-        color: inherit;
-      }
-      
-      .blog-content .read-more {
-        color: red;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      
-      .blog-content .read-more:hover {
-        text-decoration: underline;
-      }
-      
-      .share-icons {
-        margin-top: 10px;
-      }
-      
-      .share-icons .icon-share {
-        cursor: pointer;
-      }
-      
-      .share-icons:hover {
-        background: black;
-        color: white;
-      }
-      
-    
+  .category-filter {
+    text-align: center;
+    margin: 15px 0;
+  }
+  
+  /* Styling for Filter Buttons */
+  .filter-btn {
+    padding: 8px 16px;  /* Slightly smaller padding for mobile */
+    margin: 5px; /* Reduce margin for better mobile layout */
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem; /* Default font size */
+  }
+  
+  /* Hover effect */
+  .filter-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight scale effect */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    h1, .title {
+      font-size: 1.2rem; /* Smaller font size for title */
+    }
+  
+    .filter-btn {
+      padding: 6px 12px; /* More compact buttons */
+      font-size: 0.9rem; /* Reduce font size for mobile */
+      margin: 3px; /* Reduce spacing between buttons */
+    }
+  
+    .category-filter {
+      margin: 10px 0;
+    }
+  }
+  
+  /* Even smaller screens */
+  @media (max-width: 480px) {
+    .filter-btn {
+      font-size: 0.85rem; /* Even smaller font for compact screens */
+      padding: 5px 10px;
+    }
+  }
+  
+  
+  .blog-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    transition: transform 0.3s ease; /* Smooth transition for section hover */
+  }
+  
+  .blog-card {
+    width: 380px;
+    height: 80%;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background: white;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for scale and shadow */
+  }
+  
+  .blog-card:hover {
+    transform: scale(1.05); /* Scale the card on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  }
+  
+  .blog-image {
+    position: relative;
+  }
+  
+  .blog-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s; /* Smooth transition for opacity change */
+  }
+  
+  .blog-card:hover .blog-image img {
+    opacity: 0.8; /* Slightly dim the image when the card is hovered */
+  }
+  
+  .blog-image .date {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .blog-image .category {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .blog-image .category a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .blog-content {
+    padding: 15px;
+  }
+  
+  .blog-content h3 a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .blog-content .read-more {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .blog-content .read-more:hover {
+    text-decoration: underline;
+  }
+  
+  .blog-content h3 a:hover {
+    color: red;
+  }
+  
+  .blog-content .share-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .blog-content p {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .icon-share {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: black;
+    padding: 5px;
+    margin-left: 51%; /* Adds space between "Continue Reading" and the share icon */
+  }
+  
+  .icon-share:hover {
+    color: red;
+  }
+  
+  .social-icon {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+    z-index: 10;
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .icon-share:focus + .social-icon,
+  .social-icon:hover {
+    display: flex;
+  }
+  
+  .social-icon a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .social-icon a:hover {
+    background: red;
+    color: white;
+  }
+  
+
+  
+
+  /* Blog Section */
+  .blog-section1 {
+    width: 100%;
+    height: 31vh;
+  }
+
+  .img_blog {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('{% static "images/blog_banner.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0.5; /* Ensures better visibility of the content */
+  }
+
+  .blog-title {
+    position: relative;
+    color: white;
+    font-size: 3.2rem; /* Larger title size */
+    font-weight: bold;
+    text-align: center;
+    z-index: 1; /* Ensures the title is above the overlay */
+  }
+
+  @media (max-width: 768px) {
+    /* Blog Card: Full Width on Mobile */
+    .blog-card {
+      width: 100%;
+    }
+  
+    /* Reduce image height for a better fit */
+    .blog-image img {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Blog Title - Adjust Font Size */
+    .blog-title {
+      font-size: 1.5rem;
+    }
+  
+    /* Reduce blog height for better mobile view */
+    .blog-section1 {
+      height: 25vh; /* Reduced height */
+    }
+  
+    /* Content Font Size Adjustments */
+    .blog-content h3 {
+      font-size: 1rem;
+    }
+  
+    .blog-content p {
+      font-size: 0.85rem;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  
+    /* Adjust Share Icon Position */
+    .icon-share {
+      font-size: 1.2rem;
+      margin-left: 30px;
+      display: none !important;
+    }
+  
+    /* Adjust Social Icons */
+    .social-icon {
+      top: 35px;
+    }
+  
+    /* Reduce Section Padding */
+    section {
+      padding: 0rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further Reduce Title Size */
+    .blog-title {
+      font-size: 1.2rem;
+    }
+  
+    /* Blog Section - Reduce Height */
+    .blog-section1 {
+      height: 22vh;
+    }
+  
+    /* Further Reduce Paragraph Font Size */
+    .blog-content p {
+      font-size: 0.8rem;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    /* Blog Content Titles */
+    .blog-content h3 {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  
+    /* Adjust Read More Link */
+    .blog-content .read-more {
+      font-size: 0.85rem;
+    }
+  
+    /* Reduce Icon Sizes */
+    .icon-share {
+      font-size: 1.1rem;
+      margin-left: 20px;
+      display: none !important;
+    }
+  
+    /* Social Icons - Adjust Size */
+    .social-icon a {
+      font-size: 0.85rem;
+      padding: 4px;
+    }
+  }
+
+  
+  
 </style>
 
-<script>
 
-    function share(blogTitle) {
-        const shareText = `Check out this blog: ${blogTitle}`;
-        const platforms = {
-          facebook: `https://www.facebook.com/sharer/sharer.php?u=${document.location.href}`,
-          twitter: `https://twitter.com/intent/tweet?text=${shareText}`,
-          linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${document.location.href}`,
-          instagram: '#', // Instagram doesn't support direct share
-          telegram: `https://t.me/share/url?url=${document.location.href}&text=${shareText}`,
-        };
-      
-        let shareLinks = '';
-        for (const [key, url] of Object.entries(platforms)) {
-          shareLinks += `<a href="${url}" target="_blank" class="share-${key}">${key}</a>`;
-        }
-      
-        alert("Sharing options:\n" + Object.values(platforms).join("\n"));
-      }
-      
-    
-</script>
+
 {% endblock %}

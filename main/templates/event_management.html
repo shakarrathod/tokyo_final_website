@@ -1,20 +1,32 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<section class="responsive-banner">
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<section class="responsive-banner" data-aos="fade-up" data-aos-duration="1200">
   <img
     src="{% static 'images/event_banner.jpg' %}"
     alt="Data Science Banner"
     class="banner-image"
+    data-aos="zoom-in" data-aos-duration="1000"
   />
-  <div class="banner-content">
+  <div class="banner-content" data-aos="fade-in" data-aos-duration="1500">
     <h1>Event Management</h1>
   </div>
 </section>
 
+
 <style>
   /* Section Styling */
   .responsive-banner {
-    margin-top: 100px;
+ 
     position: relative;
     height: 300px;
     width: 100%;
@@ -68,13 +80,12 @@
   }
 </style>
 
-<section class="event-offerings-section">
+<section class="event-offerings-section" data-aos="fade-up" data-aos-duration="1500">
   <div class="event-offerings-container">
     <!-- Text Section -->
-
-    <div class="event-offerings-text">
+    <div class="event-offerings-text" data-aos="fade-right" data-aos-duration="1200">
       <p>
-        <strong> Tokyo AnalyticX</strong> offers an event management course that
+        <strong>Tokyo AnalyticX</strong> offers an event management course that
         transforms ideas into exceptional experiences, emphasizing precision and
         creativity. Whether for personal celebrations or corporate milestones,
         this course ensures stress-free planning, flawless execution, and
@@ -83,11 +94,12 @@
     </div>
 
     <!-- Image Section -->
-    <div class="event-offerings-image">
+    <div class="event-offerings-image" data-aos="zoom-in-up" data-aos-duration="1200">
       <img src="{% static 'images/event_img.jpg' %}" alt="Event Management" />
     </div>
   </div>
 </section>
+
 
 <style>
   .event-offerings-section {
@@ -197,40 +209,41 @@
     }
   }
 </style>
-<section class="event-management-section">
+
+<section class="event-management-section" data-aos="fade-up" data-aos-duration="1500">
   <div class="event-management-container">
-    <div class="event-management-image">
+    <!-- Image Section -->
+    <div class="event-management-image" data-aos="zoom-in" data-aos-duration="1000">
       <img
         src="{% static 'images/event_image11.png' %}"
         alt="Event Management"
       />
     </div>
-    <div class="event-management-text">
+    
+    <!-- Text Section -->
+    <div class="event-management-text" data-aos="fade-left" data-aos-duration="1200">
       <ul class="event-management-list">
         <li>
-          <span class="check-icon blue">&#10003;</span> Event Planning &
-          Strategy
+          <span class="check-icon blue">&#10003;</span> Event Planning & Strategy
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Budgeting & Financial
-          Management
+          <span class="check-icon blue">&#10003;</span> Budgeting & Financial Management
         </li>
         <li>
           <span class="check-icon blue">&#10003;</span> Marketing & Promotion
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Venue Selection &
-          Logistics
+          <span class="check-icon blue">&#10003;</span> Venue Selection & Logistics
         </li>
         <li><span class="check-icon blue">&#10003;</span> Vendor Management</li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Post-Event Evaluation &
-          Reporting
+          <span class="check-icon blue">&#10003;</span> Post-Event Evaluation & Reporting
         </li>
       </ul>
     </div>
   </div>
 </section>
+
 
 <style>
   /* Section Styling */
@@ -281,7 +294,8 @@
   }
 
   .event-management-list li {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    text-align: start;
     margin: 10px 0;
   }
 
@@ -312,16 +326,16 @@
     }
 
     .event-management-list li {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 </style>
 
-<section class="event-course-section">
+<section class="event-course-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="event-course-container">
-    <h2 class="event-course-title">Why Choose Tokyo AnalyticX ?</h2>
+    <h2 class="event-course-title" data-aos="fade-down" data-aos-duration="1000">Why Choose Tokyo AnalyticX?</h2>
     <div class="event-course-cards-wrapper">
-      <div class="event-course-card">
+      <div class="event-course-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
         <h3 class="event-course-card-title">In-Depth Curriculum</h3>
         <p>
           Our course covers essential topics like event planning, budgeting,
@@ -329,7 +343,7 @@
         </p>
       </div>
 
-      <div class="event-course-card">
+      <div class="event-course-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
         <h3 class="event-course-card-title">Practical Training</h3>
         <p>
           Gain hands-on experience through live projects, case studies, and
@@ -337,7 +351,7 @@
         </p>
       </div>
 
-      <div class="event-course-card">
+      <div class="event-course-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
         <h3 class="event-course-card-title">Expert Mentors</h3>
         <p>
           Learn from professionals with extensive experience in organizing
@@ -345,7 +359,7 @@
         </p>
       </div>
 
-      <div class="event-course-card">
+      <div class="event-course-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
         <h3 class="event-course-card-title">Networking Access</h3>
         <p>
           Build connections with industry leaders, event organizers, and fellow
@@ -353,7 +367,7 @@
         </p>
       </div>
 
-      <div class="event-course-card">
+      <div class="event-course-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
         <h3 class="event-course-card-title">Career Growth</h3>
         <p>
           Open doors to roles like Event Planner, Marketing Specialist, or Venue
@@ -361,7 +375,7 @@
         </p>
       </div>
 
-      <div class="event-course-card">
+      <div class="event-course-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1200">
         <h3 class="event-course-card-title">Flexible Learning</h3>
         <p>
           Choose from online, in-person, or hybrid learning options to fit your
@@ -371,6 +385,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -469,16 +484,18 @@
   }
 </style>
 
-<div class="event-management-programs-section">
-  <h2 class="event-management-section-title">Our Training Program</h2>
-  <div class="event-management-program-card">
+<div class="event-management-programs-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="event-management-section-title" data-aos="fade-down" data-aos-duration="1000">
+    Our Training Program
+  </h2>
+  <div class="event-management-program-card" data-aos="zoom-in" data-aos-duration="1000">
     <div class="event-management-program-header">
       <h3 class="event-management-program-title">
         Event Management and Planning
       </h3>
     </div>
 
-    <table class="event-management-program-table">
+    <table class="event-management-program-table" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
       <tr>
         <td><strong>Mode:</strong></td>
         <td>Hybrid</td>
@@ -502,8 +519,7 @@
       <tr>
         <td><strong>Career Opportunities:</strong></td>
         <td>
-          Event Manager, Event Planner, Conference Coordinator, Marketing
-          Specialist
+          Event Manager, Event Planner, Conference Coordinator, Marketing Specialist
         </td>
       </tr>
       <tr>
@@ -512,42 +528,18 @@
       </tr>
     </table>
 
-    <div class="event-management-button-container">
-      <button class="event-management-brochure-btn" id="brochure-btn">
-        📄 Brochure
-      </button>
-      <button class="event-management-enroll-btn" id="enroll-btn">
+    <div class="event-management-button-container" data-aos="fade-up" data-aos-duration="1000">
+      <a href="resume_shankar_rathod.pdf" download class="event-management-brochure-btn">
+        📄 Download Brochure
+      </a>
+      <a href="{% url 'payment_form' %}" class="event-management-enroll-btn">
         🖊 Enroll Now
-      </button>
+      </a>
     </div>
   </div>
-
-  <!-- Form Container -->
-  <div id="form-container" style="display: none">
-    <form id="dynamic-form" class="event-management-form">
-      <h3 id="form-title">Form</h3>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Enter your name"
-      />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-      />
-      <label for="otp">OTP:</label>
-      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 </div>
+
+
 
 <style>
   .event-management-programs-section {
@@ -704,61 +696,54 @@
   }
 </style>
 
-<section class="learning-skills-section">
+<section class="learning-skills-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="learning-skills-container">
     <!-- What You Will Learn Section -->
-    <div class="learning-content">
+    <div class="learning-content" data-aos="fade-right" data-aos-duration="1000">
       <h2 class="learning-title">What You Will Learn</h2>
       <ul class="learning-list">
         <li>
-          <span class="icon-check primary">&#10003;</span> Event Scope & Nature
+          <span class="icon-check primary" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Event Scope & Nature
         </li>
         <li>
-          <span class="icon-check primary">&#10003;</span> Concept & Team
-          Management
+          <span class="icon-check primary" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Concept & Team Management
         </li>
         <li>
-          <span class="icon-check primary">&#10003;</span> Finance & Client
-          Services
+          <span class="icon-check primary" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Finance & Client Services
         </li>
         <li>
-          <span class="icon-check primary">&#10003;</span> Logistics &
-          Legalities
+          <span class="icon-check primary" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Logistics & Legalities
         </li>
         <li>
-          <span class="icon-check primary">&#10003;</span> PR & Guest Management
+          <span class="icon-check primary" data-aos="zoom-in" data-aos-duration="1000">✔️</span> PR & Guest Management
         </li>
       </ul>
     </div>
 
     <!-- Skill Set Covered Section -->
-    <div class="skills-content">
+    <div class="skills-content" data-aos="fade-left" data-aos-duration="1000">
       <h2 class="skills-title">Skill Set Covered</h2>
       <ul class="skills-list">
         <li>
-          <span class="icon-check highlight1">&#10003;</span> Strategic Planning
-          and Organization
+          <span class="icon-check highlight1" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Strategic Planning and Organization
         </li>
         <li>
-          <span class="icon-check highlight1">&#10003;</span> Budgeting and
-          Financial Management
+          <span class="icon-check highlight1" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Budgeting and Financial Management
         </li>
         <li>
-          <span class="icon-check highlight1">&#10003;</span> Creative Thinking
-          and Problem-Solving
+          <span class="icon-check highlight1" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Creative Thinking and Problem-Solving
         </li>
         <li>
-          <span class="icon-check highlight1">&#10003;</span> Communication and
-          Interpersonal Skills
+          <span class="icon-check highlight1" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Communication and Interpersonal Skills
         </li>
         <li>
-          <span class="icon-check highlight1">&#10003;</span> Marketing and
-          Branding
+          <span class="icon-check highlight1" data-aos="zoom-in" data-aos-duration="1000">✔️</span> Marketing and Branding
         </li>
       </ul>
     </div>
   </div>
 </section>
+
 
 <style>
   .learning-skills-section {

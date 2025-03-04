@@ -1,12 +1,23 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<section class="responsive-banner">
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<section class="responsive-banner" data-aos="fade-in" data-aos-duration="1200">
   <img
     src="{% static 'images/ds_banner.jpg' %}"
     alt="Data Science Banner"
     class="banner-image"
+    data-aos="zoom-in" data-aos-duration="1000"
   />
-  <div class="banner-content">
+  <div class="banner-content" data-aos="fade-up" data-aos-duration="1000">
     <h1>Cloud and DevOps</h1>
   </div>
 </section>
@@ -14,7 +25,7 @@
 <style>
   /* Section Styling */
   .responsive-banner {
-    margin-top: 100px;
+   
     position: relative;
     height: 300px;
     width: 100%;
@@ -68,11 +79,11 @@
 </style>
 
 <!-- Cloud and DevOps Courses Section Start -->
-<section class="cloud-devops-courses-section">
+<section class="cloud-devops-courses-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="cloud-devops-container">
     <!-- Introductory Category -->
-    <div class="cloud-devops-course-category">
-      <h2 class="cloud-devops-course-title"></h2>
+    <div class="cloud-devops-course-category" data-aos="fade-right" data-aos-duration="1000">
+      <h2 class="cloud-devops-course-title">Cloud & DevOps Training</h2>
       <p>
         <strong>Tokyo AnalyticX</strong> equips professionals with the expertise
         to excel in today’s cloud-centric and DevOps-driven world. Our focus on
@@ -82,7 +93,7 @@
       <br />
       <p>
         Through cutting-edge courses on AWS, Azure, and Google Cloud,
-        <strong>Tokyo AnalyticX </strong> empowers professionals to master cloud
+        <strong>Tokyo AnalyticX</strong> empowers professionals to master cloud
         architecture, migration, and cost optimization. Embark on a journey to
         develop skills in building, deploying, and managing scalable cloud
         solutions, automating processes, and optimizing workflows to become a
@@ -140,12 +151,12 @@
   }
 </style>
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-left" data-aos-duration="1200">
   <div class="offerings-container">
-    <div class="offerings-image">
+    <div class="offerings-image" data-aos="fade-up" data-aos-duration="1000">
       <img src="{% static 'images/cloud_img.jpg' %}" alt="Student learning" />
     </div>
-    <div class="offerings-text">
+    <div class="offerings-text" data-aos="fade-right" data-aos-duration="1000">
       <h2 class="offerings-title">Our Diverse Course Offerings</h2>
       <ul class="offerings-list">
         <li>
@@ -172,13 +183,12 @@
           <span class="check-icon blue">&#10003;</span> Cloud Platforms: AWS,
           Azure, Google Cloud
         </li>
-
         <li>
           <span class="check-icon blue">&#10003;</span> Security & Compliance in
           Cloud Environments
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Agile Methodologies &
+          <span class="check-icon blue">&#10003;</span> Agile Methodologies & 
           DevOps Culture
         </li>
       </ul>
@@ -186,19 +196,20 @@
   </div>
 </section>
 
+
 <!-- HTML -->
-<section class="cloudevops--why-choose-section">
+<section class="cloudevops-why-choose-section" data-aos="zoom-in" data-aos-duration="1200">
   <div class="cloudevops-container">
-    <h2 class="cloudevops-section-title">Why Choose Tokyo AnalyticX ?</h2>
+    <h2 class="cloudevops-section-title" data-aos="fade-up" data-aos-duration="1000">Why Choose Tokyo AnalyticX?</h2>
     <div class="cloudevops-cards-wrapper">
-      <div class="cloudevops-card">
+      <div class="cloudevops-card" data-aos="fade-right" data-aos-duration="1000">
         <h3 class="cloudevops-card-title">Comprehensive Curriculum</h3>
         <p>
           Our Cloud and DevOps curriculum covers essential topics like cloud
           architecture, Kubernetes, AWS, Azure, automation, and CI/CD.
         </p>
       </div>
-      <div class="cloudevops-card">
+      <div class="cloudevops-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
         <h3 class="cloudevops-card-title">Hands-On Learning</h3>
         <p>
           Gain practical experience through labs, simulations, and real-world
@@ -206,7 +217,7 @@
           Cloud and DevOps field.
         </p>
       </div>
-      <div class="cloudevops-card">
+      <div class="cloudevops-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
         <h3 class="cloudevops-card-title">Industry-Experienced Instructors</h3>
         <p>
           Learn from experts with years of experience in cloud computing, DevOps
@@ -214,7 +225,7 @@
           classroom.
         </p>
       </div>
-      <div class="cloudevops-card">
+      <div class="cloudevops-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
         <h3 class="cloudevops-card-title">Networking Access</h3>
         <p>
           Connect with other students, instructors, and professionals in the
@@ -222,7 +233,7 @@
           others' experiences.
         </p>
       </div>
-      <div class="cloudevops-card">
+      <div class="cloudevops-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
         <h3 class="cloudevops-card-title">Career Growth Potential</h3>
         <p>
           Whether you're starting or advancing your career, our courses provide
@@ -230,7 +241,7 @@
           Site Reliability Engineer, and more.
         </p>
       </div>
-      <div class="cloudevops-card">
+      <div class="cloudevops-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
         <h3 class="cloudevops-card-title">Adaptable Learning</h3>
         <p>
           Choose from online, in-person, or hybrid learning modes to fit your
@@ -240,6 +251,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -338,14 +350,14 @@
   }
 </style>
 
-<div class="cloud-devops-programs-section">
-  <h2 class="cloud-devops-section-title">Our Training Program</h2>
-  <div class="cloud-devops-program-card">
+<div class="cloud-devops-programs-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="cloud-devops-section-title" data-aos="fade-up" data-aos-duration="1000">Our Training Program</h2>
+  <div class="cloud-devops-program-card" data-aos="zoom-in" data-aos-duration="1000">
     <div class="cloud-devops-program-header">
       <h3 class="cloud-devops-program-title">Cloud Computing and DevOps</h3>
     </div>
 
-    <table class="cloud-devops-program-table">
+    <table class="cloud-devops-program-table" data-aos="fade-up" data-aos-duration="1000">
       <tr>
         <td><strong>Mode:</strong></td>
         <td>Hybrid</td>
@@ -356,7 +368,7 @@
       </tr>
       <tr>
         <td><strong>Hours of Teaching:</strong></td>
-        <td>150 Hours </td>
+        <td>150 Hours</td>
       </tr>
       <tr>
         <td><strong>Minimum Eligibility:</strong></td>
@@ -369,8 +381,7 @@
       <tr>
         <td><strong>Career Opportunities:</strong></td>
         <td>
-          Cloud Engineer, DevOps Engineer, Site Reliability Engineer, Cloud
-          Architect
+          Cloud Engineer, DevOps Engineer, Site Reliability Engineer, Cloud Architect
         </td>
       </tr>
       <tr>
@@ -379,42 +390,18 @@
       </tr>
     </table>
 
-    <div class="cloud-devops-button-container">
-      <button class="cloud-devops-brochure-btn" id="brochure-btn">
-        📄 Brochure
-      </button>
-      <button class="cloud-devops-enroll-btn" id="enroll-btn">
+    <div class="cloud-devops-button-container" data-aos="fade-up" data-aos-duration="1000">
+      <a href="resume_shankar_rathod.pdf" download class="cloud-devops-brochure-btn">
+        📄 Download Brochure
+      </a>
+      <a href="{% url 'payment_form' %}" class="cloud-devops-enroll-btn">
         🖊 Enroll Now
-      </button>
+      </a>
     </div>
   </div>
-
-  <!-- Form Container -->
-  <div id="form-container" style="display: none">
-    <form id="dynamic-form" class="cloud-devops-form">
-      <h3 id="form-title">Form</h3>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Enter your name"
-      />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-      />
-      <label for="otp">OTP:</label>
-      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 </div>
+
+
 
 <style>
   .cloud-devops-programs-section {
@@ -571,41 +558,35 @@
   }
 </style>
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="offerings-container">
-    <div class="offerings-text">
+    <div class="offerings-text" data-aos="fade-up" data-aos-duration="1000">
       <h2 class="offerings-title">Career Paths with Us</h2>
       <ul class="offerings-list">
         <li>
-          <span class="check-icon blue">&#10003;</span> Cloud Solutions
-          Architect
+          <span class="check-icon blue">&#10003;</span> Cloud Solutions Architect
         </li>
         <li><span class="check-icon blue">&#10003;</span> DevOps Engineer</li>
         <li>
           <span class="check-icon blue">&#10003;</span> Cloud Security Engineer
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Cloud Infrastructure
-          Engineer
+          <span class="check-icon blue">&#10003;</span> Cloud Infrastructure Engineer
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Site Reliability
-          Engineer (SRE)
+          <span class="check-icon blue">&#10003;</span> Site Reliability Engineer (SRE)
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Cloud and DevOps
-          Consultants
+          <span class="check-icon blue">&#10003;</span> Cloud and DevOps Consultants
         </li>
       </ul>
     </div>
-    <div class="offerings-image">
-      <img
-        src="{% static 'images/cloud_career.jpg' %}"
-        alt="Student learning"
-      />
+    <div class="offerings-image" data-aos="zoom-in" data-aos-duration="1000">
+      <img src="{% static 'images/cloud_career.jpg' %}" alt="Student learning" />
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>

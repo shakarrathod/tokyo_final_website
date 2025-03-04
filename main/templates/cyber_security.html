@@ -1,20 +1,33 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<section class="responsive-banner">
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<section class="responsive-banner" data-aos="fade-up" data-aos-duration="1200">
   <img
     src="{% static 'images/ds_banner.jpg' %}"
     alt="Data Science Banner"
     class="banner-image"
+    data-aos="zoom-in"
+    data-aos-duration="1000"
   />
-  <div class="banner-content">
+  <div class="banner-content" data-aos="fade-down" data-aos-duration="1000">
     <h1>Cyber Security and Ethical Hacking</h1>
   </div>
 </section>
 
+
 <style>
   /* Section Styling */
   .responsive-banner {
-    margin-top: 100px;
+    
     position: relative;
     height: 300px;
     width: 100%;
@@ -67,11 +80,13 @@
   }
 </style>
 
-<section class="cyber-security-section">
+<section class="cyber-security-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="cyber-security-container">
-    <div class="cyber-security-category">
-      <h2 class="cyber-security-title"></h2>
-      <p>
+    <div class="cyber-security-category" data-aos="fade-right" data-aos-duration="1000">
+      <h2 class="cyber-security-title" data-aos="fade-down" data-aos-duration="1000">
+        Cybersecurity and Ethical Hacking
+      </h2>
+      <p data-aos="fade-left" data-aos-duration="1000">
         <strong>Tokyo AnalyticX</strong> offers advanced cybersecurity courses
         designed to equip professionals with the skills needed to protect
         digital systems and networks. Covering key areas like network security,
@@ -79,8 +94,8 @@
         courses prepare individuals to tackle cyber threats effectively.
       </p>
 
-      <div class="cyber-security-category">
-        <p>
+      <div class="cyber-security-category" data-aos="fade-left" data-aos-duration="1000">
+        <p data-aos="fade-right" data-aos-duration="1000">
           With a focus on ethical hacking,
           <strong>Tokyo AnalyticX</strong> teaches students the techniques used
           by cybersecurity experts to identify and prevent security breaches,
@@ -92,6 +107,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -148,17 +164,17 @@
   }
 </style>
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="offerings-container">
-    <div class="offerings-image">
+    <div class="offerings-image" data-aos="zoom-in" data-aos-duration="1000">
       <img
         src="{% static 'images/diverse_course.png' %}"
         alt="Student learning"
       />
     </div>
-    <div class="offerings-text">
+    <div class="offerings-text" data-aos="fade-right" data-aos-duration="1000">
       <h2 class="offerings-title">Our Diverse Course Offerings</h2>
-      <ul class="offerings-list">
+      <ul class="offerings-list" data-aos="fade-left" data-aos-duration="1000">
         <li>
           <span class="check-icon blue">&#10003;</span> Introduction to Cyber
           Security and Ethical Hacking
@@ -172,7 +188,7 @@
           Methodology
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span>Penetration Testing and
+          <span class="check-icon blue">&#10003;</span> Penetration Testing and
           Vulnerability Assessment
         </li>
         <li>
@@ -195,11 +211,14 @@
   </div>
 </section>
 
-<section class="cyber-security-why-choose-section">
+
+<section class="cyber-security-why-choose-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="cyber-security-container">
-    <h2 class="cyber-security-section-title">Why Choose Tokyo AnalyticX ?</h2>
+    <h2 class="cyber-security-section-title" data-aos="fade-down" data-aos-duration="1000">
+      Why Choose Tokyo AnalyticX?
+    </h2>
     <div class="cyber-security-cards-wrapper">
-      <div class="cyber-security-card">
+      <div class="cyber-security-card" data-aos="fade-right" data-aos-duration="1000">
         <h3 class="cyber-security-card-title">In-Depth Curriculum</h3>
         <p>
           Our curriculum covers topics like network security, cryptography,
@@ -207,21 +226,23 @@
         </p>
       </div>
 
-      <div class="cyber-security-card">
+      <div class="cyber-security-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
         <h3 class="cyber-security-card-title">Hands-On Training</h3>
         <p>
           Get hands-on experience through labs, simulations, and scenarios that
           mirror professional challenges.
         </p>
       </div>
-      <div class="cyber-security-card">
+
+      <div class="cyber-security-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
         <h3 class="cyber-security-card-title">Experienced Instructors</h3>
         <p>
           Learn from seasoned experts with years of industry experience who
           bring real-world insights into the classroom.
         </p>
       </div>
-      <div class="cyber-security-card">
+
+      <div class="cyber-security-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
         <h3 class="cyber-security-card-title">Networking Access</h3>
         <p>
           Connect with students, instructors, and professionals in the
@@ -230,7 +251,7 @@
         </p>
       </div>
 
-      <div class="cyber-security-card">
+      <div class="cyber-security-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">
         <h3 class="cyber-security-card-title">Career Advancement</h3>
         <p>
           Whether starting or advancing your career, this course provides a
@@ -239,7 +260,7 @@
         </p>
       </div>
 
-      <div class="cyber-security-card">
+      <div class="cyber-security-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">
         <h3 class="cyber-security-card-title">Adaptable Learning</h3>
         <p>
           Choose from a variety of learning modes, including online, in-person,
@@ -249,6 +270,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -346,16 +368,18 @@
   }
 </style>
 
-<div class="cyber-security-programs-section">
-  <h2 class="cyber-security-section-title">Our Training Program</h2>
-  <div class="cyber-security-program-card">
+<div class="cyber-security-programs-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="cyber-security-section-title" data-aos="zoom-in" data-aos-duration="1000">
+    Our Training Program
+  </h2>
+  <div class="cyber-security-program-card" data-aos="flip-left" data-aos-duration="1000">
     <div class="cyber-security-program-header">
       <h3 class="cyber-security-program-title">
         Cyber Security and Ethical Hacking
       </h3>
     </div>
 
-    <table class="cyber-security-program-table">
+    <table class="cyber-security-program-table" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
       <tr>
         <td><strong>Mode:</strong></td>
         <td>Hybrid</td>
@@ -379,8 +403,7 @@
       <tr>
         <td><strong>Career Opportunities:</strong></td>
         <td>
-          Ethical Hacker, Security Analyst, Penetration Tester, Cyber Forensics
-          Expert
+          Ethical Hacker, Security Analyst, Penetration Tester, Cyber Forensics Expert
         </td>
       </tr>
       <tr>
@@ -389,42 +412,18 @@
       </tr>
     </table>
 
-    <div class="cyber-security-button-container">
-      <button class="cyber-security-brochure-btn" id="brochure-btn">
-        📄 Brochure
-      </button>
-      <button class="cyber-security-enroll-btn" id="enroll-btn">
+    <div class="cyber-security-button-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+      <a href="{% static 'pdfs/CyberSecurityBrochure.pdf' %}" download class="cyber-security-brochure-btn"> 
+        📄 Download Brochure
+      </a>
+      <a href="{% url 'payment_form' %}" class="cyber-security-enroll-btn">
         🖊 Enroll Now
-      </button>
+      </a>
     </div>
   </div>
-
-  <!-- Form Container -->
-  <div id="form-container" style="display: none">
-    <form id="dynamic-form" class="cyber-security-form">
-      <h3 id="form-title">Form</h3>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Enter your name"
-      />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-      />
-      <label for="otp">OTP:</label>
-      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 </div>
+
+
 
 <style>
   .cyber-security-programs-section {
@@ -581,11 +580,13 @@
   }
 </style>
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="offerings-container">
-    <div class="offerings-text">
-      <h2 class="offerings-title">Career Paths with Us</h2>
-      <ul class="offerings-list">
+    <div class="offerings-text" data-aos="fade-right" data-aos-duration="1000">
+      <h2 class="offerings-title" data-aos="zoom-in" data-aos-duration="800">
+        Career Paths with Us
+      </h2>
+      <ul class="offerings-list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
         <li>
           <span class="check-icon blue">&#10003;</span> Cyber Security Expert
         </li>
@@ -593,26 +594,25 @@
           <span class="check-icon blue">&#10003;</span> Cyber Security Engineer
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Application Security
-          Engineer
+          <span class="check-icon blue">&#10003;</span> Application Security Engineer
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span>Network Security Manager
+          <span class="check-icon blue">&#10003;</span> Network Security Manager
         </li>
         <li>
           <span class="check-icon blue">&#10003;</span> Cyber Security Analyst
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span>Cyber Security
-          Consultants
+          <span class="check-icon blue">&#10003;</span> Cyber Security Consultants
         </li>
       </ul>
     </div>
-    <div class="offerings-image">
+    <div class="offerings-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
       <img src="{% static 'images/cs_course.jpg' %}" alt="Student learning" />
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>

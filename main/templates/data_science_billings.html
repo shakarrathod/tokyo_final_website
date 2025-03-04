@@ -1,0 +1,876 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<div class="contact-header" data-aos="fade-down" data-aos-duration="1000">
+    <h1 data-aos="zoom-in" data-aos-delay="300">CHECKOUT</h1>
+</div>
+
+
+<!--banner section css start here ============= -->
+<style>
+    /* Header */
+    .contact-header {
+      text-align: center;
+      padding: 40px;
+      color: white;
+      background-color: black;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 480px) {
+      .contact-header {
+        height: 120px;
+      }
+
+      .contact-header h1 {
+        font-size: 1.8rem;
+        }  }
+
+    @media screen and (max-width: 768px) {
+      .contact-header {
+        height: 150px;
+        padding: 20px;
+      }
+
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+  }
+</style>
+
+
+  <style>
+    /* Container & Section */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+    }
+    .section {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #ff6b6b;
+      display: inline-block;
+    }
+
+    /* Billing Form */
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    form label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 5px;
+      display: block;
+    }
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      background: #f9f9f9;
+      transition: 0.3s ease;
+      box-sizing: border-box;
+    }
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border-color: #ff6b6b;
+      box-shadow: 0 0 6px rgba(255, 107, 107, 0.4);
+      outline: none;
+    }
+    .full-width {
+      grid-column: span 2;
+    }
+    form textarea {
+      resize: vertical;
+      height: 80px;
+    }
+
+    /* Order Summary Section */
+    .order-summary {
+      padding: 1.5rem;
+      background: #fefefe;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+    /* Each order item is separated by a dashed line */
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      padding: 10px 0;
+      border-bottom: 1px dashed #ccc;
+    }
+    .order-item:last-child {
+      border-bottom: none;
+    }
+    .order-item.total {
+      font-weight: bold;
+      color: #e63946;
+      font-size: 1.1rem;
+    }
+
+    /* Payment Information */
+    .payment-info {
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(135deg, #f7f8fa, #ffffff);
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .payment-info p {
+      margin: 10px 0;
+    }
+    .payment-info a {
+      color: #ff6b6b;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .payment-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Place Order Button */
+    .place-order-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #ff6b6b, #e63946);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 20px;
+    }
+    .place-order-btn:hover {
+      background: linear-gradient(135deg, #e63946, #d62828);
+      transform: translateY(-2px);
+    }
+
+
+   
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        
+      }
+    
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    
+      .form-group label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 5px;
+      }
+    
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        background: #f9f9f9;
+        transition: 0.3s ease;
+        box-sizing: border-box;
+      }
+    
+      .form-group select:focus {
+        border-color: #ff6b6b;
+        box-shadow: 0 0 6px rgba(255, 107, 107, 0.4);
+        outline: none;
+      }
+    
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+   
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+<div class="container">
+    <!-- Billing Details Section -->
+    <div class="section billing-details">
+        <h2>Billing Details</h2>
+        <form id="payment-form">
+            <div>
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" required />
+            </div>
+            <div>
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" required />
+            </div>
+            <div>
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div>
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="aadhar">Aadhar Number *</label>
+                <input type="text" id="aadhar" name="aadhar" pattern="\d{12}" placeholder="Enter 12-digit Aadhar number" required />
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required>
+                    <option value="">-- Select Gender --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="full-width">
+                <label for="company-name">Company Name (Optional)</label>
+                <input type="text" id="company-name" name="company_name" />
+            </div>
+            <div>
+                <label for="country">Country/Region *</label>
+                <select id="country" name="country" required>
+                    <option value="India" selected>India</option>
+                    <option value="USA">USA</option>
+                    <option value="Japan">Japan</option>
+                </select>
+            </div>
+            <div>
+                <label for="city">Town / City *</label>
+                <input type="text" id="city" name="city" required />
+            </div>
+            <div>
+                <label for="postcode">PIN Code *</label>
+                <input type="text" id="postcode" name="postcode" required />
+            </div>
+            <div>
+                <label for="state">State *</label>
+                <input type="text" id="state" name="state" required />
+            </div>
+            <div class="form-group">
+                <label for="category">Course Category *</label>
+                <select id="category" name="category" class="form-control" onchange="updateCourseOptions()" required>
+                    <option value="">-- Course Category --</option>
+                    <option value="it">IT Courses</option>
+                    <option value="professional">Professional Courses</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course *</label>
+                <select id="course" name="course" class="form-control" required>
+                    <option value="">-- Select Course --</option>
+                </select>
+            </div>
+            <div class="full-width">
+                <label for="street-address">Address *</label>
+                <input type="text" id="street-address" name="street_address" placeholder="House number and street name" required />
+            </div>
+            <div class="full-width">
+                <label for="additional-info">Additional Information (Optional)</label>
+                <textarea id="additional-info" name="additional_info" placeholder="Notes about your order, e.g. special instructions"></textarea>
+            </div>
+            <div>
+                <label for="fees">Amount: ₹<span id="fees-amount">0</span></label>
+                <input type="hidden" id="fees" name="fees" />
+            </div>
+        </form>
+    </div>
+
+    <!-- Place Order Button -->
+    <button onclick="payNow()" class="place-order-btn">Place Order</button>
+
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+    // Course fees data
+    const courseFees = {
+        "it": {
+            "data_science": 50000,
+            "cyber_security": 60000,
+            "cloud_devops": 70000,
+            "chess_analytics": 40000
+        },
+        "professional": {
+            "event_management": 55000,
+            "nail_artistry": 25000,
+            "makeup_artistry": 45000,
+            "spoken_english": 30000
+        }
+    };
+
+    // Function to update course options based on category selection
+    function updateCourseOptions() {
+        const category = document.getElementById("category").value;
+        const courseSelect = document.getElementById("course");
+
+        const courses = courseFees[category] || {};
+        courseSelect.innerHTML = '<option value="">-- Select Course --</option>';
+
+        for (const course in courses) {
+            const option = document.createElement("option");
+            option.value = course;
+            option.textContent = course.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()) + ' - ₹' + courses[course];
+            courseSelect.appendChild(option);
+        }
+
+        // Reset the fees field when no course is selected
+        document.getElementById("fees").value = '';
+        document.getElementById("fees-amount").textContent = '0';
+    }
+
+    // Function to handle course selection and display amount
+    document.getElementById("course").addEventListener("change", function () {
+        const category = document.getElementById("category").value;
+        const course = this.value;
+        if (category && course) {
+            const amount = courseFees[category][course];
+            document.getElementById("fees").value = amount;
+            document.getElementById("fees-amount").textContent = amount;
+        }
+    });
+
+    // Razorpay payment function
+    function payNow() {
+        const firstName = document.getElementById("first-name").value;
+        const lastName = document.getElementById("last-name").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const course = document.getElementById("course").value;
+        const amount = document.getElementById("fees").value * 100;  // Convert to paisa
+
+        if (!firstName || !lastName || !phone || !email || !amount || !course) {
+            alert("Please fill all required fields before proceeding with payment.");
+            return;
+        }
+
+        const options = {
+            "key": "rzp_test_eHuIxxejGdjpik",  // Replace with your Razorpay API key
+            "amount": amount,
+            "currency": "INR",
+            "name": "Tokyo AnalyticX Andheri",
+            "description": "Course Payment for " + course,
+            "handler": function (response) {
+                alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                window.location.href = `/payment_success/?payment_id=${response.razorpay_payment_id}`;
+            },
+            "prefill": {
+                "name": firstName + " " + lastName,
+                "email": email,
+                "contact": phone
+            },
+            "theme": { "color": "#3498DB" }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    }
+</script>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Payment</title>
+    <link rel="stylesheet" href="styles.css">  <!-- External CSS -->
+</head>
+<body>
+
+  
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<div class="contact-header" data-aos="fade-down" data-aos-duration="1000">
+    <h1 data-aos="zoom-in" data-aos-delay="300">CHECKOUT</h1>
+</div>
+
+
+<!--banner section css start here ============= -->
+<style>
+    /* Header */
+    .contact-header {
+      text-align: center;
+      padding: 40px;
+      color: white;
+      background-color: black;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 480px) {
+      .contact-header {
+        height: 120px;
+      }
+
+      .contact-header h1 {
+        font-size: 1.8rem;
+        }  }
+
+    @media screen and (max-width: 768px) {
+      .contact-header {
+        height: 150px;
+        padding: 20px;
+      }
+
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+  }
+</style>
+
+
+  <style>
+    /* Container & Section */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+    }
+    .section {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #ff6b6b;
+      display: inline-block;
+    }
+
+    /* Billing Form */
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    form label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 5px;
+      display: block;
+    }
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      background: #f9f9f9;
+      transition: 0.3s ease;
+      box-sizing: border-box;
+    }
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border-color: #ff6b6b;
+      box-shadow: 0 0 6px rgba(255, 107, 107, 0.4);
+      outline: none;
+    }
+    .full-width {
+      grid-column: span 2;
+    }
+    form textarea {
+      resize: vertical;
+      height: 80px;
+    }
+
+    /* Order Summary Section */
+    .order-summary {
+      padding: 1.5rem;
+      background: #fefefe;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+    }
+    /* Each order item is separated by a dashed line */
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      padding: 10px 0;
+      border-bottom: 1px dashed #ccc;
+    }
+    .order-item:last-child {
+      border-bottom: none;
+    }
+    .order-item.total {
+      font-weight: bold;
+      color: #e63946;
+      font-size: 1.1rem;
+    }
+
+    /* Payment Information */
+    .payment-info {
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(135deg, #f7f8fa, #ffffff);
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .payment-info p {
+      margin: 10px 0;
+    }
+    .payment-info a {
+      color: #ff6b6b;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .payment-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Place Order Button */
+    .place-order-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #ff6b6b, #e63946);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 20px;
+    }
+    .place-order-btn:hover {
+      background: linear-gradient(135deg, #e63946, #d62828);
+      transform: translateY(-2px);
+    }
+
+
+   
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        
+      }
+    
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    
+      .form-group label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 5px;
+      }
+    
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        background: #f9f9f9;
+        transition: 0.3s ease;
+        box-sizing: border-box;
+      }
+    
+      .form-group select:focus {
+        border-color: #ff6b6b;
+        box-shadow: 0 0 6px rgba(255, 107, 107, 0.4);
+        outline: none;
+      }
+    
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+   
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <!-- Billing Details Section -->
+    <div class="section billing-details">
+        <h2>Billing Details</h2>
+        <form id="payment-form">
+            <div>
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" required />
+            </div>
+            <div>
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" required />
+            </div>
+            <div>
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div>
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="aadhar">Aadhar Number *</label>
+                <input type="text" id="aadhar" name="aadhar" pattern="\d{12}" placeholder="Enter 12-digit Aadhar number" required />
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required>
+                    <option value="">-- Select Gender --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="full-width">
+                <label for="company-name">Company Name (Optional)</label>
+                <input type="text" id="company-name" name="company_name" />
+            </div>
+            <div>
+                <label for="country">Country/Region *</label>
+                <select id="country" name="country" required>
+                    <option value="India" selected>India</option>
+                    <option value="USA">USA</option>
+                    <option value="Japan">Japan</option>
+                </select>
+            </div>
+            <div>
+                <label for="city">Town / City *</label>
+                <input type="text" id="city" name="city" required />
+            </div>
+            <div>
+                <label for="postcode">PIN Code *</label>
+                <input type="text" id="postcode" name="postcode" required />
+            </div>
+            <div>
+                <label for="state">State *</label>
+                <input type="text" id="state" name="state" required />
+            </div>
+            <div class="form-group">
+                <label for="category">Course Category *</label>
+                <select id="category" name="category" class="form-control" onchange="updateCourseOptions()" required>
+                    <option value="">-- Course Category --</option>
+                    <option value="it">IT Courses</option>
+                    <option value="professional">Professional Courses</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course *</label>
+                <select id="course" name="course" class="form-control" required>
+                    <option value="">-- Select Course --</option>
+                </select>
+            </div>
+            <div class="full-width">
+                <label for="street-address">Address *</label>
+                <input type="text" id="street-address" name="street_address" placeholder="House number and street name" required />
+            </div>
+            <div class="full-width">
+                <label for="additional-info">Additional Information (Optional)</label>
+                <textarea id="additional-info" name="additional_info" placeholder="Notes about your order, e.g. special instructions"></textarea>
+            </div>
+            <div>
+                <label for="fees">Amount: ₹<span id="fees-amount">0</span></label>
+                <input type="hidden" id="fees" name="fees" />
+            </div>
+        </form>
+    </div>
+
+    <!-- Place Order Button -->
+    <button onclick="payNow()" class="place-order-btn">Place Order</button>
+
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+        // Course fees data
+        const courseFees = {
+            "it": {
+                "data_science": 50000,
+                "cyber_security": 60000,
+                "cloud_devops": 70000,
+                "chess_analytics": 40000
+            },
+            "professional": {
+                "event_management": 55000,
+                "nail_artistry": 25000,
+                "makeup_artistry": 45000,
+                "spoken_english": 30000
+            }
+        };
+
+        // Function to update course options based on category selection
+        function updateCourseOptions() {
+            const category = document.getElementById("category").value;
+            const courseSelect = document.getElementById("course");
+
+            const courses = courseFees[category] || {};
+            courseSelect.innerHTML = '<option value="">-- Select Course --</option>';
+
+            for (const course in courses) {
+                const option = document.createElement("option");
+                option.value = course;
+                option.textContent = course.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()) + ' - ₹' + courses[course];
+                courseSelect.appendChild(option);
+            }
+
+            // Reset the fees field when no course is selected
+            document.getElementById("fees").value = '';
+            document.getElementById("fees-amount").textContent = '0';
+        }
+
+        // Function to handle course selection and display amount
+        document.getElementById("course").addEventListener("change", function () {
+            const category = document.getElementById("category").value;
+            const course = this.value;
+            if (category && course) {
+                const amount = courseFees[category][course];
+                document.getElementById("fees").value = amount;
+                document.getElementById("fees-amount").textContent = amount;
+            }
+        });
+
+        // Razorpay payment function
+        function payNow() {
+            const firstName = document.getElementById("first-name").value;
+            const lastName = document.getElementById("last-name").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+            const course = document.getElementById("course").value;
+            const amount = document.getElementById("fees").value * 100;  // Convert to paisa
+
+            if (!firstName || !lastName || !phone || !email || !amount || !course) {
+                alert("Please fill all required fields before proceeding with payment.");
+                return;
+            }
+
+            const options = {
+                "key": "rzp_test_eHuIxxejGdjpik",  // Replace with your Razorpay API key
+                "amount": amount,
+                "currency": "INR",
+                "name": "Tokyo AnalyticX Andheri",
+                "description": "Course Payment for " + course,
+                "handler": function (response) {
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                    window.location.href = `/payment_success/?payment_id=${response.razorpay_payment_id}`;
+                },
+                "prefill": {
+                    "name": firstName + " " + lastName,
+                    "email": email,
+                    "contact": phone
+                },
+                "theme": { "color": "#3498DB" }
+            };
+
+            const rzp = new Razorpay(options);
+            rzp.open();
+        }
+</script>
+
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="script.js"></script>  <!-- External JavaScript -->
+</body>
+</html>

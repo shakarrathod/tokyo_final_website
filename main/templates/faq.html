@@ -3,88 +3,119 @@
 
 {% block content %}
 
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
 <div class="faq-container">
-    <h1 class="faq-title">FAQs</h1>
+    <h1 class="faq-title" data-aos="fade-up" data-aos-duration="1000">FAQs</h1>
     <div class="faq-row">
-        <div class="faq-column">
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">What is Data Science?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Data Science is a multidisciplinary field that involves extracting insights and knowledge from data using techniques from statistics, machine learning, and domain expertise. It encompasses data collection, cleaning, analysis, and interpretation to inform decision-making and solve complex problems..</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">What is the difference between Data Analytics and Data Science?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Data Analytics primarily focuses on examining historical data to identify trends, patterns, and insights that help organizations make informed decisions. It often involves descriptive and diagnostic analysis, aiming to answer specific questions based on existing data.
-
-                    Data Science, on the other hand, encompasses a broader range of activities. It involves not only analyzing historical data but also using advanced techniques like machine learning to predict future outcomes and prescribe actions. Data Science goes beyond descriptive and diagnostic analysis to include predictive and prescriptive analysis, often involving more complex and diverse data sources. It also emphasizes the development of models and algorithms to automate decision-making processes.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">Career opportunities in Data Science?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Career opportunities in Data Science are diverse and expanding rapidly. Some key roles include Data Scientist, Machine Learning Engineer...</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">Job titles in Cyber Security?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Security Analyst, Network Security Engineer, Information Security Specialist...</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">What are the Benefits of Data Analytics training?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Incorporating data analytics training empowers individuals to extract meaningful insights from data...</div>
-            </div>
+      <div class="faq-column">
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">What is Data Science?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Data Science is a multidisciplinary field that involves extracting insights and knowledge from data using techniques from statistics, machine learning, and domain expertise. It encompasses data collection, cleaning, analysis, and interpretation to inform decision-making and solve complex problems.
+          </div>
         </div>
-
-        <div class="faq-column">
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">Can we complete the Data Science course in 3 months?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Completing a comprehensive data science course in just 3 months can be challenging...</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">Is Cyber Security a good career?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Yes, Cyber Security is a promising and rewarding career choice due to high demand...</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">Is coding required for Cyber Security course?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Yes, coding is often required or highly beneficial in a cyber security course...</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">What are the challenges of ethical hacking?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Ethical hacking involves identifying vulnerabilities in computer systems...</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">
-                    <button class="faq-question">What basic knowledge is required for ethical hacking?</button>
-                    <span class="faq-icon">&#9662;</span>
-                </div>
-                <div class="faq-answer">Basic knowledge required for ethical hacking includes an understanding of computer networking...</div>
-            </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">What is the difference between Data Analytics and Data Science?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Data Analytics primarily focuses on examining historical data to identify trends, patterns, and insights that help organizations make informed decisions. It often involves descriptive and diagnostic analysis, aiming to answer specific questions based on existing data.
+  
+            Data Science, on the other hand, encompasses a broader range of activities. It involves not only analyzing historical data but also using advanced techniques like machine learning to predict future outcomes and prescribe actions. Data Science goes beyond descriptive and diagnostic analysis to include predictive and prescriptive analysis, often involving more complex and diverse data sources. It also emphasizes the development of models and algorithms to automate decision-making processes.
+          </div>
         </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">Career opportunities in Data Science?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Career opportunities in Data Science are diverse and expanding rapidly. Some key roles include Data Scientist, Machine Learning Engineer, Data Analyst, Business Intelligence Analyst, and Data Engineer, among others.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">Job titles in Cyber Security?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Job titles in Cyber Security include Security Analyst, Network Security Engineer, Information Security Specialist, Security Architect, and Ethical Hacker.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">What are the Benefits of Data Analytics training?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Incorporating data analytics training empowers individuals to extract meaningful insights from data, improve decision-making, and contribute to the overall business strategy. It also enhances job prospects and helps in understanding trends that drive business success.
+          </div>
+        </div>
+      </div>
+  
+      <div class="faq-column">
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">Can we complete the Data Science course in 3 months?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Completing a comprehensive data science course in just 3 months can be challenging, as it typically involves mastering various skills like programming, data analysis, machine learning, and statistics. A 3-month program may provide foundational knowledge, but continued practice and learning are necessary to truly master the field.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">Is Cyber Security a good career?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Yes, Cyber Security is a promising and rewarding career choice due to high demand and the increasing importance of protecting sensitive data and systems from cyber threats. It offers a wide range of roles, career advancement opportunities, and competitive salaries.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">Is coding required for Cyber Security course?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Yes, coding is often required or highly beneficial in a cyber security course. Understanding programming languages like Python, C++, or JavaScript is essential for tasks such as developing security tools, conducting penetration testing, and analyzing vulnerabilities in systems.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">What are the challenges of ethical hacking?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Ethical hacking involves identifying vulnerabilities in computer systems without causing harm. Challenges include dealing with ever-evolving security threats, staying up to date with new tools and techniques, and obtaining legal authorization to conduct security assessments.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-header">
+            <button class="faq-question" data-aos="fade-up" data-aos-duration="1200">What basic knowledge is required for ethical hacking?</button>
+            <span class="faq-icon">&#9662;</span>
+          </div>
+          <div class="faq-answer">
+            Basic knowledge required for ethical hacking includes an understanding of computer networking, operating systems (especially Linux), programming languages, web technologies, and cryptography.
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  
 
 <script>
     const faqHeaders = document.querySelectorAll('.faq-header');

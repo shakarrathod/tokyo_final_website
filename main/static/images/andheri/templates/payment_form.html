@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Payment</title>
+    <link rel="stylesheet" href="styles.css">  <!-- External CSS -->
+</head>
+<body>
+
+    <div class="container">
+        <h2>Enroll & Pay</h2>
+        <form id="payment-form">
+            <label>First Name</label>
+            <input type="text" name="first_name" required>
+
+            <label>Last Name</label>
+            <input type="text" name="last_name" required>
+
+            <label>Phone</label>
+            <input type="text" name="phone" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Gender</label>
+            <select name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label>Aadhar Number</label>
+            <input type="text" name="aadhar" required>
+
+            <label>Address</label>
+            <input type="text" name="address" required>
+
+            <label>State</label>
+            <input type="text" name="state" required>
+
+            <label>City</label>
+            <input type="text" name="city" required>
+
+            <label>Zip Code</label>
+            <input type="text" name="zip" required>
+
+            <label>Choose Course</label>
+            <select id="course" name="course" required>
+                <option value="Data Science and Business Analytics">Data Science and Business Analytics - ₹5</option>
+                <option value="Cyber Security and Ethical Hacking">Cyber Security and Ethical Hacking - ₹60,000</option>
+                <option value="Cloud Computing and DevOps">Cloud Computing and DevOps - ₹70,000</option>
+                <option value="Chess Analytics">Chess Analytics - ₹40,000</option>
+                <option value="Event Management">Event Management - ₹55,000</option>
+                <option value="Spoken English">Spoken English - ₹30,000</option>
+                <option value="Nail Artistry">Nail Artistry - ₹25,000</option>
+                <option value="Makeup Artistry">Makeup Artistry - ₹45,000</option>
+            </select>
+
+            <input type="hidden" id="fees" name="fees">
+
+            <button type="button" onclick="payNow()">Pay Now</button>
+        </form>
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ECF0F1;
+            color: #2C3E50;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            color: #3498DB;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-top: 10px;
+            text-align: left;
+        }
+        
+        input, select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #BDC3C7;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #E74C3C;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background-color: #C0392B;
+        }
+        
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let courseFees = {
+                "Data Science and Business Analytics": 5,
+                "Cyber Security and Ethical Hacking": 60000,
+                "Cloud Computing and DevOps": 70000,
+                "Chess Analytics": 40000,
+                "Event Management": 55000,
+                "Spoken English": 30000,
+                "Nail Artistry": 25000,
+                "Makeup Artistry": 45000
+            };
+        
+            let courseDropdown = document.getElementById("course");
+            let feesInput = document.getElementById("fees");
+        
+            // Set initial fee value when page loads
+            feesInput.value = courseFees[courseDropdown.value];
+        
+            // Update fee value when course selection changes
+            courseDropdown.addEventListener("change", function() {
+                feesInput.value = courseFees[this.value];
+            });
+        });
+        
+        function payNow() {
+            let firstName = document.querySelector("[name='first_name']").value;
+            let lastName = document.querySelector("[name='last_name']").value;
+            let phone = document.querySelector("[name='phone']").value;
+            let email = document.querySelector("[name='email']").value;
+            let course = document.getElementById("course").value;
+            let amount = document.getElementById("fees").value * 100;  // Convert to paisa
+        
+            if (!firstName || !lastName || !phone || !email || !amount) {
+                alert("Please fill all required fields before proceeding with payment.");
+                return;
+            }
+        
+            let options = {
+                "key": "rzp_test_eHuIxxejGdjpik",  // Replace with your Razorpay API key
+                "amount": amount,
+                "currency": "INR",
+                "name": "Tokyo AnalyticX Andheri",
+                "description": "Course Payment for " + course,
+                "handler": function(response) {
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                    window.location.href = `/payment_success/?payment_id=${response.razorpay_payment_id}`;
+                },
+                "prefill": {
+                    "name": firstName + " " + lastName,
+                    "email": email,
+                    "contact": phone
+                },
+                "theme": { "color": "#3498DB" }
+            };
+        
+            let rzp = new Razorpay(options);
+            rzp.open();
+        }
+        
+    </script>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="script.js"></script>  <!-- External JavaScript -->
+</body>
+</html>

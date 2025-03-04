@@ -1,15 +1,27 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<section class="responsive-banner">
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<section class="responsive-banner" data-aos="fade-up" data-aos-duration="1200">
   <img
     src="{% static 'images/nail_banner.jpg' %}"
-    alt="Data Science Banner"
+    alt="Nail Artistry Banner"
     class="banner-image"
+    data-aos="zoom-in" data-aos-duration="1000"
   />
-  <div class="banner-content">
+  <div class="banner-content" data-aos="fade-up" data-aos-duration="1000">
     <h1>Nail Artistry</h1>
   </div>
 </section>
+
 
 <style>
   body{
@@ -17,7 +29,7 @@
   }
   /* Section Styling */
   .responsive-banner {
-    margin-top: 100px;
+    
     position: relative;
     height: 300px;
     width: 100%;
@@ -72,7 +84,8 @@
 
 <section class="nail-section">
   <div class="nail-container">
-    <div class="nail-category">
+    <!-- First Category with Animation -->
+    <div class="nail-category" data-aos="fade-up" data-aos-duration="1200">
       <p>
         Enhance your skills with <strong>Tokyo AnalyticX's</strong> expert-led nail artistry courses, designed for both aspiring and professional artists. Our program combines advanced techniques with the latest trends, preparing you for success in the beauty industry.
       </p>
@@ -81,13 +94,15 @@
       </p>
     </div>
 
-    <div class="nail-category">
+    <!-- Second Category with Animation -->
+    <div class="nail-category" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
       <p>
         Explore in-depth training on nail design, color theory, and the art of 3D nail techniques. Perfect your craft and build a portfolio that attracts top-tier clients and sets you apart in the competitive beauty market.
       </p>
     </div>
   </div>
 </section>
+
 <style>
   .nail-section {
     padding-top: 50px;
@@ -135,87 +150,78 @@
   
 </style>
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="offerings-container">
-    <div class="offerings-text">
-      <h2 class="offerings-title">
-        Explore Our Exclusive Nail Artistry Courses
-      </h2>
-      <ul class="offerings-list">
+    <div class="offerings-text" data-aos="fade-right" data-aos-duration="1000">
+      <h2 class="offerings-title">Explore Our Exclusive Nail Artistry Courses</h2>
+      <ul class="offerings-list" data-aos="fade-up" data-aos-duration="1200">
         <li>
-          <span class="check-icon blue">&#10003;</span> Nail Anatomy and Hygiene
-          Practices
+          <span class="check-icon blue">&#10003;</span> Nail Anatomy and Hygiene Practices
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span>Foundation in Manicure
-          and Pedicure Techniques
+          <span class="check-icon blue">&#10003;</span> Foundation in Manicure and Pedicure Techniques
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Creative Nail Art
-          Designs and Trends
+          <span class="check-icon blue">&#10003;</span> Creative Nail Art Designs and Trends
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span>3D Nail Art and
-          Embellishment Application
+          <span class="check-icon blue">&#10003;</span> 3D Nail Art and Embellishment Application
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Gel, Acrylic, and
-          Extension Techniques
+          <span class="check-icon blue">&#10003;</span> Gel, Acrylic, and Extension Techniques
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Safe Practices and
-          Chemical Handling
+          <span class="check-icon blue">&#10003;</span> Safe Practices and Chemical Handling
         </li>
         <li>
-          <span class="check-icon blue">&#10003;</span> Building a Professional
-          Portfolio
+          <span class="check-icon blue">&#10003;</span> Building a Professional Portfolio
         </li>
       </ul>
     </div>
-    <div class="offerings-image">
+    <div class="offerings-image" data-aos="zoom-in" data-aos-duration="1000">
       <img src="{% static 'images/Nail-image3.jpg' %}" alt="Student learning" />
     </div>
   </div>
 </section>
 
-<section class="nail-artistry-why-choose-section">
+
+<section class="nail-artistry-why-choose-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="nail-artistry-container">
-    <h2 class="nail-artistry-section-title">
-      Why Choose tokyo AnalyticX?
+    <h2 class="nail-artistry-section-title" data-aos="fade-down" data-aos-duration="1000">
+      Why Choose Tokyo AnalyticX?
     </h2>
     <div class="nail-artistry-cards-wrapper">
-      <div class="nail-artistry-card">
-        <h3 class="nail-artistry-card-title">In-Dept Curriculum</h3>
+      <div class="nail-artistry-card" data-aos="fade-right" data-aos-duration="1000">
+        <h3 class="nail-artistry-card-title">In-Depth Curriculum</h3>
         <p>
           Our course covers a wide range of nail artistry techniques, from basic manicures to advanced nail art designs.
         </p>
       </div>
-      <div class="nail-artistry-card">
+      <div class="nail-artistry-card" data-aos="fade-right" data-aos-duration="1200">
         <h3 class="nail-artistry-card-title">Hands-on Training</h3>
         <p>
           Engage in practical training sessions that will help you master the skills and techniques required for nail artistry.
         </p>
       </div>
-      <div class="nail-artistry-card">
+      <div class="nail-artistry-card" data-aos="fade-left" data-aos-duration="1000">
         <h3 class="nail-artistry-card-title">Experienced Instructors</h3>
         <p>
           Learn from industry professionals who provide personalized feedback to help you grow your skills and creativity.
         </p>
       </div>
-      <div class="nail-artistry-card">
+      <div class="nail-artistry-card" data-aos="fade-left" data-aos-duration="1200">
         <h3 class="nail-artistry-card-title">Creative Design Techniques</h3>
         <p>
           Learn to create beautiful nail art designs using various tools and techniques, enhancing your creativity and style.
         </p>
       </div>
-      <div class="nail-artistry-card">
+      <div class="nail-artistry-card" data-aos="fade-right" data-aos-duration="1000">
         <h3 class="nail-artistry-card-title">Flexible Learning</h3>
         <p>
           With our online platform, you can learn at your own pace, anywhere, and anytime, making it easier to balance your schedule.
         </p>
       </div>
-      <!-- New Card -->
-      <div class="nail-artistry-card">
+      <div class="nail-artistry-card" data-aos="fade-left" data-aos-duration="1200">
         <h3 class="nail-artistry-card-title">Real-World Practice</h3>
         <p>
           Gain experience with live client sessions and practice applying your skills in real-world scenarios.
@@ -224,6 +230,7 @@
     </div>
   </div>
 </section>
+
 
 <style>
   .nail-artistry-why-choose-section {
@@ -308,11 +315,11 @@
     }
   
     .nail-artistry-section-title {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
     }
   
     .nail-artistry-card p {
-      font-size: 0.87rem;
+      font-size: 0.8rem;
     }
   
     .nail-artistry-cards-wrapper::-webkit-scrollbar {
@@ -322,14 +329,14 @@
   
 </style>
 
-<div class="nail-art-programs-section">
-  <h2 class="nail-art-section-title">Our Training Program</h2>
-  <div class="nail-art-program-card">
+<div class="nail-art-programs-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="nail-art-section-title" data-aos="fade-down" data-aos-duration="1000">Our Training Program</h2>
+  <div class="nail-art-program-card" data-aos="fade-right" data-aos-duration="1000">
     <div class="nail-art-program-header">
       <h3 class="nail-art-program-title">Nail Artistry and Design</h3>
     </div>
 
-    <table class="nail-art-program-table">
+    <table class="nail-art-program-table" data-aos="fade-left" data-aos-duration="1200">
       <tr>
         <td><strong>Mode:</strong></td>
         <td>Hybrid</td>
@@ -353,8 +360,7 @@
       <tr>
         <td><strong>Career Opportunities:</strong></td>
         <td>
-          Professional Nail Artist, Nail Technician, Salon Owner, Freelance Nail
-          Artist
+          Professional Nail Artist, Nail Technician, Salon Owner, Freelance Nail Artist
         </td>
       </tr>
       <tr>
@@ -363,40 +369,18 @@
       </tr>
     </table>
 
-    <div class="nail-art-button-container">
-      <button class="nail-art-brochure-btn" id="brochure-btn">
-        📄 Brochure
-      </button>
-      <button class="nail-art-enroll-btn" id="enroll-btn">🖊 Enroll Now</button>
+    <div class="nail-art-button-container" data-aos="fade-up" data-aos-duration="1200">
+      <a href="resume_shankar_rathod.pdf" download class="nail-art-brochure-btn">
+        📄 Download Brochure
+      </a>
+      <a href="{% url 'payment_form' %}" class="nail-art-enroll-btn">
+        🖊 Enroll Now
+      </a>
     </div>
   </div>
-
-  <!-- Form Container -->
-  <div id="form-container" style="display: none">
-    <form id="dynamic-form" class="nail-art-form">
-      <h3 id="form-title">Form</h3>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Enter your name"
-      />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-      />
-      <label for="otp">OTP:</label>
-      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 </div>
+
+
 
 <style>
   .nail-art-programs-section {
@@ -553,12 +537,10 @@
   }
 </style>
 
-<section class="nail1-career-opportunities-section">
+<section class="nail1-career-opportunities-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="nail1-career-opportunities-container">
-    <div class="nail1-career-opportunities-text">
-      <h2 class="nail1-career-opportunities-title">
-        Career Paths with Us
-      </h2>
+    <div class="nail1-career-opportunities-text" data-aos="fade-right" data-aos-duration="1000">
+      <h2 class="nail1-career-opportunities-title">Career Paths with Us</h2>
       <ul class="nail1-career-opportunities-list">
         <li><span class="nail1-check-icon blue">&#10003;</span> Nail Artist</li>
         <li>
@@ -580,7 +562,7 @@
         </li>
       </ul>
     </div>
-    <div class="nail1-career-opportunities-image">
+    <div class="nail1-career-opportunities-image" data-aos="fade-left" data-aos-duration="1000">
       <img
         style="height: 60vh"
         src="{% static 'images/nail-image1.png' %}"
@@ -589,6 +571,7 @@
     </div>
   </div>
 </section>
+
 
 <style>
   .nail1-career-opportunities-section {
@@ -679,11 +662,11 @@
     }
 
     .nail1-career-opportunities-title {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
     }
 
     .nail1-career-opportunities-list li {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
     }
   }
 </style>
@@ -783,7 +766,7 @@
     }
 
     .offerings-list li {
-      font-size: 0.87rem;
+      font-size: 0.8rem;
     }
   }
 </style>

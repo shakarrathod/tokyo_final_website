@@ -1,0 +1,760 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<div class="contact-header" data-aos="fade-down" data-aos-duration="1000">
+    <h1 data-aos="zoom-in" data-aos-delay="300">Blogs</h1>
+</div>
+
+
+<!--banner section css start here ============= -->
+<style>
+    /* Header */
+    .contact-header {
+      text-align: center;
+      padding: 40px;
+      color: white;
+      background-color: black;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 480px) {
+      .contact-header {
+        height: 120px;
+      }
+
+      .contact-header h1 {
+        font-size: 1.8rem;
+        }  }
+
+    @media screen and (max-width: 768px) {
+      .contact-header {
+        height: 150px;
+        padding: 20px;
+      }
+
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+  }
+</style>
+
+
+
+<style>
+        /* Cybersecurity Blog Section */
+    .cyber-security-blog1-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        box-sizing: border-box;
+    }
+
+    .cyber-security-blog1-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        
+        position: relative;
+        color: #555555;
+    }
+
+    .cyber-security-blog1-title::after {
+        content: "";
+        width: 120px;
+        height: 4px;
+        background: #007bff;
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        border-radius: 5px;
+    }
+
+    .cyber-security-blog1-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .cyber-security-blog1-text {
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .cyber-security-blog1-text h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #555555;
+        position: relative;
+        transition: color 0.3s ease-in-out;
+    }
+
+
+
+    .cyber-security-blog1-text p {
+        font-size: 1rem;
+        color: #555555;
+    }
+
+    .cyber-security-blog1-image {
+        width: 100%;
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+
+    .cyber-security-blog1-image img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .cyber-security-blog1-image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Additional Content Section */
+    .cyber-security-blog1-additional {
+        max-width: 1200px;
+        margin: 2rem auto;
+        text-align: left;
+        padding: 0 1rem;
+    }
+
+    .cyber-security-blog1-additional p {
+        font-size: 1rem;
+        
+        color: #555;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+        .cyber-security-blog1-content {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .cyber-security-blog1-text {
+            width: 48%;
+            padding-right: 1.5rem;
+        }
+
+        .cyber-security-blog1-image {
+            width: 48%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .cyber-security-blog1-title h2 {
+            font-size: 1.9rem;
+        }
+
+        .cyber-security-blog1-text h3 {
+            font-size: 1.2rem;
+        }
+
+        .cyber-security-blog1-text p {
+            font-size: 0.8rem;
+        }
+
+        .cyber-security-blog1-additional p {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cyber-security-blog1-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cyber-security-blog1-title::after {
+            width: 60px;
+            height: 2px;
+        }
+
+        .cyber-security-blog1-text h3 {
+            font-size: 1rem;
+        }
+
+        .cyber-security-blog1-text p {
+            font-size: 0.8rem;
+        }
+
+        .cyber-security-blog1-additional p {
+            font-size: 0.8rem;
+        }
+    }
+
+</style>
+
+<section id="imp" class="cyber-security-blog1-container" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="cyber-security-blog1-title" data-aos="zoom-in" data-aos-duration="1000">
+      Data Science
+    </h2>
+    <div class="cyber-security-blog1-content">
+      <div class="cyber-security-blog1-text" data-aos="fade-up" data-aos-duration="1200">
+        <h3>Importance of Data Science: Simple Guide in 6 Steps</h3>
+        <p>We live in a world where data is king. From the social media posts we share to the products we buy online, every aspect of our lives generates data. Moreover, as the amount of data we produce grows, so does the importance of data science. At TokyoAnalyticX, we empower ambitions and amplify insights. Enroll now for top-tier data analytics and business courses!</p>
+        <p>However, in our previous blog you will get to learn about exactly what is data science? here lets understand the importance of data science?</p>
+    </div>
+      <div class="cyber-security-blog1-image" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+        <img src="{% static 'images/blog5.jpg' %}" alt="Cybersecurity Illustration" />
+      </div>
+    </div>
+  </section>
+
+ 
+  
+
+  <style>
+    /* Data Science Blog Section Styles */
+    .data-science-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+        color: #555555;
+        padding-bottom: 0;
+    }
+
+    .data-science-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .data-science-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 2px;
+        background-color: #007bff;
+    }
+
+    .data-science-section {
+        margin-bottom: 2rem;
+    }
+
+    .data-science-section-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .data-science-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .data-science-list-item {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .data-science-list-item::before {
+        content: '\2022';
+        color: #007bff;
+        font-size: 1.2rem;
+        position: absolute;
+        left: 0;
+        top: 0.2rem;
+    }
+
+    .data-science-list-item strong {
+        color: #333;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        color: #555555;
+        font-size: 0.8rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .data-science-title {
+            font-size: 1rem;
+        }
+
+        .data-science-section-title {
+            font-size: 0.9rem;
+        }
+
+        .data-science-section p {
+            font-size: 0.8rem;
+        }
+
+        .data-science-list-item {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .data-science-title {
+            font-size: 0.9rem;
+        }
+
+        .data-science-section-title {
+            font-size: 0.8rem;
+        }
+
+        .data-science-list-item {
+            font-size: 0.7rem;
+        }
+    }
+</style>
+
+<div class="data-science-container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="data-science-section" data-aos="fade-right" data-aos-delay="200">
+        <h1 class="data-science-title">What is Data Science?</h1>
+        <p>Data science utilizes scientific techniques, algorithms, and systems to extract insights and knowledge from data. Data scientists solve complex problems, make better decisions, and create innovative products and services.</p>
+        <p>Dive in, and let us explore the crucial steps defining data science’s importance.</p>
+    </div>
+    
+    <div class="data-science-section" data-aos="fade-left" data-aos-delay="400">
+        <h2 class="data-science-section-title">1. Why is Data Science Important?</h2>
+        <p>Data science holds significance as it enables informed decision-making grounded in data-driven insights. The importance of data science is that it enables us to:</p>
+        <ul class="data-science-list">
+            <li class="data-science-list-item">Understand our customers better and provide personalized and relevant products and services.</li>
+            <li class="data-science-list-item">Improve our efficiency and productivity by streamlining our processes and automating our tasks.</li>
+            <li class="data-science-list-item">Innovate and create new solutions and opportunities by discovering new patterns and trends in data.</li>
+            <li class="data-science-list-item">Enhance our competitiveness and profitability by optimizing our strategies and performance.</li>
+            <li class="data-science-list-item">Solve complex and challenging problems by applying advanced analytical techniques and algorithms.</li>
+        </ul>
+    </div>
+
+    <div class="data-science-section" data-aos="fade-right" data-aos-delay="600">
+        <h2 class="data-science-section-title">2. The Importance of Data Science in Business</h2>
+        <p>Businesses of all sizes benefit tremendously from data science. From startups to Fortune companies, data science improves decision-making, operations, and product development.</p>
+        <ul class="data-science-list">
+            <li class="data-science-list-item"><strong>Amazon:</strong> Tailored product suggestions enhance your shopping journey with personalized recommendations.</li>
+            <li class="data-science-list-item"><strong>Netflix:</strong> Curates your watchlist by analyzing your viewing patterns for a customized experience.</li>
+            <li class="data-science-list-item"><strong>Uber:</strong> Processes real-time traffic data and rider demands, ensuring efficient routes and shorter wait times.</li>
+        </ul>
+    </div>
+
+    <div class="data-science-section" data-aos="fade-left" data-aos-delay="800">
+        <h2 class="data-science-section-title">3. Significance of Data Science</h2>
+        <p>The significance of data science lies in its diverse applications across various fields:</p>
+        <ul class="data-science-list">
+            <li class="data-science-list-item"><strong>Marketing Precision:</strong> Target customers with personalized campaigns and optimize ROI using data insights.</li>
+            <li class="data-science-list-item"><strong>Healthcare Innovation:</strong> Enhance patient care, treatment plans, and drug discovery for better outcomes.</li>
+            <li class="data-science-list-item"><strong>Financial Optimization:</strong> Secure portfolios, detect fraud, and make informed financial decisions with data.</li>
+            <li class="data-science-list-item"><strong>Educational Engagement:</strong> Personalize learning paths and assessments for effective education experiences.</li>
+            <li class="data-science-list-item"><strong>Government Efficiency:</strong> Improve policymaking, public services, and safety through data-driven insights.</li>
+        </ul>
+    </div>
+
+    <div class="data-science-section" data-aos="fade-right" data-aos-delay="1000">
+        <h2 class="data-science-section-title">4. Skills and Knowledge Required for Data Science</h2>
+        <p>To become a data scientist, you need a combination of skills and knowledge, such as:</p>
+        <ul class="data-science-list">
+            <li class="data-science-list-item">Mathematics and Statistics: A foundation in essential mathematical concepts.</li>
+            <li class="data-science-list-item">Programming Proficiency: Skills in Python, R, SQL, and Excel.</li>
+            <li class="data-science-list-item">Machine Learning: Knowledge of key machine learning techniques.</li>
+            <li class="data-science-list-item">Domain Expertise: Industry-specific understanding and effective communication.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<style>
+    .cyber-security-section {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+        padding-top: 0px;
+        color: #555555;
+    }
+
+    .cyber-security-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .cyber-security-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 3px;
+        background-color: #007bff;
+        margin-top: 0.5rem;
+    }
+
+    .cyber-security-subtitle {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #007bff;
+    }
+
+    .cyber-security-paragraph {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+
+    .cyber-security-list {
+        
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .cyber-security-list-item {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .cyber-security-list-item::before {
+        content: '\2022';
+        color: #007bff;
+        font-size: 1rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 480px) {
+        .cyber-security-title {
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .cyber-security-title::after {
+            margin: 0 auto;
+        }
+
+        .cyber-security-subtitle {
+            text-align: center;
+        }
+
+        .cyber-security-paragraph {
+            font-size: 0.8rem;
+        }
+
+        .cyber-security-list-item {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<div class="cyber-security-section" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <p class="cyber-security-paragraph">Data science is a valuable tool for enhancing decision-making processes, improving operations, and creating new products and services. It is playing an increasingly important role in businesses of all sizes and has a significant impact on society.</p>
+    <p class="cyber-security-paragraph">If you want to learn more about data science, you can check out the Tokyo Analyticx  <a style="text-decoration: none;" href="{% url 'data_sci
+        ence_business_analytics' %}">Data Science and Business Analytics course.</a> This course helps you acquire the essential skills for a job in data science and start your career in this rapidly growing field. Enroll now and get ready to unleash the power of data science in 2023!</p>
+</div>
+  
+
+
+
+
+
+  <div class="blog-nav" data-aos="fade-down" data-aos-duration="1000">
+    <!-- First Row: Tags and Social Icons -->
+    <div class="nav-row">
+        <!-- Tags Section -->
+        <div class="tags" data-aos="fade-right" data-aos-duration="1000">
+            <a href="#imp">data science and its importance</a>
+            <a href="#imp3">importance of data science</a>
+            <a href="#imp4">importance of data science in business</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/share?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="pinterest"><i class="fab fa-pinterest"></i></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://telegram.me/share/url?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="telegram"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <!-- Second Row: Previous, Back to List, and Next Blog Section -->
+    <div class="nav-container">
+        <!-- Previous Blog Section -->
+        <div class="prev-blog" data-aos="fade-right" data-aos-duration="1000">
+            <span class="label">Newer</span>
+            <div class="blog-link">
+                <a href="{% url 'cyber_security_importance_need_and_advantages' %}" class="icon-link" data-hover="Previous Blog"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="{% url 'cyber_security_importance_need_and_advantages' %}" class="text-link">Understanding Data Science: <br> A Guide for Beginners</a>
+            </div>
+        </div>
+
+        <!-- Back to List Section -->
+        <div class="back-to-list" data-aos="zoom-in" data-aos-duration="800">
+            <a href="{% url 'blog' %}" class="icon-link" data-hover="Back to List"><i class="fa-solid fa-list"></i></a>
+        </div>
+
+        <!-- Next Blog Section -->
+        <div class="next-blog" data-aos="fade-left" data-aos-duration="1000">
+            <span class="label">Older</span>
+            <div class="blog-link">
+                <a href="#" class="text-link"></a>
+                <a href="#" class="icon-link" data-hover="No More Blogs"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+    .blog-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        gap: 20px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+        border-top: 2px solid rgba(150, 150, 150, 0.3);
+        border-bottom: 2px solid rgba(150, 150, 150, 0.3);
+    }
+
+    .nav-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .tags a {
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: white;
+        font-weight: 600;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .tags a:hover {
+        transform: scale(1.08);
+        background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    .social-icons1 {
+        display: flex;
+        gap: 12px;
+    }
+
+    .social-icons1 a {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 18px;
+        color: white;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        text-decoration: none;
+    }
+
+    .social-icons1 a:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .facebook { background: #1877f2; }
+    .twitter { background: #1DA1F2; }
+    .pinterest { background: #E60023; }
+    .linkedin { background: #0077b5; }
+    .telegram { background: #0088cc; }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .label {
+        font-size: 16px;
+        color: #555;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .prev-blog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+    }
+
+     .next-blog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        text-align: end;
+    }
+
+    .blog-link {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .blog-link a.text-link {
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .blog-link a.text-link:hover {
+        color: red;
+    }
+
+    .blog-link a.icon-link {
+        font-size: 24px;
+        color: #222;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .blog-link a.icon-link::before {
+        content: attr(data-hover);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
+        white-space: nowrap;
+    }
+
+    .blog-link a.icon-link:hover::before {
+        display: block;
+    }
+
+    .back-to-list a {
+        font-size: 24px;
+        color: #333;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .back-to-list a::before {
+        content: attr(data-hover);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
+        white-space: nowrap;
+    }
+
+    .back-to-list a:hover::before {
+        display: block;
+    }
+
+   
+@media (max-width: 768px) {
+    .nav-row {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tags a {
+        font-size: 12px;
+        padding: 5px 10px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .blog-link a.text-link {
+        font-size: 12px;
+    }
+
+    .social-icons1 a {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .blog-link a.icon-link {
+        font-size: 20px;
+    }
+
+    .back-to-list a {
+        font-size: 18px;
+    }
+}
+</style>
+
+
+
+
+{% endblock content%}

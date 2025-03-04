@@ -221,12 +221,11 @@ a {
     color: #242424;
     background: white;
     font-weight: 600;
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     position: absolute;
     top: 60px;
     left: 0;
     padding: 10px 0;
-    border-radius: 5px;
+    border-radius: 0px;
     z-index: 1000;
   }
 
@@ -273,7 +272,7 @@ a {
   .nav-links:hover .courses-link:hover {
     color: white;
     background: rgb(255, 49, 49);
-    border-radius: 5px;
+   
     /* transform: translateY(-3px); */
   }
 }
@@ -1391,98 +1390,4 @@ footer {
   .gallery-item img {
     object-fit: contain;
   }
-}
-
-.visionary-section {
-  padding: 40px 20px;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  width: 70%;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 3rem;
-}
-
-.section-heading {
-  font-size: 2.4rem;
-  color: #2c3e50;
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-transform: capitalize;
-  position: relative;
-}
-
-.section-heading::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: #c81b1b;
-  margin: 10px auto 0;
-}
-
-.info-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px; /* Adjusted gap to make it more spacious */
-  justify-content: center;
-}
-
-.info-card {
-  flex: 1 1 calc(45% - 30px);
-  min-width: 280px;
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 8px; /* Added rounded corners for a professional look */
-}
-
-.vision-info {
-  background: #ffffff;
-  color: #2c3e50;
-}
-
-.info-card h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.info-card p {
-  line-height: 1.5;
-}
-
-.info-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(239, 238, 238, 0.2);
-  background-color: rgb(241, 22, 22);
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .section-heading {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .info-cards {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .info-card {
-    flex: 1 1 100%;
-    min-width: unset;
-    padding: 15px;
-  }
-
-  .info-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-
- 
 }

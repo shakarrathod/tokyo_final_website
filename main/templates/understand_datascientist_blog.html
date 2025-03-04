@@ -1,0 +1,920 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<div class="contact-header" data-aos="fade-down" data-aos-duration="1000">
+    <h1 data-aos="zoom-in" data-aos-delay="300">Blogs</h1>
+</div>
+
+<!--banner section css start here ============= -->
+<style>
+    /* Header */
+    .contact-header {
+      text-align: center;
+      padding: 40px;
+      color: white;
+      background-color: black;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 480px) {
+      .contact-header {
+        height: 120px;
+      }
+
+      .contact-header h1 {
+        font-size: 1.8rem;
+        }  }
+
+    @media screen and (max-width: 768px) {
+      .contact-header {
+        height: 150px;
+        padding: 20px;
+      }
+
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+  }
+</style>
+
+
+
+  
+
+<section id="imp" class="blog-section" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="blog-title" data-aos="zoom-in" data-aos-duration="1000">
+      Data Scientist
+    </h2>
+    <div class="blog-content">
+      <div class="blog-text" data-aos="fade-up" data-aos-duration="1200">
+        <h3>Beginner's Guide to Data Science</h3>
+        <p>Data science transforms raw data into meaningful insights. This guide will help you understand data science concepts and explore its importance in solving complex challenges.</p>
+        <p>Data science helps organizations and industries use data to gain a competitive edge, drive innovation, and solve complex problems. The insights from data science improve efficiency, effectiveness, and decision-making. This blog introduces data science for beginners and guides you on starting this exciting career path.</p>
+      </div>
+      <div class="blog-image" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+        <img src="{% static 'images/blog4.jpg' %}" alt="Data Scientist Illustration" />
+      </div>
+    </div>
+</section>
+  
+  <style>
+    /* Blog Section Styles */
+    .blog-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 1rem auto;
+    }
+  
+    .blog-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      position: relative;
+      color: #555555;
+    }
+  
+    .blog-title::after {
+      content: "";
+      width: 120px;
+      height: 4px;
+      background: #007bff;
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+  
+    .blog-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .blog-text {
+      width: 100%;
+      padding: 1rem;
+      text-align: left;
+    }
+  
+    .blog-text h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #555555;
+    }
+  
+    .blog-text p {
+      font-size: 1rem;
+      color: #555555;
+    }
+  
+    .blog-image {
+      width: 100%;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+  
+    .blog-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+  
+    .blog-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+  
+    @media (min-width: 768px) {
+      .blog-content {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+  
+      .blog-text {
+        width: 48%;
+        padding-right: 1.5rem;
+      }
+  
+      .blog-image {
+        width: 48%;
+      }
+    }
+  
+    @media (max-width: 767px) {
+      .blog-title {
+        font-size: 1.6rem;
+      }
+  
+      .blog-text h3 {
+        font-size: 1.2rem;
+      }
+  
+      .blog-text p {
+        font-size: 0.9rem;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .blog-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+  
+      .blog-title::after {
+        width: 60px;
+        height: 2px;
+      }
+  
+      .blog-text h3 {
+        font-size: 1rem;
+      }
+  
+      .blog-text p {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+  
+
+
+
+
+
+
+<div class="data-science-container" data-aos="fade-up" data-aos-duration="1000">
+    <h1 class="data-science-main-title">Introduction to Data Science for Beginners</h1>
+    
+    <div class="data-science-section" data-aos="fade-right" data-aos-delay="200">
+        <h2 id="imp2" class="data-science-title">What is Data Science?</h2>
+        <p>Data science is a multidisciplinary domain that combines mathematics, statistics, programming, and domain knowledge to extract meaningful insights from data. It helps businesses to make better decisions, improve customer satisfaction, optimize processes, and create innovative products.</p>
+        <p>Data science involves collecting, cleaning, analyzing, visualizing, and communicating data to solve real-world problems. Data science uses various techniques & tools from different fields, such as:</p>
+    </div>
+    
+    <div class="data-science-section" data-aos="fade-left" data-aos-delay="400">
+        <h2 id="imp3" class="data-science-title">Techniques & Tools in Data Science</h2>
+        <ul class="data-science-list">
+            <li class="data-science-list-item" ><strong>Mathematics:</strong> Utilizes concepts like linear algebra, calculus, probability, and optimization for data calculations.</li>
+            <li class="data-science-list-item"  ><strong>Statistics:</strong> Employs descriptive and inferential statistics, hypothesis testing, and machine learning to interpret data patterns.</li>
+            <li class="data-science-list-item"  ><strong>Programming:</strong> Proficiency in Python, R, SQL, and Java to manipulate data and create predictive algorithms.</li>
+            <li class="data-science-list-item" ><strong>Domain Knowledge:</strong> A deep understanding of specific fields (e.g., business, finance, healthcare) contextualizes data insights.</li>
+        </ul>
+        <p>A data scientist is someone who can utilize their skills and knowledge to solve data-driven problems.</p>
+    </div>
+</div>
+
+<style>
+    /* Data Science Section Styles */
+    .data-science-container {
+        max-width: 1200px;
+        margin: 0rem auto;
+        padding: 1rem;
+        padding-bottom: 0px;
+        color: #555555;
+        margin-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .data-science-main-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 2rem;
+        color: #333;
+    }
+
+    .data-science-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .data-science-title::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 2px;
+        background-color: #007bff;
+    }
+
+    .data-science-section {
+        margin-bottom: 2rem;
+    }
+
+    .data-science-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .data-science-list-item {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .data-science-list-item::before {
+        content: '\2022';
+        color: #007bff;
+        font-size: 1.2rem;
+        position: absolute;
+        left: 0;
+        top: 0.2rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+        color: #555555;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .data-science-main-title {
+            font-size: 1.2rem;
+        }
+
+        .data-science-section p {
+            font-size: 0.8rem;
+        }
+
+        .data-science-title {
+            font-size: 1rem;
+        }
+
+        .data-science-list-item {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .data-science-main-title {
+            font-size: 1rem;
+        }
+
+        .data-science-title {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+
+
+
+<style>
+    .data-science-section {
+        max-width: 1200px;
+        margin: 1rem auto;
+        padding: 1rem;
+        color: #555555;
+        margin-top: 0px;
+    }
+
+    .data-science-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .data-science-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 3px;
+        background-color: #007bff;
+        margin-top: 0.5rem;
+    }
+
+    .data-science-paragraph {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+
+    .data-science-list {
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .data-science-list-item {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .data-science-list-item::before {
+        content: '\2022';
+        color: #007bff;
+        font-size: 1rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 480px) {
+        .data-science-title {
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .data-science-title::after {
+            margin: 0 auto;
+        }
+
+        .data-science-paragraph {
+            font-size: 0.8rem;
+        }
+
+        .data-science-list-item {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<div class="data-science-section" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <h1 id="process_of_data_science" class="data-science-title">The Process of Data Science for Beginners</h1>
+    <p class="data-science-paragraph">Here’s a detailed breakdown of the data science process for beginners:</p>
+    <ul class="data-science-list">
+        <li class="data-science-list-item"><strong>Data Collection:</strong> Data scientists gather information from diverse sources, such as sensors, social media, and transaction records. These raw datasets form the foundation of every data-driven project.</li>
+        <li class="data-science-list-item"><strong>Data Cleaning and Preparation:</strong> Raw data is often messy and incomplete. Data scientists employ techniques to clean, preprocess, and transform the data into a usable format, ensuring accuracy and consistency.</li>
+        <li class="data-science-list-item"><strong>Data Analysis:</strong> This involves applying statistical methods and machine learning algorithms to the data to extract meaningful insights.</li>
+        <li class="data-science-list-item"><strong>Data Visualization:</strong> This involves visualizing the insights from the data analysis to communicate them to decision-makers.</li>
+        <li class="data-science-list-item"><strong>Exploratory Data Analysis (EDA):</strong> EDA involves visually exploring data to understand its characteristics. Techniques like histograms, scatter plots, and correlation matrices help identify patterns and outliers.</li>
+        <li class="data-science-list-item"><strong>Feature Engineering:</strong> Data scientists select the dataset’s relevant features (variables) to build models. Skillful feature engineering significantly influences the accuracy of predictions.</li>
+        <li class="data-science-list-item"><strong>Model Building:</strong> Various algorithms, such as regression, decision trees, and neural networks, are applied to the prepared data. These models learn from the data to make predictions or classifications.</li>
+        <li class="data-science-list-item"><strong>Model Evaluation and Deployment:</strong> Data scientists assess the model’s performance, fine-tune it, and finally deploy it for real-world use, where it continues to learn and improve over time.</li>
+    </ul>
+</div>
+
+
+
+
+<style>
+    .data-applications-section {
+        max-width: 1200px;
+        margin: 0rem auto;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        padding-top: 0px;
+        color: #555555;
+    }
+
+    .data-applications-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .data-applications-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 3px;
+        background-color: #007bff;
+        margin-top: 0.5rem;
+    }
+
+    .data-applications-paragraph {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+
+    .data-applications-list {
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .data-applications-list-item {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .data-applications-list-item::before {
+        content: '\2022';
+        color: #007bff;
+        font-size: 1rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .data-science-subsection-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #007bff;
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 480px) {
+        .data-applications-title {
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .data-applications-title::after {
+            margin: 0 auto;
+        }
+
+        .data-applications-paragraph {
+            font-size: 0.8rem;
+        }
+
+        .data-applications-list-item {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<div class="data-applications-section" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <h1 id="applications_of_data_science" class="data-applications-title">Applications of Data Science</h1>
+    <p class="data-applications-paragraph">Data science is used in a wide variety of industries, including:</p>
+    <ul class="data-applications-list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <li class="data-applications-list-item"><strong>Technology:</strong> Data scientists are used by tech companies to create different products and services. It also helps improve customer experience and optimize operations.</li>
+        <li class="data-applications-list-item"><strong>Finance:</strong> Data scientists are used by financial institutions to predict market trends, detect flaws, and make the right investment decisions.</li>
+        <li class="data-applications-list-item"><strong>Healthcare:</strong> Data scientists are used by healthcare providers to develop new treatments, improve patient outcomes, and reduce costs. For example, during COVID-19, data science predicted disease outbreaks, analyzed infection rates, and guided interventions and resource allocation.</li>
+        <li class="data-applications-list-item"><strong>Retail:</strong> Data scientists help retailers understand customer behavior, target marketing campaigns, and optimize supply chains. Online retailers employ data science to personalize user experiences and enhance satisfaction and sales.</li>
+    </ul>
+
+    <h2 class="data-applications-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Why Data Science Matters for Beginners?</h2>
+    <ul class="data-applications-list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <li class="data-applications-list-item"><strong>Informed Decisions:</strong> Data science guides strategic choices for businesses.</li>
+        <li class="data-applications-list-item"><strong>Predictive Precision:</strong> Accurate trend forecasts anticipate future demands.</li>
+        <li class="data-applications-list-item"><strong>Personalized Interactions:</strong> Tailored online experiences driven by data algorithms.</li>
+        <li class="data-applications-list-item"><strong>Technology Innovation:</strong> Fuels sector efficiencies from healthcare to finance.</li>
+    </ul>
+
+    <h2 class="data-applications-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Why Choose Data Science?</h2>
+    <ul class="data-applications-list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <li class="data-applications-list-item"><strong>High Demand:</strong> Data science offers rewarding career opportunities in rapidly growing fields.</li>
+        <li class="data-applications-list-item"><strong>Attractive Salaries:</strong> Data scientists enjoy high earning potential based on factors like experience and industry.</li>
+        <li class="data-applications-list-item"><strong>Global Impact:</strong> Data science addresses pressing global challenges like climate change, poverty, healthcare, education, and security.</li>
+        <li class="data-applications-list-item"><strong>Career Fulfillment:</strong> It’s a path for curious minds, fostering creativity and constant growth.</li>
+        <li class="data-applications-list-item"><strong>Accessible Learning:</strong> Abundant online resources enable entry into the data science realm.</li>
+    </ul>
+
+    <h2 class="data-applications-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Key Skills and Tools for Data Scientists</h2>
+    <ul class="data-applications-list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <li class="data-applications-list-item"><strong>Programming:</strong> Python is one of the most popular programming languages for data science.</li>
+        <li class="data-applications-list-item"><strong>Statistics:</strong> Understanding concepts like probability, hypothesis testing, and regression analysis is crucial.</li>
+        <li class="data-applications-list-item"><strong>Machine Learning:</strong> Machine learning enables computers to learn from data without explicit programming. Data scientists create predictive models using techniques like regression, clustering, and neural networks.</li>
+        <li class="data-applications-list-item"><strong>Data Sources:</strong> Leverage diverse data sources like databases, APIs, web scraping, and surveys.</li>
+        <li class="data-applications-list-item"><strong>Data Platforms:</strong> Use cloud services like AWS, Azure, or Google Cloud for data storage and scalability.</li>
+        <li class="data-applications-list-item"><strong>Data Pipelines:</strong> Transform raw data through extraction, cleaning, and integration for actionable insights.</li>
+        <li class="data-applications-list-item"><strong>Data Analysis:</strong> Dive deep into data using tools like Jupyter Notebook and RStudio.</li>
+        <li class="data-applications-list-item"><strong>Data Visualization:</strong> Present data visually using tools like Tableau and Power BI.</li>
+        <li class="data-applications-list-item"><strong>Data Modeling:</strong> Build predictive models using libraries like scikit-learn, TensorFlow, PyTorch, and Keras.</li>
+    </ul>
+</div>
+
+
+<div class="data-journey-container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="data-journey-section" data-aos="fade-right" data-aos-delay="200">
+        <h1 class="data-journey-title">Tokyo AnalyticX Data Science and Business Analytics Course</h1>
+        <p class="data-journey-paragraph">
+            Data science uses math, statistics, programming, and domain knowledge to solve problems with data. Data science can help businesses improve their decisions, products, and services. If you want to learn data science, join the <a style="text-decoration: none;" href="{% url 'data_sci
+            ence_business_analytics' %}">Data Science and Business Analytics course</a> by Tokyo AnalyticX. This course covers all the skills of data science, such as Python, SQL, Tableau, statistics, machine learning, etc. You will also work on projects, get mentorship, and get a certificate. Explore Tokyo AnalyticX, your ultimate destination for the finest data analysis courses for beginners. Enroll in our data science course today and take your career to the next level!
+        </p>
+    </div>
+</div>
+
+<style>
+    /* Data Journey Section Styles */
+    .data-journey-container {
+        max-width: 1200px;
+        margin: 1rem auto;
+        padding-bottom: 0px;
+        margin-top: 0px;
+        padding: 1rem;
+        color: #333;
+    }
+
+    .data-journey-section {
+        margin-bottom: 2rem;
+    }
+
+    .data-journey-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .data-journey-title::after {
+        content: "";
+        display: block;
+        width: 150px;
+        height: 3px;
+        background-color: #007bff;
+        margin-top: 0.5rem;
+    }
+
+    .data-journey-paragraph {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: justify;
+        color: #555555;
+    }
+
+    .data-journey-paragraph strong {
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .data-journey-title {
+            font-size: 1.2rem;
+        }
+
+        .data-journey-paragraph {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .data-journey-title {
+            font-size: 1rem;
+        }
+
+        .data-journey-paragraph {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+
+
+
+<div class="blog-nav" data-aos="fade-down" data-aos-duration="1000">
+    <!-- First Row: Tags and Social Icons -->
+    <div class="nav-row">
+        <!-- Tags Section -->
+        <div class="tags" data-aos="fade-right" data-aos-duration="1000">
+            <a href="#dsjobs">business analytics </a>
+            <a href="#demand">data science</a>
+            <a href="#reasons">data science for beginners</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/share?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="pinterest"><i class="fab fa-pinterest"></i></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://telegram.me/share/url?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="telegram"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <!-- Second Row: Previous, Back to List, and Next Blog Section -->
+    <div class="nav-container">
+        <!-- Previous Blog Section -->
+        <div class="prev-blog" data-aos="fade-right" data-aos-duration="1000">
+            <span class="label">Newer</span>
+            <div class="blog-link">
+                <a href="{% url 'why-become-a-data-scientist' %}" class="icon-link" data-hover="Previous Blog"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="{% url 'why-become-a-data-scientist' %}" class="text-link">Why Become a Data Scientist</a>
+            </div>
+        </div>
+
+        <!-- Back to List Section -->
+        <div class="back-to-list" data-aos="zoom-in" data-aos-duration="800">
+            <a href="{% url 'blog' %}" class="icon-link" data-hover="Back to List"><i class="fa-solid fa-list"></i></a>
+        </div>
+
+        <!-- Next Blog Section -->
+        <div class="next-blog" data-aos="fade-left" data-aos-duration="1000">
+            <span class="label">Older</span>
+            <div class="blog-link">
+                <a href="{% url 'importance-of-data-science-simple-guide-in-6-step' %}" class="text-link"> Importance of Data Science: <br> Simple Guide in 6 Steps</a>
+                <a href="{% url 'importance-of-data-science-simple-guide-in-6-step' %}" class="icon-link" data-hover="Next Blog"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+    .blog-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        gap: 20px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+        border-top: 2px solid rgba(150, 150, 150, 0.3);
+        border-bottom: 2px solid rgba(150, 150, 150, 0.3);
+    }
+
+    .nav-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .tags a {
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: white;
+        font-weight: 600;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .tags a:hover {
+        transform: scale(1.08);
+        background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    .social-icons1 {
+        display: flex;
+        gap: 12px;
+    }
+
+    .social-icons1 a {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 18px;
+        color: white;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        text-decoration: none;
+    }
+
+    .social-icons1 a:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .facebook { background: #1877f2; }
+    .twitter { background: #1DA1F2; }
+    .pinterest { background: #E60023; }
+    .linkedin { background: #0077b5; }
+    .telegram { background: #0088cc; }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .label {
+        font-size: 16px;
+        color: #555;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .prev-blog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+    }
+
+     .next-blog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        text-align: end;
+    }
+
+    .blog-link {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .blog-link a.text-link {
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .blog-link a.text-link:hover {
+        color: red;
+    }
+
+    .blog-link a.icon-link {
+        font-size: 24px;
+        color: #222;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .blog-link a.icon-link::before {
+        content: attr(data-hover);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
+        white-space: nowrap;
+    }
+
+    .blog-link a.icon-link:hover::before {
+        display: block;
+    }
+
+    .back-to-list a {
+        font-size: 24px;
+        color: #333;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .back-to-list a::before {
+        content: attr(data-hover);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
+        white-space: nowrap;
+    }
+
+    .back-to-list a:hover::before {
+        display: block;
+    }
+
+    
+    @media (max-width: 768px) {
+        .nav-row {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .nav-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tags a {
+            font-size: 12px;
+            padding: 5px 10px;
+        }
+
+        .blog-link a.text-link {
+            font-size: 12px;
+        }
+
+        .social-icons1 a {
+            width: 32px;
+            height: 32px;
+            font-size: 14px;
+        }
+
+        .blog-link a.icon-link {
+            font-size: 20px;
+        }
+
+        .back-to-list a {
+            font-size: 18px;
+        }
+    }
+
+
+@media (max-width: 480px) {
+    .tags a {
+        font-size: 12px;
+        margin: 0 auto;
+        padding: 4px 10px;
+        align-items: center;
+    }
+
+    .blog-link a.text-link {
+        font-size: 12px;
+    }
+
+    .social-icons a {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .back-to-list a {
+        font-size: 16px;
+    }
+}
+</style>
+
+
+
+
+{% endblock content%}

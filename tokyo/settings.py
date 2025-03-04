@@ -9,16 +9,30 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'main/static']
 
 
+
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-xg#&co&*8(603j!79d2_(fz^mj++4*uikfv!7z2l&86g^5y)jl'
 
+
+
+# RAZORPAY_KEY_ID = "rzp_test_eHuIxxejGdjpik"
+# RAZORPAY_KEY_SECRET = "fMgWjM6DFaLaI9xwsgv62lf1"
+
+
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'd7fe-2409-40f2-104e-f1e-bd26-4dec-2715-8405.ngrok-free.app']
 
 
 # Application definition
@@ -30,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'debug_toolbar',
     'main',
+   
+
 ]
 
 MIDDLEWARE = [
@@ -41,7 +58,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ] 
+
 
 ROOT_URLCONF = 'tokyo.urls'
 
@@ -69,10 +92,15 @@ WSGI_APPLICATION = 'tokyo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tokyo_database',
+        'USER': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'PASSWORD': 'tokyo@123',
     }
 }
+
 
 
 # Password validation

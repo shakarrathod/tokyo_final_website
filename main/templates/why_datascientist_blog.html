@@ -1,0 +1,863 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<div class="contact-header" data-aos="fade-down" data-aos-duration="1000">
+    <h1 data-aos="zoom-in" data-aos-delay="300">Blogs</h1>
+</div>
+
+<!--banner section css start here ============= -->
+<style>
+    /* Header */
+    .contact-header {
+      text-align: center;
+      padding: 40px;
+      color: white;
+      background-color: black;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 480px) {
+      .contact-header {
+        height: 120px;
+      }
+
+      .contact-header h1 {
+        font-size: 1.8rem;
+        }  }
+
+    @media screen and (max-width: 768px) {
+      .contact-header {
+        height: 150px;
+        padding: 20px;
+      }
+
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+  }
+</style>
+
+
+
+<section id="imp" class="data-scientist-blog1-container" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="data-scientist-blog1-title" data-aos="zoom-in" data-aos-duration="1000">
+      Data Scientist
+    </h2>
+    <div class="data-scientist-blog1-content">
+      <div class="data-scientist-blog1-text" data-aos="fade-up" data-aos-duration="1200">
+        <h3>Why Become a Data Scientist? Top 5 Reasons to Become a Data Scientist</h3>
+        <p>
+          Data scientists are the architects of innovation in the digital age, transforming raw data into actionable insights. In the 21st century, data science stands out as one of the most sought-after and financially rewarding careers, as data is everywhere, with the potential to transform businesses, industries, and society.
+        </p>
+        <p>
+          Data science is a ticket to a fulfilling career choice. With the continuous rise of data volume, businesses and organizations of all sizes seek data scientists to help them make sense of it all.
+        </p>
+      </div>
+      <div class="data-scientist-blog1-image" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+        <img src="{% static 'images/blog3.jpg' %}" alt="Data Scientist Illustration" />
+      </div>
+    </div>
+  </section>
+  
+  <section class="data-scientist-blog1-additional" data-aos="fade-up" data-aos-duration="1200">
+    <div class="container">
+      <p data-aos="fade-left">
+        As data continues to grow in importance, empowering yourself with this knowledge is your first step towards a successful career in data science. Ready to enhance your skills? Explore Tokyo AnalyticX for expert guidance and stay ahead in the digital age!
+      </p>
+      <p>
+        Are you intrigued by this dynamic field? Understand the
+        <a style="text-decoration: none;" href="{% url 'cyber_security_importance_need_and_advantages' %}">importance of data science</a> and explore the top reasons to become a data scientist in 2023. Discovering the top 5 reasons to become a data scientist might be your next game-changing career move. Dive into the world of data science at Tokyo AnalyticX, where dreams meet data! Join now!
+      </p>
+    </div>
+</section>
+  
+<style>
+      /* Data Scientist Blog Section */
+      .data-scientist-blog1-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 1rem;
+          max-width: 1200px;
+          margin: 1rem auto;
+          box-sizing: border-box;
+      }
+  
+      .data-scientist-blog1-title {
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          text-transform: uppercase;
+          position: relative;
+          color: #555555;
+      }
+  
+      .data-scientist-blog1-title::after {
+          content: "";
+          width: 120px;
+          height: 4px;
+          background: #007bff;
+          position: absolute;
+          left: 50%;
+          bottom: -8px;
+          transform: translateX(-50%);
+          border-radius: 5px;
+      }
+  
+      .data-scientist-blog1-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          max-width: 1200px;
+      }
+  
+      .data-scientist-blog1-text {
+          width: 100%;
+          padding: 1rem;
+          text-align: left;
+      }
+  
+      .data-scientist-blog1-text h3 {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          color: #555555;
+          position: relative;
+          transition: color 0.3s ease-in-out;
+      }
+  
+      .data-scientist-blog1-text p {
+          font-size: 1rem;
+          color: #555555;
+      }
+  
+      .data-scientist-blog1-image {
+          width: 100%;
+          text-align: center;
+          margin-top: 1.5rem;
+      }
+  
+      .data-scientist-blog1-image img {
+          width: 100%;
+          max-width: 500px;
+          border-radius: 8px;
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+  
+      .data-scientist-blog1-image img:hover {
+          transform: scale(1.05);
+          box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+      }
+  
+      /* Additional Content Section */
+      .data-scientist-blog1-additional {
+          max-width: 1200px;
+          margin: 2rem auto;
+          text-align: left;
+          padding: 0 1rem;
+      }
+  
+      .data-scientist-blog1-additional p {
+          font-size: 1rem;
+          color: #555;
+      }
+  
+      /* Responsive Design */
+      @media (min-width: 768px) {
+          .data-scientist-blog1-content {
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: flex-start;
+          }
+  
+          .data-scientist-blog1-text {
+              width: 48%;
+              padding-right: 1.5rem;
+          }
+  
+          .data-scientist-blog1-image {
+              width: 48%;
+          }
+      }
+  
+      @media (max-width: 767px) {
+          .data-scientist-blog1-title h2 {
+              font-size: 1.9rem;
+          }
+  
+          .data-scientist-blog1-text h3 {
+              font-size: 1.2rem;
+          }
+  
+          .data-scientist-blog1-text p {
+              font-size: 0.8rem;
+          }
+  
+          .data-scientist-blog1-additional p {
+              font-size: 0.8rem;
+          }
+      }
+  
+      @media (max-width: 480px) {
+          .data-scientist-blog1-title {
+              font-size: 1.5rem;
+              margin-bottom: 1rem;
+          }
+  
+          .data-scientist-blog1-title::after {
+              width: 60px;
+              height: 2px;
+          }
+  
+          .data-scientist-blog1-text h3 {
+              font-size: 1rem;
+          }
+  
+          .data-scientist-blog1-text p {
+              font-size: 0.8rem;
+          }
+  
+          .data-scientist-blog1-additional p {
+              font-size: 0.8rem;
+          }
+      }
+</style>
+  
+
+
+  
+
+
+<div class="data-demand-container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="data-demand-section" data-aos="fade-right" data-aos-delay="200">
+        <h1 id="imp2" class="data-demand-title">High Demand for Data Scientists?</h1>
+        <p>
+            The demand for data scientists is growing at a faster pace. The US Bureau of Labour Statistics predicts that employment of data scientists’ jobs will grow by 31.4% from 2020 to 2030, experiencing growth significantly above the average for all professions.
+            <br><br>
+            Companies eagerly seek professionals in the lucrative area of data science due to its high demand. Accessible through platforms like LinkedIn, the demand for data scientists offers diverse opportunities across sectors.
+        </p>
+    </div>
+</div>  
+
+<style>
+    /* Data Demand Section Styles */
+    .data-demand-container {
+        max-width: 1200px;
+        margin: 1rem auto;
+        padding: 1rem;
+        color: #555555;
+        padding-bottom: 0px;
+    }
+
+    .data-demand-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .data-demand-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 2px;
+        background-color: #007bff;
+    }
+
+    .data-demand-section {
+        margin-bottom: 2rem;
+    }
+
+    .data-demand-section-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .data-demand-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .data-demand-list-item {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .data-demand-list-item::before {
+        content: '\2022';
+        color: #007bff;
+        font-size: 1.2rem;
+        position: absolute;
+        left: 0;
+        top: 0.2rem;
+    }
+
+    .data-demand-list-item strong {
+        color: #333;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        color: #555555;
+        font-size: 0.8rem;
+    }
+
+    .data-demand-section p h3 {
+        color: #555555;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .data-demand-title {
+            font-size: 1rem;
+        }
+
+        .data-demand-section-title {
+            font-size: 0.9rem;
+        }
+
+        .data-demand-section p {
+            font-size: 0.8rem;
+        }
+
+        .data-demand-list-item {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .data-demand-title {
+            font-size: 1rem;
+        }
+
+        .data-demand-section-title {
+            font-size: 0.9rem;
+        }
+
+        .data-demand-list-item {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+
+<div class="data-flexibility-container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="data-flexibility-section" data-aos="fade-right" data-aos-delay="200">
+        <h1 class="data-flexibility-title">Data Science is Flexible and Diverse</h1>
+        <p>
+            Data science skills are versatile; they are applicable in diverse sectors. From healthcare to finance, your expertise can drive impactful changes and innovations, making a difference wherever you go.
+            <br><br>
+            Data science offers diverse specializations like data analysis, machine learning, and AI, allowing flexibility in career focus. Professionals can switch between areas and tackle challenges, from customer segmentation to image recognition, fostering continuous growth and adaptability.
+        </p>
+    </div>
+</div>
+
+<style>
+    /* Data Flexibility Section Styles */
+    .data-flexibility-container {
+        max-width: 1200px;
+        margin: 1rem auto;
+        padding: 1rem;
+        color: #555555;
+    }
+
+    .data-flexibility-section {
+        margin-bottom: 2rem;
+    }
+
+    .data-flexibility-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .data-flexibility-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 0.5rem;
+    }
+
+    .data-flexibility-section p {
+        margin-bottom: 1rem;
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .data-flexibility-title {
+            font-size: 1rem;
+        }
+
+        .data-flexibility-section p {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .data-flexibility-title {
+            font-size: 0.9rem;
+        }
+
+        .data-flexibility-section p {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+
+<div class="data-impact-container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="data-impact-section" data-aos="fade-right" data-aos-delay="200">
+        <h1 class="data-impact-title">Data Science is Valuable and Impactful</h1>
+        <p>
+            Data science empowers personalized customer experiences, boosts efficiency, fuels innovation, and solves complex challenges across industries. From healthcare to finance, its impact extends to health, education, governance, and entertainment, enhancing various aspects of our lives.
+            <br><br>
+            Data scientists solve real-world problems and become problem solvers. Data scientists tackle real-world issues, from climate change to healthcare crises. Your work will have a tangible impact, improving the world.
+        </p>
+    </div>
+</div>
+
+<style>
+    /* Data Impact Section Styles */
+    .data-impact-container {
+        max-width: 1200px;
+        margin: 1rem auto;
+        padding: 1rem;
+        color: #555555;
+    }
+
+    .data-impact-section {
+        margin-bottom: 2rem;
+    }
+
+    .data-impact-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .data-impact-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 0.5rem;
+    }
+
+    .data-impact-section p {
+        margin-bottom: 1rem;
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .data-impact-title {
+            font-size: 1rem;
+        }
+
+        .data-impact-section p {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .data-impact-title {
+            font-size: 0.9rem;
+        }
+
+        .data-impact-section p {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+
+
+<div class="data-fun-container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="data-fun-section" data-aos="fade-right" data-aos-delay="200">
+        <h1 class="data-fun-title">Data Science is Fun and Challenging</h1>
+        <p>
+            Data science offers a dynamic blend of creativity and logic, involving techniques like machine learning and AI to solve intricate challenges. From exploring data to deploying innovative solutions, data scientists’ jobs encourage curiosity, experimentation, and analytical thinking. Encouraging curiosity and experimentation involves exploring data and implementing innovative solutions.
+            <br><br>
+            Becoming a data scientist is not just a career choice; it is a transformative journey into the heart of modern technology and innovation. Uncover endless opportunities, competitive salaries, and the chance to make a genuine impact. Are you ready to redefine your career trajectory in data scientists’ jobs? If you’re looking for a challenging and rewarding career, data science could align perfectly with your interests and skills.
+            <br><br>
+            <strong>Tokyo Analyticx’s data analytics program</strong> equips you with the essential skills for a prosperous data science career. You will understand how to collect, clean, and analyze data, build machine learning models, and communicate your findings effectively.
+            <br><br>
+            The course is instructed by dedicated and knowledgeable data scientists, ensuring students’ success. Master data science with Tokyo Analyticx and become a highly-paid professional. Upgrade your career now!
+        </p>
+    </div>
+</div>
+
+<style>
+    /* Data Fun Section Styles */
+    .data-fun-container {
+        max-width: 1200px;
+        margin: 1rem auto;
+        padding: 1rem;
+        color: #555555;
+    }
+
+    .data-fun-section {
+        margin-bottom: 2rem;
+    }
+
+    .data-fun-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .data-fun-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 2px;
+        background-color: #007bff;
+        margin-top: 0.5rem;
+    }
+
+    .data-fun-section p {
+        margin-bottom: 1rem;
+        color: #555555;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .data-fun-section p strong {
+        font-weight: bold;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .data-fun-title {
+            font-size: 1rem;
+        }
+
+        .data-fun-section p {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .data-fun-title {
+            font-size: 0.9rem;
+        }
+
+        .data-fun-section p {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+
+  
+
+
+
+<div class="blog-nav" data-aos="fade-down" data-aos-duration="1000">
+    <!-- First Row: Tags and Social Icons -->
+    <div class="nav-row">
+        <!-- Tags Section -->
+        <div class="tags" data-aos="fade-right" data-aos-duration="1000">
+            <a href="#dsjobs">data scientist jobs</a>
+            <a href="#demand">demand for data scientists</a>
+            <a href="#reasons">reasons to become a data scientist</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/share?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="pinterest"><i class="fab fa-pinterest"></i></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://telegram.me/share/url?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="telegram"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <!-- Second Row: Previous, Back to List, and Next Blog Section -->
+    <div class="nav-container">
+        <!-- Previous Blog Section -->
+        <div class="prev-blog" data-aos="fade-right" data-aos-duration="1000">
+            <span class="label">Newer</span>
+            <div class="blog-link">
+                <a href="{% url 'understanding-what-is-cyber-security' %}" class="icon-link" data-hover="Previous Blog"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="{% url 'understanding-what-is-cyber-security' %}" class="text-link">Understanding What is Cyber Security</a>
+            </div>
+        </div>
+
+        <!-- Back to List Section -->
+        <div class="back-to-list" data-aos="zoom-in" data-aos-duration="800">
+            <a href="{% url 'blog' %}" class="icon-link" data-hover="Back to List"><i class="fa-solid fa-list"></i></a>
+        </div>
+
+        <!-- Next Blog Section -->
+        <div class="next-blog" data-aos="fade-left" data-aos-duration="1000">
+            <span class="label">Older</span>
+            <div class="blog-link">
+                <a href="{% url 'understanding-data-science-a-guide-for-beginners' %}" class="text-link"> Understanding Data Science.<br> A Guide for Beginners</a>
+                <a href="{% url 'understanding-data-science-a-guide-for-beginners' %}" class="icon-link" data-hover="Next Blog"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+    .blog-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        gap: 20px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+        border-top: 2px solid rgba(150, 150, 150, 0.3);
+        border-bottom: 2px solid rgba(150, 150, 150, 0.3);
+    }
+
+    .nav-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .tags a {
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: white;
+        font-weight: 600;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .tags a:hover {
+        transform: scale(1.08);
+        background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    .social-icons1 {
+        display: flex;
+        gap: 12px;
+    }
+
+    .social-icons1 a {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 18px;
+        color: white;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        text-decoration: none;
+    }
+
+    .social-icons1 a:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .facebook { background: #1877f2; }
+    .twitter { background: #1DA1F2; }
+    .pinterest { background: #E60023; }
+    .linkedin { background: #0077b5; }
+    .telegram { background: #0088cc; }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .label {
+        font-size: 16px;
+        color: #555;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .prev-blog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+    }
+
+     .next-blog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        text-align: end;
+    }
+
+    .blog-link {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .blog-link a.text-link {
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .blog-link a.text-link:hover {
+        color: red;
+    }
+
+    .blog-link a.icon-link {
+        font-size: 24px;
+        color: #222;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .blog-link a.icon-link::before {
+        content: attr(data-hover);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
+        white-space: nowrap;
+    }
+
+    .blog-link a.icon-link:hover::before {
+        display: block;
+    }
+
+    .back-to-list a {
+        font-size: 24px;
+        color: #333;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .back-to-list a::before {
+        content: attr(data-hover);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
+        white-space: nowrap;
+    }
+
+    .back-to-list a:hover::before {
+        display: block;
+    }
+
+    
+    @media (max-width: 768px) {
+        .nav-row {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .nav-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tags a {
+            font-size: 12px;
+            padding: 5px 10px;
+        }
+
+        .blog-link a.text-link {
+            font-size: 12px;
+        }
+
+        .social-icons1 a {
+            width: 32px;
+            height: 32px;
+            font-size: 14px;
+        }
+
+        .blog-link a.icon-link {
+            font-size: 20px;
+        }
+
+        .back-to-list a {
+            font-size: 18px;
+        }
+    }
+</style>
+
+
+
+
+{% endblock content%}

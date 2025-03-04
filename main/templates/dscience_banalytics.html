@@ -1,20 +1,34 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<section class="responsive-banner">
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<section class="responsive-banner" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
   <img
     src="{% static 'images/ds_banner.jpg' %}"
     alt="Data Science Banner"
     class="banner-image"
+    data-aos="zoom-in"
+    data-aos-duration="1200"
   />
-  <div class="banner-content">
+  <div class="banner-content" data-aos="fade-left" data-aos-duration="1000">
     <h1>Data Science and Business Analytics</h1>
   </div>
 </section>
 
+
 <style>
   /* Section Styling */
   .responsive-banner {
-    margin-top: 100px;
+ 
     position: relative;
     height: 300px;
     width: 100%;
@@ -67,10 +81,10 @@
   }
 </style>
 
-<section class="data-science--section">
+<section class="data-science--section" data-aos="fade-up" data-aos-duration="1200">
   <div class="data-science-container">
-    <div class="data-science-category">
-      
+    
+    <div class="data-science-category" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
       <p>
         <strong>Tokyo AnalyticX </strong>empowers individuals with key skills in data science and
         business analytics, emphasizing crucial areas such as cybersecurity and
@@ -78,7 +92,7 @@
       </p>
     </div>
 
-    <div class="data-science-category">
+    <div class="data-science-category" data-aos="fade-left" data-aos-duration="1300" data-aos-delay="400">
       <p>
         <strong>Tokyo AnalyticX’s</strong> comprehensive course provides expertise in data
         analysis, visualization, machine learning, and business analytics,
@@ -88,6 +102,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -128,7 +143,7 @@
   @media (max-width: 768px) {
     .data-science-title {
       font-size: 1.2rem;
-y    }
+    }
 
     .data-science-category {
       margin-bottom: 30px;
@@ -155,17 +170,21 @@ y    }
   }
 </style>
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="offerings-container">
-    <div class="offerings-image">
+    
+    <div class="offerings-image" data-aos="zoom-in" data-aos-duration="1000">
       <img
         src="{% static 'images/diverse_course.png' %}"
         alt="Student learning"
       />
     </div>
-    <div class="offerings-text">
-      <h2 class="offerings-title">Our Diverse Course Offerings</h2>
-      <ul class="offerings-list">
+    
+    <div class="offerings-text" data-aos="fade-left" data-aos-duration="1300" data-aos-delay="200">
+      <h2 class="offerings-title" data-aos="fade-down" data-aos-duration="1000">
+        Our Diverse Course Offerings
+      </h2>
+      <ul class="offerings-list" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
         <li>
           <span class="check-icon blue">&#10003;</span> Foundations of Data
           Science
@@ -192,21 +211,23 @@ y    }
   </div>
 </section>
 
-<!-- HTML -->
-<section class="data-science--why-choose-section">
+
+<section class="data-science--why-choose-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="data-science-container">
-    <h2 class="data-science-section-title">
+    <h2 class="data-science-section-title" data-aos="fade-down" data-aos-duration="1000">
       Why Choose Tokyo AnalyticX?
     </h2>
     <div class="data-science-cards-wrapper">
-      <div class="data-science-card">
+      
+      <div class="data-science-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
         <h3 class="data-science-card-title">In-Depth Curriculum</h3>
         <p>
           Our curriculum covers a wide range of topics, including data
           analytics, databases, statistics, modeling, and data visualization.
         </p>
       </div>
-      <div class="data-science-card">
+
+      <div class="data-science-card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="400">
         <h3 class="data-science-card-title">Hands-On Training</h3>
         <p>
           Get hands-on experience through practical labs, simulations, and
@@ -214,14 +235,16 @@ y    }
           in the field.
         </p>
       </div>
-      <div class="data-science-card">
+
+      <div class="data-science-card" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
         <h3 class="data-science-card-title">Experienced Instructors</h3>
         <p>
           Learn from seasoned experts with years of industry experience who
           bring real-world insights into the classroom.
         </p>
       </div>
-      <div class="data-science-card">
+
+      <div class="data-science-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
         <h3 class="data-science-card-title">Networking Access</h3>
         <p>
           Connect with fellow students, instructors, and professionals in the
@@ -229,7 +252,8 @@ y    }
           others' experiences.
         </p>
       </div>
-      <div class="data-science-card">
+
+      <div class="data-science-card" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="1000">
         <h3 class="data-science-card-title">Career Advancement</h3>
         <p>
           Whether you're just starting or looking to advance in your career,
@@ -237,16 +261,19 @@ y    }
           business analyst, marketing analyst, python developer, and more.
         </p>
       </div>
-      <div class="data-science-card">
+
+      <div class="data-science-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200">
         <h3 class="data-science-card-title">Adaptive Learning</h3>
         <p>
           Choose from online, in-person, or hybrid learning modes to fit your
           schedule and learning preferences.
         </p>
       </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -339,16 +366,19 @@ y    }
 </style>
 
 
-<div class="data-science-programs-section">
-  <h2 class="data-science-section-title">Our Training Program</h2>
-  <div class="data-science-program-card">
+<section class="data-science-programs-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="data-science-section-title" data-aos="fade-down" data-aos-duration="1000">
+    Our Training Program
+  </h2>
+
+  <div class="data-science-program-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
     <div class="data-science-program-header">
       <h3 class="data-science-program-title">
         Data Science and Business Analytics
       </h3>
     </div>
 
-    <table class="data-science-program-table">
+    <table class="data-science-program-table" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
       <tr>
         <td><strong>Mode:</strong></td>
         <td>Hybrid</td>
@@ -372,8 +402,7 @@ y    }
       <tr>
         <td><strong>Career Opportunities:</strong></td>
         <td>
-          Data Scientist, Business Analyst, Data Analyst, Machine Learning
-          Engineer
+          Data Scientist, Business Analyst, Data Analyst, Machine Learning Engineer
         </td>
       </tr>
       <tr>
@@ -382,42 +411,19 @@ y    }
       </tr>
     </table>
 
-    <div class="data-science-button-container">
-      <button class="data-science-brochure-btn" id="brochure-btn">
-        📄 Brochure
-      </button>
-      <button class="data-science-enroll-btn" id="enroll-btn">
+    <div class="data-science-button-container" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+      <a href="{% static 'pdfs/TokyoAnalyticsDataScience.pdf' %}" download class="data-science-brochure-btn">
+        📄 Download Brochure
+      </a>
+      
+      <a href="{% url 'payment_form' %}" class="data-science-enroll-btn">
         🖊 Enroll Now
-      </button>
+      </a>
     </div>
   </div>
+</section>
 
-  <!-- Form Container -->
-  <div id="form-container" style="display: none">
-    <form id="dynamic-form" class="data-science-form">
-      <h3 id="form-title">Form</h3>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Enter your name"
-      />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-      />
-      <label for="otp">OTP:</label>
-      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</div>
+
 
 <style>
   .data-science-programs-section {
@@ -574,34 +580,25 @@ y    }
   }
 </style>
 
-<section class="offerings-section">
+<section class="offerings-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="offerings-container">
-    <div class="offerings-text">
-      <h2 class="offerings-title">
-        Career Paths with Us      </h2>
-      <ul class="offerings-list">
+    <div class="offerings-text" data-aos="fade-right" data-aos-duration="1000">
+      <h2 class="offerings-title">Career Paths with Us</h2>
+      <ul class="offerings-list" data-aos="fade-left" data-aos-duration="1000">
         <li><span class="check-icon blue">&#10003;</span> Data Scientist</li>
-        <li>
-          <span class="check-icon blue">&#10003;</span> Business Analytics
-        </li>
+        <li><span class="check-icon blue">&#10003;</span> Business Analytics</li>
         <li><span class="check-icon blue">&#10003;</span> Marketing Analyst</li>
-        <li>
-          <span class="check-icon blue">&#10003;</span> Power BI/Tableau
-          Developer
-        </li>
-        <li>
-          <span class="check-icon blue">&#10003;</span> Decision Scientist
-        </li>
-        <li>
-          <span class="check-icon blue">&#10003;</span> Python/ R Developer
-        </li>
+        <li><span class="check-icon blue">&#10003;</span> Power BI/Tableau Developer</li>
+        <li><span class="check-icon blue">&#10003;</span> Decision Scientist</li>
+        <li><span class="check-icon blue">&#10003;</span> Python/ R Developer</li>
       </ul>
     </div>
-    <div class="offerings-image">
+    <div class="offerings-image" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
       <img src="{% static 'images/ds_career.webp' %}" alt="Student learning" />
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>

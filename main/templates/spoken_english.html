@@ -1,20 +1,33 @@
 {% extends "base.html" %} {% load static %} {% block content %}
-<section class="spoken_english-responsive-banner">
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<section class="spoken_english-responsive-banner" data-aos="fade-up" data-aos-duration="1200">
   <img
-    src="{% static 'images/soke_banner.jpg' %}"
+    src="{% static 'images/ds_banner.jpg' %}"
     alt="Spoken English Banner"
     class="spoken_english-banner-image"
+    data-aos="zoom-in" data-aos-duration="1000"
   />
-  <div class="spoken_english-banner-content">
+  <div class="spoken_english-banner-content" data-aos="fade-up" data-aos-duration="1000">
     <h1>Spoken English and Communication Skills</h1>
   </div>
 </section>
+
 
 <!--banner section css start here ============= -->
 <style>
   /* Section Styling */
   .spoken_english-responsive-banner {
-    margin-top: 100px;
+   
     position: relative;
     height: 300px;
     width: 100%;
@@ -67,11 +80,11 @@
   }
 </style>
 
-<section class="spoken_english-courses-section">
+<section class="spoken_english-courses-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="spoken_english-container">
-    <div class="spoken_english-course-category">
+    <div class="spoken_english-course-category" data-aos="fade-left" data-aos-duration="1000">
       <p>
-       <strong> Tokyo Analytics</strong> offers specialized courses in spoken English, business
+        <strong>Tokyo Analytics</strong> offers specialized courses in spoken English, business
         communication, and personality development, enabling individuals to
         thrive in today's communication-focused world. Their programs cover
         grammar, vocabulary, accent training, and conversation practice,
@@ -79,7 +92,6 @@
         professional environments.
       </p>
       <br />
-
       <p>
         The business communication courses focus on essential skills such as
         presentation, negotiation, and professional writing, preparing students
@@ -87,12 +99,9 @@
         strong relationships and become highly sought-after specialists.
       </p>
     </div>
-
-    
-
-    
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -144,78 +153,66 @@
 
   @media (max-width: 768px) {
     .spoken_english-section-title {
-      font-size: 2rem;
+      font-size: 1.2rem;
+    }
+    .spoken_english-course-category p {
+      font-size: 0.8rem;
+     
     }
 
     .spoken_english-course-title {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     .spoken_english-section-description {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 </style>
 
-<section class="spoken_english-offerings-section">
+<section class="spoken_english-offerings-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="spoken_english-offerings-container">
-    <div class="spoken_english-offerings-image">
+    <div class="spoken_english-offerings-image" data-aos="zoom-in" data-aos-duration="1000">
       <img
         src="{% static 'images/spoken_image11.png' %}"
         alt="Student learning"
       />
     </div>
-    <div class="spoken_english-offerings-text">
+    <div class="spoken_english-offerings-text" data-aos="fade-left" data-aos-duration="1200">
       <h2 class="spoken_english-offerings-title">
         Our Diverse Course Offerings
       </h2>
       <ul class="spoken_english-offerings-list">
         <li>
-          <span class="spoken_english-check-icon spoken_english-blue"
-            >&#10003;</span
-          >
+          <span class="spoken_english-check-icon spoken_english-blue">&#10003;</span>
           Introduction to Spoken English and Communication
         </li>
         <li>
-          <span class="spoken_english-check-icon spoken_english-blue"
-            >&#10003;</span
-          >
+          <span class="spoken_english-check-icon spoken_english-blue">&#10003;</span>
           Vocabulary Building and Accent Training
         </li>
         <li>
-          <span class="spoken_english-check-icon spoken_english-blue"
-            >&#10003;</span
-          >
+          <span class="spoken_english-check-icon spoken_english-blue">&#10003;</span>
           English Grammar Fundamentals
         </li>
         <li>
-          <span class="spoken_english-check-icon spoken_english-blue"
-            >&#10003;</span
-          >
+          <span class="spoken_english-check-icon spoken_english-blue">&#10003;</span>
           Effective Speaking and Listening Skills
         </li>
         <li>
-          <span class="spoken_english-check-icon spoken_english-blue"
-            >&#10003;</span
-          >
+          <span class="spoken_english-check-icon spoken_english-blue">&#10003;</span>
           Public Speaking and Presentation Skills
         </li>
         <li>
-          <span class="spoken_english-check-icon spoken_english-blue"
-            >&#10003;</span
-          >
+          <span class="spoken_english-check-icon spoken_english-blue">&#10003;</span>
           Business Communication and Etiquette
         </li>
         <li>
-          <span class="spoken_english-check-icon spoken_english-blue"
-            >&#10003;</span
-          >
+          <span class="spoken_english-check-icon spoken_english-blue">&#10003;</span>
           Writing Professional Emails and Reports
         </li>
         <li>
-          <span class="spoken_english-check-icon spoken_english-blue"
-            >&#10003;</span
-          >
+          <span class="spoken_english-check-icon spoken_english-blue">&#10003;</span>
           Personality Development and Confidence Building
         </li>
       </ul>
@@ -223,12 +220,10 @@
   </div>
 </section>
 
+
 <!-- CSS -->
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-  }
+
 
   .spoken_english-offerings-section {
     padding-bottom: 50px;
@@ -316,22 +311,22 @@
     }
 
     .spoken_english-offerings-title {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
     }
 
     .spoken_english-offerings-list li {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
     }
   }
 </style>
 
-<section class="spoken-why-choose-section">
+<section class="spoken-why-choose-section" data-aos="fade-up" data-aos-duration="1200">
   <div class="spoken-container">
-    <h2 class="spoken-section-title">
+    <h2 class="spoken-section-title" data-aos="fade-down" data-aos-duration="1000">
       Why Choose Tokyo AnalyticX?
     </h2>
     <div class="spoken-cards-wrapper">
-      <div class="spoken-card">
+      <div class="spoken-card" data-aos="fade-right" data-aos-duration="1200">
         <h3 class="spoken-card-title">In-Dept Curriculum</h3>
         <p>
           Our courses cover everything from basic pronunciation to advanced
@@ -339,21 +334,21 @@
           English.
         </p>
       </div>
-      <div class="spoken-card">
+      <div class="spoken-card" data-aos="fade-left" data-aos-duration="1200">
         <h3 class="spoken-card-title">Interactive Sessions</h3>
         <p>
           Participate in live classes and interactive activities designed to
           improve your speaking and listening skills through real-time feedback.
         </p>
       </div>
-      <div class="spoken-card">
+      <div class="spoken-card" data-aos="fade-right" data-aos-duration="1200">
         <h3 class="spoken-card-title">Expert Instructors</h3>
         <p>
           Learn from experienced teachers who specialize in spoken English and
           provide personalized guidance to boost your confidence and fluency.
         </p>
       </div>
-      <div class="spoken-card">
+      <div class="spoken-card" data-aos="fade-left" data-aos-duration="1200">
         <h3 class="spoken-card-title">Real-World Practice</h3>
         <p>
           Engage in role-play scenarios, discussions, and debates to practice
@@ -361,7 +356,7 @@
           communication.
         </p>
       </div>
-      <div class="spoken-card">
+      <div class="spoken-card" data-aos="fade-right" data-aos-duration="1200">
         <h3 class="spoken-card-title">Adaptive Learning</h3>
         <p>
           With our online platform, you can learn at your own pace, anywhere,
@@ -369,7 +364,7 @@
         </p>
       </div>
       <!-- New Card -->
-      <div class="spoken-card">
+      <div class="spoken-card" data-aos="fade-left" data-aos-duration="1200">
         <h3 class="spoken-card-title">Personalized Feedback</h3>
         <p>
           Receive individualized feedback from instructors to improve your
@@ -380,6 +375,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- CSS -->
 <style>
@@ -465,7 +461,7 @@
     }
 
     .spoken-section-title {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .spoken-card p {
@@ -480,16 +476,19 @@
 
 
 
-<div class="spoken-english-programs-section">
-  <h2 class="spoken-english-section-title">Our Spoken English Training Programs</h2>
-  <div class="spoken-english-program-card">
+<div class="spoken-english-programs-section" data-aos="fade-up" data-aos-duration="1200">
+  <h2 class="spoken-english-section-title" data-aos="fade-down" data-aos-duration="1000">
+    Our Spoken English Training Programs
+  </h2>
+  
+  <div class="spoken-english-program-card" data-aos="fade-right" data-aos-duration="1200">
     <div class="spoken-english-program-header">
       <h3 class="spoken-english-program-title">
         Intensive Speaking Module
       </h3>
     </div>
 
-    <table class="spoken-english-program-table">
+    <table class="spoken-english-program-table" data-aos="fade-left" data-aos-duration="1200">
       <tr>
         <td><strong>Mode:</strong></td>
         <td>Hybrid</td>
@@ -520,42 +519,18 @@
       </tr>
     </table>
 
-    <div class="spoken-english-button-container">
-      <button class="spoken-english-brochure-btn" id="brochure-btn">
-        📄 Brochure
-      </button>
-      <button class="spoken-english-enroll-btn" id="enroll-btn">
+    <div class="spoken-english-button-container" data-aos="zoom-in" data-aos-duration="1200">
+      <a href="resume_shankar_rathod.pdf" download class="spoken-english-brochure-btn">
+        📄 Download Brochure
+      </a>
+      <a href="{% url 'payment_form' %}" class="spoken-english-enroll-btn">
         🖊 Enroll Now
-      </button>
+      </a>
     </div>
   </div>
-
-  <!-- Form Container -->
-  <div id="form-container" style="display: none">
-    <form id="dynamic-form" class="spoken-english-form">
-      <h3 id="form-title">Form</h3>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        placeholder="Enter your name"
-      />
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-      />
-      <label for="otp">OTP:</label>
-      <input type="text" id="otp" name="otp" required placeholder="Enter OTP" />
-      <button type="submit">Submit</button>
-    </form>
-  </div>
 </div>
+
+
 
 <style>
   .spoken-english-programs-section {

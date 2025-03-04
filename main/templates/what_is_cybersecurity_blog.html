@@ -1,0 +1,753 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<!-- Include AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration
+    once: true, // Run animation only once
+  });
+</script>
+
+<div class="contact-header" data-aos="fade-down" data-aos-duration="1000">
+    <h1 data-aos="zoom-in" data-aos-delay="300">Blogs</h1>
+</div>
+
+
+<!--banner section css start here ============= -->
+<style>
+    /* Header */
+    .contact-header {
+      text-align: center;
+      padding: 40px;
+      color: white;
+      background-color: black;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 480px) {
+      .contact-header {
+        height: 120px;
+      }
+
+      .contact-header h1 {
+        font-size: 1.8rem;
+        }  }
+
+    @media screen and (max-width: 768px) {
+      .contact-header {
+        height: 150px;
+        padding: 20px;
+      }
+
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+  }
+</style>
+
+
+
+<style>
+        /* Cybersecurity Blog Section */
+    .cyber-security-blog1-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        box-sizing: border-box;
+    }
+
+    .cyber-security-blog1-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        
+        position: relative;
+        color: #555555;
+    }
+
+    .cyber-security-blog1-title::after {
+        content: "";
+        width: 120px;
+        height: 4px;
+        background: #007bff;
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        border-radius: 5px;
+    }
+
+    .cyber-security-blog1-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .cyber-security-blog1-text {
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .cyber-security-blog1-text h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #555555;
+        position: relative;
+        transition: color 0.3s ease-in-out;
+    }
+
+
+
+    .cyber-security-blog1-text p {
+        font-size: 1rem;
+        color: #555555;
+    }
+
+    .cyber-security-blog1-image {
+        width: 100%;
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+
+    .cyber-security-blog1-image img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .cyber-security-blog1-image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Additional Content Section */
+    .cyber-security-blog1-additional {
+        max-width: 1200px;
+        margin: 2rem auto;
+        text-align: left;
+        padding: 0 1rem;
+    }
+
+    .cyber-security-blog1-additional p {
+        font-size: 1rem;
+        
+        color: #555;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+        .cyber-security-blog1-content {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .cyber-security-blog1-text {
+            width: 48%;
+            padding-right: 1.5rem;
+        }
+
+        .cyber-security-blog1-image {
+            width: 48%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .cyber-security-blog1-title h2 {
+            font-size: 1.9rem;
+        }
+
+        .cyber-security-blog1-text h3 {
+            font-size: 1.2rem;
+        }
+
+        .cyber-security-blog1-text p {
+            font-size: 0.8rem;
+        }
+
+        .cyber-security-blog1-additional p {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cyber-security-blog1-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cyber-security-blog1-title::after {
+            width: 60px;
+            height: 2px;
+        }
+
+        .cyber-security-blog1-text h3 {
+            font-size: 1rem;
+        }
+
+        .cyber-security-blog1-text p {
+            font-size: 0.8rem;
+        }
+
+        .cyber-security-blog1-additional p {
+            font-size: 0.8rem;
+        }
+    }
+
+</style>
+
+<section id="imp" class="cyber-security-blog1-container" data-aos="fade-right" data-aos-duration="1000">
+    <h2 class="cyber-security-blog1-title" data-aos="zoom-in" data-aos-duration="1000">
+      Cyber Security
+    </h2>
+    <div class="cyber-security-blog1-content">
+      <div class="cyber-security-blog1-text" data-aos="fade-up" data-aos-duration="1200">
+        <h3>Cyber Security Understanding What is Cyber Security</h3>
+        <p>
+            In today’s hyper-connected world, where every aspect of our lives finds its digital counterpart, ensuring the safety of our online presence has become paramount. Cyber security, safeguarding digital structures, webs, and data from stealing, damage, or unauthorised access, is our shield against an ever-evolving array of cyber threats.        </p>
+        <p>
+            Cyber security safeguards systems, networks, and data from cyber-attacks and unauthorised access attempts. A cyber-attack is any attempt to gain unauthorised access to, disrupt, or destroy computer systems, networks, or data.        </p>
+      </div>
+      <div class="cyber-security-blog1-image" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+        <img src="{% static 'images/blog2.jpg' %}" alt="Cybersecurity Illustration" />
+      </div>
+    </div>
+  </section>
+
+  <section class="cyber-security-blog1-additional" data-aos="fade-up" data-aos-duration="1200">
+    <div class="container">
+      <p data-aos="fade-right" data-aos-delay="300">
+        Cyber security is important because our world is increasingly dependent on digital technology. We use computers, networks, and data to store everything from personal information to financial records and trade secrets. A successful cyber-attack can devastate individuals, businesses, and governments.      </p>
+      <p data-aos="fade-left" data-aos-delay="600">
+        As cyber threats loom large, empowering yourself with this knowledge is your first step towards a safer online environment. Ready to enhance your cyber security knowledge? Explore Tokyo AnalyticX’s <a style="text-decoration: none;" href="{% url 'cyber_security_and_ethical_hacking' %}">cyber security and ethical hacking course</a>,for expert guidance and stay ahead in the digital age!
+      </p>
+    </div>
+  </section>
+  
+
+<style>
+    /* Cyber Blog Section Styles */
+    .cyber-blog1-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+        color: #555555;
+        padding-bottom: 0px;
+    }
+
+    .cyber-blog1-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .cyber-blog1-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 2px;
+        text-align: left;
+        background-color: #007bff;
+        
+    }
+
+    .cyber-blog1-section {
+        margin-bottom: 2rem;
+    }
+
+    .cyber-blog1-section-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        
+    }
+
+    .cyber-blog1-list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .cyber-blog1-list-item {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .cyber-blog1-list-item::before {
+        content: '\2022';
+        color: #007bff;
+        font-size: 1.2rem;
+        position: absolute;
+        left: 0;
+        top: 0.2rem;
+    }
+
+    .cyber-blog1-list-item strong {
+        color: #333;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        color: #555555;
+        font-size: 0.8rem;
+    }
+
+    .cyber-blog1-section p h3 {
+        color: #555555;
+      
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .cyber-blog1-title {
+            font-size: 1rem;
+        }
+
+        .cyber-blog1-section-title {
+            font-size: 0.9rem;
+        }
+
+        .cyber-blog1-section p {
+            font-size: 0.8rem;
+          
+        }
+    
+
+        .cyber-blog1-list-item {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cyber-blog1-title {
+            font-size: 1rem;
+        }
+
+        .cyber-blog1-section-title {
+            font-size: 0.9rem;
+        }
+
+        .cyber-blog1-list-item {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<div class="cyber-blog1-container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="cyber-blog1-section" data-aos="fade-right" data-aos-delay="200">
+      <h1 id="imp2" class="cyber-blog1-title">What is Cyber Security?</h1>
+      <p>Cyber security, often called information technology security, shields electronic data and systems across various domains. It spans network security, safeguarding against intrusions, and application security, ensuring software remains threat-free.</p>
+      <p>Information security maintains data integrity in storage and transit, while operational security manages user permissions and data handling protocols.</p>
+      <p>Additionally, disaster recovery strategies and business continuity plans enable organisations to respond effectively to cyber incidents, ensuring seamless operations.</p>
+    </div>
+  
+    <div class="cyber-blog1-section" data-aos="fade-left" data-aos-delay="400">
+      <h2 id="imp3" class="cyber-blog1-title">Common Cyber Security Measures</h2>
+      <ul class="cyber-blog1-list">
+        <li class="cyber-blog1-list-item" data-aos="fade-up" data-aos-delay="200">Firewalls: Monitor and control network traffic, blocking unauthorised access.        </li>
+        <li class="cyber-blog1-list-item" data-aos="fade-up" data-aos-delay="400">IDS/IPS Systems: Detect and prevent suspicious network activity, alerting administrators.</li>
+        <li class="cyber-blog1-list-item" data-aos="fade-up" data-aos-delay="600">Antivirus Software: Protect systems against viruses, worms, and Trojan horses.</li>
+        <li class="cyber-blog1-list-item" data-aos="fade-up" data-aos-delay="800">Data encryption scrambles data, preventing unauthorised reading.</li>
+        <li class="cyber-blog1-list-item" data-aos="fade-up" data-aos-delay="1000">Access Control: Limits system access to authorised personnel.</li>
+      </ul>
+    </div>
+  
+    
+</div>  
+
+
+
+<style>
+    .cyber-security-section {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+        padding-top: 0px;
+        color: #555555;
+    }
+
+    .cyber-security-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .cyber-security-title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        height: 3px;
+        background-color: #007bff;
+        margin-top: 0.5rem;
+    }
+
+    .cyber-security-subtitle {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #007bff;
+    }
+
+    .cyber-security-paragraph {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+
+    .cyber-security-list {
+        
+        padding-left: 0;
+        margin: 1rem 0;
+    }
+
+    .cyber-security-list-item {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .cyber-security-list-item::before {
+        content: '\2022';
+        color: #007bff;
+        font-size: 1rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 480px) {
+        .cyber-security-title {
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .cyber-security-title::after {
+            margin: 0 auto;
+        }
+
+        .cyber-security-subtitle {
+            text-align: center;
+        }
+
+        .cyber-security-paragraph {
+            font-size: 0.8rem;
+        }
+
+        .cyber-security-list-item {
+            font-size: 0.8rem;
+        }
+    }
+</style>
+
+<div class="cyber-security-section" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    <h1 id="needs_of_cybersecurity" class="cyber-security-title">What are some examples of cyber security in action?</h1>
+    <p class="cyber-security-paragraph">Cybersecurity safeguards systems, networks, and data from unauthorized or malicious access. It is important because our world is increasingly dependent on digital technology. By embracing the best practices outlined and staying vigilant, we can fortify our digital defenses, safeguarding our online presence from potential threats. Take charge of your digital safety today and fortify your virtual world against cyber adversaries.</p>
+    <ul class="cyber-security-list">
+      <li class="cyber-security-list-item"><strong>Cryptocurrency Exchange Hacks (2022):</strong> High-profile hacks stole millions, highlighting crypto’s vulnerability.</li>
+      <li class="cyber-security-list-item"><strong>Ransomware Attacks on Small Businesses (2022):</strong> Rising attacks devastate small businesses, causing data and financial losses.</li>
+      <li class="cyber-security-list-item"><strong>Microsoft Exchange Hack (2021):</strong> Exploited server vulnerabilities led to global network breaches, data theft, and malware installation.</li>
+      <li class="cyber-security-list-item"><strong>Log4Shell Vulnerability (2021):</strong> The exploited Log4j flaw allowed attackers access to global networks, marking a severe and widespread security breach and regarded as one of the most critical vulnerabilities.</li>
+    </ul>
+    <p class="cyber-security-paragraph">Protect your digital future with <a href="https://tokyoanalyticx.org/" target="_blank">Tokyo AnalyticX‘s</a> industry-leading cyber security and ethical hacking course. Join us in shaping a safer digital tomorrow. </p>
+  </div>
+  
+
+
+
+
+
+  <div class="blog-nav" data-aos="fade-down" data-aos-duration="1000">
+    <!-- First Row: Tags and Social Icons -->
+    <div class="nav-row">
+        <!-- Tags Section -->
+        <div class="tags" data-aos="fade-right" data-aos-duration="1000">
+            <a href="#imp">cyber security</a>
+            <a href="#imp3">cyber security best practices</a>
+            <a href="#imp4">what is cyber security</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/share?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="pinterest"><i class="fab fa-pinterest"></i></a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://telegram.me/share/url?url=https://tokyoanalyticx.org/cyber-security-importance-need-and-advantages/" class="telegram"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+
+    <!-- Second Row: Previous, Back to List, and Next Blog Section -->
+    <div class="nav-container">
+        <!-- Previous Blog Section -->
+        <div class="prev-blog" data-aos="fade-right" data-aos-duration="1000">
+            <span class="label">Newer</span>
+            <div class="blog-link">
+                <a href="{% url 'cyber_security_importance_need_and_advantages' %}" class="icon-link" data-hover="Previous Blog"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="{% url 'cyber_security_importance_need_and_advantages' %}" class="text-link">Cyber Security Importance:<br> Need and Advantages</a>
+            </div>
+        </div>
+
+        <!-- Back to List Section -->
+        <div class="back-to-list" data-aos="zoom-in" data-aos-duration="800">
+            <a href="{% url 'blog' %}" class="icon-link" data-hover="Back to List"><i class="fa-solid fa-list"></i></a>
+        </div>
+
+        <!-- Next Blog Section -->
+        <div class="next-blog" data-aos="fade-left" data-aos-duration="1000">
+            <span class="label">Older</span>
+            <div class="blog-link">
+                <a href="{% url 'why-become-a-data-scientist' %}" class="text-link">Why Become a Data Scientist?<br>Top 5 Reasons to Become a Data Scientist</a>
+                <a href="{% url 'why-become-a-data-scientist' %}" class="icon-link" data-hover="Next Blog"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+    .blog-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        gap: 20px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1200px;
+        border-top: 2px solid rgba(150, 150, 150, 0.3);
+        border-bottom: 2px solid rgba(150, 150, 150, 0.3);
+    }
+
+    .nav-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .tags a {
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: white;
+        font-weight: 600;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .tags a:hover {
+        transform: scale(1.08);
+        background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    .social-icons1 {
+        display: flex;
+        gap: 12px;
+    }
+
+    .social-icons1 a {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 18px;
+        color: white;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        text-decoration: none;
+    }
+
+    .social-icons1 a:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .facebook { background: #1877f2; }
+    .twitter { background: #1DA1F2; }
+    .pinterest { background: #E60023; }
+    .linkedin { background: #0077b5; }
+    .telegram { background: #0088cc; }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .label {
+        font-size: 16px;
+        color: #555;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .prev-blog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+    }
+
+     .next-blog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        text-align: end;
+    }
+
+    .blog-link {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .blog-link a.text-link {
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .blog-link a.text-link:hover {
+        color: red;
+    }
+
+    .blog-link a.icon-link {
+        font-size: 24px;
+        color: #222;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .blog-link a.icon-link::before {
+        content: attr(data-hover);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
+        white-space: nowrap;
+    }
+
+    .blog-link a.icon-link:hover::before {
+        display: block;
+    }
+
+    .back-to-list a {
+        font-size: 24px;
+        color: #333;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .back-to-list a::before {
+        content: attr(data-hover);
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: none;
+        white-space: nowrap;
+    }
+
+    .back-to-list a:hover::before {
+        display: block;
+    }
+
+   
+@media (max-width: 768px) {
+    .nav-row {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tags a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .blog-link a.text-link {
+        font-size: 12px;
+    }
+
+    .social-icons1 a {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .blog-link a.icon-link {
+        font-size: 20px;
+    }
+
+    .back-to-list a {
+        font-size: 18px;
+    }
+}
+</style>
+
+
+
+
+{% endblock content%}

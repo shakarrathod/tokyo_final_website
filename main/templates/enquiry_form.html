@@ -1,0 +1,206 @@
+<section class="contact-us" data-aos="fade-up">
+    <div class="enquiry-section" data-aos="zoom-in">
+        <h2>Enquire Now</h2>
+        <div id="success-message" class="success-message" style="display: none;"></div>
+
+        <form class="enquiry-form" id="enquiry-form">
+            {% csrf_token %}
+            <input type="hidden" name="source_page" value="{{ source_page }}"> <!-- Identify page -->
+
+            <div class="form-row">
+                <input type="text" name="first_name" placeholder="First Name" data-aos="fade-right" required />
+                <input type="text" name="last_name" placeholder="Last Name" data-aos="fade-left" required />
+            </div>
+            <div class="form-row">
+                <input type="text" name="phone" placeholder="Phone Number" data-aos="fade-right" required />
+                <input type="email" name="email" placeholder="Email" data-aos="fade-left" required />
+            </div>
+            <div class="form-row">
+                <div class="form-group half-width" data-aos="fade-up">
+                    <label for="category">Course Category</label>
+                    <select id="category" name="category" class="form-control" onchange="updateCourseOptions()" required>
+                        <option value="">-- Course Category --</option>
+                        <option value="it">IT Courses</option>
+                        <option value="professional">Professional Courses</option>
+                    </select>
+                </div>
+                <div class="form-group half-width" data-aos="fade-up">
+                    <label for="course">Select Course</label>
+                    <select id="course" name="course" class="form-control" required>
+                        <option value="">-- Select Course --</option>
+                    </select>
+                </div>
+            </div>
+            <textarea name="message" placeholder="How can we help you?" data-aos="fade-up" required></textarea>
+            <button type="submit" class="submit-btn" data-aos="zoom-in">Submit</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    AOS.init();
+
+    function updateCourseOptions() {
+        const category = document.getElementById("category").value;
+        const courseSelect = document.getElementById("course");
+
+        const courses = {
+            "it": [
+                { value: "data_science", text: "Data Science & Business Analytics" },
+                { value: "cyber_security", text: "Cyber Security & Ethical Hacking" },
+                { value: "cloud_devops", text: "Cloud & DevOps" },
+                { value: "chess_analytics", text: "Chess Analytics" }
+            ],
+            "professional": [
+                { value: "event_management", text: "Event Management" },
+                { value: "nail_artistry", text: "Nail Artistry" },
+                { value: "makeup_artistry", text: "Makeup Artistry" },
+                { value: "spoken_english", text: "Spoken English" }
+            ]
+        };
+
+        courseSelect.innerHTML = '<option value="">-- Select Course --</option>';
+        (courses[category] || []).forEach(course => {
+            const option = document.createElement("option");
+            option.value = course.value;
+            option.textContent = course.text;
+            courseSelect.appendChild(option);
+        });
+    }
+
+    document.getElementById("enquiry-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const successMessage = document.getElementById("success-message");
+
+        fetch("{% url 'enquire_now' %}", {
+            method: "POST",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                "X-CSRFToken": formData.get("csrfmiddlewaretoken"),
+            },
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                successMessage.textContent = "Your enquiry has been submitted successfully!";
+                successMessage.style.display = "block";
+                successMessage.style.color = "green";
+                this.reset();
+                setTimeout(() => successMessage.style.display = "none", 5000);
+            } else {
+                successMessage.textContent = "There were some errors in your submission. Please check again.";
+                successMessage.style.display = "block";
+                successMessage.style.color = "red";
+                alert(Object.values(data.errors).join("\n"));
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
+
+<style>
+    {{ css|safe }}
+  .contact-us {
+      padding: 40px 0;
+  }
+  .enquiry-section {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  .enquiry-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #333;
+  }
+  .enquiry-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+  .form-row {
+      display: flex;
+      gap: 20px;
+  }
+  .half-width {
+      width: 50%;
+  }
+  .form-group {
+      display: flex;
+      flex-direction: column;
+  }
+  .form-row input,
+  .form-group select,
+  textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+  }
+  textarea {
+      resize: none;
+      min-height: 120px;
+  }
+  .submit-btn {
+      padding: 15px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+  }
+  .submit-btn:hover {
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+      transform: scale(1.05);
+  }
+        .success-message {
+            background: #dff0d8;
+            color: #3c763d;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 1px solid #3c763d;
+            display: none;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+  @media screen and (max-width: 768px) {
+      .form-row {
+          flex-direction: column;
+      }
+      .half-width {
+          width: 100%;
+      }
+      .enquiry-section {
+          padding: 30px;
+      }
+      .enquiry-section h2 {
+          font-size: 1.5rem;
+      }
+      .submit-btn {
+          font-size: 1rem;
+          padding: 12px;
+      }
+  }
+</style>

@@ -1,168 +1,356 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<div class="banner-container">
-  <!-- Banner Image -->
-  <img
-    src="{% static 'images/banner4.jpg' %}"
-    alt="Banner"
-    class="banner-image"
-  />
-
-  <!-- Registration Form Overlay -->
-  <div class="form-overlay">
-    <h2>Enquire Now</h2>
-
-    <form action="" method="POST" class="registration-form">
-      {% csrf_token %}
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="first_name">First Name</label>
-          <input type="text" id="first_name" name="first_name" required />
-        </div>
-
-        <div class="form-group">
-          <label for="last_name">Last Name</label>
-          <input type="text" id="last_name" name="last_name" required />
+<div class="carousel-container">
+  <div class="carousel">
+    <!-- Cloned Last Slide (for smooth looping) -->
+    <div class="slide clone">
+      <img
+        src="{% static 'images/banner(1).jpg' %}"
+        alt="Banner 4"
+        class="slide-image"
+      />
+      <div class="content-overlay">
+        <h2 class="title">Empowering Your Digital Journey</h2>
+        <p class="subtitle">
+          Explore innovative courses tailored to your future.
+        </p>
+        <div class="button-group">
+          <a href="{% url 'enquire_now' %}" class="btn enquire">Enquire Now</a>
+          <a href="{% url 'contact' %}" class="btn contact">Contact Us</a>
         </div>
       </div>
+    </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="phone_number">Phone Number</label>
-          <input type="text" id="phone_number" name="phone_number" required />
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+    <!-- Original Slides -->
+    <div class="slide">
+      <img
+        src="{% static 'images/banner4.jpg' %}"
+        alt="Banner 1"
+        class="slide-image"
+      />
+      <div class="content-overlay">
+        <h2 class="title">Cutting-Edge Education-Tech Company</h2>
+        <p class="subtitle">Begin your education adventure with us.</p>
+        <div class="button-group">
+          <a href="{% url 'enquire_now' %}" class="btn enquire">Enquire Now</a>
+          <a href="{% url 'contact' %}" class="btn contact">Contact Us</a>
         </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label for="course">Course</label>
-        <select id="course" name="course" required>
-          <option value="" disabled selected hidden>Select Course</option>
-          <option value="course1">Data Science and Business Analytics</option>
-          <option value="course2">Cyber Security & Ethical Hacking</option>
-          <option value="course3">Chess Analytics</option>
-          <option value="course4">Event Management</option>
-        </select>
+    <div class="slide">
+      <img
+        src="{% static 'images/banner8.png' %}"
+        alt="Banner 2"
+        class="slide-image"
+      />
+      <div class="content-overlay">
+        <h2 class="title">Leading International Training Institute</h2>
+        <p class="subtitle">
+          A global edu-tech leader in Tech & profesional Field.
+        </p>
+        <div class="button-group">
+          <a href="{% url 'enquire_now' %}" class="btn enquire">Enquire Now</a>
+          <a href="{% url 'contact' %}" class="btn contact">Contact Us</a>
+        </div>
       </div>
+    </div>
 
-      <button type="submit" class="btn-submit">Submit</button>
-    </form>
+    <div class="slide">
+      <img
+        src="{% static 'images/slide_new_1.webp' %}"
+        alt="Banner 3"
+        class="slide-image"
+      />
+      <div class="content-overlay">
+        <h2 class="title">Expert Event Management Solutions</h2>
+
+        <p class="subtitle">
+          Flawless planning, coordination, and execution for great events.
+        </p>
+
+        <div class="button-group">
+          <a href="{% url 'enquire_now' %}" class="btn enquire">Enquire Now</a>
+          <a href="{% url 'contact' %}" class="btn contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img
+        src="{% static 'images/banner(1).jpg' %}"
+        alt="Banner 4"
+        class="slide-image"
+      />
+      <div class="content-overlay">
+        <h2 class="title">Empowering Your Digital Journey</h2>
+        <p class="subtitle">
+          Explore innovative courses tailored to your future.
+        </p>
+        <div class="button-group">
+          <a href="{% url 'enquire_now' %}" class="btn enquire">Enquire Now</a>
+          <a href="{% url 'contact' %}" class="btn contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cloned First Slide (for smooth looping) -->
+    <div class="slide clone">
+      <img
+        src="{% static 'images/banner4.jpg' %}"
+        alt="Banner 1"
+        class="slide-image"
+      />
+      <div class="content-overlay">
+        <h2 class="title">Innovative Educational & Technology Company</h2>
+        <p class="subtitle">
+          Embark on a tailored learning journey for your goals.
+        </p>
+        <div class="button-group">
+          <a href="{% url 'enquire_now' %}" class="btn enquire">Enquire Now</a>
+          <a href="{% url 'contact' %}" class="btn contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Navigation Buttons -->
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
 </div>
 
 <style>
-
-    {% comment %}  homepage image and form  {% endcomment %}
-
-    .banner-container {
-      position: relative;
-      width: 100%;
-      height: auto; /* Adjusts height dynamically */
-      overflow:scroll; /* Ensures no content overflows */
+  /* Carousel Styling */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
   }
 
-  .banner-image {
-      width: 100%;
-      height: 740px; /* Maintains a consistent height */
-      object-fit: cover; /* Ensures the image covers the container proportionally */
-      filter: brightness(0.8) contrast(1.2); /* Enhances the background image */
-      background-position: center; /* Centers the image for better focus */
-      background-repeat: no-repeat; /* Prevents tiling of the image */
-      background-size: cover; /* Ensures it fills the container */
+  .carousel {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
   }
 
-
-  .form-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-      padding: 20px;
-      border-radius: 8px;
-      color: white;
-      width: 80%;
-      max-width: 600px;
-      box-sizing: border-box;
+  .slide {
+    min-width: 100%;
+    height: 100vh;
+    position: relative;
   }
 
-  h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: white; /* Red color for the heading */
-      font-weight: 800; /* Heavy font weight for boldness */
+  .slide-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
 
-  .registration-form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+  .content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    max-width: 60%;
   }
 
-  .form-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
+  .title {
+    font-size: 2.3em;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .form-group {
-      display: flex;
-      flex-direction: column;
-      width: 48%;
+  .subtitle {
+    font-size: 1em;
+    max-width: 600px;
+    margin: 0 auto 20px;
   }
 
-  label {
-      font-weight: bold;
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
   }
 
-  input, select {
-      padding: 10px;
-      font-size: 16px;
-      margin-top: 5px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      opacity: 0.9; /* Increased opacity for the input fields */
+  .btn {
+    background: #ff4742;
+    border: 1px solid #ff4742;
+    border-radius: 6px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 12px 14px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
   }
 
-  input::placeholder, select::placeholder {
-      opacity: 0.4; /* Increased transparency of placeholder */
+  .btn:hover,
+  .btn:active {
+    background-color: transparent;
+    color: #ff4742;
   }
 
-  button.btn-submit {
-      padding: 6px 12px; /* Smaller padding for a compact button */
-      font-size: 16px;
-      background-color: red; /* Same red color as Register Now */
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-align: center;
-      width: auto;
-      margin-top: 10px;
+  .btn:active {
+    opacity: 0.5;
   }
 
-  button.btn-submit:hover {
-      background-color: #cc0000; /* Darker red on hover */
+  .btn.contact {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
   }
+
+  .btn.contact:hover {
+    background: white;
+    color: #ff4742;
+  }
+
+  /* Navigation Buttons */
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(48, 46, 46, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 16px;
+    visibility: hidden;
+  }
+
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
+
+  .carousel-container:hover .prev,
+  .carousel-container:hover .next {
+    visibility: visible;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .content-overlay {
+      max-width: 100%;
+    }
+
+    .title {
+      font-size: 2em;
+    }
+
+    .subtitle {
+      font-size: 0.9em;
+    }
+  }
+
   @media (max-width: 768px) {
-    .banner-image {
-        height: 90vh; /* Makes the image proportional on smaller devices */
+    .title {
+      font-size: 1em;
+    }
 
+    .subtitle {
+      font-size: 0.85em;
+    }
+
+    .btn {
+      padding: 8px 12px;
+      font-size: 12px;
+      min-width: 110px;
     }
   }
 
   @media (max-width: 480px) {
-    .banner-image {
-        height: 90vh; /* Further reduces height for very small devices */
-        filter: brightness(0.7); /* Slightly dims the background for text readability */
+    .title {
+      font-size: 0.9em;
+    }
+
+    .subtitle {
+      font-size: 0.7 `em;
+    }
+
+    .button-group {
+      gap: 10px;
     }
   }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".carousel");
+    const slides = document.querySelectorAll(".slide");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+
+    let index = 1; // Start at the first REAL slide
+    const slideWidth = slides[0].clientWidth;
+    const totalSlides = slides.length;
+    let autoSlide;
+
+    // Move to the correct start position
+    carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+
+    function moveSlide(direction) {
+      if (direction === 1) {
+        index++;
+      } else {
+        index--;
+      }
+
+      carousel.style.transition = "transform 0.8s ease-in-out";
+      carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+
+      // Reset slide position instantly when at a cloned slide
+      setTimeout(() => {
+        if (index === totalSlides - 1) {
+          // Reached the last (cloned) slide
+          carousel.style.transition = "none"; // Disable transition
+          index = 1; // Jump to first real slide
+          carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+        if (index === 0) {
+          // Reached the first (cloned) slide
+          carousel.style.transition = "none"; // Disable transition
+          index = totalSlides - 2; // Jump to last real slide
+          carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+      }, 800); // Match the transition duration
+    }
+
+    // Auto-slide every 6 seconds
+    function startAutoSlide() {
+      autoSlide = setInterval(() => moveSlide(1), 6000);
+    }
+
+    startAutoSlide(); // Start auto-slide
+
+    nextButton.addEventListener("click", () => {
+      clearInterval(autoSlide);
+      moveSlide(1);
+      startAutoSlide();
+    });
+
+    prevButton.addEventListener("click", () => {
+      clearInterval(autoSlide);
+      moveSlide(-1);
+      startAutoSlide();
+    });
+
+    window.addEventListener("resize", () => {
+      // Adjust position when resizing
+      carousel.style.transition = "none";
+      carousel.style.transform = `translateX(${-index * slideWidth}px)`;
+    });
+  });
+</script>
 
 {% comment %} quote in homapage {% endcomment %}
 <!-- Section for 3 boxes in a row with quotes -->
@@ -174,7 +362,10 @@
     </p>
   </div>
   <div class="box">
-    <p>"Technology is best when it brings people together." - Matt Mullenweg</p>
+    <p>
+      "Technology is best when it brings people together."<br />
+      - Matt Mullenweg
+    </p>
   </div>
   <div class="box">
     <p>
@@ -196,11 +387,15 @@
     gap: 20px; /* Space between the boxes */
     position: relative;
     bottom: 30px;
+    min-width: 1200px;
   }
 
   .box {
-    width: 20%; /* Reduced width of each box */
-    padding: 15px; /* Reduced padding */
+    width: 27%; /* Reduced width of each box */
+    padding-left: 10px;
+    padding-right: 6px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -213,23 +408,29 @@
   }
 
   .box p {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #333;
     line-height: 1.5;
     margin: 0;
     overflow: hidden; /* Ensures text doesn’t overflow */
   }
 
-  /* Responsive Design */
+  /* Hide the section on mobile */
   @media (max-width: 768px) {
     .three-boxes-row {
-      flex-direction: column; /* Stack boxes vertically on smaller screens */
-      align-items: center;
+      display: none; /* Hide the section on mobile */
+    }
+  }
+
+  /* Show the section on larger screens */
+  @media (min-width: 769px) {
+    .three-boxes-row {
+      display: flex; /* Make sure it's displayed on larger screens */
+      flex-direction: row; /* Ensure the boxes are in a row */
     }
 
     .box {
-      width: 80%; /* On smaller screens, boxes take up 80% width */
-      margin-bottom: 10px;
+      width: 27%; /* Keep the width at 27% for each box */
     }
   }
 </style>
@@ -320,10 +521,11 @@
 
   .about-content h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
     color: #162020;
+    margin-bottom: 20px;
     display: flex;
     justify-content: start;
+    font-weight: bold;
   }
 
   .about-content p {
@@ -379,6 +581,8 @@
 
     .about-content h2 {
       font-size: 2rem;
+      text-align: center; /* Centers text only in responsive mode */
+      display: block; /* Ensures proper alignment */
     }
 
     .about-content .desktop-text {
@@ -397,14 +601,15 @@
   }
 </style>
 
-{% comment %} courese sections starts here ================== {% endcomment %}
-
-<div class="career-section" id="careerSection3">
-  <h2 class="career-title">Onboard Yourself With New Skillset</h2>
-  <div class="career-carousel">
+{% comment %} Course sections start here ================== {% endcomment %}
+<div style="margin-top: 0px" class="career-section" id="careerSectionNew">
+  <h2 class="career-title" data-aos="fade-up">
+    Onboard Yourself With New Skillset
+  </h2>
+  <div class="career-carousel" data-aos="fade-up" data-aos-delay="200">
     <div class="career-cards-wrapper">
-      <div class="career-cards" id="careerCards3">
-        <div class="career-card">
+      <div class="career-cards" id="careerCardsNew">
+        <div class="career-card" data-aos="fade-up" data-aos-delay="300">
           <img src="{% static 'images/ds.png' %}" alt="Data Science" />
           <h3>Data Science</h3>
           <p>
@@ -413,16 +618,17 @@
             Learning and Artificial Intelligence.
           </p>
         </div>
-        <div class="career-card">
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="400">
           <img src="{% static 'images/cs.png' %}" alt="Cyber Security" />
           <h3>Cyber Security</h3>
           <p>
-            In an era of increasing cyber threats, Tokyo AnalyticX provides
-            cutting-edge Cyber Security courses to help professionals develop
-            the necessary skills to safeguard Digital Systems and Networks.
+            Tokyo AnalyticX provides cutting-edge Cyber Security courses to help
+            professionals safeguard Digital Systems and Networks.
           </p>
         </div>
-        <div class="career-card">
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="500">
           <img src="{% static 'images/ba.png' %}" alt="Business Analytics" />
           <h3>Business Analytics</h3>
           <p>
@@ -431,252 +637,202 @@
             Analytics courses.
           </p>
         </div>
-        <div class="career-card">
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="600">
           <img src="{% static 'images/eh.png' %}" alt="Ethical Hacking" />
           <h3>Ethical Hacking</h3>
           <p>
-            With the rising demand for Ethical Hackers who can identify
-            vulnerabilities in systems and ensure robust security measures,
-            Tokyo AnalyticX offers courses in Ethical Hacking.
+            With the rising demand for Ethical Hackers, Tokyo AnalyticX offers
+            courses in Ethical Hacking.
           </p>
         </div>
-        <div class="career-card">
-          <img src="{% static 'images/eh.png' %}" alt="chess analytics" />
-          <h3>Chess Analytics</h3>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="700">
+          <img
+            style="
+              margin-top: 20px;
+              border-radius: 50%;
+              height: 170px;
+              width: 170px;
+            "
+            src="{% static 'images/ch2.jpg' %}"
+            alt="Chess Analytics"
+          />
+          <h3 style="margin-top: 20px">Chess Analytics</h3>
           <p>
-            With the growing popularity of chess and the increasing need for
-            data-driven insights to enhance gameplay, Tokyo AnalyticX offers
-            courses in Chess Analytics.
+            With the growing popularity of chess, Tokyo AnalyticX offers courses
+            in Chess Analytics.
           </p>
+        </div>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="800">
+          <img
+            style="
+              margin-top: 20px;
+              border-radius: 50%;
+              height: 170px;
+              width: 170px;
+            "
+            src="{% static 'images/event-course.jpeg' %}"
+            alt="Event Management"
+          />
+          <h3 style="margin-top: 20px">Event Management</h3>
+          <p>
+            Tokyo AnalyticX offers comprehensive courses in Event Management.
+          </p>
+        </div>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="900">
+          <img
+            style="
+              margin-top: 20px;
+              border-radius: 50%;
+              height: 170px;
+              width: 170px;
+            "
+            src="{% static 'images/sp.jpg' %}"
+            alt="Spoken English"
+          />
+          <h3 style="margin-top: 20px">Spoken English</h3>
+          <p>
+            Tokyo AnalyticX offers Spoken English courses to boost confidence,
+            fluency, and conversational skills.
+          </p>
+        </div>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="1000">
+          <img
+            style="
+              margin-top: 20px;
+              border-radius: 50%;
+              height: 170px;
+              width: 170px;
+            "
+            src="{% static 'images/nail-course.jpeg' %}"
+            alt="Nail Artistry"
+          />
+          <h3 style="margin-top: 20px">Nail Artistry</h3>
+          <p>
+            Tokyo AnalyticX offers courses to master modern Nail Art techniques
+            and designs.
+          </p>
+        </div>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="1100">
+          <img
+            style="
+              margin-top: 20px;
+              border-radius: 50%;
+              height: 170px;
+              width: 170px;
+            "
+            src="{% static 'images/makeup-course.jpg' %}"
+            alt="Makeup Artistry"
+          />
+          <h3 style="margin-top: 20px">Makeup Artistry</h3>
+          <p>Learn professional makeup techniques with Tokyo AnalyticX.</p>
         </div>
       </div>
     </div>
-    <button class="carousel-arrow right-arrow" id="nextButton3">
+    <button class="carousel-arrow right-arrow" id="nextButtonNew">
       &#10095;
     </button>
-    <button class="carousel-arrow left-arrow" id="prevButton3">&#10094;</button>
+    <button class="carousel-arrow left-arrow" id="prevButtonNew">
+      &#10094;
+    </button>
   </div>
-  <div class="carousel-dots" id="carouselDots3"></div>
+  <div class="carousel-dots" id="carouselDotsNew"></div>
 </div>
 
 <!-- JavaScript -->
 <script>
-  const careerCards3 = document.getElementById("careerCards3");
-  const dotsContainer3 = document.getElementById("carouselDots3");
-  const prevButton3 = document.getElementById("prevButton3");
-  const nextButton3 = document.getElementById("nextButton3");
+  const careerCardsNew = document.getElementById("careerCardsNew");
+  const dotsContainerNew = document.getElementById("carouselDotsNew");
+  const prevButtonNew = document.getElementById("prevButtonNew");
+  const nextButtonNew = document.getElementById("nextButtonNew");
 
-  const cards3 = document.querySelectorAll("#careerCards3 .career-card");
-  let currentIndex3 = 0;
-  const cardsPerPage3 = window.innerWidth < 768 ? 1 : 3;
+  const cardsNew = document.querySelectorAll("#careerCardsNew .career-card");
+  let currentIndexNew = 0;
+  const cardsPerPageNew = window.innerWidth < 768 ? 1 : 3;
+  const autoSlideIntervalNew = 4000;
 
-  function updateCarousel3() {
-    const cardWidth3 = careerCards3.children[0].offsetWidth + 10; // Including margin
-    careerCards3.style.transform = `translateX(-${
-      currentIndex3 * cardWidth3
+  function cloneFirstCardNew() {
+    const firstCardNew = careerCardsNew.querySelector(".career-card");
+    const clonedCardNew = firstCardNew.cloneNode(true);
+    careerCardsNew.appendChild(clonedCardNew);
+  }
+
+  function updateCarouselNew() {
+    const cardWidthNew = careerCardsNew.children[0].offsetWidth + 10;
+    careerCardsNew.style.transform = `translateX(-${
+      currentIndexNew * cardWidthNew
     }px)`;
-    updateDots3();
+    updateDotsNew();
   }
 
-  function updateDots3() {
-    dotsContainer3.innerHTML = "";
-    const totalDots3 = Math.ceil(cards3.length / cardsPerPage3);
-    for (let i = 0; i < totalDots3; i++) {
-      const dot3 = document.createElement("button");
-      dot3.classList.add("dot");
-      if (i === currentIndex3) dot3.classList.add("active");
-      dot3.addEventListener("click", () => {
-        currentIndex3 = i;
-        updateCarousel3();
+  function updateDotsNew() {
+    dotsContainerNew.innerHTML = "";
+    const totalDotsNew = cardsNew.length;
+    for (let i = 0; i < totalDotsNew; i++) {
+      const dotNew = document.createElement("button");
+      dotNew.classList.add("dot");
+      if (i === currentIndexNew) dotNew.classList.add("active");
+      dotNew.addEventListener("click", () => {
+        currentIndexNew = i;
+        updateCarouselNew();
       });
-      dotsContainer3.appendChild(dot3);
+      dotsContainerNew.appendChild(dotNew);
     }
   }
 
-  prevButton3.addEventListener("click", () => {
-    if (currentIndex3 > 0) {
-      currentIndex3--;
-      updateCarousel3();
+  function autoSlideNew() {
+    currentIndexNew = (currentIndexNew + 1) % cardsNew.length;
+    updateCarouselNew();
+  }
+
+  let autoSlideIntervalIDNew = setInterval(autoSlideNew, autoSlideIntervalNew);
+
+  prevButtonNew.addEventListener("click", () => {
+    clearInterval(autoSlideIntervalIDNew);
+    autoSlideIntervalIDNew = setInterval(autoSlideNew, autoSlideIntervalNew);
+    if (currentIndexNew === 0) {
+      currentIndexNew = cardsNew.length - 1;
+    } else {
+      currentIndexNew--;
     }
+    updateCarouselNew();
   });
 
-  nextButton3.addEventListener("click", () => {
-    if (currentIndex3 < Math.ceil(cards3.length / cardsPerPage3) - 1) {
-      currentIndex3++;
-      updateCarousel3();
+  nextButtonNew.addEventListener("click", () => {
+    clearInterval(autoSlideIntervalIDNew);
+    autoSlideIntervalIDNew = setInterval(autoSlideNew, autoSlideIntervalNew);
+    if (currentIndexNew === cardsNew.length - 1) {
+      currentIndexNew = 0;
+    } else {
+      currentIndexNew++;
+    }
+    updateCarouselNew();
+  });
+
+  careerCardsNew.addEventListener("transitionend", () => {
+    if (currentIndexNew === cardsNew.length - 1) {
+      currentIndexNew = 0;
+      careerCardsNew.style.transition = "none";
+      updateCarouselNew();
+      setTimeout(() => {
+        careerCardsNew.style.transition = "transform 0.5s ease-in-out";
+      }, 50);
     }
   });
 
   window.addEventListener("resize", () => {
-    currentIndex3 = 0;
-    updateCarousel3();
+    currentIndexNew = 0;
+    updateCarouselNew();
   });
 
-  updateCarousel3();
+  cloneFirstCardNew();
+  updateCarouselNew();
 </script>
-{% comment %} courese sections ends here ================== {% endcomment %}
-
-<section
-  class="py-10"
-  style="
-    width: 100%;
-    margin: 0 auto;
-    background-image: url('{% static 'images\home-company-back.jpg' %}');
-    padding-top: 0;
-    padding-bottom: 0;
-  "
->
-  <div
-    class="container"
-    style="max-width: 1200px; padding: 15px; margin: 0 auto; text-align: center"
-  >
-    <h2
-      class="companies-hire"
-      style="
-        font-size: 2rem;
-        font-weight: bold;
-        color: white;
-        margin-bottom: 2rem;
-      "
-    >
-      Trusted By Top Companies For Hiring Talent
-
-    <div class="image-grid">
-      <div class="image-wrapper">
-        <img src="{% static 'images/c1.png' %}" alt="Company 1" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c2.png' %}" alt="Company 2" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c3.png' %}" alt="Company 3" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c4.png' %}" alt="Company 4" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c5.png' %}" alt="Company 5" />
-      </div>
-
-      <div class="image-wrapper">
-        <img src="{% static 'images/c7.png' %}" alt="Company 7" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c8.png' %}" alt="Company 8" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c9.png' %}" alt="Company 9" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c10.png' %}" alt="Company 10" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c11.png' %}" alt="Company 11" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c12.png' %}" alt="Company 12" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c13.png' %}" alt="Company 13" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c14.png' %}" alt="Company 14" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c15.png' %}" alt="Company 15" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c16.png' %}" alt="Company 16" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c17.png' %}" alt="Company 17" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c18.png' %}" alt="Company 18" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c19.png' %}" alt="Company 19" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c20.png' %}" alt="Company 20" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c21.png' %}" alt="Company 21" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c22.png' %}" alt="Company 22" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c23.png' %}" alt="Company 23" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c24.png' %}" alt="Company 24" />
-      </div>
-      <div class="image-wrapper">
-        <img src="{% static 'images/c25.png' %}" alt="Company 25" />
-      </div>
-    </div>
-  </div>
-</section>
-
-{% comment %} career opportunities section ============= {% endcomment %}
-
-<div class="career-section">
-  <h2 class="career-title">
-    Career Opportunities in Data Science & Cyber Security
-  </h2>
-  <div class="career-carousel">
-    <div class="career-cards-wrapper">
-      <div class="career-cards" id="careerCards">
-        <div class="career-card">
-          <h3>Machine Learning Engineer</h3>
-          <p>
-            A Machine Learning Engineer is a specialized role within the field
-            of artificial intelligence (AI) and data science. The professionals
-            focus on designing, developing, and implementing machine learning
-            models and systems.
-          </p>
-        </div>
-        <div class="career-card">
-          <h3>Cyber Security Expert</h3>
-          <p>
-            A Cyber Security Expert is a specialist dedicated to shielding
-            digital systems and data from cyber threats. They devise strategies,
-            implement safeguards, and lead responses to protect against
-            unauthorized access, breaches, and vulnerabilities.
-          </p>
-        </div>
-        <div class="career-card">
-          <h3>Application Security Engineer</h3>
-          <p>
-            An Application Security Engineer is a professional focused on
-            fortifying digital applications against cyber threats. They assess,
-            identify, and rectify vulnerabilities within software systems.
-          </p>
-        </div>
-        <div class="career-card">
-          <h3>Data Scientist</h3>
-          <p>
-            Data Scientists are experts at analyzing large datasets, building
-            predictive models, and providing actionable insights to support
-            data-driven decisions for businesses.
-          </p>
-        </div>
-        <div class="career-card">
-          <h3>Cloud Security Specialist</h3>
-          <p>
-            Cloud Security Specialists work on securing cloud infrastructures,
-            ensuring data protection, and managing compliance within cloud
-            environments.
-          </p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-arrow right-arrow" id="nextButton">&#10095;</button>
-    <button class="carousel-arrow left-arrow" id="prevButton">&#10094;</button>
-  </div>
-  <div class="carousel-dots" id="carouselDots"></div>
-</div>
 
 <!-- CSS -->
 <style>
@@ -687,10 +843,46 @@
     margin-top: 6rem;
   }
 
+  .career-card {
+    flex: 0 0 calc(33.333% - 10px); /* 3 cards visible on larger screens */
+    box-sizing: border-box;
+    padding: 25px;
+    margin: 5px;
+    background-color: white;
+    color: #666666;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .career-cards-wrapper {
+      width: 100%;
+    }
+
+    .career-card {
+      flex: 0 0 100%; /* Cards take full width on mobile */
+    }
+
+    .career-card h3 {
+      font-size: 1.2rem;
+    }
+    .career-card p {
+      font-size: 0.8rem;
+    }
+    .career-title {
+      font-size: 1.2rem;
+      color: #162020;
+      margin-bottom: 20px;
+    }
+  }
+
   .career-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #162020;
     margin-bottom: 20px;
+    font-weight: bold;
   }
 
   .career-carousel {
@@ -725,7 +917,7 @@
   .career-card h3 {
     font-size: 1.5rem;
   }
-  .career-card p{
+  .career-card p {
     font-size: 0.87rem;
   }
 
@@ -756,7 +948,6 @@
   .right-arrow {
     right: 50px;
     color: #666666;
-
   }
 
   .carousel-dots {
@@ -802,123 +993,679 @@
       flex: 0 0 100%; /* Cards will take full width on mobile */
     }
   }
+
+  .career-card {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .career-card:hover {
+    transform: translateY(-10px);
+  }
 </style>
+
+{% comment %} courese sections ends here ================== {% endcomment %}
+
+<section class="py-10 company-slider-section" data-aos="fade-up">
+  <div class="container">
+    <h2 class="companies-hire" data-aos="fade-up" data-aos-delay="200">
+      Trusted By Top Companies For Hiring Talent
+    </h2>
+    <div class="swiper company-swiper" data-aos="fade-up" data-aos-delay="300">
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <img
+            src="{% static 'images/c1.png' %}"
+            alt="Company 1"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
+          <img
+            src="{% static 'images/c2.png' %}"
+            alt="Company 2"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
+          <img
+            src="{% static 'images/c3.png' %}"
+            alt="Company 3"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="500"
+        >
+          <img
+            src="{% static 'images/c4.png' %}"
+            alt="Company 4"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="600"
+        >
+          <img
+            src="{% static 'images/c5.png' %}"
+            alt="Company 5"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="700"
+        >
+          <img
+            src="{% static 'images/c6.png' %}"
+            alt="Company 6"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="800"
+        >
+          <img
+            src="{% static 'images/c7.png' %}"
+            alt="Company 7"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="900"
+        >
+          <img
+            src="{% static 'images/c8.png' %}"
+            alt="Company 8"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1000"
+        >
+          <img
+            src="{% static 'images/c9.png' %}"
+            alt="Company 9"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c10.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c11.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c12.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c13.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c14.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c15.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c16.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c17.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c18.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c19.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c20.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c21.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c22.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c23.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+        <div
+          class="swiper-slide image-wrapper"
+          data-aos="zoom-in"
+          data-aos-delay="1100"
+        >
+          <img
+            src="{% static 'images/c24.png' %}"
+            alt="Company 10"
+            class="company-logo"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .company-slider-section {
+    width: 100%;
+    background-image: url("{% static 'images/home-company-back.jpg' %}");
+    padding: 50px 5%;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .companies-hire {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  /* Swiper adjustments */
+  .swiper {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+
+  /* Ensuring image wrapper scales properly */
+  .image-wrapper {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-wrapper:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Ensuring company logos scale properly */
+  .company-logo {
+    max-width: 100%;
+    height: auto;
+    animation: slideIn 1s ease-in-out;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 1024px) {
+    .company-slider-section {
+      padding: 40px 5%;
+    }
+
+    .companies-hire {
+      font-size: 1.8rem;
+    }
+
+    .image-wrapper {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .company-slider-section {
+      padding: 30px 5%;
+    }
+
+    .companies-hire {
+      font-size: 1.5rem;
+    }
+
+    .swiper-slide {
+      flex-direction: column;
+    }
+
+    .image-wrapper {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .company-slider-section {
+      padding: 20px 5%;
+    }
+
+    .companies-hire {
+      font-size: 1.2rem;
+    }
+
+    .image-wrapper {
+      width: 90px;
+      height: 90px;
+    }
+  }
+</style>
+
+<script>
+  const swiper = new Swiper(".company-swiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    speed: 1000,
+    slidesPerGroup: 1,
+    breakpoints: {
+      1024: { slidesPerView: 4, slidesPerGroup: 1 },
+      768: { slidesPerView: 2, slidesPerGroup: 1 },
+      480: { slidesPerView: 1, slidesPerGroup: 1 },
+    },
+  });
+</script>
+
+{% comment %} career opportunities section ============= {% endcomment %}
+
+<div class="career-section">
+  <h2 class="career-title" data-aos="fade-up">
+    Career Roles With Tokyo AnalyticX
+  </h2>
+  <div class="career-carousel" data-aos="fade-up" data-aos-delay="200">
+    <div class="career-cards-wrapper">
+      <div class="career-cards" id="careerCards">
+        <div class="career-card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Machine Learning Engineer</h3>
+          <p>
+            A Machine Learning Engineer is a specialized role within the field
+            of artificial intelligence (AI) and data science. The professionals
+            focus on designing, developing, and implementing machine learning
+            models and systems.
+          </p>
+        </div>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="400">
+          <h3>Cyber Security Expert</h3>
+          <p>
+            A Cyber Security Expert is a specialist dedicated to shielding
+            digital systems and data from cyber threats. They devise strategies,
+            implement safeguards, and lead responses to protect against
+            unauthorized access, breaches, and vulnerabilities.
+          </p>
+        </div>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="500">
+          <h3>Application Security Engineer</h3>
+          <p>
+            An Application Security Engineer is a professional focused on
+            fortifying digital applications against cyber threats. They assess,
+            identify, and rectify vulnerabilities within software systems.
+          </p>
+        </div>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="600">
+          <h3>Data Scientist</h3>
+          <p>
+            Data Scientists are experts at analyzing large datasets, building
+            predictive models, and providing actionable insights for data-driven
+            business decisions. Their skills in statistics, programming, and
+            domain knowledge help uncover trends driving strategic growth.
+          </p>
+        </div>
+
+        <div class="career-card" data-aos="fade-up" data-aos-delay="700">
+          <h3>Cloud Security Specialist</h3>
+          <p>
+            Cloud Security Specialists work on securing cloud infrastructures,
+            ensuring data protection, and managing compliance within cloud
+            environments.
+          </p>
+        </div>
+        <div class="career-card" data-aos="fade-up" data-aos-delay="700">
+          <h3>Event Management</h3>
+          <p>
+            Event Managers excel in planning, organizing, and executing events,
+            ensuring smooth operations and memorable experiences for attendees.
+          </p>
+        </div>
+        <div class="career-card" data-aos="fade-up" data-aos-delay="700">
+          <h3>Spoken English</h3>
+          <p>
+            Spoken English courses focus on improving fluency, pronunciation,
+            and confidence in conversational English, helping learners
+            communicate effectively in various social and professional contexts.
+          </p>
+        </div>
+        <div class="career-card" data-aos="fade-up" data-aos-delay="700">
+          <h3>Nail Artistry</h3>
+          <p>
+            Nail Artists specialize in creative nail designs, offering services
+            such as manicures, pedicures, and nail art to enhance the beauty and
+            style of clients hands and feet.
+          </p>
+        </div>
+        <div class="career-card" data-aos="fade-up" data-aos-delay="700">
+          <h3>Makeup Artistry</h3>
+          <p>
+            Makeup Artists excel in enhancing facial features through the
+            application of makeup, offering services for various occasions such
+            as weddings, photoshoots, and special events to help clients look
+            their absolute best, radiating confidence and beauty.
+          </p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-arrow right-arrow"
+      id="nextButton"
+      data-aos="fade-left"
+      data-aos-delay="800"
+    >
+      &#10095;
+    </button>
+    <button
+      class="carousel-arrow left-arrow"
+      id="prevButton"
+      data-aos="fade-right"
+      data-aos-delay="800"
+    >
+      &#10094;
+    </button>
+  </div>
+  <div
+    class="carousel-dots"
+    id="carouselDots"
+    data-aos="fade-up"
+    data-aos-delay="900"
+  ></div>
+</div>
 
 <!-- JavaScript -->
 <script>
   const careerCards = document.getElementById("careerCards");
-  const dotsContainer = document.getElementById("carouselDots");
-  const prevButton = document.getElementById("prevButton");
-  const nextButton = document.getElementById("nextButton");
+const dotsContainer = document.getElementById("carouselDots");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
 
-  const cards = document.querySelectorAll(".career-card");
-  let currentIndex = 0;
-  let isAutoScrolling = true;
+let currentIndex = 0;
+let isAutoScrolling = true;
+const autoScrollInterval = 5000; // Auto-scroll interval of 5 seconds
 
-  function updateCarousel() {
-    const cardWidth = careerCards.children[0].offsetWidth + 10; // Including margin
-    careerCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    updateDots();
-  }
+function updateCarousel() {
+  const cardWidth = careerCards.children[0].offsetWidth + 10; // Including margin
+  careerCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  updateDots();
+}
 
-  function updateDots() {
-    dotsContainer.innerHTML = "";
-    const totalDots = Math.ceil(cards.length / (isMobile() ? 1 : 3)); // 1 card per slide on mobile, 3 per slide on desktop
-    for (let i = 0; i < totalDots; i++) {
-      const dot = document.createElement("button");
-      dot.classList.add("dot");
-      if (i === currentIndex) dot.classList.add("active");
-      dot.addEventListener("click", () => {
-        currentIndex = i;
-        updateCarousel();
-      });
-      dotsContainer.appendChild(dot);
-    }
-  }
+function updateDots() {
+  dotsContainer.innerHTML = "";
+  const totalSlides = careerCards.children.length;
+  const totalDots = totalSlides; // Show one slide at a time
 
-  prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
+  for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement("button");
+    dot.classList.add("dot");
+    if (i === currentIndex) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      currentIndex = i;
       updateCarousel();
-    }
-  });
+    });
+    dotsContainer.appendChild(dot);
+  }
+}
 
-  nextButton.addEventListener("click", () => {
-    const totalDots = Math.ceil(cards.length / (isMobile() ? 1 : 3));
-    if (currentIndex < totalDots - 1) {
-      currentIndex++;
-      updateCarousel();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    currentIndex = 0;
+prevButton.addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
     updateCarousel();
-  });
-
-  // Auto-scroll functionality
-  setInterval(() => {
-    if (isAutoScrolling) {
-      const totalDots = Math.ceil(cards.length / (isMobile() ? 1 : 3));
-      if (currentIndex < totalDots - 1) {
-        currentIndex++;
-      } else {
-        currentIndex = 0; // Reset to first slide
-      }
-      updateCarousel();
-    }
-  }, 5000);
-
-  // Pause auto-scroll on mobile touch
-  const careerCarousel = document.querySelector(".career-carousel");
-  careerCarousel.addEventListener("touchstart", () => {
-    isAutoScrolling = false;
-  });
-
-  careerCarousel.addEventListener("touchend", () => {
-    isAutoScrolling = true;
-  });
-
-  function isMobile() {
-    return window.innerWidth <= 768;
   }
+});
 
+nextButton.addEventListener("click", () => {
+  const totalSlides = careerCards.children.length;
+  if (currentIndex < totalSlides - 1) {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+window.addEventListener("resize", () => {
   updateCarousel();
+});
+
+setInterval(() => {
+  if (isAutoScrolling) {
+    const totalSlides = careerCards.children.length;
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  }
+}, autoScrollInterval);
+
+document.querySelector(".career-carousel").addEventListener("touchstart", () => {
+  isAutoScrolling = false;
+});
+
+document.querySelector(".career-carousel").addEventListener("touchend", () => {
+  isAutoScrolling = true;
+});
+
+// Initialize
+updateCarousel();
+
 </script>
 
-{%comment %} Why choos us section {% endcomment %}
-
 <section class="why-choose-us">
-  <h2 class="section-title">Why Choose Us</h2>
+  <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
 
   <div class="row">
     <!-- Row 1 -->
-    <div class="col content-box image-box">
+    <div class="col content-box image-box" data-aos="fade-right">
       <img src="{% static 'images/why1.jpg' %}" alt="Image 1" />
     </div>
-    <div class="col content-box text-box red-box">
+    <div class="col content-box text-box red-box" data-aos="fade-left">
       <div class="content">
         <h3>Hybrid Model</h3>
         <p>Offline &#9679; Online &#9679; Recorded</p>
       </div>
     </div>
-    <div class="col content-box image-box">
+    <div
+      class="col content-box image-box"
+      data-aos="fade-right"
+      data-aos-delay="200"
+    >
       <img src="{% static 'images/why2.jpg' %}" alt="Image 2" />
     </div>
-    <div class="col content-box text-box red-box">
+    <div
+      class="col content-box text-box red-box"
+      data-aos="fade-left"
+      data-aos-delay="200"
+    >
       <div class="content">
         <h3>Global Recognition</h3>
-        <span
-          >Reputation in analytics education <br />
-          for career prospects</span
-        >
+        <span>
+          Reputation in analytics education <br />
+          for career prospects
+        </span>
       </div>
     </div>
   </div>
 
   <div class="row">
     <!-- Row 2 -->
-    <div class="col content-box text-box white-box">
+    <div class="col content-box text-box white-box" data-aos="fade-right">
       <div class="content">
         <h3 style="color: black">Practical Application</h3>
         <p style="color: black">
@@ -927,10 +1674,14 @@
         </p>
       </div>
     </div>
-    <div class="col content-box image-box">
+    <div class="col content-box image-box" data-aos="fade-left">
       <img src="{% static 'images/why3.jpg' %}" alt="Image 3" />
     </div>
-    <div class="col content-box text-box white-box">
+    <div
+      class="col content-box text-box white-box"
+      data-aos="fade-right"
+      data-aos-delay="200"
+    >
       <div class="content">
         <h3 style="color: black">24x7 Student Support</h3>
         <p style="color: black">
@@ -939,7 +1690,11 @@
         </p>
       </div>
     </div>
-    <div class="col content-box image-box">
+    <div
+      class="col content-box image-box"
+      data-aos="fade-left"
+      data-aos-delay="200"
+    >
       <img src="{% static 'images/why4.jpg' %}" alt="Image 4" />
     </div>
   </div>
@@ -950,16 +1705,14 @@
     width: 100%;
     padding: 20px 0;
     margin-top: 100px;
-    margin-bottom: 100px;
   }
 
   .section-title {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 2rem;
+    color: #162020;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 20px;
-    color: black;
   }
 
   .row {
@@ -1041,9 +1794,170 @@
   }
 </style>
 
+{% comment %} 3d  {% endcomment %}
+
+<div class="banner">
+  <div class="slider" style="--quantity: 10">
+      <div class="item" style="--position: 1"><img src="{% static 'images/event_western_style.webp'%}" alt=""></div>
+      <div class="item" style="--position: 2"><img src="{% static 'images/3d_ds.webp'%}" alt=""></div>
+      <div class="item" style="--position: 3"><img src="{% static 'images/3d_ce.webp'%}" alt=""></div>
+      <div class="item" style="--position: 4"><img src="{% static 'images/3d_cd.webp'%}" alt=""></div>
+      <div class="item" style="--position: 5"><img src="{% static 'images/3d_ca.webp'%}" alt=""></div>
+      <div class="item" style="--position: 6"><img src="{% static 'images/3d_se.webp'%}" alt=""></div>
+      <div class="item" style="--position: 7"><img src="{% static 'images/3d_ma.webp'%}" alt=""></div>
+      <div class="item" style="--position: 8"><img src="{% static 'images/3d_na.webp'%}" alt=""></div>
+      <div class="item" style="--position: 9"><img src="{% static 'images/3d_about.webp'%}" alt=""></div>
+      <div class="item" style="--position: 10"><img src="{% static 'images/3d_about2.webp'%}" alt=""></div>
+  </div>
+  <div class="content">
+      <h1 data-content="">
+      </h1>
+      
+      <div class="model"></div>
+  </div>
+</div>
+
+<style>
+  @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+  @import url('https://fonts.cdnfonts.com/css/poppins');
+  
+  .banner{
+    
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      margin-top: 100px;
+  }
+  .banner .slider{
+      position: absolute;
+      width: 200px;
+      height: 250px;
+      top: 10%;
+      left: calc(50% - 100px);
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      animation: autoRun 30s linear infinite;
+      z-index: 2;
+  }
+  @keyframes autoRun{
+      from{
+          transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+      }to{
+          transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+      }
+  }
+  
+  .banner .slider .item{
+      position: absolute;
+      inset: 0 0 0 0;
+      transform: 
+          rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+          translateZ(550px);
+  }
+  .banner .slider .item img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  .banner .content{
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1400px, 100vw);
+      height: max-content;
+      padding-bottom: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1;
+  }
+  .banner .content h1{
+      font-family: 'ICA Rubrik';
+      font-size: 16em;
+      line-height: 1em;
+      color: #25283B;
+      position: relative;
+  }
+  .banner .content h1::after{
+      position: absolute;
+      inset: 0 0 0 0;
+      content: attr(data-content);
+      z-index: 2;
+      -webkit-text-stroke: 2px #d2d2d2;
+      color: transparent;
+  }
+  .banner .content .author{
+      font-family: Poppins;
+      text-align: right;
+      max-width: 200px;
+  }
+  .banner .content h2{
+      font-size: 3em;
+  }
+  .banner .content .model{
+      background-image: url("{% static 'images/model.png' %}");
+      width: 100%;
+      height: 75vh;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-size: auto 130%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      z-index: 1;
+  }
+  @media screen and (max-width: 1023px) {
+      .banner .slider{
+          width: 160px;
+          height: 200px;
+          left: calc(50% - 80px);
+      }
+      .banner .slider .item{
+          transform: 
+              rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+              translateZ(300px);
+      }
+      .banner .content h1{
+          text-align: center;
+          width: 100%;
+          text-shadow: 0 10px 20px #000;
+          font-size: 7em;
+      }
+      .banner .content .author{
+          color: #fff;
+          padding: 20px;
+          text-shadow: 0 10px 20px #000;
+          z-index: 2;
+          max-width: unset;
+          width: 100%;
+          text-align: center;
+          padding: 0 30px;
+      }
+  }
+  @media screen and (max-width: 767px) {
+      .banner .slider{
+          width: 100px;
+          height: 150px;
+          left: calc(50% - 50px);
+      }
+      .banner .slider .item{
+          transform: 
+              rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+              translateZ(180px);
+      }
+      .banner .content h1{
+          font-size: 5em;
+      }
+  }
+</style>
+
+
 <div class="custom-container">
-  <!-- Right Section: Enroll Content -->
-  <div class="custom-enroll-section">
+  <div class="custom-enroll-section" data-aos="fade-up">
     <h2>Unlock Your True Potential with Us!</h2>
     <p>
       Step into a world of endless learning opportunities with Tokyo AnalyticX.
@@ -1060,189 +1974,111 @@
       Don't miss this opportunity to be a part of our thriving learning
       community. Let's shape your journey to excellence together!
     </p>
-    <a href="#" class="custom-enroll-btn">Join Us Now</a>
+    <a
+      href="{% url 'enquire_now' %}"
+      class="custom-enroll-btn"
+      data-aos="zoom-in"
+      >Join Us Now</a
+    >
   </div>
 </div>
 
 <style>
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 30px;
-    margin: 0 auto;
-    height: 450px;
-  }
-
-  .image-wrapper {
-    background: white;
-    padding: 0;
-    margin: 5px;
-    
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-
-  .image-wrapper:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .image-wrapper img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .custom-enroll-section p{
-    font-size: inherit;
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      padding: 10px;
-    }
-
-    .image-grid {
-      gap: 10px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-    }
-  }
-</style>
-
-<style>
-
-
   .custom-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 10px;
-  color: #fff;
-  width: 80%;
-  {% comment %} max-width: 1200px; {% endcomment %}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
   }
-
-  .custom-heading {
-  flex: 1 0 100%;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: black;
-  }
-
 
   /* Enroll Section */
   .custom-enroll-section {
-  flex: 1;
-  padding: 20px;
-  background:rgb(229, 233, 218);
-  border-radius: 10px;
-  color: rgba(55, 52, 52);
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 4rem;
-  margin-top: 3rem;
+    flex: 1;
+    padding: 30px;
+    background: rgb(229, 233, 218);
+    border-radius: 10px;
+    color: rgba(55, 52, 52);
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
+  .custom-enroll-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   .custom-enroll-section h2 {
-  color: #ee0979;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
+    color: #ee0979;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .custom-enroll-section:hover h2 {
+    color: rgb(241, 8, 105);
   }
 
   .custom-enroll-section p {
-  font-size: 0.87rem;
-  line-height: 1.5;
-  margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
   }
 
   .custom-enroll-btn {
-  display: inline-block;
-  background: #fff;
-  color: #ee0979;
-  margin-top: 50px;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
+    display: inline-block;
+    background: #fff;
+    color: #ee0979;
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .custom-enroll-btn:hover {
-  background:rgb(241, 8, 105);
-  color: #fff;
-  transform: scale(1.05);
+    background: rgb(241, 8, 105);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
 
   /* Mobile Responsive Design */
   @media (max-width: 768px) {
-  .custom-container {
+    .custom-container {
       flex-direction: column;
-      padding: 10px;
-  }
-
-  .custom-heading {
-      font-size: 22px;
-      margin-bottom: 15px;
-  }
-
-  .custom-form-section,
-  .custom-enroll-section {
       padding: 15px;
+    }
+
+    .custom-enroll-section {
+      padding: 20px;
       box-shadow: none; /* Simplify for mobile */
-  }
+    }
 
-  .custom-row {
-      flex-direction: column;
-      gap: 10px;
-  }
+    .custom-enroll-section h2 {
+      font-size: 22px;
+    }
 
-  .custom-field {
-      flex: 1 0 100%;
-  }
+    .custom-enroll-section p {
+      font-size: 0.9rem;
+    }
 
-  .custom-field label {
-      font-size: 13px;
-  }
-
-  .custom-field input,
-  .custom-field select,
-  .custom-field textarea {
-      font-size: 12px;
-      padding: 8px;
-  }
-
-  .custom-submit-btn {
-      font-size: 14px;
-      margin: 0 auto;
-      display: block;
+    .custom-enroll-btn {
+      font-size: 0.9rem;
+      padding: 10px 20px;
       margin-top: 20px;
-  }
-
-  .custom-enroll-section h2 {
-      font-size: 20px;
-  }
-
-  .custom-enroll-section p {
-      font-size: 0.87rem;
-  }
-
-  .custom-enroll-btn {
-      font-size: 0.87rem;
-      padding: 8px 16px;
-      margin-top: 20px;
-  }
+    }
   }
 </style>
 
